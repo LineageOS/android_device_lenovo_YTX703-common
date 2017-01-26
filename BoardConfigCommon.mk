@@ -55,7 +55,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x08000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/lenovo/msm8976
-TARGET_KERNEL_CONFIG := YTX703F_defconfig
+TARGET_KERNEL_CONFIG := lineage_YTX703F_defconfig
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
