@@ -16,7 +16,7 @@
 #
 
 # inherit from the proprietary version
-$(call inherit-product, vendor/samsung/msm8976-common/msm8976-common-vendor.mk)
+$(call inherit-product, vendor/lenovo/msm8976-common/msm8976-common-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -26,8 +26,8 @@ PRODUCT_AAPT_CONFIG := normal large xlarge
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2048
-TARGET_SCREEN_WIDTH := 1536
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1600
 
 # Device characteristics
 PRODUCT_CHARACTERISTICS := tablet
@@ -115,10 +115,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8952 \
     memtrack.msm8952 \
     liboverlay
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    fingerprintd
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \

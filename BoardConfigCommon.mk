@@ -15,10 +15,10 @@
 #
 
 # inherit from the proprietary version
--include vendor/samsung/msm8976-common/BoardConfigVendor.mk
+-include vendor/lenovo/msm8976-common/BoardConfigVendor.mk
 
-BOARD_VENDOR := samsung
-VENDOR_PATH := device/samsung/msm8976-common
+BOARD_VENDOR := lenovo
+VENDOR_PATH := device/lenovo/msm8976-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 
@@ -49,12 +49,13 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000 --board FPRPG21W000KU
-TARGET_KERNEL_SOURCE := kernel/samsung/msm8976
+BOARD_MKBOOTIMG_ARGS := BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x08000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+TARGET_KERNEL_SOURCE := kernel/lenovo/msm8976
+TARGET_KERNEL_CONFIG := YTX703F_defconfig
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -108,7 +109,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
     hardware/cyanogen/cmhw \
-    hardware/samsung/cmhw \
     $(VENDOR_PATH)/cmhw
 
 # Dex
@@ -144,12 +144,12 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
-BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
-BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x4000000
+BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4404019200
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 26268905472
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3758096384
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 26227481600
 
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(VENDOR_PATH)/android_filesystem_config.h
 

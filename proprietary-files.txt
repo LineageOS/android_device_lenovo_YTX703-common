@@ -1,11 +1,39 @@
 # ACBD Data
-etc/Bluetooth_cal.acdb
-etc/General_cal.acdb
-etc/Global_cal.acdb
-etc/Handset_cal.acdb
-etc/Hdmi_cal.acdb
-etc/Headset_cal.acdb
-etc/Speaker_cal.acdb
+etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+etc/acdbdata/MTP/MTP_General_cal.acdb
+etc/acdbdata/MTP/MTP_Global_cal.acdb
+etc/acdbdata/MTP/MTP_Handset_cal.acdb
+etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+etc/acdbdata/MTP/MTP_Headset_cal.acdb
+etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+etc/acdbdata/MTP/msm8952-tomtom-snd-card/MTP_WCD9330_Bluetooth_cal.acdb
+etc/acdbdata/MTP/msm8952-tomtom-snd-card/MTP_WCD9330_General_cal.acdb
+etc/acdbdata/MTP/msm8952-tomtom-snd-card/MTP_WCD9330_Global_cal.acdb
+etc/acdbdata/MTP/msm8952-tomtom-snd-card/MTP_WCD9330_Handset_cal.acdb
+etc/acdbdata/MTP/msm8952-tomtom-snd-card/MTP_WCD9330_Hdmi_cal.acdb
+etc/acdbdata/MTP/msm8952-tomtom-snd-card/MTP_WCD9330_Headset_cal.acdb
+etc/acdbdata/MTP/msm8952-tomtom-snd-card/MTP_WCD9330_Speaker_cal.acdb
+etc/acdbdata/MTP/msm8976-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
+etc/acdbdata/MTP/msm8976-tasha-snd-card/MTP_WCD9335_General_cal.acdb
+etc/acdbdata/MTP/msm8976-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
+etc/acdbdata/MTP/msm8976-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb
+etc/acdbdata/MTP/msm8976-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb
+etc/acdbdata/MTP/msm8976-tasha-snd-card/MTP_WCD9335_Headset_cal.acdb
+etc/acdbdata/MTP/msm8976-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb
+etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+etc/acdbdata/QRD/QRD_General_cal.acdb
+etc/acdbdata/QRD/QRD_Global_cal.acdb
+etc/acdbdata/QRD/QRD_Handset_cal.acdb
+etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
+etc/acdbdata/QRD/QRD_Headset_cal.acdb
+etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Bluetooth_cal.acdb
+etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_General_cal.acdb
+etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Global_cal.acdb
+etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Handset_cal.acdb
+etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Hdmi_cal.acdb
+etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Headset_cal.acdb
+etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Speaker_cal.acdb
 
 # ADSP
 bin/adsprpcd
@@ -49,23 +77,13 @@ vendor/lib/soundfx/libqcvirt.so
 
 # Bluetooth
 bin/hci_qcomm_init
-bin/wcnss_filter
-etc/firmware/btfw32.tlv
-etc/firmware/btnv32.bin
 
 # Camera
 bin/mm-qcamera-daemon
-etc/camera/msm8976_camera_tabs2.xml
-etc/camera/s5k4h5yc_dw9807_chromatix.xml
-etc/camera/s5k6b2yx_chromatix.xml
-etc/P08QL_s5k4h5yc_module_info.xml
-etc/Q08QL_s5k4h5yc_module_info.xml
 lib/hw/camera.msm8952.so
-lib/libalawb_algo.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libmm-qcamera.so
-lib/libsblcv.so
 lib/libqomx_core.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
@@ -73,11 +91,12 @@ vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
+vendor/lib/libmmcamera2_dcrf.so
 vendor/lib/libmmcamera2_frame_algorithm.so
 vendor/lib/libmmcamera2_iface_modules.so
 vendor/lib/libmmcamera2_imglib_modules.so
-vendor/lib/libmmcamera2_isp_modules.so
 vendor/lib/libmmcamera2_is.so
+vendor/lib/libmmcamera2_isp_modules.so
 vendor/lib/libmmcamera2_mct.so
 vendor/lib/libmmcamera2_pp_buf_mgr.so
 vendor/lib/libmmcamera2_pproc_modules.so
@@ -88,15 +107,18 @@ vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera2_vpe_module.so
 vendor/lib/libmmcamera2_wnr_module.so
+vendor/lib/libmmcamera_ar1335.so
 vendor/lib/libmmcamera_cac3_lib.so
+vendor/lib/libmmcamera_chromaflash_lib.so
 vendor/lib/libmmcamera_csidtg.so
-vendor/lib/libmmcamera_dbg.so
-vendor/lib/libmmcamera_dw9807_eeprom.so
+vendor/lib/libmmcamera_dcrf_lib.so
+vendor/lib/libmmcamera_dw9761b_eeprom.so
 vendor/lib/libmmcamera_eeprom_util.so
 vendor/lib/libmmcamera_eztune_module.so
 vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_imglib.so
+vendor/lib/libmmcamera_isp_abcc44.so
 vendor/lib/libmmcamera_isp_abf40.so
 vendor/lib/libmmcamera_isp_bcc40.so
 vendor/lib/libmmcamera_isp_be_stats44.so
@@ -130,17 +152,28 @@ vendor/lib/libmmcamera_isp_scaler_viewfinder44.so
 vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_sub_module.so
 vendor/lib/libmmcamera_isp_wb40.so
-vendor/lib/libmmcamera_pdafcamif.so
+vendor/lib/libmmcamera_llvd.so
+vendor/lib/libmmcamera_optizoom_lib.so
+vendor/lib/libmmcamera_ov5695.so
+vendor/lib/libmmcamera_ov5695_avc.so
 vendor/lib/libmmcamera_pdaf.so
+vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_ppbase_module.so
-vendor/lib/libmmcamera_s5k4h5yc.so
-vendor/lib/libmmcamera_s5k6b2yx.so
+vendor/lib/libmmcamera_qtech_ov5695_eeprom.so
+vendor/lib/libmmcamera_sunny_dw9761b_eeprom.so
+vendor/lib/libmmcamera_sw_tnr.so
 vendor/lib/libmmcamera_thread_services.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
-vendor/lib/libmmcamera_tuning_lookup.so
 vendor/lib/libmmcamera_tuning.so
+vendor/lib/libmmcamera_tuning_lookup.so
+vendor/lib/libmmcamera_ubifocus_lib.so
 vendor/lib/libmmcamera_vpu_module.so
+vendor/lib64/libmmcamera2_frame_algorithm.so
+vendor/lib64/libmmcamera2_is.so
+vendor/lib64/libmmcamera2_q3a_core.so
+vendor/lib64/libmmcamera2_sensor_debug.so
+vendor/lib64/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
@@ -151,74 +184,90 @@ vendor/lib/libts_detected_face_hal.so
 vendor/lib/libts_face_beautify_hal.so
 
 # Camera actuators
-vendor/lib/libactuator_dw9807.so
+vendor/lib/libactuator_dw9761b.so
 
 # Camera chromatix
-vendor/lib/libchromatix_s5k4h5yc_dw9807_3a_food.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_3a_hfr_120.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_3a_night_preview.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_3a_panorama_preview.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_3a_sports_preview.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_3a_zsl_preview.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_3a_zsl_video.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_common.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_food_snapshot.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_hfr_120.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_iso_snapshot.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_liveshot.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_night_snapshot.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_panorama_snapshot.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_preview.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_snapshot.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_sports_snapshot.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_video_qhd.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_cpp_video.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_isp_default_video.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_isp_hfr_120.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_isp_mode_iso.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_isp_preview.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_isp_qhd_video.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_isp_snapshot.so
-vendor/lib/libchromatix_s5k4h5yc_dw9807_postproc.so
-vendor/lib/libchromatix_s5k6b2yx_1080p_preview_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_1080p_video_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_4k_preview_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_4k_video_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_common.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_hfr_120.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_hfr_60.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_hfr_90.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_liveshot.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_preview.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_snapshot.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_video_4k.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_video.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_vt_30fps.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_vt_hd.so
-vendor/lib/libchromatix_s5k6b2yx_cpp_vt.so
-vendor/lib/libchromatix_s5k6b2yx_default_preview_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_default_video_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_default_video.so
-vendor/lib/libchromatix_s5k6b2yx_hfr_120_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_hfr_120.so
-vendor/lib/libchromatix_s5k6b2yx_hfr_60_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_hfr_60.so
-vendor/lib/libchromatix_s5k6b2yx_hfr_90_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_hfr_90.so
-vendor/lib/libchromatix_s5k6b2yx_liveshot.so
-vendor/lib/libchromatix_s5k6b2yx_night_preview_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_postproc.so
-vendor/lib/libchromatix_s5k6b2yx_preview.so
-vendor/lib/libchromatix_s5k6b2yx_snapshot.so
-vendor/lib/libchromatix_s5k6b2yx_video_4k.so
-vendor/lib/libchromatix_s5k6b2yx_vt_30fps_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_vt_30fps.so
-vendor/lib/libchromatix_s5k6b2yx_vt_hd_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_vt_hd.so
-vendor/lib/libchromatix_s5k6b2yx_vt_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_vt.so
-vendor/lib/libchromatix_s5k6b2yx_zsl_preview_lc898122.so
-vendor/lib/libchromatix_s5k6b2yx_zsl_video_lc898122.so
+vendor/lib/libchromatix_ar1335_common.so
+vendor/lib/libchromatix_ar1335_cpp_ds_chromatix.so
+vendor/lib/libchromatix_ar1335_cpp_hfr_60.so
+vendor/lib/libchromatix_ar1335_cpp_hfr_90.so
+vendor/lib/libchromatix_ar1335_cpp_hfr_120.so
+vendor/lib/libchromatix_ar1335_cpp_liveshot.so
+vendor/lib/libchromatix_ar1335_cpp_preview.so
+vendor/lib/libchromatix_ar1335_cpp_snapshot.so
+vendor/lib/libchromatix_ar1335_cpp_us_chromatix.so
+vendor/lib/libchromatix_ar1335_cpp_video.so
+vendor/lib/libchromatix_ar1335_cpp_video_full.so
+vendor/lib/libchromatix_ar1335_default_preview_dw9761b.so
+vendor/lib/libchromatix_ar1335_default_video.so
+vendor/lib/libchromatix_ar1335_default_video_dw9761b.so
+vendor/lib/libchromatix_ar1335_hfr_60.so
+vendor/lib/libchromatix_ar1335_hfr_60_dw9761b.so
+vendor/lib/libchromatix_ar1335_hfr_90.so
+vendor/lib/libchromatix_ar1335_hfr_90_dw9761b.so
+vendor/lib/libchromatix_ar1335_hfr_120.so
+vendor/lib/libchromatix_ar1335_hfr_120_dw9761b.so
+vendor/lib/libchromatix_ar1335_liveshot.so
+vendor/lib/libchromatix_ar1335_postproc.so
+vendor/lib/libchromatix_ar1335_preview.so
+vendor/lib/libchromatix_ar1335_snapshot.so
+vendor/lib/libchromatix_ar1335_video_full.so
+vendor/lib/libchromatix_ar1335_zsl_preview_dw9761b.so
+vendor/lib/libchromatix_ar1335_zsl_video_dw9761b.so
+vendor/lib/libchromatix_ov5695_a3_default_preview.so
+vendor/lib/libchromatix_ov5695_a3_default_video.so
+vendor/lib/libchromatix_ov5695_a3_hfr_60.so
+vendor/lib/libchromatix_ov5695_a3_hfr_90.so
+vendor/lib/libchromatix_ov5695_a3_hfr_120.so
+vendor/lib/libchromatix_ov5695_avc_a3_default_preview.so
+vendor/lib/libchromatix_ov5695_avc_a3_default_video.so
+vendor/lib/libchromatix_ov5695_avc_a3_hfr_60.so
+vendor/lib/libchromatix_ov5695_avc_a3_hfr_90.so
+vendor/lib/libchromatix_ov5695_avc_a3_hfr_120.so
+vendor/lib/libchromatix_ov5695_avc_common.so
+vendor/lib/libchromatix_ov5695_avc_cpp_ds_chromatix.so
+vendor/lib/libchromatix_ov5695_avc_cpp_hfr_60.so
+vendor/lib/libchromatix_ov5695_avc_cpp_hfr_90.so
+vendor/lib/libchromatix_ov5695_avc_cpp_hfr_120.so
+vendor/lib/libchromatix_ov5695_avc_cpp_liveshot.so
+vendor/lib/libchromatix_ov5695_avc_cpp_preview.so
+vendor/lib/libchromatix_ov5695_avc_cpp_snapshot.so
+vendor/lib/libchromatix_ov5695_avc_cpp_us_chromatix.so
+vendor/lib/libchromatix_ov5695_avc_cpp_video.so
+vendor/lib/libchromatix_ov5695_avc_cpp_video_full.so
+vendor/lib/libchromatix_ov5695_avc_default_video.so
+vendor/lib/libchromatix_ov5695_avc_hfr_60.so
+vendor/lib/libchromatix_ov5695_avc_hfr_90.so
+vendor/lib/libchromatix_ov5695_avc_hfr_120.so
+vendor/lib/libchromatix_ov5695_avc_liveshot.so
+vendor/lib/libchromatix_ov5695_avc_postproc.so
+vendor/lib/libchromatix_ov5695_avc_preview.so
+vendor/lib/libchromatix_ov5695_avc_snapshot.so
+vendor/lib/libchromatix_ov5695_avc_video_full.so
+vendor/lib/libchromatix_ov5695_avc_zsl_preview.so
+vendor/lib/libchromatix_ov5695_avc_zsl_video.so
+vendor/lib/libchromatix_ov5695_common.so
+vendor/lib/libchromatix_ov5695_cpp_ds_chromatix.so
+vendor/lib/libchromatix_ov5695_cpp_hfr_60.so
+vendor/lib/libchromatix_ov5695_cpp_hfr_90.so
+vendor/lib/libchromatix_ov5695_cpp_hfr_120.so
+vendor/lib/libchromatix_ov5695_cpp_liveshot.so
+vendor/lib/libchromatix_ov5695_cpp_preview.so
+vendor/lib/libchromatix_ov5695_cpp_snapshot.so
+vendor/lib/libchromatix_ov5695_cpp_us_chromatix.so
+vendor/lib/libchromatix_ov5695_cpp_video.so
+vendor/lib/libchromatix_ov5695_cpp_video_full.so
+vendor/lib/libchromatix_ov5695_default_video.so
+vendor/lib/libchromatix_ov5695_hfr_60.so
+vendor/lib/libchromatix_ov5695_hfr_90.so
+vendor/lib/libchromatix_ov5695_hfr_120.so
+vendor/lib/libchromatix_ov5695_liveshot.so
+vendor/lib/libchromatix_ov5695_postproc.so
+vendor/lib/libchromatix_ov5695_preview.so
+vendor/lib/libchromatix_ov5695_snapshot.so
+vendor/lib/libchromatix_ov5695_video_full.so
+vendor/lib/libchromatix_ov5695_zsl_preview.so
+vendor/lib/libchromatix_ov5695_zsl_video.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw
@@ -229,9 +278,6 @@ etc/firmware/cpp_firmware_v1_4_0.fw
 etc/firmware/cpp_firmware_v1_5_0.fw
 etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
-etc/firmware/ois_SE_BU24219.bin
-etc/firmware/ois_SP_BU24219.bin
-etc/firmware/ois_VE_BU24219.bin
 
 # DRM
 bin/qseecomd
@@ -247,18 +293,6 @@ vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib/libQSEEComAPI.so
 
-# FinegerPrint
-lib64/hw/fingerprint.default.so
-lib64/libbauthserver.so
-lib64/libbauthtzcommon.so
-lib64/libegis_fp_normal_sensor_test.so
-lib64/libsynaFpSensorTestNwd.so
-lib/hw/fingerprint.default.so
-lib/libbauthserver.so
-lib/libbauthtzcommon.so
-lib/libegis_fp_normal_sensor_test.so
-lib/libsynaFpSensorTestNwd.so
-
 # Gatekeeper
 vendor/lib64/hw/gatekeeper.msm8952.so
 
@@ -269,9 +303,7 @@ bin/xtwifi-client|b39bf2ed886c05f56a54e98f4f66bf41e0d67651
 bin/xtwifi-inet-agent|c3a25436fd1624cc51c364824b33e22159b07821
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
 etc/permissions/com.qualcomm.location.xml|878999ca1861e71cdbda75378164d6113296a428
-etc/permissions/izat.xt.srv.xml|a0f460056f27b5495a4d6e959eecf0e429c42a57
 framework/com.qti.location.sdk.jar|77d824800d15da47ea065ef8ac002299464d3ba7
-framework/izat.xt.srv.jar|9070a55970099aebbb2ebe20ffbaf36528eb28e7
 -lib64/libloc_api_v02.so|8cae1087f2038534776ca86074d597f265058b38
 lib64/libloc_ds_api.so|4329bbd2517e43dc59ec789463bf6789f0584e88
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk|5e8a3d9e15b927e5746b990848e04b350f3527fb
@@ -305,7 +337,6 @@ vendor/lib64/egl/libGLESv2_adreno.so|98d78fe0a67284cb7f902a767337526d627c8fda
 vendor/lib64/egl/libq3dtools_adreno.so|72469dbee993656e3dcceff22d942e7e88d103c0
 vendor/lib64/egl/libq3dtools_esx.so|f8cca2fbb4740195c6c13e50ade6abab35271907
 vendor/lib64/egl/libQTapGLES.so|fd94c79ef9d2c8dfc06e4b3c293eda64e38568e1
-vendor/lib64/hw/vulkan.msm8952.so|d20674a6be6b1b27f5db40fd2637a882d747a902
 vendor/lib64/libadreno_utils.so|c748281c382e798051dc59ca16ad26e98cff6eb5
 vendor/lib64/libbccQTI.so|6d2001c415c5125d6393e52fff3e2073877877fd
 vendor/lib64/libC2D2.so|25e15520757374b463ed1228e7e6f5af7cf12a24
@@ -315,7 +346,6 @@ vendor/lib64/libCB.so|58b9b3c96b9475d5940f2011e0b6284dc448ba45
 vendor/lib64/libgsl.so|403770f9885ae4bb21b7f09f41bbf3fd56d57d68
 vendor/lib64/libllvm-glnext.so|510bf6c4ad252a9d3bbb14377ad69f065e6cabb1
 vendor/lib64/libllvm-qcom.so|c2d558ef305dadf21ded4efd81027a39d53e86fc
-vendor/lib64/libllvm-qgl.so|5efb11398feea48db39fe84eaacd865e35739e61
 vendor/lib64/libmm-disp-apis.so|9bbc89ae665310da384fcd960c51236c92f947d2
 vendor/lib64/libmm-qdcm.so|59800c8833adf8fca6369bd08dfd16d6787f09c4
 vendor/lib64/libOpenCL.so|62e208a4a184d09b77b9ebf1a45011d4371f48ba
@@ -331,7 +361,6 @@ vendor/lib/egl/libGLESv2_adreno.so|6258569a2e3ad11f12a3131ba4c5c66b47c411ad
 vendor/lib/egl/libq3dtools_adreno.so|33707155f9cbbcecee3f267f20d2aeb5c3c55d9e
 vendor/lib/egl/libq3dtools_esx.so|e534fb5a62782b388ad9c16d727e3d5229f3235f
 vendor/lib/egl/libQTapGLES.so|381b3bf22cc2c45211607e0a0a1ed20b46365a40
-vendor/lib/hw/vulkan.msm8952.so|c8c47cde89804fcd8b2b3f133ca554bba4f559ef
 vendor/lib/libadreno_utils.so|522db7791ef53fc0747fc66274e3d9d01ac7b406
 vendor/lib/libbccQTI.so|363ffc697eaae3e9011ee2bf632fe29b4106c434
 vendor/lib/libC2D2.so|dc2b67f9f9390499e3f2b9c9444a695289f799cb
@@ -341,7 +370,6 @@ vendor/lib/libCB.so|a24338bfabb07be412a3bef9b9b1ea5da76a4063
 vendor/lib/libgsl.so|97b5bac7c9e9af3961ef8d371ffe5cecff3e692f
 vendor/lib/libllvm-glnext.so|86a8efd0f526a3d746f21e7319356beac50c3d0a
 vendor/lib/libllvm-qcom.so|4ae219adc7b40dc4e86adce4554ab5fb6f3b4d92
-vendor/lib/libllvm-qgl.so|023b153dd38b7959573e2a36dd684ff19b45bd05
 vendor/lib/libmm-disp-apis.so|c2bd0b6099ec2f2abdcaacb98cd68f86f781771f
 vendor/lib/libmm-qdcm.so|8b823a370692e3b1314e7a676e71278416556930
 vendor/lib/libmmQSM.so|ba300f71ead44760fbb235acd5af7412556979f7
@@ -447,15 +475,9 @@ bin/tftp_server
 vendor/lib64/libmdmdetect.so
 vendor/lib/libmdmdetect.so
 
-# SEC
-lib64/libsecnativefeature.so
-lib/libsecnativefeature.so
-
 # Sensors
 lib64/hw/sensors.msm8952.so
-vendor/etc/yas_set.cfg
 vendor/lib64/libsensor1.so
-vendor/lib64/libyasalgo.so
 vendor/lib/libsensor1.so
 
 # Thermal
@@ -468,21 +490,24 @@ vendor/lib/libthermalclient.so
 -vendor/lib64/libtime_genoff.so
 -vendor/lib/libtime_genoff.so
 
-# WideVine - from bullhead
-vendor/lib/libwvdrm_L1.so|3eaf8ed1cb337608a1ccdb80d2c95804e7aea323
-vendor/lib/libwvm.so|59c4c078f4b897ddac8f665309b7a3f25522f207
-vendor/lib/libWVStreamControlAPI_L1.so|6b28492ac55b9a3d86993343cf2c8b55240b3420
-vendor/lib/drm/libdrmwvmplugin.so|3bee766222895f524421eb996ca6a08bcf95f19f
-vendor/lib/mediadrm/libwvdrmengine.so|301e0ef26cfc3a22efd52ebf4bb095d0a33bc68d
+# WideVine
+vendor/lib/mediadrm/libwvdrmengine.so
+etc/firmware/widevine.b00
+etc/firmware/widevine.b01
+etc/firmware/widevine.b02
+etc/firmware/widevine.b03
+etc/firmware/widevine.b04
+etc/firmware/widevine.b05
+etc/firmware/widevine.b06
+etc/firmware/widevine.mdt
+
 
 # WiFi
 bin/cnss-daemon
 
 # WiFi Firmware
-etc/firmware/bdwlan30.bin
-etc/firmware/bdwlan30_R01.bin
-etc/firmware/otp30.bin
-etc/firmware/qwlan30.bin
-etc/firmware/utf30.bin
-etc/firmware/utfbd30.bin
-etc/firmware/utfbd30_R01.bin
+etc/firmware/wlan/prima/WCNSS_cfg.dat 
+etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
+
