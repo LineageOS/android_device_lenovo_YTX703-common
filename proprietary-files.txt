@@ -304,7 +304,7 @@ bin/xtwifi-inet-agent|c3a25436fd1624cc51c364824b33e22159b07821
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
 etc/permissions/com.qualcomm.location.xml|878999ca1861e71cdbda75378164d6113296a428
 framework/com.qti.location.sdk.jar|77d824800d15da47ea065ef8ac002299464d3ba7
--lib64/libloc_api_v02.so|8cae1087f2038534776ca86074d597f265058b38
+lib64/libloc_api_v02.so|8cae1087f2038534776ca86074d597f265058b38
 lib64/libloc_ds_api.so|4329bbd2517e43dc59ec789463bf6789f0584e88
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk|5e8a3d9e15b927e5746b990848e04b350f3527fb
 vendor/bin/slim_daemon|295c46c9208e7c7217a41ebf373180c045defbf4
@@ -328,6 +328,8 @@ vendor/lib64/libulp2.so|6f3ed8d9cb642f101e06c69496d333b129e2b281
 vendor/lib64/libxt_native.so|696f4fea9e799492409db5f6e45863ac1bd372d8
 vendor/lib64/libxtadapter.so|8040ecf9c4e7e302ce2baeaaaf23d7da022b58c9
 vendor/lib64/libxtwifi_ulp_adaptor.so|301ddc7c1bb788623e92c91fa63266a78f675238
+lib64/libloc_eng.so
+lib64/libloc_core.so
 
 # Graphics - from Mi Max
 vendor/lib64/egl/eglSubDriverAndroid.so|e98ec3f44246e14b84c4832cff3d6f374fa91263
