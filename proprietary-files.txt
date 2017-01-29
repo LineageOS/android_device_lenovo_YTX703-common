@@ -430,7 +430,9 @@ vendor/lib/libqti-perfd-client.so
 bin/pm-proxy
 bin/pm-service
 vendor/lib64/libperipheral_client.so
+vendor/lib64/libsmemlog.so
 vendor/lib/libperipheral_client.so
+vendor/lib/libsmemlog.so
 
 # Postprocessing
 etc/permissions/com.qti.snapdragon.sdk.display.xml
