@@ -510,6 +510,7 @@ etc/firmware/widevine.mdt
 
 # WiFi
 bin/cnss-daemon
+bin/wcnss_service
 
 # WiFi Firmware
 etc/firmware/wlan/prima/WCNSS_cfg.dat 
