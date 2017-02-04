@@ -157,7 +157,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.MSM8952
+    lights.msm8952
 
 # Media
 PRODUCT_COPY_FILES += \
