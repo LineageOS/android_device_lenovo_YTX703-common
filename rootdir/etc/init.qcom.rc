@@ -42,6 +42,11 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
+    setprop ro.sf.lcd_density 480
+    setprop media.msm8956hw 1
+    setprop media.settings.xml /etc/media_profiles_8956.xml    
+    setprop media.msm8956.version 1   
+
     #mkdir /bt_firmware
     #mkdir /bt_firmware/image
     #symlink /system/etc/firmware/btfw32.tlv /bt_firmware/image/btfw32.tlv
@@ -88,11 +93,11 @@ on fs
     write /proc/sys/vm/swappiness 100
     mkdir /persist/data 0700 system system
     restorecon_recursive /persist
-    restorecon_recursive /dsp
+    #restorecon_recursive /dsp
     #chown system radio /efs
     #chmod 0771 /efs
     #restorecon_recursive /efs
-
+    start setup_fs
     #rm -rf /efs/dmverity
 
 on boot
