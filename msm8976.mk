@@ -89,6 +89,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml: \
     $(LOCAL_PATH)/audio/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/ftm_test_config:system/etc/ftm_test_config \
+	$(LOCAL_PATH)/audio/ftm_test_config_msm8952-skum-snd-card:system/etc/ftm_test_config_msm8952-skum-snd-card \
+	$(LOCAL_PATH)/audio/ftm_test_config_msm8976-skun-snd-card:system/etc/ftm_test_config_msm8976-skun-snd-card \
+	$(LOCAL_PATH)/audio/ftm_test_config_msm8976-tasha-snd-card:system/etc/ftm_test_config_msm8976-tasha-snd-card \
+	$(LOCAL_PATH)/audio/ftm_test_config_mtp:system/etc/ftm_test_config_mtp \
+	$(LOCAL_PATH)/audio/ftm_test_config_wcd9330:system/etc/ftm_test_config_wcd9330 \
+	$(LOCAL_PATH)/audio/ftm_test_config_wcd9335:system/etc/ftm_test_config_wcd9335 \
+	$(LOCAL_PATH)/audio/media_codecs_8956.xml:system/etc/media_codecs_8956.xml \
+	$(LOCAL_PATH)/audio/media_codecs_8956_v1.xml:system/etc/media_codecs_8956_v1.xml \
+	$(LOCAL_PATH)/audio/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
+	$(LOCAL_PATH)/audio/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
+	$(LOCAL_PATH)/audio/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
     $(LOCAL_PATH)/audio/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
@@ -106,7 +118,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9335.xml:system/etc/sound_trigger_mixer_paths_wcd9335.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
+    $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    $(LOCAL_PATH)/audio/wfdconfig.xml:system/etc/wfdconfig.xml \
+	$(LOCAL_PATH)/audio/wfdconfigsink.xml:system/etc/wfdconfigsink.xml
 
 # Browser
 PRODUCT_PACKAGES += \
