@@ -42,10 +42,10 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
-    setprop ro.sf.lcd_density 480
-    setprop media.msm8956hw 1
-    setprop media.settings.xml /etc/media_profiles_8956.xml    
-    setprop media.msm8956.version 1   
+    #setprop ro.sf.lcd_density 480
+    #setprop media.msm8956hw 1
+    #setprop media.settings.xml /etc/media_profiles_8956.xml    
+    #setprop media.msm8956.version 1   
 
     #mkdir /bt_firmware
     #mkdir /bt_firmware/image
@@ -449,26 +449,6 @@ service config_bt_addr /system/bin/btnvtool -O
     user bluetooth
     group bluetooth radio
     oneshot
-
-service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
-    class core
-    user root
-    seclabel u:r:bluetooth_loader:s0
-    oneshot
-
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
-    class late_start
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    seclabel u:r:bluetooth_loader:s0
-    oneshot
-
-on property:bluetooth.hciattach=true
-    start hciattach
-
-on property:bluetooth.hciattach=false
-    setprop bluetooth.status off
 
 # FM
 on property:hw.fm.init=0
