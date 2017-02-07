@@ -37,7 +37,7 @@ audio.parser.ip.buffer.size=262144
 bluetooth.hfp.client=1
 ro.bt.bdaddr_path=/persist/bluetooth/.bt_nv.bin
 qcom.bluetooth.soc=smd
-#ro.qualcomm.bt.hci_transport=smd
+ro.qualcomm.bt.hci_transport=smd
 
 # Camera
 media.camera.ts.monotonic=0
