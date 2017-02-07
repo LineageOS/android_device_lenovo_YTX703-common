@@ -29,10 +29,9 @@ use.qti.sw.ape.decoder=true
 
 # Bluetooth
 bluetooth.hfp.client=1
-qcom.bluetooth.soc=rome
-ro.bluetooth.hfp.ver=1.7
 ro.bt.bdaddr_path=/persist/bluetooth/.bt_nv.bin
-ro.qualcomm.bt.hci_transport=smd
+qcom.bluetooth.soc=smd
+#ro.qualcomm.bt.hci_transport=smd
 
 # Camera
 media.camera.ts.monotonic=0
