@@ -31,28 +31,42 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
-RFS_MSM_ADSP_SYMLINKS := $(TARGET_OUT)/rfs/msm/adsp/
-$(RFS_MSM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Creating RFS MSM ADSP folder structure: $@"
-	@rm -rf $@
-	@mkdir -p $(dir $@)/readonly
-	$(hide) ln -sf /data/tombstones/lpass $@/ramdumps
-	$(hide) ln -sf /persist/rfs/msm/adsp $@/readwrite
-	$(hide) ln -sf /persist/rfs/shared $@/shared
-	$(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /firmware $@/readonly/firmware
+ADSP_IMAGES := \
+    adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 adsp.b07 \
+    adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.mbn adsp.mdt
 
-RFS_MSM_MPSS_SYMLINKS := $(TARGET_OUT)/rfs/msm/mpss/
-$(RFS_MSM_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Creating RFS MSM MPSS folder structure: $@"
+ADSP_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(ADSP_IMAGES)))
+$(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "ADSP firmware link: $@"
+	@mkdir -p $(dir $@)
 	@rm -rf $@
-	@mkdir -p $(dir $@)/readonly
-	$(hide) ln -sf /data/tombstones/modem $@/ramdumps
-	$(hide) ln -sf /persist/rfs/msm/mpss $@/readwrite
-	$(hide) ln -sf /persist/rfs/shared $@/shared
-	$(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /firmware $@/readonly/firmware
+	$(hide) ln -sf /firmware/adsp/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(ADSP_SYMLINKS)
+
+MBA_IMAGES := \
+    mba.mbn
+
+MBA_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(MBA_IMAGES)))
+$(MBA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "MBA firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /vendor/firmware/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(MBA_SYMLINKS)
+
+MISC_IMAGES := \
+    qdsp6m.qdb 
+
+MISC_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(MISC_IMAGES)))
+$(MISC_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Misc firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /vendor/firmware/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(MISC_SYMLINKS)
+
 
 endif
