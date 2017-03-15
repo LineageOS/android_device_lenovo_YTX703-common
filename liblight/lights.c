@@ -170,7 +170,6 @@ set_speaker_light_locked(struct light_device_t* dev,
 	            sprintf(pattern, "2 %d 2 %d",onS,offS);
 	            ALOGD("Using blink pattern: %s\n",pattern);
 	            write_str(POWER_PATTERN_FILE, pattern);
-	            write_int(POWER_LED_FILE,brightness);
 	            write_int(POWER_BLINK_FILE,1);
 	        }
         } else {
