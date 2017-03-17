@@ -402,10 +402,10 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
     user root
     oneshot
 
-#service rmt_storage /system/bin/rmt_storage
-#    class core
-#    user root
-#    writepid /dev/cpuset/system-background/tasks
+service rmt_storage /system/bin/rmt_storage
+    class core
+    user root
+    writepid /dev/cpuset/system-background/tasks
 
 #service tftp_server /system/bin/tftp_server
 #    class main
