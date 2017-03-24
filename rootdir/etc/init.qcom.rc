@@ -30,8 +30,6 @@ import init.qcom.usb.rc
 import init.target.rc
 
 on early-init
-    export LD_SHIM_LIBS /system/vendor/lib64/lib-imsvt.so|libshims_ims.so
-
     # Turn off backlight on blank
     write /sys/class/leds/lcd-backlight/trigger "backlight"
 
