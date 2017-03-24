@@ -30,7 +30,7 @@ import init.qcom.usb.rc
 import init.target.rc
 
 on early-init
-    export LD_SHIM_LIBS /system/bin/mm-qcamera-daemon|libc_shim.so
+    export LD_SHIM_LIBS /system/vendor/lib64/lib-imsvt.so|libshims_ims.so
 
     # Turn off backlight on blank
     write /sys/class/leds/lcd-backlight/trigger "backlight"
@@ -43,6 +43,9 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
     mkdir /userstore 0771 system system
+
+    insmod /sbin/qcrypto_module.ko
+    insmod /sbin/qdrbg_module.ko
 
     #setprop ro.sf.lcd_density 480
     setprop media.msm8956hw 1
@@ -57,6 +60,8 @@ on early-init
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
+
+    start qfintverify
 
     # Set permissions for efs partition
     #mkdir /efs 0771 system radio
@@ -387,6 +392,12 @@ on property:sys.boot_completed=1
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
+service qfintverify /sbin/qfintverify
+    user root
+    class core
+    seclabel u:r:qfips:s0
+    oneshot
+
 service cnd /system/bin/cnd
     class late_start
     socket cnd stream 660 root inet
@@ -516,10 +527,6 @@ service loc_launcher /system/bin/loc_launcher
     class late_start
     group gps inet qcom_diag wifi
 
-on property:crypto.driver.load=1
-    insmod /system/lib/modules/qce.ko
-    insmod /system/lib/modules/qcedev.ko
-
 service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     class late_start
     user root
@@ -546,11 +553,11 @@ service msm_irqbal_lb /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqba
     writepid /dev/cpuset/system-background/tasks
 
 # Start camera server as daemon
-# service qcamerasvr /system/bin/mm-qcamera-daemon
-#    class late_start
-#    user camera
-#    group camera system inet input graphics
-#    writepid /dev/cpuset/camera-daemon/tasks
+service qcamerasvr /system/bin/mm-qcamera-daemon
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/camera-daemon/tasks
 
 service qseecomd /system/bin/qseecomd
     class core
