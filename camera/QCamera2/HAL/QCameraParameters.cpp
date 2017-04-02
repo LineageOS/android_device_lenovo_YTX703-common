@@ -11422,6 +11422,13 @@ int32_t QCameraParameters::commitSetBatch()
 
     if (i < CAM_INTF_PARM_MAX) {
         rc = m_pCamOpsTbl->ops->set_parms(m_pCamOpsTbl->camera_handle, m_pParamBuf);
+        /* dirty workaround to fix the set parameter issue with mm_qcamera_daemon */
+        int rep_count = 0;
+        while ((rc == -1) && (rep_count < 100)) {
+        	rc = m_pCamOpsTbl->ops->set_parms(m_pCamOpsTbl->camera_handle, m_pParamBuf);
+        	rep_count++;
+        	ALOGE("%s: repeat %d set_parms rc %d on function %p, handle %p, buf %p ", __func__, rep_count, (int)rc, (void*)m_pCamOpsTbl->ops->set_parms, m_pCamOpsTbl->camera_handle, m_pParamBuf);
+        }
     }
     if (rc == NO_ERROR) {
         // commit change from temp storage into param map
