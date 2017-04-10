@@ -457,7 +457,7 @@ QCamera3HardwareInterface::~QCamera3HardwareInterface()
             stream_config_info.buffer_info.max_buffers = MAX_INFLIGHT_REQUESTS;
             ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters, CAM_INTF_META_STREAM_INFO,
                     stream_config_info);
-            int rc = mCameraHandle->ops->set_parms(mCameraHandle->camera_handle, mParameters);
+            int rc = commitParams();
             if (rc < 0) {
                 ALOGE("%s: set_parms failed for unconfigure", __func__);
             }
@@ -897,7 +897,7 @@ int32_t QCamera3HardwareInterface::getSensorOutputSize(cam_dimension_t &sensor_d
         return rc;
     }
 
-    rc = mCameraHandle->ops->set_parms(mCameraHandle->camera_handle, mParameters);
+    rc = commitParams();
     if (rc != NO_ERROR) {
         ALOGE("%s: Failed to set CAM_INTF_PARM_MAX_DIMENSION", __func__);
         return rc;
@@ -2476,8 +2476,7 @@ int QCamera3HardwareInterface::processCaptureRequest(
                     CAM_INTF_PARM_HAL_VERSION, hal_version);
             ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters,
                     CAM_INTF_META_STREAM_INFO, stream_config_info);
-            rc = mCameraHandle->ops->set_parms(mCameraHandle->camera_handle,
-                    mParameters);
+            rc = commitParams();
             if (rc < 0) {
                 ALOGE("%s: set_parms for unconfigure failed", __func__);
                 pthread_mutex_unlock(&mMutex);
@@ -2552,8 +2551,7 @@ int QCamera3HardwareInterface::processCaptureRequest(
         }
         /*set the capture intent, hal version, tintless, stream info,
          *and disenable parameters to the backend*/
-        rc = mCameraHandle->ops->set_parms(mCameraHandle->camera_handle,
-                    mParameters);
+        rc = commitParams();
         if (rc < 0) {
             ALOGE("%s: set_parms failed for hal version, stream info", __func__);
         }
@@ -2925,7 +2923,7 @@ int QCamera3HardwareInterface::processCaptureRequest(
 
     if(request->input_buffer == NULL) {
         /*set the parameters to backend*/
-        rc = mCameraHandle->ops->set_parms(mCameraHandle->camera_handle, mParameters);
+        rc = commitParams();
         if (rc < 0) {
             ALOGE("%s: set_parms failed", __func__);
         }
@@ -8409,6 +8407,32 @@ void QCamera3HardwareInterface::getLogLevel()
         gCamHal3LogLevel = globalLogLevel;
 
     return;
+}
+
+/*===========================================================================
+* FUNCTION   : commitParams
+*
+* DESCRIPTION: Commit camera parameters to hardware with workaround 
+*
+* PARAMETERS :
+*   None
+*
+* RETURN     :
+*   None
+*==========================================================================*/
+int  QCamera3HardwareInterface::commitParams()
+{
+    int rc = -1;
+    int rep_count = 0;
+    while ((rc == -1) && (rep_count < 100000)) {
+       rc = mCameraHandle->ops->set_parms(mCameraHandle->camera_handle, mParameters);
+       rep_count++;
+    }
+    if ((rep_count > 1) || (rc != 0))
+    {
+        ALOGE("%s: repeat %d set_parms rc %d handle %p, buf %p ", __func__, rep_count, (int)rc, mCameraHandle->camera_handle, mParameters);
+    }
+    return rc;
 }
 
 }; //end namespace qcamera

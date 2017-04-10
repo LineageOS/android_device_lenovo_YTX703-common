@@ -236,6 +236,7 @@ private:
             metadata_buffer_t *hal_metadata);
 
     void updatePowerHint(bool bWasVideo, bool bIsVideo);
+    int  commitParams();
 
     camera3_device_t   mCameraDevice;
     uint32_t           mCameraId;
