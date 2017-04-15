@@ -7077,13 +7077,14 @@ int QCamera3HardwareInterface::translateToHalMetadata
             redeye = 0;
         }
 
+        /*
         int val = lookupHalName(AE_FLASH_MODE_MAP, METADATA_MAP_SIZE(AE_FLASH_MODE_MAP),
                 fwk_aeMode);
         if (NAME_NOT_FOUND != val) {
             int32_t flashMode = (int32_t)val;
             ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters, CAM_INTF_PARM_LED_MODE, flashMode);
             ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_PARM_LED_MODE, flashMode);
-        }
+        }*/
 
         ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_META_AEC_MODE, aeMode);
         if (ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_PARM_REDEYE_REDUCTION, redeye)) {
@@ -7342,12 +7343,13 @@ int QCamera3HardwareInterface::translateToHalMetadata
                     (int)frame_settings.find(ANDROID_FLASH_MODE).data.u8[0]);
             CDBG_HIGH("%s: flash mode after mapping %d", __func__, val);
             // To check: CAM_INTF_META_FLASH_MODE usage
+            /*
             if (NAME_NOT_FOUND != val) {
                 uint8_t flashMode = (uint8_t)val;
                 if (ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters, CAM_INTF_PARM_LED_MODE, flashMode)) {
                     rc = BAD_VALUE;
                 }
-            }
+            }*/
         }
     }
 
@@ -8424,8 +8426,10 @@ int  QCamera3HardwareInterface::commitParams()
 {
     int rc = -1;
     int rep_count = 0;
-    while ((rc == -1) && (rep_count < 100000)) {
+    while (rep_count < 1000) {
        rc = mCameraHandle->ops->set_parms(mCameraHandle->camera_handle, mParameters);
+       if (rc == NO_ERROR) break;
+       usleep(1000);
        rep_count++;
     }
     if ((rep_count > 1) || (rc != 0))
