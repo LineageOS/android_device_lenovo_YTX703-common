@@ -1,0 +1,3 @@
+allow vold adsprpcd_file:dir { ioctl open read };  
+
+
