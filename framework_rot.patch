@@ -1,0 +1,33 @@
+diff --git a/frameworks/base/cmds/bootanimation/BootAnimation.cpp b/frameworks/base/cmds/bootanimation/BootAnimation.cpp
+index 10fabcfb735..5f219910b03 100644
+--- a/frameworks/base/cmds/bootanimation/BootAnimation.cpp
++++ b/frameworks/base/cmds/bootanimation/BootAnimation.cpp
+@@ -267,10 +267,12 @@ status_t BootAnimation::readyToRun() {
+     status_t status = SurfaceComposerClient::getDisplayInfo(dtoken, &dinfo);
+     if (status)
+         return -1;
++    
++    SurfaceComposerClient::setDisplayProjection(dtoken, 1, Rect(0,0,dinfo.h,dinfo.w), Rect(0,0,dinfo.h,dinfo.w));
+ 
+     // create the native surface
+     sp<SurfaceControl> control = session()->createSurface(String8("BootAnimation"),
+-            dinfo.w, dinfo.h, PIXEL_FORMAT_RGB_565);
++            dinfo.h, dinfo.w, PIXEL_FORMAT_RGB_565);
+ 
+     SurfaceComposerClient::openGlobalTransaction();
+     control->setLayer(0x40000000);
+diff --git a/frameworks/base/services/core/java/com/android/server/wm/WindowManagerService.java b/frameworks/base/services/core/java/com/android/server/wm/WindowManagerService.java
+index 3c9170e65a7..c2ec7a45f30 100644
+--- a/frameworks/base/services/core/java/com/android/server/wm/WindowManagerService.java
++++ b/frameworks/base/services/core/java/com/android/server/wm/WindowManagerService.java
+@@ -553,8 +553,8 @@ public class WindowManagerService extends IWindowManager.Stub
+     /** All DisplayContents in the world, kept here */
+     SparseArray<DisplayContent> mDisplayContents = new SparseArray<>(2);
+ 
+-    int mRotation = 0;
+-    int mLastOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
++    int mRotation = 1;
++    int mLastOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+     boolean mAltOrientation = false;
+ 
+     private boolean mKeyguardWaitingForActivityDrawn;
