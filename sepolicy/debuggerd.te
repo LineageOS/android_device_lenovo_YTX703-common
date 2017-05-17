@@ -1,0 +1,2 @@
+allow debuggerd app_data_file:dir search;
+

@@ -1,0 +1,37 @@
+###
+### Apps signed with the dolby key.
+###
+
+type atmos, domain, domain_deprecated;
+app_domain(atmos)
+# Access the network.
+net_domain(atmos)
+# Access bluetooth.
+bluetooth_domain(atmos)
+# Read from /data/local/tmp or /data/data/com.android.shell.
+allow atmos shell_data_file:dir search;
+allow atmos shell_data_file:file { open getattr read };
+allow atmos icon_file:file { open getattr read };
+
+# Access to /data/media.
+allow atmos media_rw_data_file:dir create_dir_perms;
+allow atmos media_rw_data_file:file create_file_perms;
+
+allow atmos audioserver_service:service_manager find;
+allow atmos cameraserver_service:service_manager find;
+allow atmos drmserver_service:service_manager find;
+allow atmos mediaserver_service:service_manager find;
+allow atmos mediaextractor_service:service_manager find;
+allow atmos mediacodec_service:service_manager find;
+allow atmos mediadrmserver_service:service_manager find;
+allow atmos persistent_data_block_service:service_manager find;
+allow atmos radio_service:service_manager find;
+allow atmos surfaceflinger_service:service_manager find;
+allow atmos app_api_service:service_manager find;
+allow atmos system_api_service:service_manager find;
+allow atmos vr_manager_service:service_manager find;
+
+allow atmos device:dir { open read };
+set_prop(atmos, dolby_prop)
+
+
