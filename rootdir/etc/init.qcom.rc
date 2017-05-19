@@ -50,8 +50,8 @@
 #          - triggers early-boot
 #          - triggers boot
 
-import init.qcom.power.rc
-import init.qcom.usb.rc
+import /vendor/etc/init/hw/init.qcom.power.rc
+import /vendor/etc/init/hw/init.qcom.usb.rc
 
 service charger /charger
     class charger
