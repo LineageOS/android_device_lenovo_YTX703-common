@@ -88,13 +88,8 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     tinymix
 
-# Dolby
-PRODUCT_COPY_FILES +=  \
-	$(LOCAL_PATH)/audio/dax-default.xml:system/vendor/etc/dolby/dax-default.xml	
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
-    $(LOCAL_PATH)/audio/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml: \
     $(LOCAL_PATH)/audio/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
@@ -105,8 +100,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/audio/ftm_test_config_mtp:system/etc/ftm_test_config_mtp \
 	$(LOCAL_PATH)/audio/ftm_test_config_wcd9330:system/etc/ftm_test_config_wcd9330 \
 	$(LOCAL_PATH)/audio/ftm_test_config_wcd9335:system/etc/ftm_test_config_wcd9335 \
-	$(LOCAL_PATH)/audio/media_codecs_8956.xml:system/etc/media_codecs_8956.xml \
-	$(LOCAL_PATH)/audio/media_codecs_8956_v1.xml:system/etc/media_codecs_8956_v1.xml \
 	$(LOCAL_PATH)/audio/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
 	$(LOCAL_PATH)/audio/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
 	$(LOCAL_PATH)/audio/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
