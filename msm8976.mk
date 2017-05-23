@@ -19,7 +19,7 @@
 $(call inherit-product, vendor/lenovo/msm8976-common/msm8976-common-vendor.mk)
 
 # apply framework patch for boot rotation
-PATCH_RESULT := $(shell (patch -p1 -r - -i $(LOCAL_PATH)/framework_rot.patch))
+PATCH_RESULT := $(shell (patch -p1 -r - --no-backup-if-mismatch -i $(LOCAL_PATH)/framework_rot.patch))
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -29,8 +29,8 @@ PRODUCT_AAPT_CONFIG := normal large xlarge
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1600
-TARGET_SCREEN_WIDTH := 2560
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1600
 
 # Device characteristics
 PRODUCT_CHARACTERISTICS := tablet
