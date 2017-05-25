@@ -21,6 +21,12 @@ on boot
     write /proc/sys/kernel/sched_boost 1
 
 on enable-low-power
+    # limit CPU frequencies to 8976 defaults
+    write /sys/module/msm_performance/parameters/cpu_max_freq "0:1401600 1:1401600 2:1401600 3:1401600 4:1804800 5:1804800 6:1804800 7:1804800"
+    
+    # limit GPU frequency to 8976 defaults
+    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 600000000
+
     # HMP scheduler (big.Little cluster related) settings
     write /proc/sys/kernel/sched_upmigrate 95
     write /proc/sys/kernel/sched_downmigrate 85
@@ -120,7 +126,7 @@ on enable-low-power
     write /proc/sys/kernel/sched_freq_dec_notify 50000
 
     # Enable core control for 8976
-    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
+    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 0
     write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
     write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 68
     write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 40
