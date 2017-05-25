@@ -4944,6 +4944,46 @@ void QCamera3HardwareInterface::convertLandmarks(cam_face_detection_info_t face,
     landmarks[5] = (int32_t)face.mouth_center.y;
 }
 
+/*===========================================================================
+ * FUNCTION   : checkCapabilities
+ *
+ * DESCRIPTION: verfiy camera capabilities are correct
+ *
+ * PARAMETERS :
+ *   @cameraId  : camera Id
+ *   @caps  : pointer to capability structure
+ *
+ * RETURN     : bool type of status
+ *              true  -- success
+ *              false -- failure code
+ *==========================================================================*/
+bool QCamera3HardwareInterface::checkCapabilities(uint32_t cameraId, cam_capability_t *caps)
+{
+    bool result = false;
+
+    if (cameraId == 0)
+    {
+        if (caps->preview_sizes_tbl_cnt == 25 &&
+            caps->picture_sizes_tbl_cnt == 25 &&
+            caps->video_sizes_tbl_cnt == 19)
+        {
+            result = true;
+        }
+    }
+    else if (cameraId == 1)
+    {
+        if (caps->preview_sizes_tbl_cnt == 25 &&
+            caps->picture_sizes_tbl_cnt == 20 &&
+            caps->video_sizes_tbl_cnt == 17)
+        {
+            result = true;
+        }
+
+    }
+
+    return result;
+}
+
 #define DATA_PTR(MEM_OBJ,INDEX) MEM_OBJ->getPtr( INDEX )
 /*===========================================================================
  * FUNCTION   : initCapabilities
@@ -4962,7 +5002,9 @@ int QCamera3HardwareInterface::initCapabilities(uint32_t cameraId)
     int rc = 0;
     mm_camera_vtbl_t *cameraHandle = NULL;
     QCamera3HeapMemory *capabilityHeap = NULL;
+    cam_capability_t* cap_dbg;
 
+    usleep(100000);
     rc = camera_open((uint8_t)cameraId, &cameraHandle);
     if (rc) {
         ALOGE("%s: camera_open failed. rc = %d", __func__, rc);
@@ -4985,6 +5027,8 @@ int QCamera3HardwareInterface::initCapabilities(uint32_t cameraId)
         goto allocate_failed;
     }
 
+    usleep(100000);
+
     /* Map memory for capability buffer */
     memset(DATA_PTR(capabilityHeap,0), 0, sizeof(cam_capability_t));
     rc = cameraHandle->ops->map_buf(cameraHandle->camera_handle,
@@ -4996,19 +5040,33 @@ int QCamera3HardwareInterface::initCapabilities(uint32_t cameraId)
         goto map_failed;
     }
 
+    usleep(100000);
+
     /* Query Capability */
     rc = cameraHandle->ops->query_capability(cameraHandle->camera_handle);
     if(rc < 0) {
         ALOGE("%s: failed to query capability",__func__);
         goto query_failed;
     }
-    gCamCapability[cameraId] = (cam_capability_t *)malloc(sizeof(cam_capability_t));
+
+    if (gCamCapability[cameraId] == NULL)
+    {
+        gCamCapability[cameraId] = (cam_capability_t *)malloc(sizeof(cam_capability_t));
+    }
     if (!gCamCapability[cameraId]) {
         ALOGE("%s: out of memory", __func__);
         goto query_failed;
     }
     memcpy(gCamCapability[cameraId], DATA_PTR(capabilityHeap,0),
-                                        sizeof(cam_capability_t));
+                           sizeof(cam_capability_t));
+    
+    cap_dbg = (cam_capability_t*)DATA_PTR(capabilityHeap,0);
+    
+    if (!checkCapabilities(cameraId, cap_dbg))
+    {
+        ALOGE("%s: corrupt capabilities: %d, %d, %d\n", __func__, cap_dbg->preview_sizes_tbl_cnt, cap_dbg->picture_sizes_tbl_cnt, cap_dbg->video_sizes_tbl_cnt );
+    }
+
     rc = 0;
 
 query_failed:
@@ -6394,7 +6452,7 @@ int QCamera3HardwareInterface::getCamInfo(uint32_t cameraId,
     int rc = 0;
 
     pthread_mutex_lock(&gCamLock);
-    if (NULL == gCamCapability[cameraId]) {
+    if (NULL == gCamCapability[cameraId] || !checkCapabilities(cameraId, gCamCapability[cameraId])) {
         rc = initCapabilities(cameraId);
         if (rc < 0) {
             pthread_mutex_unlock(&gCamLock);

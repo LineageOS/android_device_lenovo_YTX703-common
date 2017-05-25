@@ -296,6 +296,7 @@ public:
     static int getCapabilities(uint32_t cameraId,
             struct camera_info *info, cam_sync_type_t *cam_type);
     static int initCapabilities(uint32_t cameraId, mm_camera_vtbl_t *cameraHandle);
+    static bool checkCapabilities(uint32_t cameraId, cam_capability_t *caps);
     cam_capability_t *getCamHalCapabilities();
 
     // Implementation of QCameraAllocator
