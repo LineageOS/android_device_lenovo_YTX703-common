@@ -40,13 +40,7 @@ qcom.bluetooth.soc=smd
 ro.qualcomm.bt.hci_transport=smd
 
 # Camera
-persist.camera.HAL3.enabled=1
-vidc.enc.dcvs.extra-buff-count=2
-#camera.hal1.packagelist=com.skype.raider,com.google.android.talk
-camera.display.umax=1920x1080
-camera.display.lmax=1280x720
-camera.lowpower.record.enable=1
-persist.camera.stats.test=5
+media.camera.ts.monotonic=0
 
 # Dex2oat threads for faster app installation
 ro.sys.fw.dex2oat_thread_count=4
