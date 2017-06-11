@@ -2147,11 +2147,8 @@ int QCamera2HardwareInterface::closeCamera()
         }
     }
 
-    if (mCameraHandle != NULL)
-    {
-        rc = mCameraHandle->ops->close_camera(mCameraHandle->camera_handle);
-        mCameraHandle = NULL;
-    }
+    rc = mCameraHandle->ops->close_camera(mCameraHandle->camera_handle);
+    mCameraHandle = NULL;
 
     //Notify display HAL that there is no active camera session
     //but avoid calling the same during bootup. Refer to openCamera
