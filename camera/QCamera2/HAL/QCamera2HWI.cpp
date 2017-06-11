@@ -1809,7 +1809,7 @@ int QCamera2HardwareInterface::openCamera()
     memset(&args, 0, sizeof(args));
     mParamAllocJob = queueDeferredWork(CMD_DEF_PARAM_ALLOC, args);
 
-    if (gCamCapability[mCameraId] != NULL && checkCapabilities(mCameraId, gCamCapability[mCameraId])) {
+    if (gCamCapability[mCameraId] != NULL) {
         // allocate metadata buffers
         DeferWorkArgs args;
         DeferMetadataAllocArgs metadataAllocArgs;
@@ -1851,24 +1851,6 @@ int QCamera2HardwareInterface::openCamera()
             ALOGE("initCapabilities failed.");
             rc = UNKNOWN_ERROR;
             goto error_exit;
-        }
-
-        DeferWorkArgs args;
-        DeferMetadataAllocArgs metadataAllocArgs;
-
-        memset(&args, 0, sizeof(args));
-        memset(&metadataAllocArgs, 0, sizeof(metadataAllocArgs));
-
-        uint32_t padding =
-                gCamCapability[mCameraId]->padding_info.plane_padding;
-        metadataAllocArgs.size = PAD_TO_SIZE(sizeof(metadata_buffer_t),
-                padding);
-        metadataAllocArgs.bufferCnt = CAMERA_MIN_METADATA_BUFFERS;
-        args.metadataAllocArgs = metadataAllocArgs;
-
-        mMetadataAllocJob = queueDeferredWork(CMD_DEF_METADATA_ALLOC, args);
-        if (mMetadataAllocJob == 0) {
-            CDBG_HIGH("%s: Failed to allocate param buffer", __func__);
         }
 
         mCameraHandle->ops->register_event_notify(mCameraHandle->camera_handle,
@@ -2194,46 +2176,6 @@ int QCamera2HardwareInterface::closeCamera()
 }
 
 #define DATA_PTR(MEM_OBJ,INDEX) MEM_OBJ->getPtr( INDEX )
-
-/*===========================================================================
- * FUNCTION   : checkCapabilities
- *
- * DESCRIPTION: verfiy camera capabilities are correct
- *
- * PARAMETERS :
- *   @cameraId  : camera Id
- *   @caps  : pointer to capability structure
- *
- * RETURN     : bool type of status
- *              true  -- success
- *              false -- failure code
- *==========================================================================*/
-bool QCamera2HardwareInterface::checkCapabilities(uint32_t cameraId, cam_capability_t *caps)
-{
-    bool result = false;
-
-    if (cameraId == 0)
-    {
-        if (caps->preview_sizes_tbl_cnt == 25 &&
-            caps->picture_sizes_tbl_cnt == 25 &&
-            caps->video_sizes_tbl_cnt == 19)
-        {
-            result = true;
-        }
-    }
-    else if (cameraId == 1)
-    {
-        if (caps->preview_sizes_tbl_cnt == 25 &&
-            caps->picture_sizes_tbl_cnt == 20 &&
-            caps->video_sizes_tbl_cnt == 17)
-        {
-            result = true;
-        }
-
-    }
-
-    return result;
-}
 
 /*===========================================================================
  * FUNCTION   : initCapabilities
