@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2015, The Linux Foundataion. All rights reserved.
+/* Copyright (c) 2012-2016, The Linux Foundataion. All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions are
@@ -76,7 +76,7 @@ QCamera2Factory::QCamera2Factory()
     int isHAL3Enabled = atoi(prop);
 
     // Signifies whether system has to enable dual camera mode
-    sprintf(propDefault, "%d", isDualCamAvailable(isHAL3Enabled));
+    snprintf(propDefault, PROPERTY_VALUE_MAX, "%d", isDualCamAvailable(isHAL3Enabled));
     property_get("persist.camera.dual.camera", prop, propDefault);
     bDualCamera = atoi(prop);
     CDBG_HIGH("%s[%d]: dualCamera:%d ", __func__, __LINE__, bDualCamera);
@@ -297,16 +297,20 @@ int QCamera2Factory::getCameraInfo(int camera_id, struct camera_info *info)
         return NO_INIT;
     }
 
-    ALOGI("Camera id %d API version %d",
-            camera_id, mHalDescriptors[camera_id].device_version);
-
-    // Need ANDROID_FLASH_INFO_AVAILABLE property for flashlight widget to
-    // work and so get the static data regardless of HAL version
-    rc = QCamera3HardwareInterface::getCamInfo(
-            mHalDescriptors[camera_id].cameraId, info);
-    if (mHalDescriptors[camera_id].device_version ==
+    if ( mHalDescriptors[camera_id].device_version ==
+            CAMERA_DEVICE_API_VERSION_3_0 ) {
+        rc = QCamera3HardwareInterface::getCamInfo(
+                mHalDescriptors[camera_id].cameraId, info);
+    } else if (mHalDescriptors[camera_id].device_version ==
             CAMERA_DEVICE_API_VERSION_1_0) {
-        info->device_version = CAMERA_DEVICE_API_VERSION_1_0;
+        rc = QCamera2HardwareInterface::getCapabilities(
+                mHalDescriptors[camera_id].cameraId, info, &cam_type);
+    } else {
+        ALOGE("%s: Device version for camera id %d invalid %d",
+              __func__,
+              camera_id,
+              mHalDescriptors[camera_id].device_version);
+        return BAD_VALUE;
     }
 
     return rc;

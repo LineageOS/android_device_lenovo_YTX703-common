@@ -271,7 +271,7 @@ public:
     virtual uint8_t getMappable() const;
 
     void setWindowInfo(preview_stream_ops_t *window, int width, int height,
-        int stride, int scanline, int format, int maxFPS, int usage = 0);
+        int stride, int scanline, int format, int maxFPS, int usage = 0, int backendFormat = 0);
     // Enqueue/display buffer[index] onto the native window,
     // and dequeue one buffer from it.
     // Returns the buffer index of the dequeued buffer.
@@ -285,7 +285,7 @@ private:
     int mLocalFlag[MM_CAMERA_MAX_NUM_FRAMES];
     struct private_handle_t *mPrivateHandle[MM_CAMERA_MAX_NUM_FRAMES];
     preview_stream_ops_t *mWindow;
-    int mWidth, mHeight, mFormat, mStride, mScanline, mUsage, mMaxFPS;
+    int mWidth, mHeight, mDisplayFormat, mStride, mScanline, mUsage, mMaxFPS, mCamFormat;
     camera_request_memory mGetMemory;
     camera_memory_t *mCameraMemory[MM_CAMERA_MAX_NUM_FRAMES];
     int mMinUndequeuedBuffers;
