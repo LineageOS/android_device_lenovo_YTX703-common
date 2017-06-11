@@ -40,7 +40,8 @@ qcom.bluetooth.soc=smd
 ro.qualcomm.bt.hci_transport=smd
 
 # Camera
-media.camera.ts.monotonic=0
+media.camera.ts.monotonic=1
+persist.camera.HAL3.enabled=1
 
 # Dex2oat threads for faster app installation
 ro.sys.fw.dex2oat_thread_count=4

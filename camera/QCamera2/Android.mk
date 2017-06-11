@@ -4,8 +4,8 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_COPY_HEADERS_TO := qcom/camera
-LOCAL_COPY_HEADERS := QCameraFormat.h
+# LOCAL_COPY_HEADERS_TO := qcom/camera
+# LOCAL_COPY_HEADERS := QCameraFormat.h
 
 LOCAL_SRC_FILES := \
         util/QCameraCmdThread.cpp \
@@ -62,7 +62,7 @@ LOCAL_C_INCLUDES := \
 #HAL 1.0 Include paths
 LOCAL_C_INCLUDES += \
         frameworks/native/include/media/hardware \
-        device/xiaomi/msm8956-common/camera/QCamera2/HAL
+        device/lenovo/msm8976-common/camera/QCamera2/HAL
 
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
@@ -82,8 +82,6 @@ endif
 ifeq (1,$(filter 1,$(shell echo "$$(( $(PLATFORM_SDK_VERSION) <= 22 ))" )))
 LOCAL_CFLAGS += -DUSE_L_MR1
 endif
-
-LOCAL_CFLAGS += -DLEGACY_CAPABILITY
 
 #LOCAL_STATIC_LIBRARIES := libqcamera2_util
 LOCAL_C_INCLUDES += \

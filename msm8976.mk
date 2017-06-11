@@ -45,7 +45,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:system/etc/permissions/android.hardware.camera.full.xml \
-	frameworks/native/data/etc/android.hardware.camera.raw.xml:system/etc/permissions/android.hardware.camera.raw.xml \
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:system/etc/permissions/android.hardware.camera.raw.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -94,15 +94,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/ftm_test_config:system/etc/ftm_test_config \
-	$(LOCAL_PATH)/audio/ftm_test_config_msm8952-skum-snd-card:system/etc/ftm_test_config_msm8952-skum-snd-card \
-	$(LOCAL_PATH)/audio/ftm_test_config_msm8976-skun-snd-card:system/etc/ftm_test_config_msm8976-skun-snd-card \
-	$(LOCAL_PATH)/audio/ftm_test_config_msm8976-tasha-snd-card:system/etc/ftm_test_config_msm8976-tasha-snd-card \
-	$(LOCAL_PATH)/audio/ftm_test_config_mtp:system/etc/ftm_test_config_mtp \
-	$(LOCAL_PATH)/audio/ftm_test_config_wcd9330:system/etc/ftm_test_config_wcd9330 \
-	$(LOCAL_PATH)/audio/ftm_test_config_wcd9335:system/etc/ftm_test_config_wcd9335 \
-	$(LOCAL_PATH)/audio/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
-	$(LOCAL_PATH)/audio/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
-	$(LOCAL_PATH)/audio/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
+    $(LOCAL_PATH)/audio/ftm_test_config_msm8952-skum-snd-card:system/etc/ftm_test_config_msm8952-skum-snd-card \
+    $(LOCAL_PATH)/audio/ftm_test_config_msm8976-skun-snd-card:system/etc/ftm_test_config_msm8976-skun-snd-card \
+    $(LOCAL_PATH)/audio/ftm_test_config_msm8976-tasha-snd-card:system/etc/ftm_test_config_msm8976-tasha-snd-card \
+    $(LOCAL_PATH)/audio/ftm_test_config_mtp:system/etc/ftm_test_config_mtp \
+    $(LOCAL_PATH)/audio/ftm_test_config_wcd9330:system/etc/ftm_test_config_wcd9330 \
+    $(LOCAL_PATH)/audio/ftm_test_config_wcd9335:system/etc/ftm_test_config_wcd9335 \
+    $(LOCAL_PATH)/audio/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
+    $(LOCAL_PATH)/audio/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
+    $(LOCAL_PATH)/audio/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
     $(LOCAL_PATH)/audio/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
@@ -122,17 +122,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9335.xml:system/etc/sound_trigger_mixer_paths_wcd9335.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
     $(LOCAL_PATH)/audio/wfdconfig.xml:system/etc/wfdconfig.xml \
-	$(LOCAL_PATH)/audio/wfdconfigsink.xml:system/etc/wfdconfigsink.xml
+    $(LOCAL_PATH)/audio/wfdconfigsink.xml:system/etc/wfdconfigsink.xml
 
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
-	camera.msm8952 \
-	libmm-qcamera
+    camera.msm8952 \
+    libmm-qcamera
 
 # Keystore
 PRODUCT_PACKAGES += \
-	keystore.msm8952	
+    keystore.msm8952	
 
 # Display
 PRODUCT_PACKAGES += \
@@ -227,12 +227,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.sh \
-    init.qcom.bt.sh
-
-PRODUCT_PACKAGES += \
+    init.qcom.bt.sh \
     init.qcom.rc \
     init.qcom.power.rc \
     init.qcom.usb.rc \
+    init.target.rc \
     ueventd.qcom.rc
 
 # TimeKeep
