@@ -1399,7 +1399,7 @@ void QCamera2HardwareInterface::video_stream_cb_routine(mm_camera_super_buf_t *s
         if (!pme->mParameters.isAVTimerEnabled()) {
             // Convert Boottime from camera to Monotime for video if needed.
             // Otherwise, mBootToMonoTimestampOffset value will be 0.
-            timeStamp = timeStamp - pme->mBootToMonoTimestampOffset;
+            timeStamp = timeStamp + pme->mBootToMonoTimestampOffset;
         }
         CDBG("Send Video frame to services/encoder TimeStamp : %lld",
             timeStamp);
