@@ -41,6 +41,7 @@ ro.qualcomm.bt.hci_transport=smd
 
 # Camera
 media.camera.ts.monotonic=1
+persist.camera.time.monotonic=0
 persist.camera.HAL3.enabled=1
 
 # Dex2oat threads for faster app installation
