@@ -68,6 +68,7 @@ debug.enable.sglscale=1
 # used by hwcomposer.msm8952.so and libqdutils.so
 debug.mdpcomp.logs=0
 debug.sf.hw=1
+debug.hwui.use_buffer_age=false
 dev.pm.dyn_samplingrate=1
 persist.hwc.mdpcomp.enable=true
 persist.hwc.downscale_threshold=1.15
