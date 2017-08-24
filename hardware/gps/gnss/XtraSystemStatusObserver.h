@@ -31,22 +31,30 @@
 
 #include <cinttypes>
 #include <MsgTask.h>
+#include <LocIpc.h>
 
 using namespace std;
 using loc_core::IOsObserver;
 using loc_core::IDataItemObserver;
 using loc_core::IDataItemCore;
+using loc_util::LocIpc;
 
 
-class XtraSystemStatusObserver : public IDataItemObserver {
+class XtraSystemStatusObserver : public IDataItemObserver, public LocIpc{
 public :
     // constructor & destructor
     inline XtraSystemStatusObserver(IOsObserver* sysStatObs, const MsgTask* msgTask):
             mSystemStatusObsrvr(sysStatObs), mMsgTask(msgTask) {
         subscribe(true);
+        startListeningNonBlocking(LOC_IPC_HAL);
     }
-    inline XtraSystemStatusObserver() {};
-    inline virtual ~XtraSystemStatusObserver() { subscribe(false); }
+    inline XtraSystemStatusObserver() {
+        startListeningNonBlocking(LOC_IPC_HAL);
+    };
+    inline virtual ~XtraSystemStatusObserver() {
+        subscribe(false);
+        stopListening();
+    }
 
     // IDataItemObserver overrides
     inline virtual void getName(string& name);
@@ -59,10 +67,9 @@ public :
     inline const MsgTask* getMsgTask() { return mMsgTask; }
     void subscribe(bool yes);
 
+    void onReceive(const std::string& data) override;
+
 private:
-    int createSocket();
-    void closeSocket(const int32_t socketFd);
-    bool sendEvent(const stringstream& event);
     IOsObserver*    mSystemStatusObsrvr;
     const MsgTask* mMsgTask;
 
