@@ -53,7 +53,7 @@ public :
     virtual void notify(const list<IDataItemCore*>& dlist);
 
     bool updateLockStatus(uint32_t lock);
-    bool updateConnectionStatus(bool connected, uint32_t type);
+    bool updateConnectionStatus(bool connected, int32_t type);
     bool updateTac(const string& tac);
     bool updateMccMnc(const string& mccmnc);
     inline const MsgTask* getMsgTask() { return mMsgTask; }

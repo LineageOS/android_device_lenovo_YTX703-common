@@ -797,7 +797,7 @@ public:
     bool setNmeaString(const char *data, uint32_t len);
     bool getReport(SystemStatusReports& reports, bool isLatestonly = false) const;
     bool setDefaultReport(void);
-    bool eventConnectionStatus(bool connected, uint8_t type);
+    bool eventConnectionStatus(bool connected, int8_t type);
 };
 
 } // namespace loc_core
