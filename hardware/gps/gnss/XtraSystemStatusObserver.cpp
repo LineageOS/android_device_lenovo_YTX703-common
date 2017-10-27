@@ -58,6 +58,12 @@ using namespace loc_core;
 #define LOG_TAG "LocSvc_XSSO"
 
 bool XtraSystemStatusObserver::updateLockStatus(uint32_t lock) {
+    mGpsLock = lock;
+
+    if (!mReqStatusReceived) {
+        return true;
+    }
+
     stringstream ss;
     ss <<  "gpslock";
     ss << " " << lock;
@@ -65,13 +71,34 @@ bool XtraSystemStatusObserver::updateLockStatus(uint32_t lock) {
 }
 
 bool XtraSystemStatusObserver::updateConnectionStatus(bool connected, int32_t type) {
+    if (connected) {
+        mConnections.insert(type);
+    } else {
+        if (-1 == type) { // -1 for disconnecting all connections
+            mConnections.clear();
+        } else {
+            mConnections.erase(type);
+        }
+    }
+
+    if (!mReqStatusReceived) {
+        return true;
+    }
+
     stringstream ss;
     ss <<  "connection";
     ss << " " << (connected ? "1" : "0");
     ss << " " << type;
     return ( send(LOC_IPC_XTRA, ss.str()) );
 }
+
 bool XtraSystemStatusObserver::updateTac(const string& tac) {
+    mTac = tac;
+
+    if (!mReqStatusReceived) {
+        return true;
+    }
+
     stringstream ss;
     ss <<  "tac";
     ss << " " << tac.c_str();
@@ -79,15 +106,67 @@ bool XtraSystemStatusObserver::updateTac(const string& tac) {
 }
 
 bool XtraSystemStatusObserver::updateMccMnc(const string& mccmnc) {
+    mMccmnc = mccmnc;
+
+    if (!mReqStatusReceived) {
+        return true;
+    }
+
     stringstream ss;
     ss <<  "mncmcc";
     ss << " " << mccmnc.c_str();
     return ( send(LOC_IPC_XTRA, ss.str()) );
 }
 
+
+static inline ostream& operator<<(ostream& os, CONNECTIONS& data) {
+    for (auto elem : data) {
+        os << elem << ' ';
+    }
+    return os;
+}
+
+inline bool XtraSystemStatusObserver::onStatusRequested(int32_t xtraStatusUpdated) {
+    mReqStatusReceived = true;
+
+    if (xtraStatusUpdated) {
+        return true;
+    }
+
+    stringstream ss;
+
+    ss << "respondStatus" << endl;
+    (mGpsLock == -1 ? ss : ss << mGpsLock) << endl << mConnections << endl
+            << mTac << endl << mMccmnc;
+
+    return ( send(LOC_IPC_XTRA, ss.str()) );
+}
+
 void XtraSystemStatusObserver::onReceive(const std::string& data) {
     if (!strncmp(data.c_str(), "ping", sizeof("ping") - 1)) {
         LOC_LOGd("ping received");
+
+#ifdef USE_GLIB
+    } else if (!strncmp(data.c_str(), "connectBackhaul", sizeof("connectBackhaul") - 1)) {
+        mSystemStatusObsrvr->connectBackhaul();
+
+    } else if (!strncmp(data.c_str(), "disconnectBackhaul", sizeof("disconnectBackhaul") - 1)) {
+        mSystemStatusObsrvr->disconnectBackhaul();
+#endif
+
+    } else if (!strncmp(data.c_str(), "requestStatus", sizeof("requestStatus") - 1)) {
+        int32_t xtraStatusUpdated = 0;
+        sscanf(data.c_str(), "%*s %d", &xtraStatusUpdated);
+
+        struct HandleStatusRequestMsg : public LocMsg {
+            XtraSystemStatusObserver& mXSSO;
+            int32_t mXtraStatusUpdated;
+            inline HandleStatusRequestMsg(XtraSystemStatusObserver& xsso,
+                    int32_t xtraStatusUpdated) :
+                    mXSSO(xsso), mXtraStatusUpdated(xtraStatusUpdated) {}
+            inline void proc() const override { mXSSO.onStatusRequested(mXtraStatusUpdated); }
+        };
+        mMsgTask->sendMsg(new (nothrow) HandleStatusRequestMsg(*this, xtraStatusUpdated));
 
     } else {
         LOC_LOGw("unknown event: %s", data.c_str());
