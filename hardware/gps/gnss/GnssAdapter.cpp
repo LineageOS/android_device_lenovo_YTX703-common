@@ -869,7 +869,7 @@ GnssAdapter::gnssDeleteAidingDataCommand(GnssAidingData& data)
             mAdapter.reportResponse(err, mSessionId);
             SystemStatus* s = mAdapter.getSystemStatus();
             if ((nullptr != s) && (mData.deleteAll)) {
-                s->setDefaultReport();
+                s->setDefaultGnssEngineStates();
             }
         }
     };
