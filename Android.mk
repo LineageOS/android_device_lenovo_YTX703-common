@@ -31,42 +31,64 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
-ADSP_IMAGES := \
-    adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 adsp.b07 \
-    adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.mbn adsp.mdt
+RFS_MSM_ADSP_SYMLINKS := $(TARGET_OUT)/rfs/msm/adsp/
+$(RFS_MSM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating RFS MSM ADSP folder structure: $@"
+	@rm -rf $@/*
+	@mkdir -p $(dir $@)/readonly
+	$(hide) ln -sf /data/tombstones/lpass $@/ramdumps
+	$(hide) ln -sf /persist/rfs/msm/adsp $@/readwrite
+	$(hide) ln -sf /persist/rfs/shared $@/shared
+	$(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
+	$(hide) ln -sf /firmware $@/readonly/firmware
 
-ADSP_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(ADSP_IMAGES)))
-$(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "ADSP firmware link: $@"
+RFS_MSM_MPSS_SYMLINKS := $(TARGET_OUT)/rfs/msm/mpss/
+$(RFS_MSM_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating RFS MSM MPSS folder structure: $@"
+	@rm -rf $@/*
+	@mkdir -p $(dir $@)/readonly
+	$(hide) ln -sf /data/tombstones/modem $@/ramdumps
+	$(hide) ln -sf /persist/rfs/msm/mpss $@/readwrite
+	$(hide) ln -sf /persist/rfs/shared $@/shared
+	$(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
+	$(hide) ln -sf /firmware $@/readonly/firmware
+
+ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS)
+
+WCNSS_INI_PRIMA_SYMLINK := $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+$(WCNSS_INI_PRIMA_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS config ini link for prima: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /firmware/adsp/$(notdir $@) $@
+	$(hide) ln -sf /data/misc/wifi/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(ADSP_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_PRIMA_SYMLINK)
 
-MBA_IMAGES := \
-    mba.mbn
-
-MBA_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(MBA_IMAGES)))
-$(MBA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "MBA firmware link: $@"
+WCNSS_INI_QCA_SYMLINK := $(TARGET_OUT_ETC)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+$(WCNSS_INI_QCA_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS config ini link for qca_cld: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /vendor/firmware/$(notdir $@) $@
+	$(hide) ln -sf /system/etc/wifi/WCNSS_qcom_sdio_cfg.ini $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(MBA_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_QCA_SYMLINK)
 
-MISC_IMAGES := \
-    qdsp6m.qdb 
-
-MISC_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(MISC_IMAGES)))
-$(MISC_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Misc firmware link: $@"
+WCNSS_WLAN_NV_SYMLINK := $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+$(WCNSS_WLAN_NV_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS wlan nv link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /vendor/firmware/$(notdir $@) $@
+	$(hide) ln -sf /persist/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(MISC_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_WLAN_NV_SYMLINK)
 
+WCNSS_WLAN_DICT_SYMLINK := $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
+$(WCNSS_WLAN_DICT_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS wlan dictionary link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /persist/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_WLAN_DICT_SYMLINK)
 
 endif
