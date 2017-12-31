@@ -451,11 +451,46 @@ service wcnss_service /system/bin/wcnss_service
     user system
     group system wifi radio
     oneshot
+    
+service imsqmidaemon /system/bin/imsqmidaemon
+    class main
+    user system
+    socket ims_qmid stream 0660 system radio
+    group radio log diag
+
+service imsdatadaemon /system/bin/imsdatadaemon
+    class main
+    user system
+    socket ims_datad stream 0660 system radio
+    group system wifi radio inet log diag
+    disabled
+
+on property:sys.ims.QMI_DAEMON_STATUS=1
+    start imsdatadaemon
+
+service ims_rtp_daemon /system/bin/ims_rtp_daemon
+   class main
+   user system
+   socket ims_rtpd stream 0660 system radio
+   group radio diag inet log
+   disabled
+
+service imscmservice /system/bin/imscmservice
+   class main
+   user system
+   group radio diag inet log
+   disabled
+
+on property:sys.ims.DATA_DAEMON_STATUS=1
+    start ims_rtp_daemon
+    start imscmservice
+
 
 service sensors /system/bin/sensors.qcom
     class late_start
     user root
     group root
+    disabled
 
 service config_bt_addr /system/bin/btnvtool -O 
     class core
@@ -551,23 +586,66 @@ service msm_irqbal_lb /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqba
     group root
     writepid /dev/cpuset/system-background/tasks
 
-# Start camera server as daemon
+#start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks
+    
+service ipacm-diag /system/bin/ipacm-diag
+    class main
+    user system
+    socket ipacm_log_file dgram 660 system net_admin
+    group net_admin qcom_diag
+    disabled
 
-service qseecomd /system/bin/qseecomd
-    class core
-    user root
-    group root
+service ipacm /system/bin/ipacm
+    class main
+    user net_admin
+    group net_admin inet
+    disabled
+    
+service netmgrd /system/bin/netmgrd
+    class main
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service perfd /system/vendor/bin/perfd
     class main
     user root
     disabled
+    writepid /dev/cpuset/system-background/tasks
+    
+service per_mgr /system/bin/pm-service
+    class core
+    user system
+    group system
+    writepid /dev/cpuset/system-background/task
+
+service per_proxy /system/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+    writepid /dev/cpuset/system-background/task
+
+on property:init.svc.per_mgr=running
+    start per_proxy
+
+on property:sys.shutdown.requested=*
+    stop per_proxy
+
+service perfd /system/vendor/bin/perfd
+    class main
+    user root
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+    
+service qseecomd /system/bin/qseecomd
+    class core
+    user root
+    group root
     writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /system/vendor/bin/thermal-engine
@@ -577,6 +655,21 @@ service thermal-engine /system/vendor/bin/thermal-engine
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     group root
+    writepid /dev/cpuset/system-background/tasks
+    
+# QMUX must be in multiple groups to support external process connections
+service qmuxd /system/bin/qmuxd
+    class main
+    user root
+    group radio audio bluetooth gps nfc qcom_diag
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+    
+service qti /system/vendor/bin/qti
+    class main
+    user radio
+    group radio net_raw qcom_diag usb net_admin
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service timekeep /system/bin/timekeep restore
