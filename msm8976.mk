@@ -145,6 +145,11 @@ PRODUCT_PACKAGES += \
     memtrack.msm8952 \
     liboverlay
 
+# FM
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
+
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -180,10 +185,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
-# Libshims
-PRODUCT_PACKAGES += \
-    libshims_camera
-
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8952
@@ -216,6 +217,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8952
+
 # Qualcomm dependencies
 PRODUCT_PACKAGES += \
     libtinyxml \
@@ -230,6 +235,10 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.target.rc \
     ueventd.qcom.rc
+
+# Sensors
+PRODUCT_PACKAGES += \
+    sensors.msm8952
 
 # TimeKeep
 PRODUCT_PACKAGES += \
