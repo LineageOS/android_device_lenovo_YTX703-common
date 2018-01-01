@@ -251,6 +251,9 @@ PRODUCT_PACKAGES += \
     TimeKeep
 
 # WCNSS
+PRODUCT_PACKAGES += \
+    wcnss_service
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_sdio_cfg.ini:system/etc/wifi/WCNSS_qcom_sdio_cfg.ini
 
