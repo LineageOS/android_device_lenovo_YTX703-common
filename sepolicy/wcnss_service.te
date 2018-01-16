@@ -1,2 +1,2 @@
-allow wcnss_service self:capability { setgid setuid };
+allow wcnss_service self:capability { setgid setuid net_raw };
 allow wcnss_service system_data_file:file { open read };
