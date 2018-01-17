@@ -35,6 +35,11 @@ ro.audio.monitorRotation=true
 
 # Bluetooth
 bluetooth.hfp.client=1
+qcom.bluetooth.soc=smd
+ro.btconfig.if=smd
+ro.btconfig.dev=/dev/smd3
+ro.btconfig.vendor=qcom
+ro.btconfig.chip=WCN3680
 
 # Camera
 media.camera.ts.monotonic=1
