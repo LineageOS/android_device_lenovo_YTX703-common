@@ -15,6 +15,7 @@ audio.playback.mch.downsample=true
 audio.pp.asphere.enabled=false
 audio.safx.pbe.enabled=true
 
+
 persist.audio.fluence.speaker=true
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
@@ -72,6 +73,7 @@ debug.sf.enable_gl_backpressure=1
 debug.sf.hw=0
 debug.egl.hw=0
 debug.sf.latch_unsignaled=1
+debug.sf.recomputecrop=0
 debug.hwui.use_buffer_age=false
 dev.pm.dyn_samplingrate=1
 persist.hwc.mdpcomp.enable=true
