@@ -1,3 +1,34 @@
+Adapts the AOSP and CMParts frameworks to the YT-X703's screen
+and volume button layout.
+
+     +-----------------------------------+
+     |                 P                 |
+     |                 O                 |
+     |                 R       D         |
+     |         U       T       O         |
+     |         P       R       W         | 1600px
+     |                 A       N         |
+  V+ |                 I                 |
+  V- |                 T                 |---+
+     +-----------------------------------+  /
+ PWR |               2560px              | / kickstand
+     +-----------------------------------+/
+
+The display is a 2560x1600 portrait display in:
+  * a portrait form factor with buttons on top (when you hold it by the grip)
+  * a landscape form factor with buttons on the left (when you use the kickstand)
+
+This patch keeps the display as portrait, but:
+  * rotates the bootanimation so it appears normal when viewed in kickstand mode
+  * sets the initial screen orientation on boot to landscape
+  * tells CMParts that this tablet is landscape, because it makes certain
+    assumptions that are otherwise too simplistic (such as the fact that volume
+    buttons are on the side, and not on top of the display). This fixes the
+    reorient functionality for the volume buttons.
+
+Signed-off-by: Matthias Lenk <matthias.lenk@gmx.de>
+Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
+
 diff --git a/frameworks/base/cmds/bootanimation/BootAnimation.cpp b/frameworks/base/cmds/bootanimation/BootAnimation.cpp
 index 10fabcfb735..5f219910b03 100644
 --- a/frameworks/base/cmds/bootanimation/BootAnimation.cpp
@@ -6,7 +37,7 @@ index 10fabcfb735..5f219910b03 100644
      status_t status = SurfaceComposerClient::getDisplayInfo(dtoken, &dinfo);
      if (status)
          return -1;
-+    
++
 +    SurfaceComposerClient::setDisplayProjection(dtoken, 1, Rect(0,0,dinfo.h,dinfo.w), Rect(0,0,dinfo.h,dinfo.w));
  
      // create the native surface
@@ -31,3 +62,23 @@ index 3c9170e65a7..c2ec7a45f30 100644
      boolean mAltOrientation = false;
  
      private boolean mKeyguardWaitingForActivityDrawn;
+diff -u -r a/packages/apps/CMParts/src/org/cyanogenmod/cmparts/input/ButtonSettings.java b/packages/apps/CMParts/src/org/cyanogenmod/cmparts/input/ButtonSettings.java
+--- a/packages/apps/CMParts/src/org/cyanogenmod/cmparts/input/ButtonSettings.java
++++ b/packages/apps/CMParts/src/org/cyanogenmod/cmparts/input/ButtonSettings.java
+@@ -734,16 +734,5 @@ public boolean onPreferenceTreeClick(Preference preference) {
+         if (preference == mSwapVolumeButtons) {
+             int value = mSwapVolumeButtons.isChecked()
+                     ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
+-            if (value == 2) {
+-                Display defaultDisplay = getActivity().getWindowManager().getDefaultDisplay();
+-
+-                DisplayInfo displayInfo = new DisplayInfo();
+-                defaultDisplay.getDisplayInfo(displayInfo);
+-
+-                // Not all tablets are landscape
+-                if (displayInfo.getNaturalWidth() < displayInfo.getNaturalHeight()) {
+-                    value = 1;
+-                }
+-            }
+             CMSettings.System.putInt(getActivity().getContentResolver(),
+                     CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
