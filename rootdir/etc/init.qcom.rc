@@ -30,9 +30,6 @@ import init.qcom.usb.rc
 import init.target.rc
 
 on early-init
-    # Turn off backlight on blank
-    write /sys/class/leds/lcd-backlight/trigger "backlight"
-
     mkdir /firmware 0771 system system
     mkdir /system 0777 root root
     symlink /data/tombstones /tombstones
@@ -107,6 +104,8 @@ on fs
     #rm -rf /efs/dmverity
 
 on boot
+    chown system system /sys/class/backlight/lcd-bl/brightness
+
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state

@@ -43,7 +43,7 @@ static struct light_state_t g_battery;
 static struct light_state_t g_attention;
 
 char const*const LCD_FILE
-        = "/sys/class/leds/lcd-backlight/brightness";
+        = "/sys/class/backlight/lcd-bl/brightness";
 
 char const*const POWER_BLINK_FILE
         = "/sys/class/leds/green/blink";
