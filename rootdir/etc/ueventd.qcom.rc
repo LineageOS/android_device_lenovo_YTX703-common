@@ -185,9 +185,6 @@
 /dev/tsc_ci0              0660   media       media
 
 # sensors
-/sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
-/sys/devices/f9925000.i2c/i2c-0/0-*                 enable         0660    input    system
-/sys/devices/f9925000.i2c/i2c-0/0-*                 poll_delay     0660    input    system
 /sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            enable         0660    input    system
 /sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            poll_delay     0660    input    system
 /sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            enable_wakeup  0660    input    system
@@ -211,11 +208,6 @@
 /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0038/sensors/ft5x06-proximity	enable	0660	input	system
 /sys/devices/virtual/gesture/gesture*		enable	0660	input	system
 /sys/devices/virtual/gesture/gesture*		pocket	0660	input	system
-
-# led
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-0045/leds/red		blink	0660	input	system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-0045/leds/green		blink	0660	input	system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-0045/leds/blue		blink	0660	input	system
 
 # vm_bms
 /dev/vm_bms               0660   system     system
