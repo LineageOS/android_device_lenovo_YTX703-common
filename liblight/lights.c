@@ -153,25 +153,24 @@ set_speaker_light_locked(struct light_device_t* dev,
                 break;
             case LIGHT_FLASH_NONE:
             default:
-		
                 onS = 0;
                 offS = 0;
                 break;
         }
 
         colorRGB = state->color & 0x00ffffff;
-	    brightness = rgb_to_brightness(state);
+        brightness = rgb_to_brightness(state);
 
-	    if (brightness > 0) {
-	        if (onS == 0 && offS == 0) {
-	            ALOGD("Using brightness: %d\n",brightness);
-	            write_int(POWER_LED_FILE, brightness);
-	        } else {
-	            sprintf(pattern, "2 %d 2 %d",onS,offS);
-	            ALOGD("Using blink pattern: %s\n",pattern);
-	            write_str(POWER_PATTERN_FILE, pattern);
-	            write_int(POWER_BLINK_FILE,1);
-	        }
+        if (brightness > 0) {
+            if (onS == 0 && offS == 0) {
+                ALOGD("Using brightness: %d\n",brightness);
+                write_int(POWER_LED_FILE, brightness);
+            } else {
+                sprintf(pattern, "2 %d 2 %d",onS,offS);
+                ALOGD("Using blink pattern: %s\n",pattern);
+                write_str(POWER_PATTERN_FILE, pattern);
+                write_int(POWER_BLINK_FILE,1);
+            }
         } else {
             write_int(POWER_BLINK_FILE,0);
             write_int(POWER_LED_FILE,0);
