@@ -79,6 +79,7 @@ av.debug.disable.pers.cache=true
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.narrow.searchrange=1
 drm.service.enabled=true
+ro.config.media_vol_steps=30
 
 # Vendor
 ro.vendor.extension_library=libqti-perfd-client.so
