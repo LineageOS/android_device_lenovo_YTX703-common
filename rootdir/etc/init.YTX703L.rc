@@ -1,0 +1,30 @@
+service port-bridge /system/bin/port-bridge /dev/mhi_pipe_32 /dev/ttyGS0
+    class main
+    user radio system
+    group radio system inet
+    disabled
+    oneshot
+
+on early-boot
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+    # Allow subsystem (modem etc) debugging
+    write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
+    start qcom-console-sh
+
+service qcom-console-sh /system/bin/sh /init.qcom.console.sh
+    class main
+    user root
+    disabled
+    oneshot
+
+service qcom-radio-sh /system/bin/sh /init.qcom.radio.sh
+    class main
+    user root
+    oneshot
+
+on property:vold.decrypt=trigger_restart_framework
+    start qcom-c_main-sh
+    start config_bt_addr
+    start config_bluetooth
+    start wcnss-service
