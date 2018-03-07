@@ -50,3 +50,44 @@ LOCAL_MODULE_TAGS	:= optional eng
 LOCAL_MODULE_CLASS	:= ETC
 LOCAL_SRC_FILES		:= etc/init.qcom.bt.sh
 include $(BUILD_PREBUILT)
+
+# Device-specific scripts
+
+ifeq ($(TARGET_DEVICE),YTX703F)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.target.rc
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.YTX703F.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+else ifeq ($(TARGET_DEVICE),YTX703L)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.target.rc
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.YTX703L.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.console.sh
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.qcom.console.sh
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.radio.sh
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.qcom.radio.sh
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+endif
+

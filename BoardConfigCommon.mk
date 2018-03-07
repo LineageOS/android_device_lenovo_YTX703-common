@@ -14,13 +14,14 @@
 # limitations under the License.
 #
 
-# inherit from the proprietary version
--include vendor/lenovo/msm8976-common/BoardConfigVendor.mk
-
 BOARD_VENDOR := lenovo
-VENDOR_PATH := device/lenovo/msm8976-common
+VENDOR_PATH := vendor/lenovo/YTX703
+DEVICE_PATH := device/lenovo/YTX703
 
-TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
+# inherit from the proprietary version
+-include $(VENDOR_PATH)/BoardConfigVendor.mk
+
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
@@ -94,7 +95,7 @@ DOLBY_ENABLE := false
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
@@ -156,7 +157,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x4000000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3758096384
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26227481600
 
-TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(VENDOR_PATH)/android_filesystem_config.h
+TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(DEVICE_PATH)/android_filesystem_config.h
 
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
@@ -188,20 +189,21 @@ TARGET_HAVE_SIGNED_VENUS_FW := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Properties
-TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop-common
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop-$(TARGET_DEVICE)
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
