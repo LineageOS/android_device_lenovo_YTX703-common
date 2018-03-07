@@ -18,7 +18,7 @@
 set -e
 
 # Load extractutils and do some sanity checks
-MY_DIR="${BASH_SOURCE%/*}"
+MY_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 CM_ROOT="$MY_DIR"/../../..
@@ -55,22 +55,24 @@ if [ -n "$SETUP" ]; then
     setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true false
     "$MY_DIR"/setup-makefiles.sh false
 
-    if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+    if [ -s "$MY_DIR"/$DEVICE/proprietary-files.txt ]; then
         # Initalize the helper for device
-        setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" false false
+        (setup_vendor "$DEVICE" "$VENDOR/$DEVICE_COMMON" "$CM_ROOT" false false)
         "$MY_DIR"/setup-makefiles.sh false
     fi
 else
     # Initialize the helper for common
+    (
     setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true "$CLEANUP"
-
     extract "$MY_DIR"/proprietary-files.txt "$SRC"
+    )
 
-    if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+    if [ -s "$MY_DIR"/$DEVICE/proprietary-files.txt ]; then
         # Reinitialize the helper for device
-        setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" false "$CLEANUP"
-
-        extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
+        (
+        setup_vendor "$DEVICE" "$VENDOR/$DEVICE_COMMON" "$CM_ROOT" false "$CLEANUP"
+        extract "$MY_DIR"/$DEVICE/proprietary-files.txt "$SRC"
+        )
     fi
 
     "$MY_DIR"/setup-makefiles.sh "$CLEANUP"
