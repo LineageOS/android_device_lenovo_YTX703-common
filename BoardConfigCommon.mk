@@ -15,8 +15,8 @@
 #
 
 BOARD_VENDOR := lenovo
-VENDOR_PATH := vendor/lenovo/YTX703
-DEVICE_PATH := device/lenovo/YTX703
+VENDOR_PATH := vendor/lenovo/YTX703-common
+DEVICE_PATH := device/lenovo/YTX703-common
 
 # inherit from the proprietary version
 -include $(VENDOR_PATH)/BoardConfigVendor.mk
