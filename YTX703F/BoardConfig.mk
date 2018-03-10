@@ -14,15 +14,9 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := lenovo
-VENDOR_PATH := vendor/lenovo/YTX703
-DEVICE_PATH := device/lenovo/YTX703
-
 # inherit from the common version
--include $(DEVICE_PATH)/BoardConfigCommon.mk
+-include device/lenovo/YTX703-common/BoardConfigCommon.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := yt_x703l
+TARGET_OTA_ASSERT_DEVICE := yt_x703f
 
-# Radio
-TARGET_RIL_VARIANT := caf
