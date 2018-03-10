@@ -15,11 +15,13 @@
 # limitations under the License.
 #
 
-set -e
+set -e -u -o pipefail
 
 # Required!
-export DEVICE=YT-X703L
-export DEVICE_COMMON=msm8976-common
+export DEVICE=YTX703F
+export DEVICE_COMMON=YTX703-common
 export VENDOR=lenovo
 
-./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@
+MY_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
+
+${MY_DIR}/../setup-makefiles.sh $@

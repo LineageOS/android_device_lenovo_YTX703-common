@@ -18,10 +18,11 @@
 set -e
 
 # Load extractutils and do some sanity checks
-MY_DIR="${BASH_SOURCE%/*}"
+MY_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 CM_ROOT="$MY_DIR"/../../..
+CLEANUP=$1
 
 HELPER="$CM_ROOT"/vendor/cm/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
@@ -31,10 +32,10 @@ fi
 . "$HELPER"
 
 # Initialize the helper for common
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" "true" "$1"
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" "true" "$CLEANUP"
 
 # Copyright headers and guards
-write_headers "YTX703L"
+write_headers "YTX703F YTX703L"
 
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
@@ -42,15 +43,15 @@ write_makefiles "$MY_DIR"/proprietary-files.txt
 # We are done!
 write_footers
 
-if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+if [ -s "$MY_DIR"/$DEVICE/proprietary-files.txt ]; then
     # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" "false" "$1"
+    setup_vendor "$DEVICE" "$VENDOR/$DEVICE_COMMON" "$CM_ROOT" "false" "$CLEANUP"
 
     # Copyright headers and guards
     write_headers
 
     # The standard device blobs
-    write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt
+    write_makefiles "$MY_DIR"/$DEVICE/proprietary-files.txt
 
     # We are done!
     write_footers
