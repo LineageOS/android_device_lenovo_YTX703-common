@@ -152,6 +152,9 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8952 \
+    libgps.utils \
+    libloc_core \
+    libloc_eng \
     libcurl
 
 PRODUCT_PACKAGES += \

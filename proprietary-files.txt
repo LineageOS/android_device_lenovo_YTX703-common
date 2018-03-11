@@ -1307,9 +1307,3 @@ vendor/qcril.db
 -lib/hw/camera.msm8952.so
 -vendor/lib/libts_detected_face_hal.so
 -vendor/lib/libts_face_beautify_hal.so
-
-# GPS
--lib64/libgps.utils.so
--lib64/libloc_core.so
--lib64/libloc_eng.so
--lib64/hw/gps.default.so
