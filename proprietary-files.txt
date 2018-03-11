@@ -762,7 +762,7 @@ vendor/lib/libmmcamera_sony_imx214_eeprom.so
 vendor/lib/libmmcamera_sonyimx135_eeprom.so
 vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_sunny_8865_eeprom.so
-vendor/lib/libmmcamera_sunny_dw9761b_eeprom.so
+vendor/lib/libmmcamera_sunny_dw9761b_eeprom.so|68d5e4bd92edb67fbb024e7883b160c44271df0a
 vendor/lib/libmmcamera_sunny_q13v06k_eeprom.so
 vendor/lib/libmmcamera_sunny_q5v41b_eeprom.so
 vendor/lib/libmmcamera_sw_tnr.so
