@@ -97,6 +97,7 @@ on late-fs
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 on post-fs
+    start vendor.qseecomd
     # Wait qseecomd started
     wait_for_prop sys.listeners.registered true
     write /dev/ipa 1
