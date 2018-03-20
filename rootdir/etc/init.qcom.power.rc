@@ -1,3 +1,10 @@
+# vim: set ft=sh:
+service qcom-post_boot /system/bin/sh /init.qcom.post_boot.sh
+    class main
+    user root
+    disabled
+    oneshot
+
 on boot
     # add a cpuset for the camera daemon
     # we want all the little cores for camera
@@ -19,6 +26,8 @@ on boot
 
     # Enable sched boost
     write /proc/sys/kernel/sched_boost 1
+
+    start qcom-post_boot
 
 on enable-low-power
     # limit CPU frequencies to 8976 defaults
