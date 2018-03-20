@@ -23,9 +23,3 @@ service qcom-radio-sh /system/bin/sh /init.qcom.radio.sh
     class main
     user root
     oneshot
-
-on property:vold.decrypt=trigger_restart_framework
-    start qcom-c_main-sh
-    start config_bt_addr
-    start config_bluetooth
-    start wcnss-service
