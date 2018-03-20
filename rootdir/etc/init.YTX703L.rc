@@ -1,3 +1,4 @@
+# vim: set ft=sh:
 service port-bridge /system/bin/port-bridge /dev/mhi_pipe_32 /dev/ttyGS0
     class main
     user radio system
