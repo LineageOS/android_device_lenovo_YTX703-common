@@ -186,6 +186,9 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Healthd
+BACKLIGHT_PATH := "/sys/class/backlight/lcd-bl/brightness"
+
 # Media
 TARGET_HAVE_SIGNED_VENUS_FW := true
 TARGET_USES_MEDIA_EXTENSIONS := true
