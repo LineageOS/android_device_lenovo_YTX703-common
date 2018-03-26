@@ -18,8 +18,12 @@
 # inherit from the proprietary version
 $(call inherit-product, vendor/lenovo/YTX703-common/YTX703-common-vendor.mk)
 
-# apply framework patch for boot rotation
-PATCH_RESULT := $(shell (patch -p1 -r - --no-backup-if-mismatch -i $(LOCAL_PATH)/framework_rot.patch))
+$(warning ---------------------------------------------------------------------)
+$(foreach patch, $(wildcard $(LOCAL_PATH)/patches/*.patch), \
+	$(warning Applying patch $(patch)) \
+	$(eval PATCH_RESULT := $(shell patch -p1 --reject-file=- --batch --no-backup-if-mismatch < $(patch) >&2; echo $$?)) \
+	$(if $(filter 0 1,$(PATCH_RESULT)),, $(error Patch $(patch) failed with code $(PATCH_RESULT)!)))
+$(warning ---------------------------------------------------------------------)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
