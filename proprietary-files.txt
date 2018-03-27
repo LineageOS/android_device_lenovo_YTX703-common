@@ -92,12 +92,6 @@ lib64/libvpplibrary.so
 -priv-app/CNEService/CNEService.apk
 -priv-app/QtiTetherService/QtiTetherService.apk
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
-sbin/qcrypto_module.hmac:rootfs
-sbin/qcrypto_module.ko:rootfs
-sbin/qdrbg_module.hmac:rootfs
-sbin/qdrbg_module.ko:rootfs
-sbin/qfintverify.hmac:rootfs
-sbin/qfintverify:rootfs
 vendor/bin/LKCore
 vendor/bin/audioflacapp
 vendor/bin/chamomile_provision
