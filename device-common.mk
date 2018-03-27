@@ -159,17 +159,11 @@ PRODUCT_COPY_FILES += $(foreach keylayout_config, $(wildcard $(LOCAL_PATH)/confi
 PRODUCT_PACKAGES += \
     lights.msm8952
 
-# Media
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml \
-    $(LOCAL_PATH)/media/media_codecs_8956_v1.xml:system/etc/media_codecs_8956_v1.xml \
-    $(LOCAL_PATH)/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/media/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
-    $(LOCAL_PATH)/media/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
-    $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml
-    $(LOCAL_PATH)/media/media_profiles_8956.xml:system/etc/media_profiles_8956.xml
+# Device-specific codec configuration
+PRODUCT_COPY_FILES += $(foreach media_config, $(wildcard $(LOCAL_PATH)/configs/media/*), \
+    $(media_config):$(addprefix system/etc/, $(notdir $(media_config))) )
 
+# Standard (software) codec configuration
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
