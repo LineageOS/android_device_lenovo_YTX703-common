@@ -39,6 +39,5 @@ PRODUCT_PACKAGES += \
 
 # Extra init scripts
 PRODUCT_PACKAGES += \
-    init.target.rc \
     init.qcom.console.sh \
     init.qcom.radio.sh
