@@ -41,6 +41,142 @@ PRODUCT_CHARACTERISTICS := tablet
 
 $(call inherit-product-if-exists, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
+#
+# PRODUCT_PACKAGES rules
+#
+
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio \
+
+# Audio
+PRODUCT_PACKAGES += \
+    audiod \
+    audio.a2dp.default \
+    audio.primary.msm8952 \
+    audio.r_submix.default \
+    audio.usb.default \
+    libaudio-resampler \
+    libaudioroute \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libtinycompress \
+    tinymix
+
+# Camera
+PRODUCT_PACKAGES += \
+    Snap \
+    camera.msm8952 \
+    libmm-qcamera \
+
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8952 \
+
+# Display
+PRODUCT_PACKAGES += \
+    copybit.msm8952 \
+    gralloc.msm8952 \
+    hwcomposer.msm8952 \
+    memtrack.msm8952 \
+    liboverlay \
+
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files \
+
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8952 \
+    libgps.utils \
+    libloc_core \
+    libloc_eng \
+    libcurl \
+
+PRODUCT_PACKAGES += \
+    flp.conf \
+    gps.conf \
+    izat.conf \
+    lowi.conf \
+    sap.conf \
+    xtwifi.conf \
+
+# IPv6
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libebtc \
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8952 \
+
+# OMX
+PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libextmedia_jni \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libOmxSwVencHevc \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw \
+
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8952 \
+
+# Qualcomm dependencies
+PRODUCT_PACKAGES += \
+    libtinyxml \
+    libxml2 \
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.target.rc \
+    init.qcom.bt.sh \
+    init.qcom.power.rc \
+    init.qcom.usb.rc \
+    ueventd.qcom.rc \
+
+# Sensors
+PRODUCT_PACKAGES += \
+    sensors.msm8952 \
+
+# TimeKeep
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep \
+
+# Wifi
+PRODUCT_PACKAGES += \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
+    libwpa_client \
+    hostapd \
+    wcnss_service \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+
+# data-ipa-cfg-mgr
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml \
+    libipanat \
+
+#
+# PRODUCT_COPY_FILES rules
+#
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -66,98 +202,34 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:system/etc/permissions/android.software.freeform_window_management.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
-
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
-
-# Audio
-PRODUCT_PACKAGES += \
-    audiod \
-    audio.a2dp.default \
-    audio.primary.msm8952 \
-    audio.r_submix.default \
-    audio.usb.default \
-    libaudio-resampler \
-    libaudioroute \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libtinycompress \
-    tinymix
 
 # Device-specific audio configs
 PRODUCT_COPY_FILES += $(foreach audio_config, $(wildcard $(LOCAL_PATH)/configs/audio/*), \
     $(audio_config):$(addprefix system/etc/, $(notdir $(audio_config))) )
 
+# Standard audio configs
 PRODUCT_COPY_FILES += \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/system/etc/a2dp_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/system/etc/audio_policy_volumes.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/system/etc/default_volume_tables.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml     
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:system/etc/default_volume_tables.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap \
-    camera.msm8952 \
-    libmm-qcamera
-
-# Keystore
-PRODUCT_PACKAGES += \
-    keystore.msm8952	
-
-# Display
-PRODUCT_PACKAGES += \
-    copybit.msm8952 \
-    gralloc.msm8952 \
-    hwcomposer.msm8952 \
-    memtrack.msm8952 \
-    liboverlay
-
-# For android_filesystem_config.h
-PRODUCT_PACKAGES += \
-    fs_config_files
-
-# GPS
-PRODUCT_PACKAGES += \
-    gps.msm8952 \
-    libgps.utils \
-    libloc_core \
-    libloc_eng \
-    libcurl
-
-PRODUCT_PACKAGES += \
-    flp.conf \
-    gps.conf \
-    izat.conf \
-    lowi.conf \
-    sap.conf \
-    xtwifi.conf
+# Device-specific codec configuration
+PRODUCT_COPY_FILES += $(foreach media_config, $(wildcard $(LOCAL_PATH)/configs/media/*), \
+    $(media_config):$(addprefix system/etc/, $(notdir $(media_config))) )
 
 # IPC router config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    libebtc
-
 # Keylayout
 PRODUCT_COPY_FILES += $(foreach keylayout_config, $(wildcard $(LOCAL_PATH)/configs/keylayout/*), \
     $(keylayout_config):$(addprefix system/usr/keylayout/, $(notdir $(keylayout_config))) )
-
-# Lights
-PRODUCT_PACKAGES += \
-    lights.msm8952
 
 # Device-specific codec configuration
 PRODUCT_COPY_FILES += $(foreach media_config, $(wildcard $(LOCAL_PATH)/configs/media/*), \
@@ -167,72 +239,14 @@ PRODUCT_COPY_FILES += $(foreach media_config, $(wildcard $(LOCAL_PATH)/configs/m
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
 
-# OMX
-PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libextmedia_jni \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libOmxSwVencHevc \
-    libOmxVdec \
-    libOmxVenc \
-    libstagefrighthw
-
-# Power
-PRODUCT_PACKAGES += \
-    power.msm8952
-
-# Qualcomm dependencies
-PRODUCT_PACKAGES += \
-    libtinyxml \
-    libxml2
-
-# Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.target.rc \
-    init.qcom.bt.sh \
-    init.qcom.power.rc \
-    init.qcom.usb.rc \
-    ueventd.qcom.rc
-
-# Sensors
-PRODUCT_PACKAGES += \
-    sensors.msm8952
-
+# Sensors configuration files
 PRODUCT_COPY_FILES += $(foreach sensor_config, $(wildcard $(LOCAL_PATH)/configs/sensors/*), \
     $(sensor_config):$(addprefix system/etc/sensors/, $(notdir $(sensor_config))) )
-
-# TimeKeep
-PRODUCT_PACKAGES += \
-    timekeep \
-    TimeKeep
-
-# Wifi
-PRODUCT_PACKAGES += \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
-    libwpa_client \
-    hostapd \
-    wcnss_service \
-    wpa_supplicant \
-    wpa_supplicant.conf
 
 # Wi-Fi and WCNSS configuration files
 PRODUCT_COPY_FILES += $(foreach wifi_config, $(wildcard $(LOCAL_PATH)/configs/wifi/*), \
     $(wifi_config):$(addprefix system/etc/wifi/, $(notdir $(wifi_config))) ) \
     $(LOCAL_PATH)/configs/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-
-# data-ipa-cfg-mgr
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
-    libipanat
 
