@@ -96,14 +96,6 @@ PRODUCT_PACKAGES += \
     libloc_eng \
     libcurl \
 
-PRODUCT_PACKAGES += \
-    flp.conf \
-    gps.conf \
-    izat.conf \
-    lowi.conf \
-    sap.conf \
-    xtwifi.conf \
-
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
@@ -257,4 +249,8 @@ PRODUCT_COPY_FILES += $(foreach wifi_config, $(wildcard $(LOCAL_PATH)/configs/wi
 # Cellular data configuration files
 PRODUCT_COPY_FILES += $(foreach data_config, $(wildcard $(LOCAL_PATH)/configs/data/*), \
     $(data_config):$(addprefix system/etc/data/, $(notdir $(data_config))) )
+
+# GPS configuration files
+PRODUCT_COPY_FILES += $(foreach gps_config, $(wildcard $(LOCAL_PATH)/configs/gps/*), \
+    $(gps_config):$(addprefix system/etc/, $(notdir $(gps_config))) )
 
