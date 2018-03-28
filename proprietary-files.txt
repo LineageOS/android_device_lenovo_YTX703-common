@@ -995,3 +995,4 @@ vendor/lib64/libxtwifi_ulp_adaptor.so
 #vendor/lib64/libyasalgo.so
 vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
+vendor/qcril.db
