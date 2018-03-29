@@ -1,3 +1,0 @@
-# Create dataservice_app domain for /system/priv-app/QtiTetherService package
-# Go match device/qcom/sepolicy/common/dataservice_app.te
-user=system domain=dataservice_app seinfo=platform name=com.qualcomm.qti.tetherservice type=system_app_data_file
