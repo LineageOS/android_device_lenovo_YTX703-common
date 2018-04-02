@@ -1,3 +1,4 @@
+-app/TimeService/TimeService.apk:priv-app/TimeService/TimeService.apk
 bin/adsprpcd
 bin/btnvtool
 bin/cnd
@@ -90,7 +91,6 @@ lib64/libloc_ds_api.so
 lib64/libvpplibrary.so
 -priv-app/CNEService/CNEService.apk
 -priv-app/QtiTetherService/QtiTetherService.apk
--priv-app/TimeService/TimeService.apk
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 sbin/qcrypto_module.hmac:rootfs
 sbin/qcrypto_module.ko:rootfs
