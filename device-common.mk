@@ -177,7 +177,11 @@ PRODUCT_PACKAGES += \
 # PRODUCT_COPY_FILES rules
 #
 
-# Permissions
+# Device-specific permissions
+PRODUCT_COPY_FILES += $(foreach permission, $(wildcard $(LOCAL_PATH)/configs/permissions/*), \
+    $(permission):$(addprefix system/etc/permissions/, $(notdir $(permission))) )
+
+# Standard permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \

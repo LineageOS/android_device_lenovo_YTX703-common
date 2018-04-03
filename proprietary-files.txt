@@ -60,17 +60,6 @@ etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Speaker_cal.acdb
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
-etc/permissions/ConnectivityExt.xml
-etc/permissions/cneapiclient.xml
-etc/permissions/com.qti.dpmframework.xml
-etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qti.snapdragon.sdk.display.xml
-etc/permissions/com.qualcomm.location.xml
-etc/permissions/com.quicinc.cne.xml
-etc/permissions/dpmapi.xml
-etc/permissions/imscm.xml
-etc/permissions/izat.xt.srv.xml
-etc/permissions/qcrilhook.xml
 etc/sensors/hals.conf
 etc/sensors/sensor_def_qcomdev.conf
 -framework/ConnectivityExt.jar
