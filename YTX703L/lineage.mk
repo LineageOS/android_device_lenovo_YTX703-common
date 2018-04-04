@@ -1,6 +1,10 @@
 # This product makefile is parsed during the lunch command,
 # which takes it from vendorsetup.sh
 
+COMMON_LUNCH_CHOICES := \
+    lineage_YTX703L-userdebug \
+    lineage_YTX703L-eng
+
 $(call inherit-product, device/lenovo/YTX703-common/YTX703L/device.mk)
 
 # Inherit some common Lineage stuff.
