@@ -40,16 +40,6 @@ on early-init
 
     mkdir /userstore 0771 system system
 
-    #setprop ro.sf.lcd_density 480
-    setprop media.msm8956hw 1
-    #setprop media.settings.xml /etc/media_profiles_8956.xml
-    setprop media.msm8956.version 1
-    setprop media.avenhancements.enabled true
-    #mkdir /bt_firmware
-    #mkdir /bt_firmware/image
-    #symlink /system/etc/firmware/btfw32.tlv /bt_firmware/image/btfw32.tlv
-    #symlink /system/etc/firmware/btnv32.bin /bt_firmware/image/btnv32.bin
-
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system

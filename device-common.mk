@@ -224,8 +224,10 @@ PRODUCT_COPY_FILES += $(foreach keylayout_config, $(wildcard $(LOCAL_PATH)/confi
     $(keylayout_config):$(addprefix system/usr/keylayout/, $(notdir $(keylayout_config))) )
 
 # Device-specific codec configuration
-PRODUCT_COPY_FILES += $(foreach media_config, $(wildcard $(LOCAL_PATH)/configs/media/*), \
-    $(media_config):$(addprefix system/etc/, $(notdir $(media_config))) )
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_codecs_8956_v1.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles_8956.xml:system/etc/media_profiles.xml \
 
 # Standard (software) codec configuration
 PRODUCT_COPY_FILES += \
