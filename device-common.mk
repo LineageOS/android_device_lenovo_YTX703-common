@@ -19,10 +19,14 @@
 $(call inherit-product, vendor/lenovo/YTX703-common/YTX703-common-vendor.mk)
 
 $(warning ---------------------------------------------------------------------)
-$(foreach patch, $(wildcard $(LOCAL_PATH)/patches/*.patch), \
-	$(warning Applying patch $(patch)) \
-	$(eval PATCH_RESULT := $(shell patch -p1 --reject-file=- --batch --no-backup-if-mismatch < $(patch) >&2; echo $$?)) \
-	$(if $(filter 0 1,$(PATCH_RESULT)),, $(error Patch $(patch) failed with code $(PATCH_RESULT)!)))
+$(foreach patch, $(wildcard $(LOCAL_PATH)/patches/*.patch),                    \
+	$(warning Applying patch $(patch))                                     \
+	$(eval PATCH_RESULT := $(shell patch -p1 --reject-file=- --batch       \
+	                                         --no-backup-if-mismatch       \
+	                                         --forward < $(patch) >&2;     \
+	                               echo $$?))                              \
+	$(if $(filter 0 1,$(PATCH_RESULT)),,                                   \
+	     $(error Patch $(patch) failed with code $(PATCH_RESULT)!)))
 $(warning ---------------------------------------------------------------------)
 
 # Overlays
