@@ -16,6 +16,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-lenovo
 
 # Use the latest approved GMS identifiers
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=YT-X703F \
-    BUILD_FINGERPRINT=Lenovo/YT-X703F/YT-X703F:6.0.1/S100/YT-X703F_S000725_161230_ROW:user/release-keys \
-    PRIVATE_BUILD_DESC="msm8952_64-user 6.0.1 MMB29M eng.maojialu.20161230.160517 release-keys"
+    PRODUCT_NAME="YT-X703F" \
+    BUILD_FINGERPRINT="Lenovo/YT-X703F/YT-X703F:7.1.1/S100/YT-X703F_S000963_171111_ROW:user/release-keys" \
+    PRIVATE_BUILD_DESC="msm8952_64-user 7.1.1 NMF26F 18 release-keys"
