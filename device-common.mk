@@ -215,10 +215,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
 
-# Device-specific codec configuration
-PRODUCT_COPY_FILES += $(foreach media_config, $(wildcard $(LOCAL_PATH)/configs/media/*), \
-    $(media_config):$(addprefix system/etc/, $(notdir $(media_config))) )
-
 # IPC router config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
