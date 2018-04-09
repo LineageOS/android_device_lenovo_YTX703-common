@@ -18,16 +18,27 @@
 # inherit from the proprietary version
 $(call inherit-product, vendor/lenovo/YTX703-common/YTX703-common-vendor.mk)
 
-$(warning ---------------------------------------------------------------------)
-$(foreach patch, $(wildcard $(LOCAL_PATH)/patches/*.patch),                    \
-	$(warning Applying patch $(patch))                                     \
-	$(eval PATCH_RESULT := $(shell patch -p1 --reject-file=- --batch       \
-	                                         --no-backup-if-mismatch       \
-	                                         --forward < $(patch) >&2;     \
-	                               echo $$?))                              \
-	$(if $(filter 0 1,$(PATCH_RESULT)),,                                   \
-	     $(error Patch $(patch) failed with code $(PATCH_RESULT)!)))
-$(warning ---------------------------------------------------------------------)
+#$(foreach patch_dir, $(BOARD_PATCH_DIRS),                                      \
+#  $(foreach patch, $(wildcard $(patch_dir)/*.patch),                           \
+#    $(warning Patch $(patch):)                                                 \
+#    $(foreach git_repo,                                                        \
+#              $(shell uniq <( for file in $$(lsdiff --strip 1 $(patch)); do    \
+#                                 (cd $$(dirname $$file);                       \
+#                                  git rev-parse --show-toplevel);              \
+#                              done)),                                          \
+#              $(warning Cleaning git repo $(git_repo)...)                      \
+#              $(shell (cd $(git_repo) && git checkout -f && git clean -fd )))  \
+#    $(warning Applying patch...)                                               \
+#    $(eval PATCH_RESULT := $(shell patch -p1 --reject-file=- --batch           \
+#                                             --no-backup-if-mismatch           \
+#                                             --forward < $(patch) >&2;         \
+#                                   echo $$?))                                  \
+#    $(warning PATCH_RESULT $(PATCH_RESULT))                                    \
+#    $(if $(filter 0 1,$(PATCH_RESULT)),,                                       \
+#         $(error Patch $(patch) failed with code $(PATCH_RESULT)!))))
+#
+
+BOARD_PATCH_DIRS := $(LOCAL_PATH)/patches
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
