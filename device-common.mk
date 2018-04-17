@@ -247,3 +247,7 @@ PRODUCT_COPY_FILES += $(foreach data_config, $(wildcard $(LOCAL_PATH)/configs/da
 PRODUCT_COPY_FILES += $(foreach gps_config, $(wildcard $(LOCAL_PATH)/configs/gps/*), \
     $(gps_config):$(addprefix system/etc/, $(notdir $(gps_config))) )
 
+# Thermal engine configuration file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf \
+
