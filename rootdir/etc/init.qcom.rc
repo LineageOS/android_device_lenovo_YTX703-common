@@ -80,12 +80,6 @@ on fs
     wait /dev/block/bootdevice
     mount_all fstab.qcom
     write /proc/sys/vm/swappiness 100
-    mkdir /persist/data 0700 system system
-    restorecon_recursive /persist
-    #restorecon_recursive /dsp
-    #chown system radio /efs
-    #chmod 0771 /efs
-    #restorecon_recursive /efs
 
 on boot
     chown system system /sys/class/backlight/lcd-bl/brightness
@@ -131,6 +125,9 @@ on boot
     mkdir /persist/bluetooth 0770 bluetooth bluetooth
     mkdir /persist/misc 0770 system system
     mkdir /persist/bluetooth 0770 bluetooth bluetooth
+    mkdir /persist/data 0700 system system
+    mkdir /persist/led 0700 system system
+    restorecon_recursive /persist
 
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
