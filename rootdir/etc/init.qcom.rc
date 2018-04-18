@@ -702,3 +702,8 @@ on property:ro.config.zram=true
     swapon_all fstab.qcom
     write /proc/sys/vm/swappiness 100
 
+service time_daemon /system/bin/time_daemon
+   class late_start
+   user root
+   group root
+
