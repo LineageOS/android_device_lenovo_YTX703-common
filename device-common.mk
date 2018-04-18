@@ -18,8 +18,6 @@
 # inherit from the proprietary version
 $(call inherit-product, vendor/lenovo/YTX703-common/YTX703-common-vendor.mk)
 
-BOARD_PATCH_DIRS := $(LOCAL_PATH)/patches
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
