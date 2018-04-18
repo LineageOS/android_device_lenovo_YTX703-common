@@ -696,3 +696,9 @@ on property:init.svc.per_mgr=running
 
 on property:sys.shutdown.requested=*
     stop per_proxy
+
+#enable zram
+on property:ro.config.zram=true
+    swapon_all fstab.qcom
+    write /proc/sys/vm/swappiness 100
+
