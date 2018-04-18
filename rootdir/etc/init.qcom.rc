@@ -39,6 +39,7 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
     mkdir /userstore 0771 system system
+    mkdir /countrycode 0771 root root
 
 on init
     # Set permissions for persist partition
@@ -85,9 +86,6 @@ on fs
     #chown system radio /efs
     #chmod 0771 /efs
     #restorecon_recursive /efs
-    start setup_fs
-    mount ext4 /dev/block/bootdevice/by-name/userstore /userstore nosuid nodev barrier=1
-    #rm -rf /efs/dmverity
 
 on boot
     chown system system /sys/class/backlight/lcd-bl/brightness
