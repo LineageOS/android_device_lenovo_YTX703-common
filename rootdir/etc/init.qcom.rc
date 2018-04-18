@@ -79,6 +79,7 @@ on early-boot
 on fs
     wait /dev/block/bootdevice
     mount_all fstab.qcom
+    write /sys/kernel/boot_adsp/boot 1
     write /proc/sys/vm/swappiness 100
 
 on boot
