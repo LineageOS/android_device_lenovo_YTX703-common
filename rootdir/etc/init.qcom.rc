@@ -707,6 +707,18 @@ service time_daemon /system/bin/time_daemon
    user root
    group root
 
+on boot
+    # access permission for secure touch
+    chmod 0660 /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch_enable
+    chmod 0440 /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch
+    chmod 0660 /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch_enable
+    chmod 0440 /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch
+    chown system drmrpc /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch_enable
+    chown system drmrpc /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch
+    chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch_enable
+    chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch
+    write /proc/sys/kernel/sched_boost 1
+
 service ppd /system/vendor/bin/mm-pp-daemon
     class late_start
     disabled
