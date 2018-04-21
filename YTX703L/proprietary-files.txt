@@ -1,3 +1,6 @@
+#
+# Please keep the lines alphabetically sorted
+#
 etc/firmware/a225p5_pm4.fw
 etc/firmware/a225_pfp.fw
 etc/firmware/a225_pm4.fw
