@@ -1,4 +1,2 @@
 # Radio
-persist.sys.lenovo.ltetype=NONE
-ro.lenovo.tablet=wifi
 ro.radio.noril=yes

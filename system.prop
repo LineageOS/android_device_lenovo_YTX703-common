@@ -55,31 +55,33 @@ ro.qq.camera.sensor=3
 # Dex2oat threads for faster app installation
 ro.sys.fw.dex2oat_thread_count=4
 
+#
 # Display
-debug.egl.hw=0
+#
+# used by libscale.so
 debug.enable.sglscale=1
+# used by hwcomposer.msm8952.so and libqdutils.so
 debug.mdpcomp.logs=0
 debug.sf.hw=1
 dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
 persist.hwc.mdpcomp.enable=true
 persist.hwc.downscale_threshold=1.15
 ro.opengles.version=196610
 ro.sf.lcd_density=320
 lockscreen.rot_override=true
 
-# we hate cabl!
+# Disable CABL (Content Adaptive Backlight)
+# used by libmm-dspp-utils.so
 ro.qualcomm.cabl=0
 
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
+#
 # Media
-mm.enable.smoothstreaming=true
-mmp.enable.3g2=true
-media.aac_51_output_enabled=true
-av.debug.disable.pers.cache=true
+#
+# used by camera.msm8952.so
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.narrow.searchrange=1
 drm.service.enabled=true
@@ -89,6 +91,9 @@ ro.config.media_vol_steps=30
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so
+# enable game colocation feature
+# used by libqti-gt.so
+sched.colocate.enable=1
 
 # TCP
 net.tcp.2g_init_rwnd=10
@@ -99,13 +104,11 @@ persist.timed.enable=true
 # WiFi
 wifi.interface=wlan0
 
+# used by perfd
 ro.core_ctl_min_cpu=2
 ro.core_ctl_max_cpu=4
 persist.debug.8976.config=true
 ro.cutoff_voltage_mv=3200
-
-#enable game colocation feature
-sched.colocate.enable=1
 
 ro.sf.hwrotation=90
 

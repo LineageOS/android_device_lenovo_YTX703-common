@@ -22,6 +22,3 @@ DEVICE_PROVISIONED=1
 #
 ro.telephony.default_network=22,20
 
-# Radio
-persist.sys.lenovo.ltetype=CSFB
-ro.lenovo.tablet=3gdata
