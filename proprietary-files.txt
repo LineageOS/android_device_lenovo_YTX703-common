@@ -88,6 +88,7 @@ lib64/libloc_ds_api.so
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/ims/ims.apk
+vendor/bin/mm-pp-daemon
 vendor/bin/perfd
 vendor/bin/qti
 vendor/bin/slim_daemon
