@@ -10,6 +10,10 @@ bin/dpmd
 bin/garden_app
 bin/hci_qcomm_init
 bin/hvdcp_opti:vendor/bin/hvdcp_opti
+bin/imsqmidaemon
+bin/imscmservice
+bin/imsdatadaemon
+bin/ims_rtp_daemon
 bin/ipacm-diag
 bin/irsc_util
 bin/loc_launcher
@@ -83,6 +87,7 @@ lib64/libloc_ds_api.so
 -priv-app/QtiTetherService/QtiTetherService.apk
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-vendor/app/ims/ims.apk
 vendor/bin/perfd
 vendor/bin/qti
 vendor/bin/slim_daemon
@@ -116,6 +121,12 @@ vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/hw/sound_trigger.primary.msm8952.so
 vendor/lib/hw/vulkan.msm8952.so
+vendor/lib/lib-imsrcscmservice.so
+vendor/lib/lib-imsrcs.so
+vendor/lib/lib-rtpsl.so
+vendor/lib/lib-rtpcore.so
+vendor/lib/lib-rtpdaemoninterface.so
+vendor/lib/lib-rtpcommon.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
 vendor/lib/libI420colorconvert.so
@@ -632,6 +643,7 @@ vendor/lib/libfastcvopt.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libgsl.so
 vendor/lib/libidl.so
+vendor/lib/libimsmedia_jni.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
@@ -850,7 +862,12 @@ vendor/lib64/hw/flp.default.so
 vendor/lib64/hw/gatekeeper.msm8952.so
 vendor/lib64/hw/keystore.msm8952.so
 vendor/lib64/hw/vulkan.msm8952.so
+vendor/lib64/lib-imsrcscmservice.so
 vendor/lib64/lib-imsrcs.so
+vendor/lib64/lib-rtpsl.so
+vendor/lib64/lib-rtpcore.so
+vendor/lib64/lib-rtpdaemoninterface.so
+vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-sec-disp.so
 #vendor/lib64/libbauthserver.so
 #vendor/lib64/libbauthtzcommon.so
@@ -907,6 +924,7 @@ vendor/lib64/libgdtap.so
 vendor/lib64/libgeofence.so
 vendor/lib64/libgsl.so
 vendor/lib64/libidl.so
+vendor/lib64/libimsmedia_jni.so
 vendor/lib64/libizat_core.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/libllvm-glnext.so
