@@ -237,6 +237,10 @@ PRODUCT_COPY_FILES += $(foreach wifi_config, $(wildcard $(LOCAL_PATH)/configs/wi
     $(wifi_config):$(addprefix system/etc/wifi/, $(notdir $(wifi_config))) ) \
     $(LOCAL_PATH)/configs/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 
+# Wi-Fi Display (WFD) configuration files
+PRODUCT_COPY_FILES += $(foreach wfd_config, $(wildcard $(LOCAL_PATH)/configs/wifi-display/*), \
+    $(wfd_config):$(addprefix system/etc/, $(notdir $(wfd_config))) ) \
+
 # Cellular data configuration files
 PRODUCT_COPY_FILES += $(foreach data_config, $(wildcard $(LOCAL_PATH)/configs/data/*), \
     $(data_config):$(addprefix system/etc/data/, $(notdir $(data_config))) )
