@@ -259,3 +259,8 @@ PRODUCT_COPY_FILES += $(foreach gps_config, $(wildcard $(LOCAL_PATH)/configs/gps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf \
 
+# Profiles for perfd
+PRODUCT_COPY_FILES += $(foreach perf_profile, $(wildcard $(LOCAL_PATH)/configs/perf-profiles/*), \
+    $(perf_profile):$(addprefix system/etc/, $(notdir $(perf_profile))) )
+
+
