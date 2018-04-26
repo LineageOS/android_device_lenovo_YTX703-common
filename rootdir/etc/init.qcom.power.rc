@@ -27,8 +27,6 @@ on boot
     # Enable sched boost
     write /proc/sys/kernel/sched_boost 1
 
-    start qcom-post_boot
-
 on enable-low-power
     # limit CPU frequencies to 8976 defaults
     write /sys/module/msm_performance/parameters/cpu_max_freq "0:1401600 1:1401600 2:1401600 3:1401600 4:1804800 5:1804800 6:1804800 7:1804800"
