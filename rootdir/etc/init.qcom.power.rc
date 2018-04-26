@@ -194,8 +194,6 @@ on enable-low-power
     write /sys/module/process_reclaim/parameters/swap_opt_eff 30
 
 on charger
-    stop perfd
-
     # Disable thermal
     write /sys/module/msm_thermal/core_control/enabled 0
 
