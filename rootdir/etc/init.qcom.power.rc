@@ -5,6 +5,29 @@ service qcom-post_boot /system/bin/sh /init.qcom.post_boot.sh
     disabled
     oneshot
 
+# Allow usb charging to be disabled persistently
+on property:persist.usb.chgdisabled=1
+    write /sys/class/power_supply/battery/charging_enabled 0
+
+on property:persist.usb.chgdisabled=0
+    write /sys/class/power_supply/battery/charging_enabled 1
+
+on charger
+    wait /dev/block/bootdevice/by-name/data
+    mount ext4 /dev/block/bootdevice/by-name/userdata /data
+    wait /dev/block/bootdevice/by-name/system
+    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
+    load_all_props
+    setprop persist.sys.usb.config mass_storage
+    start qcom-post-boot
+    setprop persist.sys.usb.config mass_storage
+    start hvdcp_opti
+
+service hvdcp_opti /system/vendor/bin/hvdcp_opti
+    class main
+    user root
+    group root
+
 on boot
     # add a cpuset for the camera daemon
     # we want all the little cores for camera
