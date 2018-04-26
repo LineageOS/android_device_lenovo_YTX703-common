@@ -623,9 +623,8 @@ service netmgrd /system/bin/netmgrd
     writepid /dev/cpuset/system-background/tasks
 
 service perfd /system/vendor/bin/perfd
-    class main
+    class late_start
     user root
-    disabled
     socket perfd seqpacket 0666 root system
     writepid /dev/cpuset/system-background/tasks
 
