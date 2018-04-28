@@ -112,6 +112,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
+    libstagefright_wfd \
+    libmm-omxcore \
 
 # Power
 PRODUCT_PACKAGES += \
@@ -157,6 +159,10 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
     libipanat \
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 
 #
 # PRODUCT_COPY_FILES rules
