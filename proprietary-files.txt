@@ -25,7 +25,6 @@ bin/pm-service
 bin/qmuxd
 bin/qseecomd
 bin/rmt_storage
-bin/sensors.qcom
 bin/time_daemon
 bin/tftp_server
 bin/wcnss_filter
@@ -671,18 +670,13 @@ vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_dcrf.so
 vendor/lib/libmmcamera2_frame_algorithm.so
-vendor/lib/libmmcamera2_iface_modules.so
-vendor/lib/libmmcamera2_imglib_modules.so
 vendor/lib/libmmcamera2_is.so
 vendor/lib/libmmcamera2_isp_modules.so
-vendor/lib/libmmcamera2_mct.so
 vendor/lib/libmmcamera2_pp_buf_mgr.so
 vendor/lib/libmmcamera2_pproc_modules.so
 vendor/lib/libmmcamera2_q3a_core.so
 vendor/lib/libmmcamera2_sensor_debug.so
-vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_algorithm.so
-vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera2_vpe_module.so
 vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/libmmcamera_ar1335.so
@@ -824,7 +818,6 @@ vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
 #vendor/lib/libsecnativefeature.so
 vendor/lib/libseemore.so
-vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsmwrapper.so
@@ -854,7 +847,6 @@ vendor/lib/sensors.ssc.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
-vendor/lib/soundfx/libswdap.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
@@ -987,7 +979,6 @@ vendor/lib64/libsd_sdk_display.so
 #vendor/lib64/libsecnativefeature.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsettings.so
 vendor/lib64/libsmemlog.so
