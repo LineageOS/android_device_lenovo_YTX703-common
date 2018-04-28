@@ -263,4 +263,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += $(foreach perf_profile, $(wildcard $(LOCAL_PATH)/configs/perf-profiles/*), \
     $(perf_profile):$(addprefix system/etc/, $(notdir $(perf_profile))) )
 
+# Configs for dpm and nsrm
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/dpm/dpm.conf:system/etc/dpm/dpm.conf \
+    $(LOCAL_PATH)/configs/dpm/nsrm/NsrmConfiguration.xml:system/etc/dpm/nsrm/NsrmConfiguration.xml \
+
 
