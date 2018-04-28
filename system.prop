@@ -132,3 +132,5 @@ ro.cutoff_voltage_mv=3200
 sched.colocate.enable=1
 
 ro.sf.hwrotation=90
+
+ro.config.zram=true
