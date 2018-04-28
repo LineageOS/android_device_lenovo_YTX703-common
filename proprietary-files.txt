@@ -1,9 +1,7 @@
 #
 # Please keep the lines alphabetically sorted
 #
--app/MediaHub/MediaHub.apk
 -app/TimeService/TimeService.apk:priv-app/TimeService/TimeService.apk
--app/com.qualcomm.qti.services.secureui/com.qualcomm.qti.services.secureui.apk
 bin/adsprpcd
 bin/btnvtool
 bin/cnd
@@ -31,7 +29,6 @@ bin/sensors.qcom
 bin/time_daemon
 bin/tftp_server
 bin/wcnss_filter
-bin/wfdservice
 bin/xtwifi-client
 bin/xtwifi-inet-agent
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
@@ -71,7 +68,6 @@ etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Headset_cal.acdb
 etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Speaker_cal.acdb
 -framework/ConnectivityExt.jar
 -framework/QtiTelephonyServicelibrary.jar
--framework/WfdCommon.jar
 -framework/com.qti.location.sdk.jar
 -framework/com.qti.snapdragon.sdk.display.jar
 -framework/dpmapi.jar
@@ -92,7 +88,6 @@ lib64/libloc_ds_api.so
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/ims/ims.apk
--vendor/app/WfdService/WfdService.apk:app/WfdService/WfdService.apk
 vendor/bin/mm-pp-daemon
 vendor/bin/perfd
 vendor/bin/qti
@@ -135,7 +130,6 @@ vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpcommon.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
-vendor/lib/libFileMux.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
@@ -148,7 +142,6 @@ vendor/lib/libOpenCL.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libQtiTether.so
 vendor/lib/libRSDriver_adreno.so
-vendor/lib/libSecureUILib.so
 vendor/lib/libTimeService.so
 #vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/libacdb-fts.so
@@ -788,19 +781,12 @@ vendor/lib/libmmcamera_tuning_lookup.so
 vendor/lib/libmmcamera_ubifocus_lib.so
 vendor/lib/libmmcamera_vpu_module.so
 vendor/lib/libmmjpeg.so
-vendor/lib/libmmosal.so
-vendor/lib/libmmparser_lite.so
-vendor/lib/libmmrtpdecoder.so
-vendor/lib/libmmrtpencoder.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
 vendor/lib/libmmsw_detail_enhancement.so
 vendor/lib/libmmsw_math.so
 vendor/lib/libmmsw_opencl.so
 vendor/lib/libmmsw_platform.so
-vendor/lib/libmmwfdinterface.so
-vendor/lib/libmmwfdsinkinterface.so
-vendor/lib/libmmwfdsrcinterface.so
 vendor/lib/libnetmgr.so
 vendor/lib/liboemcrypto.so
 vendor/lib/liboptizoom.so
@@ -837,9 +823,6 @@ vendor/lib/libscale.so
 #vendor/lib/libsblcv.so
 vendor/lib/libsd_sdk_display.so
 #vendor/lib/libsecnativefeature.so
-vendor/lib/libsecureui.so
-vendor/lib/libsecureui_svcsock.so
-vendor/lib/libsecureuisvc_jni.so
 vendor/lib/libseemore.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
@@ -852,21 +835,6 @@ vendor/lib/libthermalclient.so
 vendor/lib/libtsvideoprocess.so
 vendor/lib/libubifocus.so
 vendor/lib/libvendorconn.so
-vendor/lib/libwfdavenhancements.so
-vendor/lib/libwfdcommonutils.so
-vendor/lib/libwfdhdcpcp.so
-vendor/lib/libwfdmmsink.so
-vendor/lib/libwfdmmsrc.so
-vendor/lib/libwfdmmutils.so
-vendor/lib/libwfdnative.so
-vendor/lib/libwfdrtsp.so
-vendor/lib/libwfdservice.so
-vendor/lib/libwfdsm.so
-vendor/lib/libwfduibcinterface.so
-vendor/lib/libwfduibcsink.so
-vendor/lib/libwfduibcsinkinterface.so
-vendor/lib/libwfduibcsrc.so
-vendor/lib/libwfduibcsrcinterface.so
 #vendor/lib/libwvdrm_L1.so
 #vendor/lib/libwvm.so
 vendor/lib/libxml.so
@@ -910,7 +878,6 @@ vendor/lib64/lib-sec-disp.so
 #vendor/lib64/libcneconn.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libCB.so
-vendor/lib64/libFileMux.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libOpenCL.so

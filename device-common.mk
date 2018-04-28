@@ -112,8 +112,6 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
-    libstagefright_wfd \
-    libmm-omxcore \
 
 # Power
 PRODUCT_PACKAGES += \
@@ -159,10 +157,6 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
     libipanat \
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 
 #
 # PRODUCT_COPY_FILES rules
@@ -242,10 +236,6 @@ PRODUCT_COPY_FILES += $(foreach sensor_config, $(wildcard $(LOCAL_PATH)/configs/
 PRODUCT_COPY_FILES += $(foreach wifi_config, $(wildcard $(LOCAL_PATH)/configs/wifi/*), \
     $(wifi_config):$(addprefix system/etc/wifi/, $(notdir $(wifi_config))) ) \
     $(LOCAL_PATH)/configs/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-
-# Wi-Fi Display (WFD) configuration files
-PRODUCT_COPY_FILES += $(foreach wfd_config, $(wildcard $(LOCAL_PATH)/configs/wifi-display/*), \
-    $(wfd_config):$(addprefix system/etc/, $(notdir $(wfd_config))) ) \
 
 # Cellular data configuration files
 PRODUCT_COPY_FILES += $(foreach data_config, $(wildcard $(LOCAL_PATH)/configs/data/*), \
