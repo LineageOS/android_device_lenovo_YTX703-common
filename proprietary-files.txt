@@ -1,6 +1,7 @@
 #
 # Please keep the lines alphabetically sorted
 #
+-app/MediaHub/MediaHub.apk
 -app/TimeService/TimeService.apk:priv-app/TimeService/TimeService.apk
 -app/com.qualcomm.qti.services.secureui/com.qualcomm.qti.services.secureui.apk
 bin/adsprpcd
