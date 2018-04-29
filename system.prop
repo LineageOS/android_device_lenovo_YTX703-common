@@ -120,3 +120,25 @@ ro.config.zram=true
 # 0 - Disables CnE  #
 persist.dpm.feature=4
 
+
+#
+# Imported from vendor/default.prop
+#
+
+# enable face beautification
+#persist.ts.postmakeup=true
+#persist.ts.rtmakeup=true
+
+# disable CM's blacklist
+#ro.telephony.cm_blklst_on=0
+
+#
+# PROPERTIES FOR IMS
+#
+persist.dbg.ims_volte_enable=1
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.radio.videopause.mode=1
+persist.data.iwlan.enable=true
+persist.dbg.wfc_avail_ovr=1
+
