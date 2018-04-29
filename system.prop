@@ -113,3 +113,10 @@ ro.cutoff_voltage_mv=3200
 ro.sf.hwrotation=90
 
 ro.config.zram=true
+
+# system props for the cne module #
+# 4 - enable NSRM adb root;#
+# 1 - Only CnE is enabled; NSRM, FMC, and WQE are disabled#
+# 0 - Disables CnE  #
+persist.dpm.feature=4
+
