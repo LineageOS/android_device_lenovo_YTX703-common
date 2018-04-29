@@ -258,4 +258,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dpm/dpm.conf:system/etc/dpm/dpm.conf \
     $(LOCAL_PATH)/configs/dpm/nsrm/NsrmConfiguration.xml:system/etc/dpm/nsrm/NsrmConfiguration.xml \
 
+# Configs for msm_irqbalance
+PRODUCT_COPY_FILES += $(foreach irqbalance_config, $(wildcard $(LOCAL_PATH)/configs/irqbalance/*), \
+    $(irqbalance_config):$(addprefix system/vendor/etc/, $(notdir $(irqbalance_config))) )
 

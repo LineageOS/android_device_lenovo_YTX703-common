@@ -87,8 +87,6 @@ vendor/bin/perfd
 vendor/bin/qti
 vendor/bin/slim_daemon
 vendor/bin/thermal-engine
-vendor/etc/msm_irqbalance.conf
-vendor/etc/msm_irqbalance_little_big.conf
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
