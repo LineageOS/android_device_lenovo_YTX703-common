@@ -1,7 +1,7 @@
 #
 # Please keep the lines alphabetically sorted
 #
--app/TimeService/TimeService.apk:priv-app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk
 bin/adsprpcd
 bin/btnvtool
 bin/cnd
