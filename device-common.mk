@@ -25,9 +25,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal large xlarge
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2560
-TARGET_SCREEN_WIDTH := 1600
+# Needed by vendor/cm/bootanimation/
+TARGET_SCREEN_WIDTH  := 2560
+TARGET_SCREEN_HEIGHT := 1600
 
 # Device characteristics
 PRODUCT_CHARACTERISTICS := tablet
