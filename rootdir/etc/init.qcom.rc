@@ -458,7 +458,7 @@ on property:hw.fm.init=0
 on property:hw.fm.init=1
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
-# Adjust socket buffer to enlarge TCP receive window for high bandwidth
+# Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
 # but only if ro.data.large_tcp_window_size property is set.
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
@@ -512,10 +512,6 @@ service cnss-daemon /system/bin/cnss-daemon -n -l
     class late_start
     user system
     group system inet net_admin wifi
-
-on property:ro.data.large_tcp_window_size=true
-    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
 service charger /charger
     class charger
