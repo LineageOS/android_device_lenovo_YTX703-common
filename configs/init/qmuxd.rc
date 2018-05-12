@@ -1,0 +1,10 @@
+# vim: set ft=sh:
+
+# QMUX must be in multiple groups to support external process connections
+service qmuxd /system/bin/qmuxd
+    class main
+    user root
+    group radio audio bluetooth gps nfc qcom_diag
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+

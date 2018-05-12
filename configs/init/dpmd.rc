@@ -1,0 +1,7 @@
+# vim: set ft=sh:
+
+service dpmd /system/bin/dpmd
+    class late_start
+    socket dpmd stream 660 root system
+    socket dpmd stream 660 root system
+

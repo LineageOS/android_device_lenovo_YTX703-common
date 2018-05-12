@@ -1,0 +1,8 @@
+# vim: set ft=sh:
+
+service ipacm /system/bin/ipacm
+    class main
+    user net_admin
+    group net_admin inet
+    disabled
+

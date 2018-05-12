@@ -1,0 +1,9 @@
+# vim: set ft=sh:
+
+service qti /system/vendor/bin/qti
+    class main
+    user radio
+    group radio net_raw qcom_diag usb net_admin
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+

@@ -1,0 +1,9 @@
+# vim: set ft=sh:
+
+service timekeep /system/bin/timekeep restore
+    class late_start
+    user root
+    group root
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
+

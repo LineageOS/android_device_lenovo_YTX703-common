@@ -262,3 +262,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += $(foreach irqbalance_config, $(wildcard $(LOCAL_PATH)/configs/irqbalance/*), \
     $(irqbalance_config):$(addprefix system/vendor/etc/, $(notdir $(irqbalance_config))) )
 
+# Vendor-provided service definitions (executed by init scripts)
+PRODUCT_COPY_FILES += $(foreach service, $(wildcard $(LOCAL_PATH)/configs/init/*), \
+    $(service):$(addprefix system/etc/init/, $(notdir $(service))) )
+

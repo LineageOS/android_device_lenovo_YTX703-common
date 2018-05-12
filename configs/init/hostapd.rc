@@ -1,0 +1,9 @@
+# vim: set ft=sh:
+
+service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
+    class late_start
+    user root
+    group root
+    oneshot
+    disabled
+

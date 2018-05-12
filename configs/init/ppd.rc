@@ -1,0 +1,9 @@
+# vim: set ft=sh:
+
+service ppd /system/vendor/bin/mm-pp-daemon
+    class late_start
+    disabled
+    user system
+    socket pps stream 0660 system system
+    group system graphics
+

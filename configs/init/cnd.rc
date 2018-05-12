@@ -1,0 +1,7 @@
+# vim: set ft=sh:
+
+service cnd /system/bin/cnd
+    class late_start
+    socket cnd stream 660 root inet
+    writepid /dev/cpuset/system-background/task
+

@@ -1,0 +1,8 @@
+# vim: set ft=sh:
+
+service msm_irqbal_lb /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance_little_big.conf
+    class core
+    user root
+    group root
+    writepid /dev/cpuset/system-background/tasks
+
