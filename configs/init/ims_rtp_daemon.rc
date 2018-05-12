@@ -1,9 +1,0 @@
-# vim: set ft=sh:
-
-service ims_rtp_daemon /system/bin/ims_rtp_daemon
-   class main
-   user system
-   socket ims_rtpd stream 0660 system radio
-   group radio diag inet log
-   disabled
-
