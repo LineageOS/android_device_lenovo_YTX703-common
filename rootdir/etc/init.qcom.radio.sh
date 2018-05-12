@@ -82,7 +82,6 @@ case "$baseband" in
 
 "msm")
     start qmuxd
-    start ipacm-diag
     start ipacm
     # persist.radio.multisim.config = ssss
     # no reason to perform any multisim operation or checks
