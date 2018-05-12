@@ -1,4 +1,5 @@
 # vim: set ft=sh:
+
 service port-bridge /system/bin/port-bridge /dev/mhi_pipe_32 /dev/ttyGS0
     class main
     user radio system
@@ -6,7 +7,3 @@ service port-bridge /system/bin/port-bridge /dev/mhi_pipe_32 /dev/ttyGS0
     disabled
     oneshot
 
-service qcom-radio-sh /system/bin/sh /init.qcom.radio.sh
-    class main
-    user root
-    oneshot

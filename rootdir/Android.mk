@@ -51,16 +51,6 @@ LOCAL_MODULE_CLASS	:= ETC
 LOCAL_SRC_FILES		:= etc/init.qcom.bt.sh
 include $(BUILD_PREBUILT)
 
-# Device-specific scripts
-
-include $(CLEAR_VARS)
-LOCAL_MODULE       := init.target.rc
-LOCAL_MODULE_TAGS  := optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.$(TARGET_DEVICE).rc
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
-include $(BUILD_PREBUILT)
-
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qcom.radio.sh
 LOCAL_MODULE_TAGS  := optional
