@@ -5,13 +5,6 @@ service qcom-post_boot /system/bin/sh /init.qcom.post_boot.sh
     disabled
     oneshot
 
-# Allow usb charging to be disabled persistently
-on property:persist.usb.chgdisabled=1
-    write /sys/class/power_supply/battery/charging_enabled 0
-
-on property:persist.usb.chgdisabled=0
-    write /sys/class/power_supply/battery/charging_enabled 1
-
 on charger
     wait /dev/block/bootdevice/by-name/data
     mount ext4 /dev/block/bootdevice/by-name/userdata /data
