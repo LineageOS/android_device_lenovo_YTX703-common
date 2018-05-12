@@ -1,9 +1,4 @@
 # vim: set ft=sh:
-service qcom-post_boot /system/bin/sh /init.qcom.post_boot.sh
-    class main
-    user root
-    disabled
-    oneshot
 
 on charger
     wait /dev/block/bootdevice/by-name/data
@@ -12,14 +7,9 @@ on charger
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
     load_all_props
     setprop persist.sys.usb.config mass_storage
-    start qcom-post_boot
+    start qcom-post_boot-sh
     setprop persist.sys.usb.config mass_storage
     start hvdcp_opti
-
-service hvdcp_opti /system/vendor/bin/hvdcp_opti
-    class main
-    user root
-    group root
 
 on boot
     # add a cpuset for the camera daemon

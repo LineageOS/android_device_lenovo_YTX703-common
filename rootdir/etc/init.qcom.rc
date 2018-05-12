@@ -373,7 +373,7 @@ on property:ro.config.zram=true
     write /proc/sys/vm/swappiness 100
 
 on boot
-    start qcom-post_boot
+    start qcom-post_boot-sh
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
