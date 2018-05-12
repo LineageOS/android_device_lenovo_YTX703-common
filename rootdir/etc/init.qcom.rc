@@ -272,10 +272,6 @@ on post-fs-data
     chmod 664 /persist/sensors/sensors_settings
     chown system root /persist/sensors/sensors_settings
 
-    # Create FM dir for patchdownloader
-    mkdir /data/misc/fm 0770 system system
-    chmod 0770 /data/misc/fm
-
     # Mark the copy complete flag to not completed
     write /data/misc/radio/copy_complete 0
     chown radio radio /data/misc/radio/copy_complete
