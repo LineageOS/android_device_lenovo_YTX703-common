@@ -29,6 +29,11 @@
 import init.qcom.power.rc
 import init.qcom.usb.rc
 
+service charger /charger
+    class charger
+    group system graphics
+    seclabel u:r:healthd:s0
+
 on early-init
     mkdir /firmware 0771 system system
     mkdir /system 0777 root root
