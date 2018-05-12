@@ -291,16 +291,6 @@ on post-fs-data
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/audio_pp 0771 media audio
 
-    # Fingerprint
-    mkdir /dev/validity 0770 system system
-    mkdir /data/validity 0770 system system
-
-    chmod 0660 /dev/vfsspi
-    chown system system /dev/vfsspi
-    chown system radio /sys/class/fingerprint/fingerprint/type_check
-    chown system radio /sys/class/fingerprint/fingerprint/name
-    chown system radio /sys/class/fingerprint/fingerprint/vendor
-
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
     write /sys/block/dm-0/queue/read_ahead_kb 128
