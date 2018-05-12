@@ -74,39 +74,18 @@ datamode=`getprop persist.data.mode`
 netmgr=`getprop ro.use_data_netmgrd`
 
 case "$baseband" in
-    "apq")
+"apq")
+    # YTX703F / YTX703X
     setprop ro.radio.noril yes
     stop ril-daemon
-esac
+    ;;
 
-case "$baseband" in
-    "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3")
+"msm")
     start qmuxd
     start ipacm-diag
     start ipacm
-    case "$baseband" in
-        "svlte2a" | "csfb")
-          start qmiproxy
-        ;;
-        "sglte" | "sglte2" )
-          if [ "x$sgltecsfb" != "xtrue" ]; then
-              start qmiproxy
-          else
-              setprop persist.radio.voice.modem.index 0
-          fi
-        ;;
-        "dsda2")
-          setprop persist.radio.multisim.config dsda
-    esac
-
-    multisim=`getprop persist.radio.multisim.config`
-
-    if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
-        start ril-daemon2
-    elif [ "$multisim" = "tsts" ]; then
-        start ril-daemon2
-        start ril-daemon3
-    fi
+    # persist.radio.multisim.config = ssss
+    # no reason to perform any multisim operation or checks
 
     case "$datamode" in
         "tethered")
@@ -125,4 +104,7 @@ case "$baseband" in
             fi
             ;;
     esac
+    ;;
+*)
+    echo "ERROR: Invalid baseband $baseband!"
 esac
