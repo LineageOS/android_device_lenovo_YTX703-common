@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service qcom-post_boot-sh /system/bin/sh /init.qcom.post_boot.sh
+service qcom-post_boot /system/bin/sh /init.qcom.post_boot.sh
     class main
     user root
     disabled
