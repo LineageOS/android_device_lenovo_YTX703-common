@@ -2254,6 +2254,10 @@ int QCamera2HardwareInterface::initCapabilities(uint32_t cameraId,
     }
     memcpy(gCamCapability[cameraId], DATA_PTR(capabilityHeap,0),
                                         sizeof(cam_capability_t));
+    /* Fixup for sensor_mount_angle capability */
+    ALOGE("%s: WARNING: Sensor %d mount angle fixup: overriding from %d to 0\n",
+          __func__, cameraId, gCamCapability[cameraId]->sensor_mount_angle);
+    gCamCapability[cameraId]->sensor_mount_angle = 0;
 
     rc = NO_ERROR;
 
