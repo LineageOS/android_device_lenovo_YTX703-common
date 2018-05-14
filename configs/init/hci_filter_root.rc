@@ -6,3 +6,8 @@ service hci_filter_root /system/bin/wcnss_filter
     group bluetooth qcom_diag system
     disabled
 
+on property:wc_transport.start_root=true
+    start hci_filter_root
+
+on property:wc_transport.start_root=false
+    stop hci_filter_root

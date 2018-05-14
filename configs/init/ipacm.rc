@@ -6,3 +6,5 @@ service ipacm /system/bin/ipacm
     group net_admin inet
     disabled
 
+on post-fs-data
+    mkdir /data/misc/ipa 0700 net_admin net_admin

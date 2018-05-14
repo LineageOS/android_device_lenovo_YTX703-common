@@ -6,3 +6,6 @@ service wcnss-service /system/bin/wcnss_service
     group system wifi radio
     oneshot
 
+on property:vold.decrypt=trigger_restart_framework
+    start wcnss-service
+

@@ -5,3 +5,7 @@ service netmgrd /system/bin/netmgrd
     disabled
     writepid /dev/cpuset/system-background/tasks
 
+on boot
+    # Create NETMGR daemon socket area
+    mkdir /dev/socket/netmgr 0750 radio radio
+

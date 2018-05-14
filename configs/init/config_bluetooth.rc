@@ -5,3 +5,6 @@ service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     user root
     oneshot
 
+on property:vold.decrypt=trigger_restart_framework
+    start config_bluetooth
+

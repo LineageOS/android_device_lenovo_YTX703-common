@@ -6,3 +6,6 @@ service config_bt_addr /system/bin/btnvtool -O
     group bluetooth radio
     oneshot
 
+on property:vold.decrypt=trigger_restart_framework
+    start config_bt_addr
+

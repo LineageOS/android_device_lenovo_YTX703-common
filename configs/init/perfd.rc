@@ -6,3 +6,8 @@ service perfd /system/vendor/bin/perfd
     socket perfd seqpacket 0666 root system
     writepid /dev/cpuset/system-background/tasks
 
+on post-fs-data
+    # Create perfd daemon related dirs
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
+

@@ -7,3 +7,8 @@ service btsnoop /system/bin/btsnoop
    disabled
    oneshot
 
+on property:bluetooth.startbtsnoop=true
+    start btsnoop
+
+on property:bluetooth.startbtsnoop=false
+    stop btsnoop

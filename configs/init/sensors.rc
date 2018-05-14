@@ -5,3 +5,8 @@ service sensors /system/bin/sensors.qcom
     user root
     group root
 
+on post-fs-data
+    mkdir /persist/sensors 0775 system system
+    chmod 664 /persist/sensors/sensors_settings
+    chown system root /persist/sensors/sensors_settings
+

@@ -6,3 +6,8 @@ service qcom-post_boot /system/bin/sh /init.qcom.post_boot.sh
     disabled
     oneshot
 
+on boot
+    start qcom-post_boot
+
+# Also started "on charger", but that trigger needs to stay in
+# /init.qcom.power.rc, since the system partition is mounted manually
