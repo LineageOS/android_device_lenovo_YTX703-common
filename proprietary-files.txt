@@ -21,7 +21,6 @@ bin/qmuxd
 bin/qseecomd
 bin/rmt_storage
 bin/time_daemon
-bin/tftp_server
 bin/wcnss_filter
 bin/xtwifi-client
 bin/xtwifi-inet-agent
