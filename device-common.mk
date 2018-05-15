@@ -213,10 +213,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
-# Keylayout
-PRODUCT_COPY_FILES += $(foreach keylayout_config, $(wildcard $(LOCAL_PATH)/configs/keylayout/*), \
-    $(keylayout_config):$(addprefix system/usr/keylayout/, $(notdir $(keylayout_config))) )
-
 # Device-specific codec configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_8956_v1.xml:system/etc/media_codecs.xml \
