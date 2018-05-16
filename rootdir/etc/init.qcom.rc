@@ -59,32 +59,38 @@ service charger /charger
     seclabel u:r:healthd:s0
 
 on early-init
-    mkdir /firmware 0771 system system
-    mkdir /system 0777 root root
     symlink /data/tombstones /tombstones
-    mkdir /dsp 0771 media media
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-
-    mkdir /userstore 0771 system system
-    mkdir /countrycode 0771 root root
-
-on init
-    # Set permissions for persist partition
-    mkdir /persist 0771 system system
-
-    # Set permissions for efs partition
-    #mkdir /efs 0771 system radio
-
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
-on fs
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+
+    mkdir /countrycode 0771 root root
+    mkdir /userstore 0771 system system
+    mkdir /firmware 0771 system system
+    mkdir /persist 0771 system system
+    mkdir /system 0777 root root
+    mkdir /dsp 0771 media media
+
+on init
     wait /dev/block/bootdevice
-    mount_all fstab.qcom
+    mount_all fstab.qcom --early
+
+    mkdir /persist/bluetooth 0770 bluetooth bluetooth
+    mkdir /persist/misc 0770 system system
+    mkdir /persist/data 0700 system system
+    mkdir /persist/drm 0770 system system
+    mkdir /persist/led 0700 system system
+    restorecon_recursive /persist
+
+on fs
     write /sys/kernel/boot_adsp/boot 1
     write /proc/sys/vm/swappiness 100
+
+on late-fs
+    mount_all fstab.qcom --late
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -130,8 +136,6 @@ on post-fs-data
 
     mkdir /data/audio/ 0770 media audio
 
-    setprop vold.post_fs_data_done 1
-
     # Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
 
@@ -157,6 +161,15 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/audio_pp 0771 media audio
+
+    # From /init.rc:
+    #   If there is no fs-post-data (sic) action in the init.<device>.rc file,
+    #   you must uncomment this line, otherwise encrypted filesystems
+    #   won't work.
+    #   Set indication (checked by vold) that we have finished this action
+    # Strangely, we appear to need to set this property even though
+    # we *do* have a post-fs-data action listener set up.
+    setprop vold.post_fs_data_done 1
 
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
@@ -204,14 +217,6 @@ on boot
 
     chown bluetooth bluetooth /sys/class/rfkill/rfkill4/device/rfkill4
     chmod 0660 /sys/class/rfkill/rfkill4/device/rfkill4
-
-    mkdir /persist/drm 0770 system system
-    mkdir /persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /persist/misc 0770 system system
-    mkdir /persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /persist/data 0700 system system
-    mkdir /persist/led 0700 system system
-    restorecon_recursive /persist
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
