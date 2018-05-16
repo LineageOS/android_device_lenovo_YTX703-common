@@ -212,15 +212,15 @@ PRODUCT_COPY_FILES += \
 
 # Device-specific audio configs
 PRODUCT_COPY_FILES += $(foreach audio_config, $(wildcard $(LOCAL_PATH)/configs/audio/*), \
-    $(audio_config):$(addprefix system/etc/, $(notdir $(audio_config))) )
+    $(audio_config):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/, $(notdir $(audio_config))) )
 
 # Standard audio configs
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
-    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:system/etc/default_volume_tables.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
 
 # IPC router config
 PRODUCT_COPY_FILES += \
@@ -228,24 +228,24 @@ PRODUCT_COPY_FILES += \
 
 # Device-specific codec configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/media_codecs_8956_v1.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media/media_profiles_8956.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_8956_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance_8956_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
 
 # Standard (software) codec configuration
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
 
 # Sensors configuration files
 PRODUCT_COPY_FILES += $(foreach sensor_config, $(wildcard $(LOCAL_PATH)/configs/sensors/*), \
-    $(sensor_config):$(addprefix system/etc/sensors/, $(notdir $(sensor_config))) )
+    $(sensor_config):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/sensors/, $(notdir $(sensor_config))) )
 
 # Wi-Fi and WCNSS configuration files
 PRODUCT_COPY_FILES += $(foreach wifi_config, $(wildcard $(LOCAL_PATH)/configs/wifi/*), \
-    $(wifi_config):$(addprefix system/etc/wifi/, $(notdir $(wifi_config))) ) \
-    $(LOCAL_PATH)/configs/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    $(wifi_config):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/wifi/, $(notdir $(wifi_config))) ) \
+    $(LOCAL_PATH)/configs/hostapd_default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd_default.conf \
 
 # Cellular data configuration files
 PRODUCT_COPY_FILES += $(foreach data_config, $(wildcard $(LOCAL_PATH)/configs/data/*), \
@@ -270,11 +270,11 @@ PRODUCT_COPY_FILES += \
 
 # Configs for msm_irqbalance
 PRODUCT_COPY_FILES += $(foreach irqbalance_config, $(wildcard $(LOCAL_PATH)/configs/irqbalance/*), \
-    $(irqbalance_config):$(addprefix system/vendor/etc/, $(notdir $(irqbalance_config))) )
+    $(irqbalance_config):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/, $(notdir $(irqbalance_config))) )
 
 # Vendor-provided service definitions (executed by init scripts)
 PRODUCT_COPY_FILES += $(foreach service, $(wildcard $(LOCAL_PATH)/configs/init/*), \
-    $(service):$(addprefix system/etc/init/, $(notdir $(service))) )
+    $(service):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/init/, $(notdir $(service))) )
 
 #
 # Ramdisk symlinks.
@@ -340,10 +340,10 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
 #
 # The /vendor/firmware symlink is required by qseecomd.
 BOARD_SYSTEM_EXTRA_SYMLINKS += \
-    /system/etc/firmware:vendor/firmware \
-    /system/etc/wifi/WCNSS_qcom_cfg.ini:etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    /system/etc/wifi/WCNSS_wlan_dictionary.dat:etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
-    /system/etc/wifi/WCNSS_qcom_wlan_nv.bin:etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    /vendor/etc/wifi/WCNSS_qcom_cfg.ini:etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    /vendor/etc/wifi/WCNSS_wlan_dictionary.dat:etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
+    /vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin:etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    /vendor/etc/sensors:etc/sensors
 
 # HIDL
 $(call inherit-product, $(LOCAL_PATH)/common-treble.mk)
