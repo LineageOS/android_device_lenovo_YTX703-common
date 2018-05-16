@@ -59,6 +59,10 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     tinymix
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
