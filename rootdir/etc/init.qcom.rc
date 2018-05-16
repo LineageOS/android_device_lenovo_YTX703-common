@@ -94,6 +94,9 @@ on fs
 on late-fs
     mount_all fstab.qcom --late
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 # msm specific files that need to be created on /data
 on post-fs-data
     # Create the directories used by CnE subsystem
