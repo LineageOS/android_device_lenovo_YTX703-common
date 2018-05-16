@@ -115,10 +115,9 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_USES_LINEAGE_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    $(VENDOR_PATH)/cmhw
+    hardware/lineage/lineagehw
 
 # Dex
 ifeq ($(HOST_OS),linux)
