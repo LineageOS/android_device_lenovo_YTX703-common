@@ -4,7 +4,7 @@
 $(call inherit-product, device/lenovo/YTX703-common/YTX703L/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 PRODUCT_NAME := lineage_YTX703L
 PRODUCT_BRAND := Lenovo
