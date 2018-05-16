@@ -9194,21 +9194,32 @@ void *QCamera2HardwareInterface::deferredWorkRoutine(void *obj)
                         pme->mParameters.init(cap,
                                 pme->mCameraHandle,
                                 pme);
-                        rc = pme->mParameters.getRelatedCamCalibration(
-                            &(pme->mJpegMetadata.otp_calibration_data));
-                        CDBG("%s: Dumping Calibration Data Version Id %f rc %d",
-                                __func__,
-                                pme->mJpegMetadata.otp_calibration_data.calibration_format_version,
-                                rc);
                         if (rc != 0) {
-                            pthread_mutex_unlock(&pme->m_parm_lock);
-                            ALOGE("getRelatedCamCalibration failed");
-                            pme->mCameraHandle->ops->close_camera(
-                                pme->mCameraHandle->camera_handle);
-                            pme->mCameraHandle = NULL;
+                            ALOGE("Parameter Initialization failed");
+                            pme->sendEvtNotify(CAMERA_MSG_ERROR,
+                                    CAMERA_ERROR_UNKNOWN, 0);
                             break;
                         }
-                        pme->m_bRelCamCalibValid = true;
+                        // Get related cam calibration only in
+                        // dual camera mode
+                        if (pme->getRelatedCamSyncInfo()->sync_control ==
+                                CAM_SYNC_RELATED_SENSORS_ON) {
+                                rc = pme->mParameters.getRelatedCamCalibration(
+                                     &(pme->mJpegMetadata.otp_calibration_data));
+                                CDBG("%s: Dumping Calibration Data Version Id %f rc %d",
+                                     __func__,
+                                     pme->mJpegMetadata.otp_calibration_data.calibration_format_version,
+                                     rc);
+                                if (rc != 0) {
+                                     pthread_mutex_unlock(&pme->m_parm_lock);
+                                     ALOGE("getRelatedCamCalibration failed");
+                                     pme->mCameraHandle->ops->close_camera(
+                                     pme->mCameraHandle->camera_handle);
+                                     pme->mCameraHandle = NULL;
+                                     break;
+                                }
+                            pme->m_bRelCamCalibValid = true;
+                        }
                         pme->mJpegMetadata.sensor_mount_angle  =
                             cap->sensor_mount_angle;
                         pme->mJpegMetadata.default_sensor_flip = FLIP_NONE;
