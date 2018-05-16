@@ -168,9 +168,6 @@
         <item>mobile_emergency,15,0,5,-1,true</item>
     </string-array>
 
-    <!-- This device is not "voice capable"; it's data-only. -->
-    <bool name="config_voice_capable">false</bool>
-
     <!-- This string array should be overridden by the device to present a list of radio
          attributes.  This is used by the connectivity manager to decide which networks can coexist
          based on the hardware -->
@@ -185,9 +182,6 @@
     <!-- If true, the screen can be rotated via the accelerometer in all 4
          rotations as the default behavior. -->
     <bool name="config_allowAllRotations">true</bool>
-
-    <!-- Diable option for lockscreen rotation; overridden via system prop -->
-    <bool name="config_enableLockScreenRotation">false</bool>
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
@@ -248,7 +242,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">64</integer>
+<!--    <integer name="config_deviceHardwareKeys">64</integer> -->
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -262,7 +256,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">0</integer>
+<!--    <integer name="config_deviceHardwareWakeKeys">0</integer> -->
 
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
@@ -274,7 +268,7 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
-    <integer name="config_longPressOnHomeBehavior">0</integer>
+<!--    <integer name="config_longPressOnHomeBehavior">0</integer> -->
 
     <!-- Control the behavior when the user long presses the app switch button.
             0 - Nothing
@@ -286,7 +280,7 @@
          This needs to match the constants in
          services/core/java/com/android/server/policy/policy/impl/PhoneWindowManager.java
     -->
-    <integer name="config_longPressOnAppSwitchBehavior">0</integer>
+<!--    <integer name="config_longPressOnAppSwitchBehavior">0</integer> -->
 
     <!-- Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
@@ -367,13 +361,15 @@
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
 
     <!-- Allow the gesture to double tap the power button twice to start the camera while the device
          is non-interactive. -->
-    <bool name="config_cameraDoubleTapPowerGestureEnabled">true</bool>
+    <bool name="config_cameraDoubleTapPowerGestureEnabled">false</bool>
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
+
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
 </resources>
