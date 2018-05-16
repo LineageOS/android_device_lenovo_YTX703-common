@@ -39,6 +39,8 @@
 #include <gralloc_priv.h>
 #include <utils/Log.h>
 #include <utils/Errors.h>
+#include <utils/Timers.h>
+#include <sys/stat.h>
 #include <cutils/properties.h>
 #include "QCamera3Channel.h"
 #include "QCamera3HWI.h"
@@ -1488,7 +1490,7 @@ void QCamera3RawDumpChannel::dumpRawSnapshot(mm_camera_buf_def_t *frame)
  * RETURN          : NA
  *==========================================================================*/
 void QCamera3RawDumpChannel::streamCbRoutine(mm_camera_super_buf_t *super_frame,
-                                                QCamera3Stream *stream)
+                                                __attribute__((unused)) QCamera3Stream *stream)
 {
     CDBG("%s: E",__func__);
     if (super_frame == NULL || super_frame->num_bufs != 1) {
@@ -2518,21 +2520,17 @@ int32_t getExifLatitude(rat_t *latitude,
 {
     char str[30];
     snprintf(str, sizeof(str), "%f", value);
-    if(str != NULL) {
-        parseGPSCoordinate(str, latitude);
+	parseGPSCoordinate(str, latitude);
 
-        //set Latitude Ref
-        float latitudeValue = strtof(str, 0);
-        if(latitudeValue < 0.0f) {
-            latRef[0] = 'S';
-        } else {
-            latRef[0] = 'N';
-        }
-        latRef[1] = '\0';
-        return NO_ERROR;
-    }else{
-        return BAD_VALUE;
-    }
+	//set Latitude Ref
+	float latitudeValue = strtof(str, 0);
+	if(latitudeValue < 0.0f) {
+		latRef[0] = 'S';
+	} else {
+		latRef[0] = 'N';
+	}
+	latRef[1] = '\0';
+	return NO_ERROR;
 }
 
 /*===========================================================================
@@ -2553,21 +2551,17 @@ int32_t getExifLongitude(rat_t *longitude,
 {
     char str[30];
     snprintf(str, sizeof(str), "%f", value);
-    if(str != NULL) {
-        parseGPSCoordinate(str, longitude);
+    parseGPSCoordinate(str, longitude);
 
-        //set Longitude Ref
-        float longitudeValue = strtof(str, 0);
-        if(longitudeValue < 0.0f) {
-            lonRef[0] = 'W';
-        } else {
-            lonRef[0] = 'E';
-        }
-        lonRef[1] = '\0';
-        return NO_ERROR;
-    }else{
-        return BAD_VALUE;
+    //set Longitude Ref
+    float longitudeValue = strtof(str, 0);
+    if(longitudeValue < 0.0f) {
+        lonRef[0] = 'W';
+    } else {
+        lonRef[0] = 'E';
     }
+    lonRef[1] = '\0';
+    return NO_ERROR;
 }
 
 /*===========================================================================
@@ -2588,7 +2582,6 @@ int32_t getExifAltitude(rat_t *altitude, char *altRef, double argValue)
 {
     char str[30];
     snprintf(str, sizeof(str), "%f", argValue);
-    if (str != NULL) {
         double value = atof(str);
         *altRef = 0;
         if(value < 0){
@@ -2596,9 +2589,6 @@ int32_t getExifAltitude(rat_t *altitude, char *altRef, double argValue)
             value = -value;
         }
         return getRational(altitude, (int)(value * 1000), 1000);
-    } else {
-        return BAD_VALUE;
-    }
 }
 
 /*===========================================================================
@@ -2621,23 +2611,19 @@ int32_t getExifGpsDateTimeStamp(char *gpsDateStamp,
 {
     char str[30];
     snprintf(str, sizeof(str), "%lld", (long long int)value);
-    if(str != NULL) {
-        time_t unixTime = (time_t)atol(str);
-        struct tm *UTCTimestamp = gmtime(&unixTime);
-        if (UTCTimestamp != NULL) {
-            strftime(gpsDateStamp, bufLen, "%Y:%m:%d", UTCTimestamp);
+	time_t unixTime = (time_t)atol(str);
+	struct tm *UTCTimestamp = gmtime(&unixTime);
+	if (UTCTimestamp != NULL) {
+		strftime(gpsDateStamp, bufLen, "%Y:%m:%d", UTCTimestamp);
 
-            getRational(&gpsTimeStamp[0], UTCTimestamp->tm_hour, 1);
-            getRational(&gpsTimeStamp[1], UTCTimestamp->tm_min, 1);
-            getRational(&gpsTimeStamp[2], UTCTimestamp->tm_sec, 1);
-            return NO_ERROR;
-        } else {
-            ALOGE("%s: Could not get the timestamp", __func__);
-            return BAD_VALUE;
-        }
-    } else {
-        return BAD_VALUE;
-    }
+		getRational(&gpsTimeStamp[0], UTCTimestamp->tm_hour, 1);
+		getRational(&gpsTimeStamp[1], UTCTimestamp->tm_min, 1);
+		getRational(&gpsTimeStamp[2], UTCTimestamp->tm_sec, 1);
+		return NO_ERROR;
+	} else {
+		ALOGE("%s: Could not get the timestamp", __func__);
+		return BAD_VALUE;
+	}
 }
 
 int32_t getExifExposureValue(srat_t* exposure_val, int32_t exposure_comp,
@@ -2669,8 +2655,8 @@ QCamera3Exif *QCamera3PicChannel::getExifData(metadata_buffer_t *metadata,
     uint32_t count = 0;
 
     // add exif entries
-    String8 dateTime;
-    String8 subsecTime;
+    String8 dateTime("");
+    String8 subsecTime("");
     rc = getExifDateTime(dateTime, subsecTime);
     if (rc == NO_ERROR) {
         exif->addEntry(EXIFTAGID_DATE_TIME, EXIF_ASCII,

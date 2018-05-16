@@ -10,6 +10,7 @@ LOCAL_SHARED_LIBRARIES:= \
     libui \
     libutils \
     libcutils \
+    liblog \
     libbinder \
     libmedia \
     libui \
@@ -37,7 +38,7 @@ LOCAL_C_INCLUDES += \
     external/skia/include/core \
     external/skia/include/images \
     $(TARGET_OUT_HEADERS)/qcom/display \
-    hardware/qcom/camera/QCamera2/stack/common \
+    device/lenovo/msm8976-common/camera/QCamera2/stack/common \
     frameworks/av/include/media/stagefright \
     frameworks/native/include/media/openmax \
     $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
@@ -48,7 +49,7 @@ LOCAL_MODULE_TAGS:= tests
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter
 LOCAL_CFLAGS += -O0
-LOCAL_CLANG := false
+#LOCAL_CLANG := false
 
 ifeq (1,$(filter 1,$(shell echo "$$(( $(PLATFORM_SDK_VERSION) >= 20 ))" )))
 

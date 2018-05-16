@@ -273,15 +273,15 @@ const QCamera3HardwareInterface::QCameraMap<
 };
 
 camera3_device_ops_t QCamera3HardwareInterface::mCameraOps = {
-    initialize:                         QCamera3HardwareInterface::initialize,
-    configure_streams:                  QCamera3HardwareInterface::configure_streams,
-    register_stream_buffers:            NULL,
-    construct_default_request_settings: QCamera3HardwareInterface::construct_default_request_settings,
-    process_capture_request:            QCamera3HardwareInterface::process_capture_request,
-    get_metadata_vendor_tag_ops:        NULL,
-    dump:                               QCamera3HardwareInterface::dump,
-    flush:                              QCamera3HardwareInterface::flush,
-    reserved:                           {0},
+    .initialize                        = QCamera3HardwareInterface::initialize,
+    .configure_streams                 = QCamera3HardwareInterface::configure_streams,
+    .register_stream_buffers           = NULL,
+    .construct_default_request_settings= QCamera3HardwareInterface::construct_default_request_settings,
+    .process_capture_request           = QCamera3HardwareInterface::process_capture_request,
+    .get_metadata_vendor_tag_ops       = NULL,
+    .dump                              = QCamera3HardwareInterface::dump,
+    .flush                             = QCamera3HardwareInterface::flush,
+    .reserved                          = {0},
 };
 
 /*===========================================================================
@@ -757,7 +757,7 @@ int QCamera3HardwareInterface::validateStreamDimensions(
         camera3_stream_configuration_t *streamList)
 {
     int rc = NO_ERROR;
-    int32_t available_processed_sizes[MAX_SIZES_CNT * 2];
+//QUALLE    int32_t available_processed_sizes[MAX_SIZES_CNT * 2];
     size_t count = 0;
 
     /*
@@ -766,7 +766,7 @@ int QCamera3HardwareInterface::validateStreamDimensions(
     */
     for (size_t j = 0; j < streamList->num_streams; j++) {
         bool sizeFound = false;
-        size_t jpeg_sizes_cnt = 0;
+//QUALLE        size_t jpeg_sizes_cnt = 0;
         camera3_stream_t *newStream = streamList->streams[j];
 
         /*
@@ -1086,7 +1086,7 @@ int QCamera3HardwareInterface::configureStreams(
     uint8_t eis_prop_set;
     uint32_t maxEisWidth = 0;
     uint32_t maxEisHeight = 0;
-    int32_t hal_version = CAM_HAL_V3;
+//QUALLE    int32_t hal_version = CAM_HAL_V3;
 
     size_t count = IS_TYPE_MAX;
     count = MIN(gCamCapability[mCameraId]->supported_is_types_cnt, count);
@@ -1712,7 +1712,7 @@ int QCamera3HardwareInterface::validateCaptureRequest(
         return BAD_VALUE;
     }
     if (request->num_output_buffers >= MAX_NUM_STREAMS) {
-        ALOGE("%s: Number of buffers %d equals or is greater than maximum number of streams!",
+        ALOGE("%s: Number of buffers %d equals or is greater than maximum number of streams ( %d )!",
                 __func__, request->num_output_buffers, MAX_NUM_STREAMS);
         return BAD_VALUE;
     }
@@ -3345,7 +3345,7 @@ int QCamera3HardwareInterface::flushPerf()
     }
 
     if (mPendingBuffersMap.num_buffers == 0) {
-        CDBG("%s: No pending buffers in the HAL, return flush");
+        CDBG("%s: No pending buffers in the HAL, return flush", __func__);
         mFlushPerf = false;
         pthread_mutex_unlock(&mMutex);
         return rc;
@@ -4627,7 +4627,7 @@ void QCamera3HardwareInterface::dumpMetadataToFile(tuning_params_t &meta,
                                                    const char *type,
                                                    uint32_t frameNumber)
 {
-    uint32_t frm_num = 0;
+//QUALLE    uint32_t frm_num = 0;
 
     //Some sanity checks
     if (meta.tuning_sensor_data_size > TUNING_SENSOR_DATA_MAX) {
@@ -5038,10 +5038,6 @@ int QCamera3HardwareInterface::initCapabilities(uint32_t cameraId)
     }
     memcpy(gCamCapability[cameraId], DATA_PTR(capabilityHeap,0),
                                         sizeof(cam_capability_t));
-    /* Fixup for sensor_mount_angle capability */
-    ALOGE("%s: WARNING: Sensor %d mount angle fixup: overriding from %d to 0\n",
-          __func__, cameraId, gCamCapability[cameraId]->sensor_mount_angle);
-    gCamCapability[cameraId]->sensor_mount_angle = 0;
     rc = 0;
 
 query_failed:
@@ -8290,7 +8286,7 @@ bool QCamera3HardwareInterface::needJpegRotation()
  *==========================================================================*/
 QCamera3ReprocessChannel *QCamera3HardwareInterface::addOfflineReprocChannel(
         const reprocess_config_t &config, QCamera3PicChannel *picChHandle,
-        metadata_buffer_t *metadata)
+        __attribute__((unused)) metadata_buffer_t *metadata)
 {
     int32_t rc = NO_ERROR;
     QCamera3ReprocessChannel *pChannel = NULL;

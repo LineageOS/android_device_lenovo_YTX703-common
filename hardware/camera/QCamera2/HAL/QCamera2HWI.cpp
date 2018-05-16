@@ -3916,7 +3916,7 @@ int32_t QCamera2HardwareInterface::configureHDRBracketing()
         mHDRBracketingEnabled = true;
     }
 
-    String8 tmp;
+    String8 tmp("");
     for (uint32_t i = 0; i < hdrFrameCount; i++) {
         tmp.appendFormat("%d",
             (int8_t) hdrBracketingSetting.exp_val.values[i]);
@@ -5153,7 +5153,7 @@ int QCamera2HardwareInterface::cancelLiveSnapshot()
 char* QCamera2HardwareInterface::getParameters()
 {
     char* strParams = NULL;
-    String8 str;
+    String8 str("");
 
     int cur_width, cur_height;
     pthread_mutex_lock(&m_parm_lock);
@@ -5165,7 +5165,7 @@ char* QCamera2HardwareInterface::getParameters()
         mParameters.m_reprocScaleParam.getPicSizeFromAPK(scale_width,scale_height);
         mParameters.getPictureSize(&cur_width, &cur_height);
 
-        String8 pic_size;
+        String8 pic_size("");
         char buffer[32];
         snprintf(buffer, sizeof(buffer), "%dx%d", scale_width, scale_height);
         pic_size.append(buffer);
@@ -5183,7 +5183,7 @@ char* QCamera2HardwareInterface::getParameters()
     if(mParameters.m_reprocScaleParam.isScaleEnabled() &&
         mParameters.m_reprocScaleParam.isUnderScaling()){
         //need set back picture size
-        String8 pic_size;
+        String8 pic_size("");
         char buffer[32];
         snprintf(buffer, sizeof(buffer), "%dx%d", cur_width, cur_height);
         pic_size.append(buffer);
@@ -8638,7 +8638,7 @@ QCameraExif *QCamera2HardwareInterface::getExifData()
     pthread_mutex_lock(&m_parm_lock);
 
     // add exif entries
-    String8 dateTime, subSecTime;
+    String8 dateTime(""), subSecTime("");
     rc = mParameters.getExifDateTime(dateTime, subSecTime);
     if(rc == NO_ERROR) {
         exif->addEntry(EXIFTAGID_DATE_TIME, EXIF_ASCII,
@@ -9170,7 +9170,9 @@ void *QCamera2HardwareInterface::deferredWorkRoutine(void *obj)
                     break;
                 case CMD_DEF_PARAM_ALLOC:
                     {
+                        pthread_mutex_lock(&pme->m_parm_lock);
                         pme->mParameters.allocate();
+                        pthread_mutex_unlock(&pme->m_parm_lock);
                     }
                     break;
                 case CMD_DEF_PARAM_INIT:
@@ -9192,7 +9194,6 @@ void *QCamera2HardwareInterface::deferredWorkRoutine(void *obj)
                         pme->mParameters.init(cap,
                                 pme->mCameraHandle,
                                 pme);
-                        pthread_mutex_unlock(&pme->m_parm_lock);
                         rc = pme->mParameters.getRelatedCamCalibration(
                             &(pme->mJpegMetadata.otp_calibration_data));
                         CDBG("%s: Dumping Calibration Data Version Id %f rc %d",
@@ -9200,6 +9201,7 @@ void *QCamera2HardwareInterface::deferredWorkRoutine(void *obj)
                                 pme->mJpegMetadata.otp_calibration_data.calibration_format_version,
                                 rc);
                         if (rc != 0) {
+                            pthread_mutex_unlock(&pme->m_parm_lock);
                             ALOGE("getRelatedCamCalibration failed");
                             pme->mCameraHandle->ops->close_camera(
                                 pme->mCameraHandle->camera_handle);
@@ -9213,6 +9215,7 @@ void *QCamera2HardwareInterface::deferredWorkRoutine(void *obj)
 
                         pme->mParameters.setMinPpMask(
                             cap->qcom_supported_feature_mask);
+                        pthread_mutex_unlock(&pme->m_parm_lock);
                         pme->mExifParams.debug_params =
                                 (mm_jpeg_debug_exif_params_t *)
                                 malloc(sizeof(mm_jpeg_debug_exif_params_t));
