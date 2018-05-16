@@ -340,3 +340,7 @@ BOARD_SYSTEM_EXTRA_SYMLINKS += \
     /system/etc/wifi/WCNSS_wlan_dictionary.dat:etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
     /system/etc/wifi/WCNSS_qcom_wlan_nv.bin:etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
 
+# HIDL
+$(call inherit-product, $(LOCAL_PATH)/common-treble.mk)
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+DEVICE_MATRIX_FILE   := $(LOCAL_PATH)/compatibility_matrix.xml
