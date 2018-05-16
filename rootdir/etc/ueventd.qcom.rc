@@ -139,8 +139,8 @@
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
-/sys/devices/soc/a000000.qcom,wcnss-wlan/net/wlan0/queues/rx-* rps_cpus           0660   system     system
-/sys/devices/soc/a000000.qcom,wcnss-wlan/net/p2p0/queues/rx-* rps_cpus            0660   system     system
+/sys/devices/soc.0/a000000.qcom,wcnss-wlan/net/wlan0/queues/rx-* rps_cpus           0660   system     system
+/sys/devices/soc.0/a000000.qcom,wcnss-wlan/net/p2p0/queues/rx-* rps_cpus            0660   system     system
 /dev/spidev0.0            0660   system     audio
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
@@ -225,14 +225,14 @@
 /sys/devices/virtual/optical_sensors/lightsensor    ls_poll_delay  0660    input    system
 /sys/devices/virtual/input/input*                   poll           0660    input    system
 /sys/devices/virtual/input/input*                   pollrate_ms    0660    input    system
-/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input*    secure_touch         0440   system  drmrpc
-/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input*    secure_touch_enable  0660   system  drmrpc
-/sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input*    secure_touch         0440   system  drmrpc
-/sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input*    secure_touch_enable  0660   system  drmrpc
-/sys/devices/soc/78b7000.i2c/i2c-3/3-004b/input/input*    secure_touch         0440   system  drmrpc
-/sys/devices/soc/78b7000.i2c/i2c-3/3-004b/input/input*    secure_touch_enable  0660   system  drmrpc
-/sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input*    secure_touch         0440   system  drmrpc
-/sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input*    secure_touch_enable  0660   system  drmrpc
+/sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input*    secure_touch_enable  0660   system  drmrpc
+/sys/devices/soc.0/78b7000.i2c/i2c-3/3-0038/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc.0/78b7000.i2c/i2c-3/3-0038/input/input*    secure_touch_enable  0660   system  drmrpc
+/sys/devices/soc.0/78b7000.i2c/i2c-3/3-004b/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc.0/78b7000.i2c/i2c-3/3-004b/input/input*    secure_touch_enable  0660   system  drmrpc
+/sys/devices/soc.0/c179000.i2c/i2c-5/5-0020/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc.0/c179000.i2c/i2c-5/5-0020/input/input*    secure_touch_enable  0660   system  drmrpc
 
 # laser sensor access
 /sys/devices/virtual/input/input*                   enable_ps_sensor 0660  system   input
@@ -246,8 +246,8 @@
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
-/sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0/queues/rx-* rps_cpus 0660 system system
-/sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/p2p0/queues/rx-* rps_cpus 0660 system system
+/sys/devices/soc.0/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0/queues/rx-* rps_cpus 0660 system system
+/sys/devices/soc.0/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/p2p0/queues/rx-* rps_cpus 0660 system system
 
 # wigig
 /sys/bus/pci/drivers/wil6210* 0000:01:00.0/wil6210/fst_link_loss 0660 wifi wifi
@@ -284,12 +284,12 @@
 /dev/hbtp_vm              0660   system     system
 
 # Add device block for FRP
-/dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
-/dev/block/platform/soc/7464900.sdhci/by-name/frp       0600   system     system
-/dev/block/platform/soc/624000.ufshc/by-name/frp        0600   system     system
-/dev/block/platform/soc/1da4000.ufshc/by-name/frp       0600   system     system
-/dev/block/platform/soc/c0c4000.sdhci/by-name/frp       0600   system     system
-/dev/block/platform/soc/1d84000.ufshc/by-name/frp       0600   system     system
+/dev/block/platform/soc.0/7824900.sdhci/by-name/config    0600   system     system
+/dev/block/platform/soc.0/7464900.sdhci/by-name/frp       0600   system     system
+/dev/block/platform/soc.0/624000.ufshc/by-name/frp        0600   system     system
+/dev/block/platform/soc.0/1da4000.ufshc/by-name/frp       0600   system     system
+/dev/block/platform/soc.0/c0c4000.sdhci/by-name/frp       0600   system     system
+/dev/block/platform/soc.0/1d84000.ufshc/by-name/frp       0600   system     system
 
 # Add device block for FRP with soc.0
 /dev/block/platform/soc.0/7824900.sdhci/by-name/config    0600   system     system
