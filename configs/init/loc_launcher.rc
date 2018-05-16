@@ -3,7 +3,7 @@
 service loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet net_raw qcom_diag net_admin wifi
+    group gps inet net_raw oem_2901 net_admin wifi
 
 on post-fs-data
     # Create directories for Location services

@@ -4,7 +4,7 @@
 service qmuxd /vendor/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps nfc qcom_diag
+    group radio audio bluetooth gps nfc oem_2901
     disabled
     writepid /dev/cpuset/system-background/tasks
 
