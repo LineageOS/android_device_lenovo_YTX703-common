@@ -133,6 +133,11 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     ueventd.qcom.rc \
 
+# Libshims
+PRODUCT_PACKAGES += \
+    libshims_get_process_name \
+    libshims_sensor
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8952 \
