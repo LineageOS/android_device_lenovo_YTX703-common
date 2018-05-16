@@ -3144,31 +3144,35 @@ int32_t QCamera3ReprocessChannel::stop()
 int32_t QCamera3ReprocessChannel::unmapOfflineBuffers(bool all)
 {
     int rc = NO_ERROR;
-    if (!mOfflineBuffers.empty()) {
-        QCamera3Stream *stream = NULL;
-        List<OfflineBuffer>::iterator it = mOfflineBuffers.begin();
-        for (; it != mOfflineBuffers.end(); it++) {
-           stream = (*it).stream;
-           if (NULL != stream) {
-               rc = stream->unmapBuf((*it).type,
-                                     (*it).index,
-                                        -1);
-               if (NO_ERROR != rc) {
-                   ALOGE("%s: Error during offline buffer unmap %d",
-                         __func__, rc);
+    {
+        Mutex::Autolock lock(mOfflineBuffersLock);
+        if (!mOfflineBuffers.empty()) {
+            QCamera3Stream *stream = NULL;
+            List<OfflineBuffer>::iterator it = mOfflineBuffers.begin();
+           for (; it != mOfflineBuffers.end(); it++) {
+               stream = (*it).stream;
+               if (NULL != stream) {
+                   rc = stream->unmapBuf((*it).type,
+                                         (*it).index,
+                                            -1);
+                   if (NO_ERROR != rc) {
+                       ALOGE("Error during offline buffer unmap %d",
+                              rc);
+                   }
+                   CDBG("Unmapped buffer with index %d", (*it).index);
                }
-               CDBG("%s: Unmapped buffer with index %d", __func__, (*it).index);
-           }
-           if (!all) {
-               mOfflineBuffers.erase(it);
-               break;
-           }
-        }
-        if (all) {
-           mOfflineBuffers.clear();
+               if (!all) {
+                   mOfflineBuffers.erase(it);
+                   break;
+               }
+            }
+            if (all) {
+               mOfflineBuffers.clear();
+            }
         }
     }
 
+    Mutex::Autolock lock(mOfflineMetaBuffersLock);
     if (!mOfflineMetaBuffers.empty()) {
         QCamera3Stream *stream = NULL;
         List<OfflineBuffer>::iterator it = mOfflineMetaBuffers.begin();
@@ -3179,10 +3183,10 @@ int32_t QCamera3ReprocessChannel::unmapOfflineBuffers(bool all)
                                      (*it).index,
                                         -1);
                if (NO_ERROR != rc) {
-                   ALOGE("%s: Error during offline buffer unmap %d",
-                         __func__, rc);
+                   ALOGE("Error during offline buffer unmap %d",
+                          rc);
                }
-               CDBG("%s: Unmapped meta buffer with index %d", __func__, (*it).index);
+               CDBG("Unmapped meta buffer with index %d", (*it).index);
            }
            if (!all) {
                mOfflineMetaBuffers.erase(it);
