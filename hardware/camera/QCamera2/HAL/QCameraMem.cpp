@@ -471,7 +471,7 @@ int QCameraMemory::allocOneBuffer(QCameraMemInfo &memInfo,
 
     rc = ioctl(main_ion_fd, ION_IOC_ALLOC, &alloc);
     if (rc < 0) {
-        ALOGE("ION allocation failed: %s\n", strerror(errno));
+        ALOGE("ION allocation of size <%d> failed: %s\n", alloc.len, strerror(errno));
         goto ION_ALLOC_FAILED;
     }
 
