@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service sensors /system/bin/sensors.qcom
+service sensors /vendor/bin/sensors.qcom
     class late_start
     user root
     group root

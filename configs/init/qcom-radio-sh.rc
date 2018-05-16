@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service qcom-radio-sh /system/bin/sh /init.qcom.radio.sh
+service qcom-radio-sh /vendor/bin/sh /init.qcom.radio.sh
     class main
     user root
     oneshot

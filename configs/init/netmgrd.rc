@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service netmgrd /system/bin/netmgrd
+service netmgrd /vendor/bin/netmgrd
     class main
     disabled
     writepid /dev/cpuset/system-background/tasks

@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service btsnoop /system/bin/btsnoop
+service btsnoop /vendor/bin/btsnoop
    user bluetooth
    group bluetooth net_bt_admin sdcard_rw sdcard_r media_rw
    class late_start

@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service rmt_storage /system/bin/rmt_storage
+service rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     group system wakelock

@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service per_proxy /system/bin/pm-proxy
+service per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system

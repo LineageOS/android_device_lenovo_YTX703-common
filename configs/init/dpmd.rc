@@ -1,7 +1,7 @@
 # vim: set ft=sh:
 
 # Data Power Manager Daemon
-service dpmd /system/bin/dpmd
+service dpmd /vendor/bin/dpmd
     class late_start
     socket dpmd stream 660 root system
     socket dpmd stream 660 root system

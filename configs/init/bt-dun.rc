@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
+service bt-dun /vendor/bin/dun-server /dev/smd7 /dev/rfcomm0
     class late_start
     user bluetooth
     group bluetooth net_bt_admin inet

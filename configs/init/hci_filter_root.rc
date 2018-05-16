@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service hci_filter_root /system/bin/wcnss_filter
+service hci_filter_root /vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth qcom_diag system
