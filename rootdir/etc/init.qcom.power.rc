@@ -211,11 +211,9 @@ on charger
     rm /data/system/perfd/default_values
     start perfd
 
-on class_start:late_start
-    trigger enable-low-power
-
 on property:init.svc.recovery=running
     trigger enable-low-power
 
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler "bfq"
+    trigger enable-low-power
