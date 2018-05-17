@@ -31,7 +31,7 @@ import init.qcom.usb.rc
 
 service charger /charger
     class charger
-    group system graphics
+    group log
     seclabel u:r:healthd:s0
 
 on early-init
