@@ -77,7 +77,7 @@ on early-init
 on init
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all fstab.qcom --early
+    mount_all /vendor/etc/fstab.qcom --early
     # qseecomd needs /dev/block/bootdevice
     # vold needs keymaster that needs qseecomd
     start qseecomd
@@ -104,7 +104,7 @@ on late-fs
 
 on late-fs
     # Mount RW partitions which need run fsck
-    mount_all fstab.qcom --late
+    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
     # Wait qseecomd started
@@ -279,6 +279,6 @@ on property:sys.sysctl.tcp_adv_win_scale=*
 
 #enable zram
 on property:ro.config.zram=true
-    swapon_all fstab.qcom
+    swapon_all /vendor/etc/fstab.qcom
     write /proc/sys/vm/swappiness 100
 
