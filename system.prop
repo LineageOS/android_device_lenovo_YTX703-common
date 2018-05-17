@@ -110,7 +110,7 @@ ro.core_ctl_max_cpu=4
 persist.debug.8976.config=true
 ro.cutoff_voltage_mv=3200
 
-ro.sf.hwrotation=90
+ro.sf.hwrotation=270
 
 ro.config.zram=true
 
