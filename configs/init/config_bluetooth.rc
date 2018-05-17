@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service config_bluetooth /system/etc/init.qcom.bt.sh "onboot"
+service config_bluetooth /vendor/bin/init.qcom.bt.sh "onboot"
     class core
     user root
     oneshot

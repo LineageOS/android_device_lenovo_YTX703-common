@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service hciattach /system/etc/init.qcom.bt.sh
+service hciattach /vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
