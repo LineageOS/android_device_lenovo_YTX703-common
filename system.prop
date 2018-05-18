@@ -85,6 +85,7 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.narrow.searchrange=1
 drm.service.enabled=true
+ro.config.vc_call_vol_steps=30
 ro.config.media_vol_steps=30
 ro.config.alarm_vol_steps=30
 ro.config.ring_vol_steps=30
