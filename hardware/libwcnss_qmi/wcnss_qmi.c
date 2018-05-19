@@ -40,10 +40,9 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * kernel sysfs entry, for the driver to process.
  * Normally, a copy of the WLAN MAC address is also kept in the persistent
  * /userstore/wifimac file, however that may get deleted or modified
- * accidentally by users.
- * As such, on each call to wcnss_qmi_get_wlan_address, a mirror of the MAC
- * address is also written in the /userstore/wifimac file, to maintain
- * compatibility with software that may be reading that file.
+ * accidentally by users. If that happens, the user should just run
+ * "cat /sys/devices/soc.0/a000000.qcom,wcnss-wlan/wcnss_mac_addr > /userstore/wifimac"
+ * for the file to be restored.
  */
 
 #if defined(__BIONIC_FORTIFY)
@@ -158,40 +157,6 @@ exit:
 	return FAILED;
 }
 
-static int wcnss_qmi_write_wlan_address_to_file(unsigned char *mac_addr,
-                                                const char *filename)
-{
-	/* 2 characters per byte, plus colons. */
-	char mac_addr_buf[WLAN_ADDR_SIZE * 3];
-	int fd;
-	int rc;
-
-	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0666);
-	if (fd < 0) {
-		ALOGE("%s: failed to open file %s for write (error %d)",
-		      __func__, filename, errno);
-		rc = FAILED;
-		goto out_no_close;
-	}
-	snprintf(mac_addr_buf, WLAN_ADDR_SIZE * 3,
-	         "%02X:%02X:%02X:%02X:%02X:%02X",
-	         mac_addr[0], mac_addr[1], mac_addr[2],
-	         mac_addr[3], mac_addr[4], mac_addr[5]);
-	ALOGE("Backup copy of MAC %s written to file %s",
-	      mac_addr_buf, filename);
-	rc = write(fd, mac_addr_buf, strlen(mac_addr_buf));
-	if (rc < 0) {
-		ALOGE("%s: failed to write %s to file %s (error %d)",
-		      __func__, mac_addr_buf, filename, errno);
-		rc = FAILED;
-		goto out_close;
-	}
-out_close:
-	close(fd);
-out_no_close:
-	return rc;
-}
-
 int wcnss_qmi_get_wlan_address(unsigned char *mac_addr)
 {
 	struct dms_get_mac_address_req_msg_v01  addr_req;
@@ -236,12 +201,6 @@ int wcnss_qmi_get_wlan_address(unsigned char *mac_addr)
 		mac_addr[WLAN_ADDR_SIZE - i - 1] = addr_resp.mac_address[i];
 	}
 	ALOGE("%s: Succesfully Read WLAN MAC Address", __func__);
-
-	/* Optional: re-create the userstore (backup) mac file.
-	 * Useful in case it gets lost. Must be called *after*
-	 * the MAC has been retrieved from the QMI services.
-	 */
-	wcnss_qmi_write_wlan_address_to_file(mac_addr, "/userstore/wifimac");
 
 	return SUCCESS;
 }
