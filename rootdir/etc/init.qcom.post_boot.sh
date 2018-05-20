@@ -543,13 +543,6 @@ case "$target" in
                 # Enable timer migration to little cluster
                 echo 1 > /proc/sys/kernel/power_aware_timer_migration
 
-                case "$soc_id" in
-                        "277" | "278")
-                        # Start energy-awareness for 8976
-                        start energy-awareness
-                ;;
-                esac
-
                 #enable sched colocation and colocation inheritance
                 echo 130 > /proc/sys/kernel/sched_grp_upmigrate
                 echo 110 > /proc/sys/kernel/sched_grp_downmigrate
@@ -607,9 +600,3 @@ if [ -f /sys/devices/soc0/select_image ]; then
     echo $image_variant > /sys/devices/soc0/image_variant
     echo $oem_version > /sys/devices/soc0/image_crm_version
 fi
-
-# Parse misc partition path and set property
-misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
-real_path=${misc_link##*>}
-setprop persist.vendor.mmi.misc_dev_path $real_path
-
