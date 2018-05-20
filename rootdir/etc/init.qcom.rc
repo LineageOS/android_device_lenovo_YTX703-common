@@ -129,8 +129,6 @@ on boot
 
 # msm specific files that need to be created on /data
 on post-fs-data
-    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
-
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
     chown system system /data/connectivity
