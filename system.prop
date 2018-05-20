@@ -113,7 +113,6 @@ ro.cutoff_voltage_mv=3200
 ro.sf.hwrotation=90
 
 ro.config.zram=true
-ro.vendor.qti.config.zram=true
 
 # system props for the cne module #
 # 4 - enable NSRM adb root;#
