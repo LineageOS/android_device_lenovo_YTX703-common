@@ -26,6 +26,30 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# For reference, Android trigger order:
+#
+# /init - parses /init.rc
+#       - triggers early-init
+#       - triggers init
+#       - Depending on boot mode:
+#          - triggers charger (this can go on to trigger late-init later)
+#          - triggers ffbm
+#          - triggers late-init
+#
+# /init.rc - picks up from late-init
+#          - triggers early-fs
+#          - triggers fs (system and vendor must be mounted
+#                         by end of this stage)
+#          - triggers post-fs (ramdisk is mounted read-only)
+#          - triggers load_system_props_action
+#          - triggers late-fs
+#          - triggers post-fs-data (userdata must be mounted by end of
+#                                   this stage. decryption happens here)
+#          - triggers load_persist_props_action
+#          - triggers firmware_mounts_complete
+#          - triggers early-boot
+#          - triggers boot
+
 import init.qcom.power.rc
 import init.qcom.usb.rc
 
@@ -56,76 +80,11 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
-on early-boot
-    # Set RLIMIT_MEMLOCK to 64MB
-    setrlimit 8 67108864 67108864
-
-    # Set aggressive read ahead during boot up.
-    write /sys/block/dm-0/queue/read_ahead_kb 2048
-
-    write /sys/kernel/boot_adsp/boot 1
-    chown root audio /sys/kernel/boot_adsp/boot
-
-    # SSR Setup
-    write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
-    write /sys/bus/msm_subsys/devices/subsys1/restart_level "related"
-    write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
-    write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
-    write /sys/bus/msm_subsys/devices/subsys4/restart_level "related"
-
 on fs
     wait /dev/block/bootdevice
     mount_all fstab.qcom
     write /sys/kernel/boot_adsp/boot 1
     write /proc/sys/vm/swappiness 100
-
-on boot
-    chown system system /sys/class/backlight/lcd-bl/brightness
-
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill4/type
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill4/state
-    chown system system /sys/module/bluetooth/parameters/disable_esco
-    chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
-    chmod 0660 /sys/module/bluetooth/parameters/disable_esco
-    chmod 0660 /sys/module/radio_iris_transport/parameters/fmsmd_set
-    chmod 0660 /sys/class/rfkill/rfkill4/state
-
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill4/device/rfkill4
-    chmod 0660 /sys/class/rfkill/rfkill4/device/rfkill4
-
-    mkdir /persist/drm 0770 system system
-    mkdir /persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /persist/misc 0770 system system
-    mkdir /persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /persist/data 0700 system system
-    mkdir /persist/led 0700 system system
-    restorecon_recursive /persist
-
-    chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
-
-
-#   Assign TCP buffer thresholds to be ceiling value of technology maximums
-#   Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  8388608
-    write /proc/sys/net/core/wmem_max  8388608
-
-    # To prevent out of order acknowledgements from making
-    # connection tracking to treat them as not belonging to
-    # the connection they belong to.
-    # Otherwise, a weird issue happens in which some long
-    # connections on high-throughput links get dropped when
-    # an ack packet comes out of order
-    write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
-
-    # Set the console loglevel to < KERN_INFO
-    # Set the default message loglevel to KERN_INFO
-    write /proc/sys/kernel/printk "6 6 1 7"
-
-    # Allow access for CCID command/response timeout configuration
-    chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
-
-    # Wifi firmware reload path
-    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -198,6 +157,86 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/audio_pp 0771 media audio
+
+on early-boot
+    # Set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+
+    # Set aggressive read ahead during boot up.
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+
+    write /sys/kernel/boot_adsp/boot 1
+    chown root audio /sys/kernel/boot_adsp/boot
+
+    # SSR Setup
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys4/restart_level "related"
+
+    # Set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+
+    # Set aggressive read ahead during boot up.
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+
+    write /sys/kernel/boot_adsp/boot 1
+    chown root audio /sys/kernel/boot_adsp/boot
+
+    # SSR Setup
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys4/restart_level "related"
+
+on boot
+    chown system system /sys/class/backlight/lcd-bl/brightness
+
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill4/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill4/state
+    chown system system /sys/module/bluetooth/parameters/disable_esco
+    chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
+    chmod 0660 /sys/module/bluetooth/parameters/disable_esco
+    chmod 0660 /sys/module/radio_iris_transport/parameters/fmsmd_set
+    chmod 0660 /sys/class/rfkill/rfkill4/state
+
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill4/device/rfkill4
+    chmod 0660 /sys/class/rfkill/rfkill4/device/rfkill4
+
+    mkdir /persist/drm 0770 system system
+    mkdir /persist/bluetooth 0770 bluetooth bluetooth
+    mkdir /persist/misc 0770 system system
+    mkdir /persist/bluetooth 0770 bluetooth bluetooth
+    mkdir /persist/data 0700 system system
+    mkdir /persist/led 0700 system system
+    restorecon_recursive /persist
+
+    chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
+
+    # Assign TCP buffer thresholds to be ceiling value of technology maximums
+    # Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max  8388608
+    write /proc/sys/net/core/wmem_max  8388608
+
+    # To prevent out of order acknowledgements from making
+    # connection tracking to treat them as not belonging to
+    # the connection they belong to.
+    # Otherwise, a weird issue happens in which some long
+    # connections on high-throughput links get dropped when
+    # an ack packet comes out of order
+    write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
+
+    # Set the console loglevel to < KERN_INFO
+    # Set the default message loglevel to KERN_INFO
+    write /proc/sys/kernel/printk "6 6 1 7"
+
+    # Allow access for CCID command/response timeout configuration
+    chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
+
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
