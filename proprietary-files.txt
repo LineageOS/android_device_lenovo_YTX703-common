@@ -9,7 +9,7 @@ bin/cnss-daemon
 bin/dpmd
 bin/garden_app
 bin/hci_qcomm_init
-bin/hvdcp_opti:vendor/bin/hvdcp_opti
+bin/hvdcp_opti
 bin/irsc_util
 bin/loc_launcher
 bin/mm-qcamera-daemon
