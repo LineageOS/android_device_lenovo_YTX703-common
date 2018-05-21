@@ -1,18 +1,19 @@
-type timekeep, domain, domain_deprecated;
+type timekeep, domain;
 type timekeep_exec, exec_type, file_type;
 
 # Started by init
 init_daemon_domain(timekeep)
 
-allow timekeep self:capability {
-    fowner
-    fsetid
-    sys_time
-    dac_override
-    dac_read_search
-};
+# Grant permission to set system time and to set the real-time lock
+allow timekeep self:capability { sys_time };
+
+# Opens:
+#   * /sys/class/rtc/rtc0/since_epoch
+#   * /data/time/ats_2
 
 allow timekeep time_data_file:file create_file_perms;
 allow timekeep time_data_file:dir create_dir_perms;
+
+allow timekeep sysfs:file r_file_perms;
 
 set_prop(timekeep, timekeep_prop)
