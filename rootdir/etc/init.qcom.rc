@@ -84,6 +84,7 @@ on init
     mkdir /persist/drm 0770 system system
     mkdir /persist/led 0700 system system
     restorecon_recursive /persist
+    restorecon_recursive /userstore
 
 on fs
     write /sys/kernel/boot_adsp/boot 1
