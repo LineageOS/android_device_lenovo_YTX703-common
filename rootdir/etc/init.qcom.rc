@@ -83,6 +83,7 @@ on init
     mkdir /persist/data 0700 system system
     mkdir /persist/drm 0770 system system
     mkdir /persist/led 0700 system system
+    restorecon_recursive /cache/recovery
     restorecon_recursive /persist
     restorecon_recursive /userstore
 

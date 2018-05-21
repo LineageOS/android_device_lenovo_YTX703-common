@@ -1,5 +1,3 @@
-allow system_server unlabeled:file unlink;
-
 # Error "qti_sensors_hal: yhj check open /userstore/adjustsensor_x_x failed"
 # comes from /system/vendor/lib64/sensors.ssc.so
 # which is pointed to by /system/etc/sensors/hals.conf
