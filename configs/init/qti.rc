@@ -7,3 +7,5 @@ service qti /system/vendor/bin/qti
     disabled
     writepid /dev/cpuset/system-background/tasks
 
+on boot
+    start qti

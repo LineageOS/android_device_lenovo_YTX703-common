@@ -8,4 +8,5 @@ service netmgrd /system/bin/netmgrd
 on boot
     # Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
+    start netmgrd
 
