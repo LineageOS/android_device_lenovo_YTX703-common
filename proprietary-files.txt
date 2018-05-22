@@ -1,7 +1,6 @@
 #
 # Please keep the lines alphabetically sorted
 #
--app/TimeService/TimeService.apk
 bin/adsprpcd
 bin/btnvtool
 bin/cnd
@@ -20,7 +19,6 @@ bin/pm-service
 bin/qmuxd
 bin/qseecomd
 bin/rmt_storage
-bin/time_daemon
 bin/wcnss_filter
 bin/xtwifi-client
 bin/xtwifi-inet-agent
@@ -108,7 +106,6 @@ vendor/lib/libOpenCL.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libQtiTether.so
 vendor/lib/libRSDriver_adreno.so
-vendor/lib/libTimeService.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
@@ -825,7 +822,6 @@ vendor/lib64/libQtiTether.so
 vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libStDrvInt.so
-vendor/lib64/libTimeService.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbmapper.so
