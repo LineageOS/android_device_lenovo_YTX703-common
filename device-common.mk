@@ -150,6 +150,7 @@ PRODUCT_PACKAGES += \
     wificond \
     wifilogd \
     hostapd \
+    libwifi-hal-qcom \
     wcnss_service \
     libwcnss_qmi \
     wpa_supplicant \
