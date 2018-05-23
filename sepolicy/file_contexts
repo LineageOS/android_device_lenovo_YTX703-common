@@ -10,6 +10,12 @@
 # SELinux domains for services
 /system/bin/timekeep               u:object_r:timekeep_exec:s0
 
+# Lights
+/(system/vendor|vendor)/bin/hw/android\.hardware\.light@2\.0-service\.msm8952 u:object_r:hal_light_default_exec:s0
+#  Backlight/Notification LED control
+/sys/devices/soc.0/78b6000.i2c/i2c-2/2-002c/backlight/lcd-bl/brightness u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/7af8000.i2c/i2c-8/8-0045/leds(/.*)? u:object_r:sysfs_graphics:s0
+
 # Regular files
 #
 # Bluetooth MAC file - slips right through the cracks of
