@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service config_bt_addr /vendor/bin/btnvtool -O
+service config_bt_addr /vendor/bin/sh -c "/vendor/bin/btnvtool -O"
     class core
     user bluetooth
     group bluetooth radio
