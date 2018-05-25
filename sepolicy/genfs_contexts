@@ -1,0 +1,3 @@
+# Power
+genfscon sysfs  /devices/soc.0/qcom,cpubw.49/devfreq/qcom,cpubw.49/bw_hwmon/io_percent                             u:object_r:sysfs_devices_system_cpu:s0
+genfscon sysfs  /devices/soc.0/qcom,cpubw.49/devfreq/qcom,cpubw.49/bw_hwmon/guard_band_mbps                        u:object_r:sysfs_devices_system_cpu:s0
