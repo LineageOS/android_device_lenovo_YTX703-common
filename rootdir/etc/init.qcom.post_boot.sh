@@ -152,7 +152,6 @@ function start_hbtp()
 
 case "$target" in
     "msm8952")
-
         if [ -f /sys/devices/soc0/soc_id ]; then
             soc_id=`cat /sys/devices/soc0/soc_id`
         else
@@ -206,17 +205,17 @@ case "$target" in
                 for devfreq_gov in /sys/class/devfreq/*qcom,cpubw*/governor
                 do
                     echo "bw_hwmon" > $devfreq_gov
-                    for cpu_io_percent in /sys/class/devfreq/*qcom,cpubw*/bw_hwmon/io_percent
+                    for cpu_io_percent in /sys/devices/soc.0/*qcom,cpubw*/devfreq/*qcom,cpubw*/bw_hwmon/io_percent
                     do
                         echo 20 > $cpu_io_percent
                     done
-                    for cpu_guard_band in /sys/class/devfreq/*qcom,cpubw*/bw_hwmon/guard_band_mbps
+                    for cpu_guard_band in /sys/devices/soc.0/*qcom,cpubw*/devfreq/*qcom,cpubw*/bw_hwmon/guard_band_mbps
                     do
                         echo 30 > $cpu_guard_band
                     done
                 done
 
-                for gpu_bimc_io_percent in /sys/class/devfreq/qcom,gpubw*/bw_hwmon/io_percent
+                for gpu_bimc_io_percent in /sys/devices/soc.0/*qcom,cpubw*/devfreq/*qcom,gpubw*/bw_hwmon/io_percent
                 do
                     echo 40 > $gpu_bimc_io_percent
                 done
