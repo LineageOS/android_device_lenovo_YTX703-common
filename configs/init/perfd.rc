@@ -3,6 +3,7 @@
 service perfd /system/vendor/bin/perfd
     class late_start
     user root
+    group system
     socket perfd seqpacket 0666 root system
     writepid /dev/cpuset/system-background/tasks
 
