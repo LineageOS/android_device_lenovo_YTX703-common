@@ -3,6 +3,8 @@
 # Data Power Manager Daemon
 service dpmd /vendor/bin/dpmd
     class late_start
+    user system
+    group system
     socket dpmd stream 660 root system
     socket dpmd stream 660 root system
 
