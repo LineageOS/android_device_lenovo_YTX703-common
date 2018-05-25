@@ -7,4 +7,3 @@ service config_bluetooth /vendor/bin/init.qcom.bt.sh "onboot"
 
 on property:vold.decrypt=trigger_restart_framework
     start config_bluetooth
-
