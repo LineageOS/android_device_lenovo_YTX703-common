@@ -218,6 +218,10 @@ case "$config" in
         config_bt
         exit 0
         ;;
+    "program_bdaddr")
+        program_bdaddr
+        exit 0
+        ;;
     *)
         ;;
 esac
