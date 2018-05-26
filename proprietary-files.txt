@@ -104,7 +104,6 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libOpenCL.so
 vendor/lib/libQSEEComAPI.so
-vendor/lib/libQtiTether.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -818,7 +817,6 @@ vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libQtiTether.so
 vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libStDrvInt.so
