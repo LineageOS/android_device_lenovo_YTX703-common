@@ -58,6 +58,9 @@ TARGET_KERNEL_CONFIG := lineage_YTX703_defconfig
 # You can access menuconfig without messing up the kernel build by running:
 # make -C kernel/lenovo/msm8976 O=$OUT/obj/KERNEL_OBJ ARCH=arm64 menuconfig
 
+# Do not create /cache -> /data/cache symlink.
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
