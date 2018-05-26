@@ -3,7 +3,7 @@
 #
 bin/adsprpcd:vendor/bin/adsprpcd
 bin/btnvtool:vendor/bin/btnvtool
-bin/cnd:vendor/bin/cnd
+bin/cnd:vendor/bin/cnd|d876882efffa12a235bc2dbba02ebddb7dd3ccb6
 bin/cnss-daemon:vendor/bin/cnss-daemon
 bin/dpmd:vendor/bin/dpmd
 bin/garden_app:vendor/bin/garden_app
@@ -585,8 +585,8 @@ vendor/lib/libchromatix_s5k3m2xx_snapshot.so
 vendor/lib/libchromatix_s5k3m2xx_video_4k.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_preview_ad5816g.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_video_ad5816g.so
-vendor/lib/libcne.so
-vendor/lib/libcneapiclient.so
+vendor/lib/libcne.so|85f9a51b015361e75f050543dda5a7ffc17b854d
+vendor/lib/libcneapiclient.so|171a5f77859fb313256f728706811f3945058bba
 vendor/lib/libcneqmiutils.so
 vendor/lib/libconnctrl.so
 vendor/lib/libdatactrl.so
@@ -782,7 +782,7 @@ vendor/lib/libtsvideoprocess.so
 vendor/lib/libubifocus.so
 vendor/lib/libvendorconn.so
 vendor/lib/libxml.so
-vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/mediadrm/libwvdrmengine.so|768e58b22e1c3d7ef3ff482dc4f5c689bd08b705
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
@@ -840,8 +840,8 @@ vendor/lib64/libc2d30-a3xx.so
 vendor/lib64/libc2d30-a4xx.so
 vendor/lib64/libc2d30-a5xx.so
 vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libcne.so
-vendor/lib64/libcneapiclient.so
+vendor/lib64/libcne.so|ff3cd9c4e556f47259b1f054e57ba71bc4269d72
+vendor/lib64/libcneapiclient.so|28d003259082020dc8947813e333518ac49bddd0
 vendor/lib64/libcneqmiutils.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libconnctrl.so
