@@ -73,102 +73,94 @@ static void *dms_qmi_client;
 static int qmi_handle;
 static int dms_init_done = FAILED;
 
-/* Android system property values for various modem types */
+/* ro.baseband=msm => YTX703L
+ * ro.baseband=apq => YTX703F
+ */
 #define QMI_UIM_PROP_BASEBAND_VALUE_MSM "msm"
 #define QMI_UIM_PROP_BASEBAND_VALUE_APQ "apq"
 
-/* Returns QMI_PORT_RMNET_0 in case of valid baseband, or NULL otherwise.
- */
-static const char *dms_find_modem_port()
-{
-	char ro_baseband[PROPERTY_VALUE_MAX];
-	/* Find out the modem type:
-	 *   - "msm" for YTX703L
-	 *   - "apq" for YTX703F.
-	 * Not much use in performing this test really, except to
-	 * make sure we're not running on some weird hardware.
-	 */
-	memset(ro_baseband, 0, sizeof(ro_baseband));
-	property_get("ro.baseband", ro_baseband, "");
-	const char *qmi_modem_port_ptr = QMI_PORT_RMNET_0;
+char ro_baseband[PROPERTY_VALUE_MAX];
 
-	/* Map the port based on the read property */
-	if ((strcmp(ro_baseband, QMI_UIM_PROP_BASEBAND_VALUE_MSM) == 0) ||
-	    (strcmp(ro_baseband, QMI_UIM_PROP_BASEBAND_VALUE_APQ) == 0)) {
-		qmi_modem_port_ptr = QMI_PORT_RMNET_0;
-	} else {
-		ALOGE("%s: Unknown property ro.baseband=%s."
-		      "Don't know what modem port to access through QMI.",
-		      __func__, ro_baseband);
-		qmi_modem_port_ptr = NULL;
-	}
-	ALOGE("%s: QMI port found for modem: %s",
-	      __func__, qmi_modem_port_ptr);
-
-	return qmi_modem_port_ptr;
-}
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof(*(a)))
 
 int wcnss_init_qmi()
 {
 	void *dms_service;
 	const char *qmi_modem_port;
-	int rc;
+	const char *tries[] = { QMI_PORT_RMNET_0, QMI_PORT_RMNET_1 };
+	int rc = SUCCESS;
+	size_t i;
 
 	ALOGE("%s: Initialize wcnss QMI Interface", __func__);
 
-	qmi_handle = qmi_init(NULL, NULL);
-	if (qmi_handle < 0) {
-		ALOGE("%s: Error while initializing qmi", __func__);
-		return FAILED;
-	}
+	/* Find out the modem type:
+	 *   - "msm" for YTX703L
+	 *   - "apq" for YTX703F.
+	 */
+	memset(ro_baseband, 0, sizeof(ro_baseband));
+	property_get("ro.baseband", ro_baseband, "");
 
-	/* Magic constants, don't ask */
-	dms_service = dms_get_service_object_internal_v01(1, 55, 6);
-	if (dms_service == NULL) {
-		ALOGE("%s: Not able to get a handle to the device management service",
-		      __func__);
-		goto exit;
-	}
+	if (strcmp(ro_baseband, QMI_UIM_PROP_BASEBAND_VALUE_MSM) == 0) {
+		ALOGE("%s: Running on the YTX703L", __func__);
 
-	/* Map to a respective QMI port */
-	qmi_modem_port = dms_find_modem_port();
-	if (qmi_modem_port == NULL) {
-		ALOGE("%s: qmi_modem_port is NULL", __func__);
-		goto exit;
-	}
+		/* Get a handle to the QMI services
+		 */
+		qmi_handle = qmi_init(NULL, NULL);
+		if (qmi_handle < 0) {
+			ALOGE("%s: Error while initializing qmi", __func__);
+			goto exit_noop;
+		}
+		/* Get a handle to the Device Management Services.
+		 * Some magic constants involved, don't ask.
+		 */
+		dms_service = dms_get_service_object_internal_v01(1, 55, 6);
+		if (dms_service == NULL) {
+			ALOGE("%s: Not able to get a handle to the device management service",
+			      __func__);
+			goto exit_release_qmi;
+		}
+		/* Get a handle to a QMI modem port (trying multiple ports)
+		 */
+		for (i = 0; i < ARRAY_SIZE(tries); i++) {
+			qmi_modem_port = tries[i];
 
-	rc = qmi_client_init((const char *)qmi_modem_port,
-	                     dms_service, NULL, dms_service, &dms_qmi_client);
-	if (rc) {
-		ALOGE("%s: Error while Initializing QMI Client: %d",
-		      __func__, rc);
-		goto exit;
+			rc = qmi_client_init(qmi_modem_port, dms_service,
+			                     NULL, dms_service, &dms_qmi_client);
+			if (rc == 0) {
+				break;
+			}
+		}
+		if (rc < 0) {
+			ALOGE("%s: Error while Initializing QMI Client: %d",
+			      __func__, rc);
+			goto exit_release_qmi;
+		}
+		dms_init_done = SUCCESS;
+	} else if (strcmp(ro_baseband, QMI_UIM_PROP_BASEBAND_VALUE_APQ) == 0) {
+		ALOGE("%s: Running on the YTX703F", __func__);
+		/* YTX703F */
+	} else {
+		ALOGE("%s: Running on unknown hardware (ro.baseband=%s).",
+		      __func__, ro_baseband);
 	}
+	goto exit_noop;
 
-	dms_init_done = SUCCESS;
+exit_release_qmi:
+	qmi_release(qmi_handle);
+exit_noop:
+	/* Never fail, even if we couldn't initialize the
+	 * QMI services on the YTX703L. We will revert to using
+	 * the userstore static file.
+	 */
 	return SUCCESS;
-
-exit:
-	rc = qmi_release(qmi_handle);
-	if (rc) {
-		ALOGE("%s: Error %d while releasing qmi %d",
-		      __func__, rc, qmi_handle);
-	}
-	return FAILED;
 }
 
-int wcnss_qmi_get_wlan_address(unsigned char *mac_addr)
+static int retrieve_wlan_mac_from_qmi(unsigned char *mac_addr)
 {
 	struct dms_get_mac_address_req_msg_v01  addr_req;
 	struct dms_get_mac_address_resp_msg_v01 addr_resp;
 	int i = 0;
 	int rc;
-
-	/* Protect against stupid users */
-	if ((dms_init_done == FAILED) || (mac_addr == NULL)) {
-		ALOGE("%s: DMS init fail or mac_addr is NULL", __func__);
-		return FAILED;
-	}
 
 	/* Clear the request content */
 	memset(&addr_req, 0, sizeof(addr_req));
@@ -205,6 +197,75 @@ int wcnss_qmi_get_wlan_address(unsigned char *mac_addr)
 	return SUCCESS;
 }
 
+static int retrieve_wlan_mac_from_userstore(unsigned char *mac_addr)
+{
+	#define WLAN_MAC_ADDR_SIZE 6
+	const char *filename = "/userstore/wifimac";
+	FILE *fd;
+	char raw_buf[BUFSIZ];
+	int  mac_tmp_buf[WLAN_MAC_ADDR_SIZE];
+	int  rc = FAILED;
+	int  i;
+
+	fd = fopen(filename, "rb");
+	if (!fd) {
+		ALOGE("open '%s' failure %s.\n", filename, strerror(errno));
+		goto out_noop;
+	}
+
+	rc = fread(raw_buf, 1, BUFSIZ, fd);
+	if (rc <= 0) {
+		ALOGE("%s: fread returned %d\n", __func__, rc);
+		rc = FAILED;
+		goto out_close_fd;
+	}
+
+	rc = sscanf(raw_buf, "%02x:%02x:%02x:%02x:%02x:%02x",
+	           &mac_tmp_buf[0], &mac_tmp_buf[1], &mac_tmp_buf[2],
+	           &mac_tmp_buf[3], &mac_tmp_buf[4], &mac_tmp_buf[5]);
+	if (rc != WLAN_MAC_ADDR_SIZE) {
+		ALOGE("%s: Failed to Copy WLAN MAC\n", __func__);
+		rc = FAILED;
+		goto out_close_fd;
+	}
+	for (i = 0; i < WLAN_MAC_ADDR_SIZE; i++) {
+		mac_addr[i] = (unsigned char) mac_tmp_buf[i];
+	}
+	ALOGE("%s: Read WLAN MAC Address from userstore: "
+	      "%02x:%02x:%02x:%02x:%02x:%02x", __func__,
+	      mac_addr[0], mac_addr[1], mac_addr[2],
+	      mac_addr[3], mac_addr[4], mac_addr[5]);
+
+	rc = SUCCESS;
+out_close_fd:
+	fclose(fd);
+out_noop:
+	return rc;
+}
+
+int wcnss_qmi_get_wlan_address(unsigned char *mac_addr)
+{
+	int rc = FAILED;
+
+	if (mac_addr == NULL) {
+		ALOGE("%s: Will not write into a NULL pointer!", __func__);
+		return FAILED;
+	}
+	if (dms_init_done == SUCCESS) {
+		/* YTX703L and we can attempt to retrieve the wifimac
+		 * from the QMI services
+		 */
+		rc = retrieve_wlan_mac_from_qmi(mac_addr);
+	}
+	if (rc == FAILED) {
+		/* YTX703F, or YTX703L with a faulty connection to the
+		 * QMI services.
+		 */
+		rc = retrieve_wlan_mac_from_userstore(mac_addr);
+	}
+	return rc;
+}
+
 void wcnss_qmi_deinit()
 {
 	int rc;
@@ -223,7 +284,7 @@ void wcnss_qmi_deinit()
 	}
 
 	qmi_handle = qmi_release(qmi_handle);
-	if (qmi_handle < 0)    {
+	if (qmi_handle < 0) {
 		ALOGE("%s: Error while releasing qmi %d",
 		      __func__, qmi_handle);
 	}

@@ -15,6 +15,7 @@
  */
 
 #define QMI_PORT_RMNET_0               "rmnet0"
+#define QMI_PORT_RMNET_1               "rmnet1"
 #define DMS_DEVICE_MAC_WLAN_V01         0
 #define QMI_DMS_GET_MAC_ADDRESS_REQ_V01 0x5Cull
 
