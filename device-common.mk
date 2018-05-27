@@ -346,7 +346,8 @@ BOARD_SYSTEM_EXTRA_SYMLINKS += \
     /vendor/etc/wifi/WCNSS_qcom_cfg.ini:etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     /vendor/etc/wifi/WCNSS_wlan_dictionary.dat:etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
     /vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin:etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
-    /vendor/etc/sensors:etc/sensors
+    /vendor/etc/sensors:etc/sensors \
+    /vendor/etc/acdbdata:etc/acdbdata
 
 # HIDL
 $(call inherit-product, $(LOCAL_PATH)/common-treble.mk)
