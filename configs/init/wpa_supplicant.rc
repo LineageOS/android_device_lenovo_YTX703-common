@@ -14,5 +14,3 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-# managed by hardware/libhardware_legacy/wifi/
-
