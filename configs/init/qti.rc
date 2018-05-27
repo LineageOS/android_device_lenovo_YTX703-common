@@ -7,5 +7,6 @@ service qti /system/vendor/bin/qti
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-on boot
-    start qti
+# Only start on YTX703L
+on property:ro.baseband=msm
+    enable qti
