@@ -1,4 +1,0 @@
-# Bluetooth
-allow qti_init_shell bluetooth_loader_exec:file { getattr open read };
-allow qti_init_shell hci_attach_dev:chr_file { open ioctl read write};
-

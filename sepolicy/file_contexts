@@ -9,3 +9,15 @@
 
 # SELinux domains for services
 /system/bin/timekeep               u:object_r:timekeep_exec:s0
+
+# Regular files
+#
+# Bluetooth MAC file - slips right through the cracks of
+# device/qcom/sepolicy/common/file_contexts, which only labels the
+# /persist/.bt_nv.bin file as bluetooth_data_file.
+# Our device, which is more special (yay) would otherwise have the .bt_nv.bin file
+# fall under the more generic persist_bluetooth_file context, and get this denial:
+# avc: denied { open } for pid=3093 comm="hci_qcomm_init" path="/persist/bluetooth/.bt_nv.bin" dev="mmcblk0p27"
+# ino=53 scontext=u:r:bluetooth_loader:s0 tcontext=u:object_r:persist_bluetooth_file:s0 tclass=file permissive=1
+/persist/bluetooth/\.bt_nv\.bin                                 u:object_r:bluetooth_data_file:s0
+

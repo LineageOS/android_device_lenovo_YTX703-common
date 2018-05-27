@@ -35,4 +35,5 @@
       { 00755, AID_SYSTEM,      AID_SYSTEM,      (1ULL << CAP_NET_BIND_SERVICE), "system/bin/pm-service"},
       { 00755, AID_SYSTEM,      AID_SYSTEM,      (1ULL << CAP_NET_BIND_SERVICE), "system/bin/cnss-daemon"},
       { 00755, AID_SYSTEM,      AID_SYSTEM,      (1ULL << CAP_SYS_TIME),         "system/bin/timekeep" },
+      { 00755, AID_SYSTEM,      AID_SYSTEM,      0,                              "system/etc/init.qcom.bt.sh" },
 };
