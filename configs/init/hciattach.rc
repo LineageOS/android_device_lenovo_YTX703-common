@@ -1,9 +1,9 @@
 # vim: set ft=sh:
 
-service hciattach /vendor/bin/init.qcom.bt.sh
+service hciattach /vendor/bin/hci_qcomm_init -e
     class late_start
     user bluetooth
-    group bluetooth net_bt_admin
+    group bluetooth net_bt_admin oem_2950 diag radio
     disabled
     oneshot
 
@@ -12,4 +12,40 @@ on property:bluetooth.hciattach=true
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
+
+# Bluetooth YTX703L
+on property:ro.baseband=msm
+    setprop ro.qualcomm.bluetooth.opp true
+    setprop ro.qualcomm.bluetooth.hfp true
+    setprop ro.qualcomm.bluetooth.hsp true
+    setprop ro.qualcomm.bluetooth.pbap true
+    setprop ro.qualcomm.bluetooth.ftp true
+    setprop ro.qualcomm.bluetooth.nap true
+    setprop ro.bluetooth.sap true
+    setprop ro.bluetooth.dun true
+    # Not athk3
+    setprop ro.qualcomm.bluetooth.map true
+
+    # Bluetooth Common Enable Bluetooth Profiles
+    setprop ro.bluetooth.hfp.ver 1.7
+    setprop ro.qualcomm.bt.hci_transport smd
+
+# Bluetooth YTX703F
+on property:ro.baseband=apq
+    setprop ro.qualcomm.bluetooth.opp true
+    setprop ro.qualcomm.bluetooth.ftp true
+    setprop ro.qualcomm.bluetooth.nap false
+    setprop ro.bluetooth.sap false
+    setprop ro.bluetooth.dun false
+
+    # For MPQ as baseband is same for both
+    setprop ro.qualcomm.bluetooth.hsp false
+    setprop ro.qualcomm.bluetooth.hfp false
+    setprop ro.qualcomm.bluetooth.pbap true
+    setprop ro.qualcomm.bluetooth.map true
+
+    # Bluetooth Common Enable Bluetooth Profiles
+    setprop ro.bluetooth.hfp.ver 1.7
+    setprop ro.qualcomm.bt.hci_transport smd
+
 
