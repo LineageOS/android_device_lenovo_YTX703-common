@@ -33,3 +33,5 @@
 # ino=53 scontext=u:r:bluetooth_loader:s0 tcontext=u:object_r:persist_bluetooth_file:s0 tclass=file permissive=1
 /persist/bluetooth/\.bt_nv\.bin                                 u:object_r:bluetooth_data_file:s0
 
+# RILD prebuilt database
+/system/vendor/qcril.db                                         u:object_r:rild_file:s0
