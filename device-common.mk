@@ -87,11 +87,13 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8952 \
-    libgps.utils \
-    libloc_core \
-    libloc_eng \
     libcurl \
+    libgnss \
+    libgnsspps
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-service-qti
 
 # IPv6
 PRODUCT_PACKAGES += \
