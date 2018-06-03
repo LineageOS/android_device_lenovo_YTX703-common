@@ -340,13 +340,6 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
 #     the file "WCNSS_CAL_FILE" instead of the actual macro that lies behind it
 #     ("/data/misc/wifi/WCNSS_qcom_wlan_cal.bin").
 #
-# The /vendor/firmware symlink is required by qseecomd.
-BOARD_SYSTEM_EXTRA_SYMLINKS += \
-    /vendor/etc/wifi/WCNSS_qcom_cfg.ini:etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    /vendor/etc/wifi/WCNSS_wlan_dictionary.dat:etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
-    /vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin:etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
-    /vendor/etc/sensors:etc/sensors \
-    /vendor/etc/acdbdata:etc/acdbdata
 
 # HIDL
 $(call inherit-product, $(LOCAL_PATH)/common-treble.mk)
