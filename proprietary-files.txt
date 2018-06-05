@@ -89,7 +89,7 @@ vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libQTapGLES.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/hw/sound_trigger.primary.msm8952.so|a173ad4ee7ebb1bddb10d4aae1849e6654bce4a3
+vendor/lib/hw/sound_trigger.primary.msm8952.so|de005e5eb876e1ec06135dedfbb86e0e0c09762f
 vendor/lib/hw/vulkan.msm8952.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
@@ -121,7 +121,7 @@ vendor/lib/libactuator_rohm_bu64243gwz.so
 vendor/lib/libadiertac.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsprpc.so
+vendor/lib/libadsprpc.so|7c98d68a009612339b7a8d6fbd119400a8b9a392
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libbccQTI.so
@@ -766,7 +766,7 @@ vendor/lib/libril-qc-qmi-1.so|35a05f83704473ea50f975687ee42bd23d276383
 vendor/lib/libril-qc-radioconfig.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/librilqmiservices.so
-vendor/lib/librs_adreno.so
+vendor/lib/librs_adreno.so|e3421d8d50a8896209c5d721e0d200c8a80b8d3c
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
@@ -827,7 +827,7 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libadsprpc.so
+vendor/lib64/libadsprpc.so|e6e674edd70253aeaad2ad2e2fac0d77a4c03933
 vendor/lib64/libalarmservice_jni.so
 vendor/lib64/libasn1cper.so
 vendor/lib64/libasn1crt.so
@@ -911,7 +911,7 @@ vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/librpmb.so|54263c1a69ee14b8f6e137edd3897d3d9e37a782
-vendor/lib64/librs_adreno.so
+vendor/lib64/librs_adreno.so|4d43da707aa82a482bd762ad8fa265db5d91e153
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libscale.so
 vendor/lib64/libsd_sdk_display.so
