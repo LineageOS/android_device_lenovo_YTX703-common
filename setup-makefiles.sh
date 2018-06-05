@@ -38,7 +38,7 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" "true" "$CLEANUP"
 write_headers "YTX703F YTX703L"
 
 # The standard common blobs
-write_makefiles "$MY_DIR"/proprietary-files.txt
+write_makefiles "$MY_DIR"/proprietary-files.txt true
 
 # We are done!
 write_footers
@@ -50,8 +50,8 @@ if [ -s "$MY_DIR"/$DEVICE/proprietary-files.txt ]; then
     # Copyright headers and guards
     write_headers
 
-    # The standard device blobs
-    write_makefiles "$MY_DIR"/$DEVICE/proprietary-files.txt
+    # The standard device blobs, make treble compatible paths and use $(TARGET_COPY_OUT_VENDOR)
+    write_makefiles "$MY_DIR"/$DEVICE/proprietary-files.txt true
 
     # We are done!
     write_footers
