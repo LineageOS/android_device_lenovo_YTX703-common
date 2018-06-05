@@ -107,6 +107,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl \
     android.hardware.health@1.0-service
 
+# Dummy hidl lib for oreo blobs
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0
+
 # Lineage stuff
 # Power
 PRODUCT_PACKAGES += \
