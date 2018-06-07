@@ -309,19 +309,19 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
 # by writing to /dev/wcnss_ctrl.
 # This triggers the main driver to load, and as it does that (hdd_wlan_startup),
 # it requests 3 firmware files from userspace:
-#   * /system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
-#   * /system/etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
-#   * /system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+#   * /vendor/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+#   * /vendor/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
+#   * /vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 # In stock, Lenovo places the firmware/config files in /persist, and the
 # firmware folder is a symlink to that.
 # We do not want to use Lenovo's firmware files from /persist, as they may be
 # out of sync with the prima WLAN driver, that is receiving continuous updates.
 # For this reason, we ship the firmware files (in the board repo,
-# under configs/wifi; in the target rootfs, under /system/etc/wifi) and in
-# /system/etc/firmware/wlan/prima/ we create symbolic links to those.
+# under configs/wifi; in the target rootfs, under /vendor/etc/wifi) and in
+# /vendor/firmware/wlan/prima/ we create symbolic links to those.
 #
 # Comments on other actions done by wcnss_service:
-#   * it has code for copying WCNSS_qcom_cfg.ini et.al. from /system/etc/wifi
+#   * it has code for copying WCNSS_qcom_cfg.ini et.al. from /vendor/etc/wifi
 #     to /data/misc/wifi. This serves absolutely no purpose to us.
 #   * it has code for creating /persist/WCNSS_qcom_wlan_nv.bin from a file in
 #     /system/etc/wifi/nvbin/ that matches the pattern of
@@ -340,6 +340,10 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
 #     the file "WCNSS_CAL_FILE" instead of the actual macro that lies behind it
 #     ("/data/misc/wifi/WCNSS_qcom_wlan_cal.bin").
 #
+BOARD_VENDOR_EXTRA_SYMLINKS += \
+    /vendor/etc/wifi/WCNSS_qcom_cfg.ini:firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    /vendor/etc/wifi/WCNSS_wlan_dictionary.dat:firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
+    /vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin:firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
 
 # HIDL
 $(call inherit-product, $(LOCAL_PATH)/common-treble.mk)
