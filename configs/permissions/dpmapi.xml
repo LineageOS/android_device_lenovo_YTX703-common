@@ -2,5 +2,5 @@
 <!--Copyright (c) 2014 Qualcomm Technologies, Inc.  All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.-->
 <permissions>
     <library name="com.qti.dpmapi"
-        file="/system/framework/dpmapi.jar"/>
+        file="/vendor/framework/dpmapi.jar"/>
 </permissions>
