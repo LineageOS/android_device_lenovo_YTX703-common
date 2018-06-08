@@ -43,9 +43,7 @@ vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741f
 
 #
 # Stuff which isn't grouped yet
-#
 # Please keep the lines alphabetically sorted
-#
 bin/adsprpcd:vendor/bin/adsprpcd
 bin/btnvtool:vendor/bin/btnvtool
 bin/cnd:vendor/bin/cnd|d876882efffa12a235bc2dbba02ebddb7dd3ccb6
@@ -952,5 +950,3 @@ vendor/lib64/libxml.so
 vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
 vendor/qcril.db
-
-
