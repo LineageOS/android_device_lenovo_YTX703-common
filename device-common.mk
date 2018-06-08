@@ -345,7 +345,14 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
 BOARD_VENDOR_EXTRA_SYMLINKS += \
     /vendor/etc/wifi/WCNSS_qcom_cfg.ini:firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     /vendor/etc/wifi/WCNSS_wlan_dictionary.dat:firmware/wlan/prima/WCNSS_wlan_dictionary.dat \
-    /vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin:firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    /vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin:firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
+# Create a link for acdbdata which is needed for the hacked libacdbloader.so library,
+# which is modified to load its configuration files from /vendor. Due the fact,
+# that it is initially loads the data from /etc/acdbdata the string provides
+# not more space than /vendor/etc/a which is linked here to the right folder.
+BOARD_VENDOR_EXTRA_SYMLINKS += \
+    /vendor/etc/acdbdata:etc/a
 
 # HIDL
 $(call inherit-product, $(LOCAL_PATH)/common-treble.mk)
