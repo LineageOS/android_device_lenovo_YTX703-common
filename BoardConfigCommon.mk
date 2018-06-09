@@ -183,6 +183,7 @@ TARGET_PER_MGR_ENABLED := true
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
+TARGET_HAS_NO_WIFI_STATS := true
 
 # Lights
 BOARD_LIGHTS_VARIANT := aw2013
