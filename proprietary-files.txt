@@ -105,6 +105,25 @@ vendor/lib/hw/sound_trigger.primary.msm8952.so|3d22060d1a7398465348d080ffbee0582
 vendor/lib/libadpcmdec.so|48c425e9e7bfdfb0665530d5b7e5011ac63aa2e2
 vendor/lib/libsmwrapper.so|bec096ce023b061407f024691eda777f68e4e9fe
 
+# Perf
+lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
+lib64/vendor.qti.hardware.perf@1.0.so|db6d62913453c545bd057866aeb37a0d058bf6f6
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|e34d3ab597388add3c68d0583cbb4e3a3fc5921e
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
+vendor/etc/perf/perfboostsconfig.xml|82695e1a44ae3238589f5f85d1ccacba158cb24d
+vendor/lib/libfeedbackhandler.so|6b9876b1f649aaef895b75ba6a47e03f8ae22186
+vendor/lib/libperfgluelayer.so|701dccc6912647b3ea29bb3fdb0b20a43b0c5213
+vendor/lib/libqti-perfd.so|8812d1ec9e01527c26b852f5a8692ae35fc427a0
+vendor/lib/libqti-perfd-client.so|582336afcadb82800178cc312367cb1e0a9dc3b4
+vendor/lib/libqti-util.so|49ef7e51ae38127ff3b54ce3c2b3d1986f0af38c
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so|add8d51e211ef4fd73c2289e8c066c5ecd0d4df9
+vendor/lib64/libfeedbackhandler.so|82728d38aa14268617868ab0750cbb8fb244bf9a
+vendor/lib64/libperfgluelayer.so|bf99ec37cbf4fd191ba641a915c98855b4e2797d
+vendor/lib64/libqti-perfd.so|4e2b3ba749b03409e01817dc2eeef4185d38696d
+vendor/lib64/libqti-perfd-client.so|d9724ac58072657c2ba9fc7502c0f2577ef75230
+vendor/lib64/libqti-util.so|6411586729d90e0c6a6f94e456f66d376ddb8969
+vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|fca94d3e81f9f6453b0cb781c2925be845bb2ddb
+
 #
 # Stuff which isn't grouped yet
 # Please keep the lines alphabetically sorted
@@ -142,7 +161,6 @@ lib64/libdhcpcd.so:vendor/lib64/libdhcpcd.so
 -priv-app/CNEService/CNEService.apk
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/mm-pp-daemon
-vendor/bin/perfd
 vendor/bin/qti
 vendor/bin/thermal-engine|f556d1c3fb55c79d9208481339c1c51c346bbad4
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -811,8 +829,6 @@ vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqti-at.so
 vendor/lib/libqti-gt.so|f8dbf3251fcef86372130a36e40d9194f3b553b2
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti_performance.so
 vendor/lib/libril-qc-ltedirectdisc.so
 vendor/lib/libril-qc-qmi-1.so|35a05f83704473ea50f975687ee42bd23d276383
 vendor/lib/libril-qc-radioconfig.so
@@ -933,8 +949,6 @@ vendor/lib64/libqmi_encdec.so
 -vendor/lib64/libqmiservices.so
 vendor/lib64/libqti-at.so
 vendor/lib64/libqti-gt.so|291e07af4c7cd933764a2275de1fc50c8070faa1
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti_performance.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-qmi-1.so|dde74eb11388b940d26629fa01b6ac939e6c4e0a
 vendor/lib64/libril-qc-radioconfig.so

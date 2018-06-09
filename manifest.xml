@@ -118,6 +118,15 @@
             <instance>gnss_vendor</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.perf</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IPerf</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 <!--
       Lineage Power HAL, activated by android.hardware.power@1.0-service-qti.
       RQBalance Power HAL mixed with lineage qti power hal activated by android.hardware.power@1.0-service-rqbalance.

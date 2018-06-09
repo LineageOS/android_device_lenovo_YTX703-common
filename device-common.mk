@@ -267,6 +267,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += $(foreach perf_profile, $(wildcard $(LOCAL_PATH)/configs/perf-profiles/*), \
     $(perf_profile):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/, $(notdir $(perf_profile))) )
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/perfd/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
 # Configs for dpm and nsrm
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dpm/dpm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/dpm/dpm.conf \
