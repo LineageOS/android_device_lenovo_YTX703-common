@@ -1,10 +1,12 @@
 # vim: set ft=sh:
 
-service ipacm /vendor/bin/ipacm
+service ipacm /system/vendor/bin/ipacm
     class main
-    user net_admin
-    group net_admin inet
+    user radio
+    group radio inet
     disabled
 
 on post-fs-data
-    mkdir /data/misc/ipa 0700 net_admin net_admin
+    #create ipacm log dir
+    mkdir /data/vendor/ipa 0770 radio radio
+    chmod 0770 /data/vendor/ipa
