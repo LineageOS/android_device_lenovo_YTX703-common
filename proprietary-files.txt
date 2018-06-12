@@ -124,6 +124,13 @@ vendor/lib64/libqti-perfd-client.so|d9724ac58072657c2ba9fc7502c0f2577ef75230
 vendor/lib64/libqti-util.so|6411586729d90e0c6a6f94e456f66d376ddb8969
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|fca94d3e81f9f6453b0cb781c2925be845bb2ddb
 
+# Thermal
+vendor/bin/thermal-engine|40990b4c75dcb7d354e9bd768b387224bfe79bfd
+#vendor/etc/thermal-engine.conf|b9b1c15f560c47bc41155c7c647af5bb698c6417
+-vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
+-vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
+vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
+
 #
 # Stuff which isn't grouped yet
 # Please keep the lines alphabetically sorted
@@ -162,7 +169,6 @@ lib64/libdhcpcd.so:vendor/lib64/libdhcpcd.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/mm-pp-daemon
 vendor/bin/qti
-vendor/bin/thermal-engine|f556d1c3fb55c79d9208481339c1c51c346bbad4
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -841,7 +847,6 @@ vendor/lib/libsd_sdk_display.so
 vendor/lib/libseemore.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsmemlog.so
-vendor/lib/libthermalclient.so
 -vendor/lib/libtime_genoff.so
 -vendor/lib/libts_detected_face_hal.so
 -vendor/lib/libts_face_beautify_hal.so
@@ -966,8 +971,6 @@ vendor/lib64/libsettings.so|4609cacca0a56dae2596687c8f5f2f9423d4d0d9
 vendor/lib64/libsmemlog.so
 vendor/lib64/libssd.so
 vendor/lib64/libsystem_health_mon.so
-vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
 -vendor/lib64/libtime_genoff.so
 vendor/lib64/libvendorconn.so
 vendor/lib64/libxml.so
