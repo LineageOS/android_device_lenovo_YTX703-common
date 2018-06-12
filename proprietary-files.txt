@@ -108,6 +108,7 @@ vendor/lib/libsmwrapper.so|bec096ce023b061407f024691eda777f68e4e9fe
 # Perf
 lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
 lib64/vendor.qti.hardware.perf@1.0.so|db6d62913453c545bd057866aeb37a0d058bf6f6
+vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|e34d3ab597388add3c68d0583cbb4e3a3fc5921e
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
 vendor/etc/perf/perfboostsconfig.xml|82695e1a44ae3238589f5f85d1ccacba158cb24d

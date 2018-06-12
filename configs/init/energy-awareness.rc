@@ -1,0 +1,8 @@
+# vim: set ft=sh:
+
+# CPU energy defaults per frequency
+service energy-awareness /vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
