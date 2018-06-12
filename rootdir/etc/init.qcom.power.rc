@@ -31,6 +31,10 @@ on boot
     # Enable sched boost
     write /proc/sys/kernel/sched_boost 1
 
+    # perfd waits until the property is set to 1 and refuses to acquire
+    # locks and process hints until it doesn't exists or it is empty.
+    setprop sys.post_boot.parsed "1"
+
 on enable-low-power
     # limit CPU frequencies to 8976 defaults
     write /sys/module/msm_performance/parameters/cpu_max_freq "0:1401600 1:1401600 2:1401600 3:1401600 4:1804800 5:1804800 6:1804800 7:1804800"
