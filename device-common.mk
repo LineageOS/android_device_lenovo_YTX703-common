@@ -152,6 +152,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/seccomp_policy/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/configs/seccomp_policy/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
+# Thermal
+PRODUCT_PACKAGES += \
+    thermal.msm8952
+
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
@@ -261,7 +265,7 @@ PRODUCT_COPY_FILES += \
 
 # Profiles for perfd
 PRODUCT_COPY_FILES += $(foreach perf_profile, $(wildcard $(LOCAL_PATH)/configs/perf-profiles/*), \
-    $(perf_profile):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/, $(notdir $(perf_profile))) )
+    $(perf_profile):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/perf, $(notdir $(perf_profile))) )
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perfd/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
