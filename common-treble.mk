@@ -115,3 +115,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
      android.hardware.power@1.0-service-qti
+
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@1.0-service-legacymm
