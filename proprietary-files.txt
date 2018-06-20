@@ -1,3 +1,4 @@
+### Blobs from Bardock ###
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk:vendor/priv-app/com.qualcomm.location/com.qualcomm.location.apk|397314f080f553489440c63da44d01f482e6b761
 -vendor/lib64/libloc_api_v02.so|6f7cda15869af111d2017df4f9e2f561a0d07033
@@ -40,6 +41,35 @@ vendor/lib64/libulp2.so|1a92023fbe40d5042239f3efbdcd82f3299e8b17
 vendor/lib64/libxtadapter.so|9a8fbd106994aaaf380be883fa2ef37d04e20401
 vendor/lib64/libxtwifi_ulp_adaptor.so|078124cc018badf89c1f5588e9102e9f7c034da2
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741fbc8
+
+# Perf
+lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
+lib64/vendor.qti.hardware.perf@1.0.so|db6d62913453c545bd057866aeb37a0d058bf6f6
+vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|e34d3ab597388add3c68d0583cbb4e3a3fc5921e
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
+vendor/etc/perf/perfboostsconfig.xml|82695e1a44ae3238589f5f85d1ccacba158cb24d
+vendor/lib/libfeedbackhandler.so|6b9876b1f649aaef895b75ba6a47e03f8ae22186
+vendor/lib/libperfgluelayer.so|701dccc6912647b3ea29bb3fdb0b20a43b0c5213
+vendor/lib/libqti-perfd.so|8812d1ec9e01527c26b852f5a8692ae35fc427a0
+vendor/lib/libqti-perfd-client.so|582336afcadb82800178cc312367cb1e0a9dc3b4
+vendor/lib/libqti-util.so|49ef7e51ae38127ff3b54ce3c2b3d1986f0af38c
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so|add8d51e211ef4fd73c2289e8c066c5ecd0d4df9
+vendor/lib64/libfeedbackhandler.so|82728d38aa14268617868ab0750cbb8fb244bf9a
+vendor/lib64/libperfgluelayer.so|bf99ec37cbf4fd191ba641a915c98855b4e2797d
+vendor/lib64/libqti-perfd.so|4e2b3ba749b03409e01817dc2eeef4185d38696d
+vendor/lib64/libqti-perfd-client.so|d9724ac58072657c2ba9fc7502c0f2577ef75230
+vendor/lib64/libqti-util.so|6411586729d90e0c6a6f94e456f66d376ddb8969
+vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|fca94d3e81f9f6453b0cb781c2925be845bb2ddb
+
+# Thermal
+vendor/bin/thermal-engine|40990b4c75dcb7d354e9bd768b387224bfe79bfd
+#vendor/etc/thermal-engine.conf|b9b1c15f560c47bc41155c7c647af5bb698c6417
+-vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
+-vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
+vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
+
+### Blobs from YTX703 ###
 
 #Audio
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
@@ -104,33 +134,6 @@ vendor/lib64/libhwdaphal.so|bda9ad017ddff06f6d20ce5c732880701a28ca92
 vendor/lib/hw/sound_trigger.primary.msm8952.so|3d22060d1a7398465348d080ffbee05823efb981
 vendor/lib/libadpcmdec.so|48c425e9e7bfdfb0665530d5b7e5011ac63aa2e2
 vendor/lib/libsmwrapper.so|bec096ce023b061407f024691eda777f68e4e9fe
-
-# Perf
-lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
-lib64/vendor.qti.hardware.perf@1.0.so|db6d62913453c545bd057866aeb37a0d058bf6f6
-vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|e34d3ab597388add3c68d0583cbb4e3a3fc5921e
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
-vendor/etc/perf/perfboostsconfig.xml|82695e1a44ae3238589f5f85d1ccacba158cb24d
-vendor/lib/libfeedbackhandler.so|6b9876b1f649aaef895b75ba6a47e03f8ae22186
-vendor/lib/libperfgluelayer.so|701dccc6912647b3ea29bb3fdb0b20a43b0c5213
-vendor/lib/libqti-perfd.so|8812d1ec9e01527c26b852f5a8692ae35fc427a0
-vendor/lib/libqti-perfd-client.so|582336afcadb82800178cc312367cb1e0a9dc3b4
-vendor/lib/libqti-util.so|49ef7e51ae38127ff3b54ce3c2b3d1986f0af38c
-vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so|add8d51e211ef4fd73c2289e8c066c5ecd0d4df9
-vendor/lib64/libfeedbackhandler.so|82728d38aa14268617868ab0750cbb8fb244bf9a
-vendor/lib64/libperfgluelayer.so|bf99ec37cbf4fd191ba641a915c98855b4e2797d
-vendor/lib64/libqti-perfd.so|4e2b3ba749b03409e01817dc2eeef4185d38696d
-vendor/lib64/libqti-perfd-client.so|d9724ac58072657c2ba9fc7502c0f2577ef75230
-vendor/lib64/libqti-util.so|6411586729d90e0c6a6f94e456f66d376ddb8969
-vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|fca94d3e81f9f6453b0cb781c2925be845bb2ddb
-
-# Thermal
-vendor/bin/thermal-engine|40990b4c75dcb7d354e9bd768b387224bfe79bfd
-#vendor/etc/thermal-engine.conf|b9b1c15f560c47bc41155c7c647af5bb698c6417
--vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
--vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
-vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
 
 #
 # Stuff which isn't grouped yet
