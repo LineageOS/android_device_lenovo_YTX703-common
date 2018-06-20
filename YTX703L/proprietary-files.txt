@@ -1,7 +1,7 @@
 #
 # Please keep the lines alphabetically sorted
 #
-bin/sensors.qcom:vendor/bin/sensors.qcom|524f17299160dff65f287f919834a3ca8c7573a1 # haxxed to read /persist/sensors/sns.los
+bin/sensors.qcom:vendor/bin/sensors.qcom|3ec376e0e7911b690ede8bce02f1846b74c9480c
 etc/firmware/a225p5_pm4.fw:vendor/firmware/a225p5_pm4.fw
 etc/firmware/a225_pfp.fw:vendor/firmware/a225_pfp.fw
 etc/firmware/a225_pm4.fw:vendor/firmware/a225_pm4.fw
