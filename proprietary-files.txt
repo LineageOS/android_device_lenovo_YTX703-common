@@ -127,7 +127,6 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
-vendor/lib/libhwdaphal.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -138,8 +137,7 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
-vendor/lib64/libhwdaphal.so
- 
+
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8952.so|de005e5eb876e1ec06135dedfbb86e0e0c09762f
 vendor/lib/libadpcmdec.so
