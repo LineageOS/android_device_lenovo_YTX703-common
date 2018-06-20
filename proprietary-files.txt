@@ -822,7 +822,7 @@ vendor/lib/libnetmgr.so
 vendor/lib/liboemcrypto.so|531beb947982c4e4f7d692386c1c9f2e6493aba5
 vendor/lib/liboptizoom.so
 vendor/lib/libperipheral_client.so
-lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so|30b2ae9299fc72d638cd65e719cb8d268e364610
+lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so|e619e076613d7bb46a883d481f7e31d2092fb795
 -vendor/lib/libqcci_legacy.so
 vendor/lib/libqct_resampler.so
 vendor/lib/libqdi.so
@@ -943,7 +943,7 @@ vendor/lib64/libmmcamera2_sensor_debug.so
 vendor/lib64/libmmcamera2_stats_algorithm.so
 vendor/lib64/libnetmgr.so
 vendor/lib64/libperipheral_client.so
-lib64/libprotobuf-cpp-lite.so:vendor/lib64/libprotobuf-cpp-Hlte.so|0387a535d564d1109869d01326539cb3b127ade8
+lib64/libprotobuf-cpp-lite.so:vendor/lib64/libprotobuf-cpp-Hlte.so|0b7f1be1e68ddca2cd989bdcff7b29e90b5081d1
 -vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqdi.so
