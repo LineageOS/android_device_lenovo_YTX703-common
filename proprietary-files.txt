@@ -48,7 +48,7 @@ vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741f
 # Perf
 lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
 lib64/vendor.qti.hardware.perf@1.0.so|db6d62913453c545bd057866aeb37a0d058bf6f6
-vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
+
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|e34d3ab597388add3c68d0583cbb4e3a3fc5921e
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
 vendor/etc/perf/perfboostsconfig.xml|82695e1a44ae3238589f5f85d1ccacba158cb24d
@@ -71,6 +71,13 @@ vendor/bin/thermal-engine|40990b4c75dcb7d354e9bd768b387224bfe79bfd
 -vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
 -vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
 vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
+
+# Misc
+vendor/lib/libsettings.so|f507b3afa202e7c582bf4e469526b57c6cc8085b
+vendor/lib64/libsettings.so|1a76294b05b125874674fae367d6d91895ec6cbc
+
+### Blobs from Smartron ###
+vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
 
 ### Blobs from YTX703 ###
 
@@ -972,7 +979,7 @@ vendor/lib64/libsd_sdk_display.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libsensor_reg.so
-vendor/lib64/libsettings.so|4609cacca0a56dae2596687c8f5f2f9423d4d0d9
+
 vendor/lib64/libsmemlog.so
 vendor/lib64/libssd.so
 vendor/lib64/libsystem_health_mon.so
