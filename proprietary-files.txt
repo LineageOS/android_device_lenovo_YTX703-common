@@ -8,6 +8,9 @@ framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar|e10f1baf6ae0f70c4a529
 lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so|84fddd9ace2be661d26cad1864281c386b709cb2
 lib64/libxt_native.so:vendor/lib64/libxt_native.so|6d77733e6d409317079e9ad1a9616d6b9e5dad25
 lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|716a812a9f4cdb45c57eb0a6fabb17624a91d553
+vendor/bin/garden_app:vendor/bin/garden_app|f68738762575b0ddcfd9d4854e95d1789ee096d0
+vendor/bin/xtwifi-client:vendor/bin/xtwifi-client|9276e88e8c04486ca00cf60589833bde9b947c4c
+vendor/bin/xtwifi-inet-agent:vendor/bin/xtwifi-inet-agent|8414f27c0e1bec63750638efed02adea83c79f33
 vendor/bin/hw/vendor.qti.gnss@1.0-service|bdf23fe2af07c2afb74721023431446104fd828d
 vendor/bin/loc_launcher|0675f4524d2c9e94f7e978b5e00734c0835ddf15
 vendor/bin/lowi-server|b9c62aefd4633a2a50287fd768a8000c37ae1b0e
@@ -143,7 +146,7 @@ bin/btnvtool:vendor/bin/btnvtool
 bin/cnd:vendor/bin/cnd|d876882efffa12a235bc2dbba02ebddb7dd3ccb6
 bin/cnss-daemon:vendor/bin/cnss-daemon
 bin/dpmd:vendor/bin/dpmd
-bin/garden_app:vendor/bin/garden_app|f68738762575b0ddcfd9d4854e95d1789ee096d0
+
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 bin/hvdcp_opti:vendor/bin/hvdcp_opti
 bin/irsc_util:vendor/bin/irsc_util
@@ -156,8 +159,6 @@ bin/qmuxd:vendor/bin/qmuxd|b553a66b749314edc1cc92ed190b21e6f893d924
 bin/qseecomd:vendor/bin/qseecomd
 bin/rmt_storage:vendor/bin/rmt_storage
 bin/wcnss_filter:vendor/bin/wcnss_filter
-bin/xtwifi-client:vendor/bin/xtwifi-client|9276e88e8c04486ca00cf60589833bde9b947c4c
-bin/xtwifi-inet-agent:vendor/bin/xtwifi-inet-agent|8414f27c0e1bec63750638efed02adea83c79f33
 -framework/ConnectivityExt.jar:vendor/framework/ConnectivityExt.jar
 -framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -framework/com.qti.snapdragon.sdk.display.jar:vendor/framework/com.qti.snapdragon.sdk.display.jar
