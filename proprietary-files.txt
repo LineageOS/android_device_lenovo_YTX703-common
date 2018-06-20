@@ -112,31 +112,31 @@ etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Headset_cal.acdb:vendor/etc/acdb
 etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Speaker_cal.acdb:vendor/etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Speaker_cal.acdb
 
 # Audio libraries
-vendor/lib/libacdb-fts.so|77e0134b0b44f381129f6a60a0f6ffab092d90a0
+vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so|06c982a8cfe594480aeb0dba663067365384e3e4
-vendor/lib/libacdbmapper.so|005eba51991267c31d6d7534ac6062b22701a4d6
-vendor/lib/libacdbrtac.so|7a3a2cc18a8656261a186fc96e6866a1fcaa3eb8
-vendor/lib/libadiertac.so|66328fca332f4341102cecf4b8c11824120d3350
-vendor/lib/libadm.so|211f423e9aeb57dc8e15d056741a8e0a762cabbc
-vendor/lib/libaudcal.so|c8dc07b7d3d27001a39b84ef5e89306ba25d5c55
-vendor/lib/libaudioalsa.so|ed50aa37cbbcf2e4e526a717635a7c9b49415e87
-vendor/lib/libhwdaphal.so|2a1daee27e97575af0c612e632cca381e2a632f9
-vendor/lib/soundfx/libqcbassboost.so|ea9d1259b8f3e04307160d0304a99417b3da7d06
-vendor/lib/soundfx/libqcreverb.so|f260dc813eb373d229ee85526549ec0e3c9a18ce
-vendor/lib/soundfx/libqcvirt.so|63bccd6a22e7b22dd715a005999f0c8268fc442d
-vendor/lib64/libacdb-fts.so|c4ebb298258b85ed8369c2c6359aa1ea40faa056
+vendor/lib/libacdbmapper.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libadm.so
+vendor/lib/libaudcal.so
+vendor/lib/libaudioalsa.so
+vendor/lib/libhwdaphal.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
+vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so|40a236a2f79e3c30cfb6636e15483ea12137a086
-vendor/lib64/libacdbmapper.so|2e7ec095d0125cb17ac74eac584468fca496b811
-vendor/lib64/libacdbrtac.so|3cc2adf6727d4aa6f5472fc47b9e42431c1395d5
-vendor/lib64/libadiertac.so|ad6f6bd17b45199bc8b9b369c4aaa76fd0b72c68
-vendor/lib64/libaudcal.so|d297a652af2ade680aab73ee59b7ec7ba04491b8
-vendor/lib64/libaudioalsa.so|a5b8461daa1eab6b8bcc51a9b30696ffab6116f6
-vendor/lib64/libhwdaphal.so|bda9ad017ddff06f6d20ce5c732880701a28ca92
+vendor/lib64/libacdbmapper.so
+vendor/lib64/libacdbrtac.so
+vendor/lib64/libadiertac.so
+vendor/lib64/libaudcal.so
+vendor/lib64/libaudioalsa.so
+vendor/lib64/libhwdaphal.so
  
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8952.so|3d22060d1a7398465348d080ffbee05823efb981
-vendor/lib/libadpcmdec.so|48c425e9e7bfdfb0665530d5b7e5011ac63aa2e2
-vendor/lib/libsmwrapper.so|bec096ce023b061407f024691eda777f68e4e9fe
+vendor/lib/libadpcmdec.so
+vendor/lib/libsmwrapper.so
 
 #
 # Stuff which isn't grouped yet
