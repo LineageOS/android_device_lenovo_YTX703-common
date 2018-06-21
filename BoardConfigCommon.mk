@@ -224,6 +224,9 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
     /system/vendor/bin/slim_daemon|libshims_sensor.so
 
+# Thermal
+USE_DEVICE_SPECIFIC_THERMAL := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
