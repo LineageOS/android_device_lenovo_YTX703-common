@@ -181,6 +181,12 @@ on post-fs-data
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/audio_pp 0771 media audio
 
+    # Create PERFD deamon related dirs
+    mkdir       /data/vendor/perfd 0770 root system
+    chmod 2770  /data/vendor/perfd
+    # Default values is re-created on boot based of environment properties
+    rm          /data/vendor/perfd/default_values
+
     # From /init.rc:
     #   If there is no fs-post-data (sic) action in the init.<device>.rc file,
     #   you must uncomment this line, otherwise encrypted filesystems
