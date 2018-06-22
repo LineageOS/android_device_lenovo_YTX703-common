@@ -25,6 +25,8 @@ include $(DEVICE_PATH)/recovery/twrp.mk
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
