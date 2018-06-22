@@ -36,10 +36,12 @@ do
     n ) CLEANUP="false" ;;
     d ) SRC=$OPTARG ;;
     s ) SETUP=1 ;;
+    x ) DEVICE_ONLY=1 ;;
     h ) echo "Usage: `basename $0` [OPTIONS] "
         echo "  -n  No cleanup"
         echo "  -d  Fetch blob from filesystem"
         echo "  -s  Setup only, no extraction"
+        echo "  -x  Only device specific extraction"
         echo "  -h  Show this help"
         exit ;;
     * ) ;;
@@ -62,10 +64,12 @@ if [ -n "$SETUP" ]; then
     fi
 else
     # Initialize the helper for common
+    if [ -z "$DEVICE_ONLY" ]; then
     (
     setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true "$CLEANUP"
     extract "$MY_DIR"/proprietary-files.txt "$SRC"
     )
+    fi
 
     if [ -s "$MY_DIR"/$DEVICE/proprietary-files.txt ]; then
         # Reinitialize the helper for device
