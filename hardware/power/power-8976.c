@@ -193,13 +193,20 @@ int power_hint_override(power_hint_t hint, void *data)
             return HINT_HANDLED;
         case POWER_HINT_INTERACTION:
         {
-            int resources[] = {
-                               0x4D04, /* Set minimum online cpus in LITTLE cluster to 4 */
-                               0x20F   /* Set maximum frequency of all LITTLE clusters  */
-                              };
+            int resource_values[] = {
+                /*
+                 * Set the minimum of online cores on bug cluster to 2
+                */
+                CPUS_ONLINE_MIN_BIG, 0x2,
+                /*
+                 * Raise and fix the minimum frequency of the cores on big cluster
+                 * to next possible frequency above 1350MHz.
+                 */
+                MIN_FREQ_BIG_CORE_0, 0x546
+            };
             int duration = 3000;
 
-            interaction(duration, sizeof(resources)/sizeof(resources[0]), resources);
+            interaction(duration, ARRAY_SIZE(resource_values), resource_values);
             return HINT_HANDLED;
         }
         default:
