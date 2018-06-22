@@ -8,12 +8,12 @@ framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar|e10f1baf6ae0f70c4a529
 lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so|84fddd9ace2be661d26cad1864281c386b709cb2
 lib64/libxt_native.so:vendor/lib64/libxt_native.so|6d77733e6d409317079e9ad1a9616d6b9e5dad25
 lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|716a812a9f4cdb45c57eb0a6fabb17624a91d553
-vendor/bin/garden_app:vendor/bin/garden_app|f68738762575b0ddcfd9d4854e95d1789ee096d0
-vendor/bin/xtwifi-client:vendor/bin/xtwifi-client|9276e88e8c04486ca00cf60589833bde9b947c4c
-vendor/bin/xtwifi-inet-agent:vendor/bin/xtwifi-inet-agent|8414f27c0e1bec63750638efed02adea83c79f33
+vendor/bin/garden_app:vendor/bin/garden_app|6127ea8179f4376c00c475c4a4d6dacd71bf1ef4
+vendor/bin/xtwifi-client:vendor/bin/xtwifi-client|33da61dbd1aa3d8f452aaee6bb7750c82427a25d
+vendor/bin/xtwifi-inet-agent:vendor/bin/xtwifi-inet-agent|d4391030c2ba255e8c44058889c3dbcaf70df6d2
 vendor/bin/hw/vendor.qti.gnss@1.0-service|bdf23fe2af07c2afb74721023431446104fd828d
 vendor/bin/loc_launcher|0675f4524d2c9e94f7e978b5e00734c0835ddf15
-vendor/bin/lowi-server|b9c62aefd4633a2a50287fd768a8000c37ae1b0e
+vendor/bin/lowi-server|b5c3f24c43a7e4237e63044a95ca0178fb45f488
 vendor/bin/slim_daemon|065400e7e8161ac700d93abb0ba7fa4acbab025a
 vendor/bin/xtra-daemon|cc2192efd623aed8c1b5f282b8ff0ccd62bb37a6
 vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
@@ -65,7 +65,7 @@ vendor/lib64/libqti-util.so|6411586729d90e0c6a6f94e456f66d376ddb8969
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|fca94d3e81f9f6453b0cb781c2925be845bb2ddb
 
 # Thermal
-vendor/bin/thermal-engine|40990b4c75dcb7d354e9bd768b387224bfe79bfd
+vendor/bin/thermal-engine|bbf59e8257b7f4b227e2b50149f4b679049c487d
 #vendor/etc/thermal-engine.conf|b9b1c15f560c47bc41155c7c647af5bb698c6417
 -vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
 -vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
