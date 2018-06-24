@@ -8,7 +8,7 @@
 /userstore(/.*)?                                                u:object_r:persist_file:s0
 
 # SELinux domains for services
-/system/bin/timekeep               u:object_r:timekeep_exec:s0
+/(vendor|system/vendor)/bin/timekeep                            u:object_r:timekeep_exec:s0
 
 # Lights
 /(system/vendor|vendor)/bin/hw/android\.hardware\.light@2\.0-service\.msm8952 u:object_r:hal_light_default_exec:s0
