@@ -1,6 +1,5 @@
 # SELinux domains for partitions
 /dev/block/bootdevice/by-name/cache                             u:object_r:cache_block_device:s0
-/dev/block/bootdevice/by-name/persistent                        u:object_r:frp_block_device:s0
 /dev/block/bootdevice/by-name/userencrypt                       u:object_r:dm_device:s0
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/userencrypt   u:object_r:dm_device:s0
 /userstore/wifimac                                              u:object_r:wifi_data_file:s0
