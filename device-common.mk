@@ -357,6 +357,12 @@ BOARD_VENDOR_EXTRA_SYMLINKS += \
 BOARD_VENDOR_EXTRA_SYMLINKS += \
     /vendor/etc/acdbdata:etc/a
 
+# Create a link for sensors.qcom which expects the default sensor configuration at /etc/sensors
+# To be able to move this file to /vendor a link /vendor/snsc is created, which points to
+# /vendor/etc/sensors
+BOARD_VENDOR_EXTRA_SYMLINKS += \
+    /vendor/etc/sensors:snsc
+
 # HIDL
 $(call inherit-product, $(LOCAL_PATH)/common-treble.mk)
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
