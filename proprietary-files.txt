@@ -8,9 +8,9 @@ framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar|e10f1baf6ae0f70c4a529
 lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so|84fddd9ace2be661d26cad1864281c386b709cb2
 lib64/libxt_native.so:vendor/lib64/libxt_native.so|6d77733e6d409317079e9ad1a9616d6b9e5dad25
 lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|716a812a9f4cdb45c57eb0a6fabb17624a91d553
-vendor/bin/garden_app:vendor/bin/garden_app|6127ea8179f4376c00c475c4a4d6dacd71bf1ef4
-vendor/bin/xtwifi-client:vendor/bin/xtwifi-client|33da61dbd1aa3d8f452aaee6bb7750c82427a25d
-vendor/bin/xtwifi-inet-agent:vendor/bin/xtwifi-inet-agent|d4391030c2ba255e8c44058889c3dbcaf70df6d2
+vendor/bin/garden_app|6127ea8179f4376c00c475c4a4d6dacd71bf1ef4
+vendor/bin/xtwifi-client|33da61dbd1aa3d8f452aaee6bb7750c82427a25d
+vendor/bin/xtwifi-inet-agent|d4391030c2ba255e8c44058889c3dbcaf70df6d2
 vendor/bin/hw/vendor.qti.gnss@1.0-service|bdf23fe2af07c2afb74721023431446104fd828d
 vendor/bin/loc_launcher|0675f4524d2c9e94f7e978b5e00734c0835ddf15
 vendor/bin/lowi-server|b9c62aefd4633a2a50287fd768a8000c37ae1b0e
