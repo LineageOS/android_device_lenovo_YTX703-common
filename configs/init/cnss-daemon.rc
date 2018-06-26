@@ -3,5 +3,5 @@
 service cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
     user system
-    group system inet net_admin wifi
+    group system inet net_admin wifi radio
 
