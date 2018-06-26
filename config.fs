@@ -38,7 +38,7 @@ caps: 0
 [/vendor/bin/sensors.qcom]
 mode: 0755
 user: AID_SENSORS
-group: AID_SENSORS
+group: AID_SENSORS AID_QTI_DIAG
 caps: NET_BIND_SERVICE
 
 [vendor/bin/cnd]
@@ -94,45 +94,3 @@ mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: SYS_NICE
-
-[vendor/bin/cnd]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
-
-[vendor/bin/ims_rtp_daemon]
-mode: 0755
-user: AID_SYSTEM
-group: AID_RADIO
-caps: NET_BIND_SERVICE
-
-[vendor/bin/imsdatadaemon]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[vendor/bin/pm-service]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[vendor/bin/slim_daemon]
-mode: 0755
-user:  AID_GPS
-group: AID_GPS
-caps: NET_BIND_SERVICE
-
-[vendor/bin/wcnss_filter]
-mode: 0755
-user: AID_BLUETOOTH
-group: AID_BLUETOOTH
-caps: BLOCK_SUSPEND
-
-[/vendor/bin/init.qcom.bt.sh]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: 0
