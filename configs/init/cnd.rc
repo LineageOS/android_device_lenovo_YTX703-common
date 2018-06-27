@@ -3,7 +3,7 @@
 service cnd /vendor/bin/cnd
     class late_start
     user system
-    group system
+    group system radio
     socket cnd stream 660 root inet
     writepid /dev/cpuset/system-background/task
 
