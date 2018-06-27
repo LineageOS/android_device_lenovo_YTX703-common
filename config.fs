@@ -38,7 +38,7 @@ caps: 0
 [/vendor/bin/sensors.qcom]
 mode: 0755
 user: AID_SENSORS
-group: AID_SENSORS AID_QTI_DIAG
+group: AID_SENSORS
 caps: NET_BIND_SERVICE
 
 [vendor/bin/cnd]
