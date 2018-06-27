@@ -156,7 +156,7 @@ bin/hvdcp_opti:vendor/bin/hvdcp_opti
 bin/irsc_util:vendor/bin/irsc_util
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
-bin/netmgrd:vendor/bin/netmgrd|6ecef216bfddbce844391579d8a0550463b4f6a7
+bin/netmgrd:vendor/bin/netmgrd|7a196cbbaff3a2c126211c1444823763f17d9fac
 bin/pm-proxy:vendor/bin/pm-proxy
 bin/pm-service:vendor/bin/pm-service
 bin/qmuxd:vendor/bin/qmuxd|b553a66b749314edc1cc92ed190b21e6f893d924
