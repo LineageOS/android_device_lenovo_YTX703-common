@@ -222,7 +222,6 @@ USE_SENSOR_MULTI_HAL := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
     /system/vendor/bin/slim_daemon|libshims_sensor.so
 
 # Thermal

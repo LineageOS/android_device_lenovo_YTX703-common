@@ -135,7 +135,6 @@ PRODUCT_PACKAGES += \
 
 # Libshims
 PRODUCT_PACKAGES += \
-    libshims_get_process_name \
     libshims_sensor
 
 # Sensors
