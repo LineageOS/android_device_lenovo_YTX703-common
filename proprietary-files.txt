@@ -174,7 +174,6 @@ lib/libOmxVpp.so:vendor/lib/libOmxVpp.so
 lib/libvpplibrary.so:vendor/lib/libvpplibrary.so|03d8f12bfa8cfbfa193492e65122e981bc8ab52e
 lib64/libdashplayer.so:vendor/lib64/libdashplayer.so
 lib64/libdhcpcd.so:vendor/lib64/libdhcpcd.so
--priv-app/CNEService/CNEService.apk
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/mm-pp-daemon
 vendor/bin/qti
