@@ -98,6 +98,9 @@ ro.vendor.gt_library=libqti-gt.so
 # used by libqti-gt.so
 sched.colocate.enable=1
 
+# Vendor security patch level
+ro.lineage.build.vendor_security_patch=2018-05-01
+
 # Time
 persist.timed.enable=true
 
