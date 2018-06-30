@@ -293,7 +293,7 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
     /persist/rfs/msm/adsp:rfs/msm/adsp/readwrite \
     /persist/rfs/shared:rfs/msm/adsp/shared \
     /persist/hlos_rfs/shared:rfs/msm/adsp/hlos \
-    /system/etc/firmware:rfs/msm/adsp/readonly/firmware \
+    /vendor/firmware:rfs/msm/adsp/readonly/firmware \
 
 # Create RFS MSM MPSS folder structure
 BOARD_ROOT_EXTRA_SYMLINKS += \
@@ -301,7 +301,7 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
     /persist/rfs/msm/mpss:rfs/msm/mpss/readwrite \
     /persist/rfs/shared:rfs/msm/mpss/shared \
     /persist/hlos_rfs/shared:rfs/msm/mpss/hlos \
-    /system/etc/firmware:rfs/msm/mpss/readonly/firmware \
+    /vendor/firmware:rfs/msm/mpss/readonly/firmware \
 
 #
 # System partition symlinks.
