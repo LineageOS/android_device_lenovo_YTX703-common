@@ -131,6 +131,7 @@ PRODUCT_PACKAGES += \
     init.qcom.radio.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
+    init.recovery.qcom.rc \
     ueventd.qcom.rc \
 
 # Libshims

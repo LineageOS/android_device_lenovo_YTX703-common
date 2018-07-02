@@ -1,0 +1,35 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+/system         ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/system      flags=display="System";backup=1;wipeingui
+/system_image   emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/system      flags=display="System Image";backup=1;
+/data           ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/userdata    flags=encryptable=/dev/block/platform/soc.0/7824900.sdhci/by-name/userencrypt
+/cache          ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/cache       flags=display="Cache";backup=1;wipeingui
+/countrycode    ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/countrycode flags=display="Country Code";backup=1
+/dsp            ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/dsp         flags=display="DSP";backup=1
+/recovery       emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/recovery    flags=display="Recovery";backup=1
+/boot           emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/boot        flags=display="Boot";backup=1;wipeingui
+
+# For bootloader commands to recovery
+/misc           emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/misc
+
+/firmware       vfat      /dev/block/platform/soc.0/7824900.sdhci/by-name/modem       flags=display="Firmware";mounttodecrypt
+/persist        ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/persist     flags=display="Persist";backup=1
+
+/sdcard1        auto      /dev/block/mmcblk1p1                                        flags=display="MicroSD";storage;wipeingui;removable
+/usb-otg        auto      /dev/block/sda1                                             flags=display="USB OTG";storage;wipeingui;removable
+
+# Bootloader
+/aboot          emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/aboot       flags=backup=1;display="Bootloader"
+/cmnlib64       emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/cmnlib64    flags=backup=1;subpartitionof=/aboot
+/cmnlib         emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/cmnlib      flags=backup=1;subpartitionof=/aboot
+/tz             emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/tz          flags=backup=1;subpartitionof=/aboot
+/rpm            emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/rpm         flags=backup=1;subpartitionof=/aboot
+/keymaster      emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/keymaster   flags=backup=1;subpartitionof=/aboot
+/devcfg         emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/devcfg      flags=backup=1;subpartitionof=/aboot
+/userencrypt    emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/userencrypt flags=backup=1;subpartitionof=/aboot
+
+# Modem/Bluetooth backup/restore
+/modem          emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/modem       flags=backup=1;display="Modem"
+
