@@ -19,40 +19,42 @@ set -e
 
 # Load extractutils and do some sanity checks
 MY_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-LINEAGE_ROOT="$MY_DIR"/../../..
-CLEANUP=$1
+LINEAGE_ROOT="${MY_DIR}/../../.."
+CLEANUP="$1"
 
-HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
-if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
-    exit 1
+HELPER="${LINEAGE_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
+	echo "Unable to find helper script at $HELPER"
+	exit 1
 fi
-. "$HELPER"
+. "${HELPER}"
 
 # Initialize the helper for common
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" "true" "$CLEANUP"
+setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" "true" "${CLEANUP}"
 
 # Copyright headers and guards
 write_headers "YTX703F YTX703L"
 
-# The standard common blobs
-write_makefiles "$MY_DIR"/proprietary-files.txt true
+# The standard YTX703-common blobs
+write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # We are done!
 write_footers
 
-if [ -s "$MY_DIR"/$DEVICE/proprietary-files.txt ]; then
-    # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR/$DEVICE_COMMON" "$LINEAGE_ROOT" "false" "$CLEANUP"
-
-    # Copyright headers and guards
-    write_headers
-
-    # The standard device blobs, make treble compatible paths and use $(TARGET_COPY_OUT_VENDOR)
-    write_makefiles "$MY_DIR"/$DEVICE/proprietary-files.txt true
-
-    # We are done!
-    write_footers
+if [ -s "${MY_DIR}/${DEVICE}/proprietary-files.txt" ]; then
+	# Reinitialize the helper for YTX703-common/${device}
+	setup_vendor "${DEVICE}" "${VENDOR}/${DEVICE_COMMON}" "${LINEAGE_ROOT}" "false" "${CLEANUP}"
+	
+	# Copyright headers and guards
+	write_headers
+	
+	# $1: The device-specific blobs
+	# $2: Make treble compatible paths and put "$(TARGET_COPY_OUT_VENDOR)"
+	#     in generated makefiles
+	write_makefiles "${MY_DIR}/${DEVICE}/proprietary-files.txt" true
+	
+	# We are done!
+	write_footers
 fi
