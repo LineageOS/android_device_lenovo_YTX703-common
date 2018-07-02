@@ -55,6 +55,9 @@ if [ -z "${DEVICE_ONLY}" ]; then
 	(
 	setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEANUP}"
 	extract "${MY_DIR}/proprietary-files.txt" "${SRC}"
+	if [ -s "${MY_DIR}/proprietary-files-twrp.txt" ]; then
+		extract "${MY_DIR}/proprietary-files-twrp.txt" "${SRC}"
+	fi
 	)
 fi
 	
@@ -63,6 +66,9 @@ if [ -s "${MY_DIR}/${DEVICE}/proprietary-files.txt" ]; then
 	(
 	setup_vendor "${DEVICE}" "${VENDOR}/${DEVICE_COMMON}" "${LINEAGE_ROOT}" false "${CLEANUP}"
 	extract "${MY_DIR}/${DEVICE}/proprietary-files.txt" "${SRC}"
+	if [ -s "${MY_DIR}/${DEVICE}/proprietary-files-twrp.txt" ]; then
+		extract "${MY_DIR}/${DEVICE}/proprietary-files-twrp.txt" "$SRC"
+	fi
 	)
 fi
 
