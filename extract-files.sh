@@ -30,7 +30,7 @@ if [ ! -f "${HELPER}" ]; then
 fi
 . "${HELPER}"
 
-while getopts ":nhd:" options
+while getopts ":nd:xh" options
 do
 	case $options in
 	n ) CLEANUP="false" ;;
