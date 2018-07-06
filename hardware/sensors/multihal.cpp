@@ -37,6 +37,7 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #define SOCKET_PATH "/dev/socket/sensor_ctl_socket"
 #define RETRY_COUNT 20
