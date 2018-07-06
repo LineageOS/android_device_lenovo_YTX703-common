@@ -52,6 +52,7 @@ LOCAL_SRC_FILES := $(MM_CAM_FILES)
 
 LOCAL_MODULE           := libmmcamera_interface
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libutils
+LOCAL_HEADER_LIBRARIES := libhardware_headers
 LOCAL_MODULE_TAGS := optional
 ifeq (1,$(filter 1,$(shell echo "$$(( $(PLATFORM_SDK_VERSION) >= 26 ))" )))
 LOCAL_MODULE_OWNER := qcom
