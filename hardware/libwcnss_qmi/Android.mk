@@ -27,6 +27,6 @@ LOCAL_SHARED_LIBRARIES += libqcci_legacy
 LOCAL_SHARED_LIBRARIES += libqmiservices
 # qmi_init, qmi_release
 LOCAL_SHARED_LIBRARIES += libqmi
-
+LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
