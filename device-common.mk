@@ -283,27 +283,6 @@ PRODUCT_COPY_FILES += $(foreach service, $(wildcard $(LOCAL_PATH)/configs/init/*
     $(service):$(addprefix $(TARGET_COPY_OUT_VENDOR)/etc/init/, $(notdir $(service))) )
 
 #
-# Ramdisk symlinks.
-# Parsed by system/core/rootdir/Android.mk
-#
-
-# Create RFS MSM ADSP folder structure
-BOARD_ROOT_EXTRA_SYMLINKS += \
-    /data/tombstones/lpass:rfs/msm/adsp/ramdumps \
-    /persist/rfs/msm/adsp:rfs/msm/adsp/readwrite \
-    /persist/rfs/shared:rfs/msm/adsp/shared \
-    /persist/hlos_rfs/shared:rfs/msm/adsp/hlos \
-    /vendor/firmware:rfs/msm/adsp/readonly/firmware \
-
-# Create RFS MSM MPSS folder structure
-BOARD_ROOT_EXTRA_SYMLINKS += \
-    /data/tombstones/modem:rfs/msm/mpss/ramdumps \
-    /persist/rfs/msm/mpss:rfs/msm/mpss/readwrite \
-    /persist/rfs/shared:rfs/msm/mpss/shared \
-    /persist/hlos_rfs/shared:rfs/msm/mpss/hlos \
-    /vendor/firmware:rfs/msm/mpss/readonly/firmware \
-
-#
 # System partition symlinks.
 # Parsed by vendor/cm/build/tasks/target_symlinks.mk
 #
