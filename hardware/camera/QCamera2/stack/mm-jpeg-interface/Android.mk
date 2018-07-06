@@ -56,7 +56,7 @@ LOCAL_SRC_FILES := \
     src/mm_jpeg_mpo_composer.c
 
 LOCAL_MODULE           := libmmjpeg_interface
-LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libqomx_core
+LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libqomx_core libutils
 LOCAL_MODULE_TAGS := optional
 ifeq (1,$(filter 1,$(shell echo "$$(( $(PLATFORM_SDK_VERSION) >= 26 ))" )))
 LOCAL_MODULE_OWNER := qcom
