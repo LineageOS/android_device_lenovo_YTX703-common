@@ -17,6 +17,6 @@
 # inherit from the common version
 -include device/lenovo/YTX703-common/BoardConfigCommon.mk
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := yt_x703f
+# For build/make/tools/releasetools/edify_generator.py
+TARGET_OTA_ASSERT_DEVICE := YTX703F,yt_x703f
 
