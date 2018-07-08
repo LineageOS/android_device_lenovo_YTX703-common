@@ -3,8 +3,8 @@ app_domain(timekeep_app)
 
 # Rules for the Java part of timekeep (com.sony.timekeep).
 
-allow timekeep_app time_data_file:dir  rw_dir_perms;
-allow timekeep_app time_data_file:file rw_file_perms;
+allow timekeep_app time_data_file:dir  create_dir_perms;
+allow timekeep_app time_data_file:file create_file_perms;
 allow timekeep_app sysfs:file          r_file_perms;
 # For /sys/class/rtc/rtc0/since_epoch
 
