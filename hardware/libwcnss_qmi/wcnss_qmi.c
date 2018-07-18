@@ -53,7 +53,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endif
 
 #define LOG_TAG "libwcnss_qmi_YTX703"
-#include <cutils/log.h>
+#include <log/log.h>
 #include <cutils/properties.h>
 #include <sys/types.h>
 #include <sys/stat.h>
