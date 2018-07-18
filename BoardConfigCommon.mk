@@ -222,7 +222,7 @@ USE_SENSOR_MULTI_HAL := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/slim_daemon|libshims_sensor.so
+    /system/vendor/lib64/libqdutils.so|libdisplayconfig.so
 
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
