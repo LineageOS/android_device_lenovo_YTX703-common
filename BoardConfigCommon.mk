@@ -221,6 +221,10 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib64/libqdutils.so|libdisplayconfig.so
+
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
 
