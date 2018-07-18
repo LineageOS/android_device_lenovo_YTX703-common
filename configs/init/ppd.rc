@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service ppd /system/vendor/bin/mm-pp-daemon
+service ppd /system/vendor/bin/mm-pp-daemon --enable-aba-cabl
     class late_start
     disabled
     user system
