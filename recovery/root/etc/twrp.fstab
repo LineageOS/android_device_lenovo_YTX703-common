@@ -9,7 +9,7 @@
 /countrycode    ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/countrycode flags=display="Country Code";backup=1
 /dsp            ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/dsp         flags=display="DSP";backup=1
 /recovery       emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/recovery    flags=display="Recovery";backup=1
-/boot           emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/boot        flags=display="Boot";backup=1;wipeingui
+/boot           emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/boot        flags=display="Boot";backup=1;
 
 # For bootloader commands to recovery
 /misc           emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/misc
