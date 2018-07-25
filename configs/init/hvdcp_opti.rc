@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service hvdcp_opti /system/bin/hvdcp_opti
+service hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
     group root
