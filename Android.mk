@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter YTX703F YTX703L, $(TARGET_DEVICE)),)
+ifneq ($(filter YTX703F YTX703L YTX703X, $(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

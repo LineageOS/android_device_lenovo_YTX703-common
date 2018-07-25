@@ -2,3 +2,5 @@ add_lunch_combo lineage_YTX703F-userdebug
 add_lunch_combo lineage_YTX703F-eng
 add_lunch_combo lineage_YTX703L-userdebug
 add_lunch_combo lineage_YTX703L-eng
+add_lunch_combo lineage_YTX703X-userdebug
+add_lunch_combo lineage_YTX703X-eng

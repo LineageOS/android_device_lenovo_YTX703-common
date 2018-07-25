@@ -35,7 +35,7 @@ fi
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" "true" "${CLEANUP}"
 
 # Copyright headers and guards
-write_headers "YTX703F YTX703L"
+write_headers "YTX703F YTX703L YTX703X"
 
 # The standard YTX703-common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
@@ -54,10 +54,10 @@ write_footers
 if [ -s "${MY_DIR}/${DEVICE}/proprietary-files.txt" ]; then
 	# Reinitialize the helper for YTX703-common/${device}
 	setup_vendor "${DEVICE}" "${VENDOR}/${DEVICE_COMMON}" "${LINEAGE_ROOT}" "false" "${CLEANUP}"
-	
+
 	# Copyright headers and guards
 	write_headers
-	
+
 	# $1: The device-specific blobs
 	# $2: Make treble compatible paths and put "$(TARGET_COPY_OUT_VENDOR)"
 	#     in generated makefiles

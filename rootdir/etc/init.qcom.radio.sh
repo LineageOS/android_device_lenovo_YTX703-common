@@ -75,7 +75,7 @@ netmgr=`getprop ro.use_data_netmgrd`
 
 case "$baseband" in
 "apq")
-    # YTX703F / YTX703X
+    # YTX703F
     setprop ro.radio.noril yes
     stop ril-daemon
     ;;

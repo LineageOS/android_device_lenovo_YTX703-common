@@ -60,7 +60,7 @@ if [ -z "${DEVICE_ONLY}" ]; then
 	fi
 	)
 fi
-	
+
 if [ -s "${MY_DIR}/${DEVICE}/proprietary-files.txt" ]; then
 	# Reinitialize the helper for YTX703-common/${device}
 	(

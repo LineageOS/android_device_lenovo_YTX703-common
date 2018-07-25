@@ -1,0 +1,17 @@
+#
+# Please keep the lines alphabetically sorted
+#
+etc/firmware/venus.b01:vendor/firmware/venus.b01
+etc/firmware/venus-v1.b01:vendor/firmware/venus-v1.b01
+etc/firmware/venus-v1.mbn:vendor/firmware/venus-v1.mbn
+etc/firmware/venus-v1.mdt:vendor/firmware/venus-v1.mdt
+etc/firmware/widevine.b01:vendor/firmware/widevine.b01
+etc/firmware/widevine.mdt:vendor/firmware/widevine.mdt
+vendor/lib/libmmcamera2_iface_modules.so:vendor/lib/libmmcamera2_iface_modules.so
+vendor/lib/libmmcamera2_imglib_modules.so:vendor/lib/libmmcamera2_imglib_modules.so
+vendor/lib/libmmcamera2_mct.so:vendor/lib/libmmcamera2_mct.so
+vendor/lib/libmmcamera2_sensor_modules.so:vendor/lib/libmmcamera2_sensor_modules.so
+vendor/lib/libmmcamera2_stats_modules.so:vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libsensor1.so:vendor/lib/libsensor1.so
+vendor/lib/soundfx/libswdap.so:vendor/lib/soundfx/libswdap.so # Only ro.product.model differs
+vendor/lib64/libsensor1.so:vendor/lib64/libsensor1.so
