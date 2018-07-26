@@ -65,10 +65,10 @@ char const*const POWER_PATTERN_FILE
         = "/sys/class/leds/green/led_time";
 
 const static std::string LCD_FILE
-        = "/sys/class/backlight/lcd-bl/brightness";
+        = "/sys/class/leds/lcd-backlight/brightness";
 
 const static std::string LCD_MAX_FILE
-        = "/sys/class/backlight/lcd-bl/max_brightness";
+        = "/sys/class/leds/lcd-backlight/max_brightness";
 
 namespace android {
     namespace hardware {
