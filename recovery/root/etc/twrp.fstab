@@ -14,12 +14,9 @@
 # For bootloader commands to recovery
 /misc           emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/misc
 
-/firmware       vfat      /dev/block/platform/soc.0/7824900.sdhci/by-name/modem       flags=display="Firmware";mounttodecrypt
+/modem          vfat      /dev/block/platform/soc.0/7824900.sdhci/by-name/modem       flags=display="Modem";mounttodecrypt
 /persist        ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/persist     flags=display="Persist";backup=1
 
 /sdcard1        auto      /dev/block/mmcblk1p1                                        flags=display="MicroSD";storage;wipeingui;removable
 /usb-otg        auto      /dev/block/sda1                                             flags=display="USB OTG";storage;wipeingui;removable
-
-# Modem/Bluetooth backup/restore
-/modem          emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/modem       flags=backup=1;display="Modem"
 
