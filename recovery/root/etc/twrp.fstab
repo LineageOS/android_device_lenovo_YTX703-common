@@ -20,16 +20,6 @@
 /sdcard1        auto      /dev/block/mmcblk1p1                                        flags=display="MicroSD";storage;wipeingui;removable
 /usb-otg        auto      /dev/block/sda1                                             flags=display="USB OTG";storage;wipeingui;removable
 
-# Bootloader
-/aboot          emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/aboot       flags=backup=1;display="Bootloader"
-/cmnlib64       emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/cmnlib64    flags=backup=1;subpartitionof=/aboot
-/cmnlib         emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/cmnlib      flags=backup=1;subpartitionof=/aboot
-/tz             emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/tz          flags=backup=1;subpartitionof=/aboot
-/rpm            emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/rpm         flags=backup=1;subpartitionof=/aboot
-/keymaster      emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/keymaster   flags=backup=1;subpartitionof=/aboot
-/devcfg         emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/devcfg      flags=backup=1;subpartitionof=/aboot
-/userencrypt    emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/userencrypt flags=backup=1;subpartitionof=/aboot
-
 # Modem/Bluetooth backup/restore
 /modem          emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/modem       flags=backup=1;display="Modem"
 
