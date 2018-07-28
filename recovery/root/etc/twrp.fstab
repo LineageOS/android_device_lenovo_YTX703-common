@@ -2,21 +2,52 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/system         ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/system      flags=display="System";backup=1;wipeingui
-/system_image   emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/system      flags=display="System Image";backup=1;
-/data           ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/userdata    flags=encryptable=/dev/block/platform/soc.0/7824900.sdhci/by-name/userencrypt
-/cache          ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/cache       flags=display="Cache";backup=1;wipeingui
-/countrycode    ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/countrycode flags=display="Country Code";backup=1
-/dsp            ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/dsp         flags=display="DSP";backup=1
-/recovery       emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/recovery    flags=display="Recovery";backup=1
-/boot           emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/boot        flags=display="Boot";backup=1;
+# Android partitions
+/system         ext4      /dev/block/bootdevice/by-name/system       flags=backup=1;display="System";wipeingui
+/system_image   emmc      /dev/block/bootdevice/by-name/system       flags=backup=1;display="System Image"
+/cache          ext4      /dev/block/bootdevice/by-name/cache        flags=backup=1;display="Cache";wipeingui
+/data           ext4      /dev/block/bootdevice/by-name/userdata     flags=backup=1;display="Data";encryptable=/dev/block/bootdevice/by-name/userencrypt
+/boot           emmc      /dev/block/bootdevice/by-name/boot         flags=backup=1;display="Boot"
+/recovery       emmc      /dev/block/bootdevice/by-name/recovery     flags=backup=1;display="Recovery"
+/firmware       vfat      /dev/block/bootdevice/by-name/modem        flags=mounttodecrypt;display="Baseband firmware" # Provided by the firmware zips, hence no backup
 
 # For bootloader commands to recovery
-/misc           emmc      /dev/block/platform/soc.0/7824900.sdhci/by-name/misc
+/misc           emmc      /dev/block/bootdevice/by-name/misc
 
-/modem          vfat      /dev/block/platform/soc.0/7824900.sdhci/by-name/modem       flags=display="Modem";mounttodecrypt
-/persist        ext4      /dev/block/platform/soc.0/7824900.sdhci/by-name/persist     flags=display="Persist";backup=1
+# External storage
 
-/sdcard1        auto      /dev/block/mmcblk1p1                                        flags=display="MicroSD";storage;wipeingui;removable
-/usb-otg        auto      /dev/block/sda1                                             flags=display="USB OTG";storage;wipeingui;removable
+/sdcard1        auto      /dev/block/mmcblk1p1                       flags=display="MicroSD";storage;wipeingui;removable
+/usb-otg        auto      /dev/block/sda1                            flags=display="USB OTG";storage;wipeingui;removable
+
+# Device unique partitions
+
+/persist        ext4      /dev/block/bootdevice/by-name/persist      flags=backup=1;display="Persist"
+/userstore      ext4      /dev/block/bootdevice/by-name/userstore    flags=backup=1;display="Userstore (custom Lenovo persist)"
+/countrycode    ext4      /dev/block/bootdevice/by-name/countrycode  flags=backup=1;display="Country Code"
+/config         emmc      /dev/block/bootdevice/by-name/config       flags=backup=1;display="Factory Reset Protection"
+/DDR            emmc      /dev/block/bootdevice/by-name/DDR          flags=backup=1;display="DDR controller firmware"
+/fsc            emmc      /dev/block/bootdevice/by-name/fsc          flags=backup=1;display="Modem Filesystem Cookie"
+/fsg            emmc      /dev/block/bootdevice/by-name/fsg          flags=backup=1;display="EFS"
+/modemst1       emmc      /dev/block/bootdevice/by-name/modemst1     flags=backup=1;subpartitionof=/fsg
+/modemst2       emmc      /dev/block/bootdevice/by-name/modemst2     flags=backup=1;subpartitionof=/fsg
+
+/limits         emmc      /dev/block/bootdevice/by-name/limits       flags=backup=1;display="Limits Management Hardware (LMh) data"
+/sec            emmc      /dev/block/bootdevice/by-name/sec          flags=backup=1;display="Fuse settings"
+/ssd            emmc      /dev/block/bootdevice/by-name/ssd          flags=backup=1;display="Secure Software Download"
+/userencrypt    emmc      /dev/block/bootdevice/by-name/userencrypt  flags=backup=1;display="Disk encryption keys"
+
+
+# Empty partitions - no point to include them in fstab
+
+# apdp
+# devinfo
+# dip
+# dpo
+# msadp
+# keystore
+# mcfg
+# misc
+# mota
+# oem
+# syscfg
 
