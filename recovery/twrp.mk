@@ -33,3 +33,5 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/
 
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
+TW_INTERNAL_STORAGE_PATH := /sdcard
+TW_EXTERNAL_STORAGE_PATH := /sdcard1
