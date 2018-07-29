@@ -1796,7 +1796,6 @@ int QCamera2HardwareInterface::openCamera(struct hw_device_t **hw_device)
  *==========================================================================*/
 int QCamera2HardwareInterface::openCamera()
 {
-    size_t i;
     int32_t rc = NO_ERROR;
     char value[PROPERTY_VALUE_MAX];
 
