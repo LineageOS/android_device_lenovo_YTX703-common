@@ -1,0 +1,3 @@
+# hvdcp_opti (quick charger daemon)
+genfscon sysfs /devices/soc.0/qpnp-vadc-6          u:object_r:sysfs_qpnp_vadc:s0
+genfscon sysfs /devices/soc.0/qpnp-vadc-13         u:object_r:sysfs_qpnp_vadc:s0
