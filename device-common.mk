@@ -134,10 +134,6 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc \
 
-# Libshims
-PRODUCT_PACKAGES += \
-    libshims_sensor
-
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8952 \
