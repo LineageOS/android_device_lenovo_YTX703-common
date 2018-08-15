@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf2cd840_fa16fb01",
+        "filename": "recovery/root/etc/twrp.fstab",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 19235
+      },
+      "writtenOn": "2018-08-15T05:08:55Z",
+      "side": 1,
+      "message": "This is typically /external_sd",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 8
+      },
+      "revId": "5dd6cc07c81109b4600cb12ccbfec5d180f67808",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
