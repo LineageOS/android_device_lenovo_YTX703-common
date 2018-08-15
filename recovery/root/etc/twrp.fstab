@@ -16,7 +16,7 @@
 
 # External storage
 
-/sdcard1        auto      /dev/block/mmcblk1p1                       flags=display="MicroSD";storage;wipeingui;removable
+/external_sd    auto      /dev/block/mmcblk1p1                       flags=display="MicroSD";storage;wipeingui;removable
 /usb-otg        auto      /dev/block/sda1                            flags=display="USB OTG";storage;wipeingui;removable
 
 # Device unique partitions
