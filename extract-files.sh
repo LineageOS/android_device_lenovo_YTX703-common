@@ -18,10 +18,8 @@
 set -e
 
 # Load extractutils and do some sanity checks
-MY_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
-if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
-
-LINEAGE_ROOT="${MY_DIR}"/../../..
+MY_DIR=$(dirname $(readlink -f "${BASH_SOURCE[0]}"))
+LINEAGE_ROOT=$(readlink -f "${MY_DIR}/../../..")
 
 HELPER="${LINEAGE_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
