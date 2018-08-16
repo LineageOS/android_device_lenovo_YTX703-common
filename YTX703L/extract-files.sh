@@ -22,6 +22,6 @@ export DEVICE=YTX703L
 export DEVICE_COMMON=YTX703-common
 export VENDOR=lenovo
 
-MY_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
+MY_DIR=$(dirname $(readlink -f "${BASH_SOURCE[0]}"))
 
 ${MY_DIR}/../extract-files.sh $@
