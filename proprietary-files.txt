@@ -1,25 +1,25 @@
 ### Blobs from Bardock ###
 # GPS
--priv-app/com.qualcomm.location/com.qualcomm.location.apk:vendor/priv-app/com.qualcomm.location/com.qualcomm.location.apk|397314f080f553489440c63da44d01f482e6b761
--vendor/lib64/libloc_api_v02.so|6f7cda15869af111d2017df4f9e2f561a0d07033
--vendor/lib/libloc_api_v02.so|8e86a2a5a78231ad09a27a31912bf1330cc93fdf
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk:vendor/priv-app/com.qualcomm.location/com.qualcomm.location.apk|c047b73a70090e49beb8378a2d1cb80a39eba5df
+-vendor/lib64/libloc_api_v02.so|41083e35594afe48ea44741e58184c1b592ab803
+-vendor/lib/libloc_api_v02.so|ad43ba53d7faf0a46bd88a213a4671dcb5760b83
 framework/com.qti.location.sdk.jar:vendor/framework/com.qti.location.sdk.jar|f2e9f1d49201e1bad83008445fdafe9541e9b2bd
 framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar|e10f1baf6ae0f70c4a529e5711559cebbc3644c9
-lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so|84fddd9ace2be661d26cad1864281c386b709cb2
+lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so|5a8d59701a0babefe807205b8901829ae9fb5e45
 lib64/libxt_native.so:vendor/lib64/libxt_native.so|6d77733e6d409317079e9ad1a9616d6b9e5dad25
 lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|716a812a9f4cdb45c57eb0a6fabb17624a91d553
-vendor/bin/garden_app|6127ea8179f4376c00c475c4a4d6dacd71bf1ef4
-vendor/bin/xtwifi-client|33da61dbd1aa3d8f452aaee6bb7750c82427a25d
+vendor/bin/garden_app|378d491bab7aa2c9fa5ec3cec6960103858c9dff
+vendor/bin/xtwifi-client|2ed47cf59b6cb49a08f1c4a48bdd92d4d89e9f30
 vendor/bin/xtwifi-inet-agent|d4391030c2ba255e8c44058889c3dbcaf70df6d2
 vendor/bin/hw/vendor.qti.gnss@1.0-service|bdf23fe2af07c2afb74721023431446104fd828d
-vendor/bin/loc_launcher|0675f4524d2c9e94f7e978b5e00734c0835ddf15
-vendor/bin/lowi-server|b9c62aefd4633a2a50287fd768a8000c37ae1b0e
+vendor/bin/loc_launcher|133d41049a88784e7fe14b8c93a284b09054b2de
+vendor/bin/lowi-server|1734353992c7caf1dfb87671b4480335d7a33dce
 vendor/bin/slim_daemon|065400e7e8161ac700d93abb0ba7fa4acbab025a
-vendor/bin/xtra-daemon|cc2192efd623aed8c1b5f282b8ff0ccd62bb37a6
+vendor/bin/xtra-daemon|a748021c47bfe89c3e363682b2b8f852e6f11048
 vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc|98655e2adc2158a052b0ecf06b065535f0a2aac7
 vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
-vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|3a66e268286ebfad3f1e35f54b041d6b3d2ed191
+vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|2c59e996f369037d03578e9409f9c2a193705855
 vendor/lib64/libDRPlugin.so|d4f1127ed8f98011fe9687d40e8942e5738f4273
 vendor/lib64/lib_drplugin_server.so|73b0e227e74f9020f2616e4a4dc0ec1f27d49638
 vendor/lib64/libalarmservice_jni.so|cf455802dcabf759bc6ac43767d7f227df8e3517
