@@ -16,9 +16,11 @@ LOCAL_SHARED_LIBRARIES:= \
     libui \
     libgui \
     libcamera_client \
-    libskia \
     libstagefright \
     libstagefright_foundation \
+
+LOCAL_STATIC_LIBRARIES:= \
+    libskia
 
 ifneq (1,$(filter 1,$(shell echo "$$(( $(PLATFORM_SDK_VERSION) >= 18 ))" )))
 
