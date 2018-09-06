@@ -1,14 +1,14 @@
 # access to /dev/socket/sensor_ctl_socket & QCCI/QCSI
-[AID_SENSORS]
+[AID_VENDOR_SENSORS]
 value:2911
 
-[AID_QTI_DIAG]
+[AID_VENDOR_QTI_DIAG]
 value:2901
 
-[AID_RFS]
+[AID_VENDOR_RFS]
 value:2951
 
-[AID_RFS_SHARED]
+[AID_VENDOR_RFS_SHARED]
 value:2952
 
 [bt_firmware/]
@@ -37,8 +37,8 @@ caps: 0
 
 [/vendor/bin/sensors.qcom]
 mode: 0755
-user: AID_SENSORS
-group: AID_SENSORS
+user: AID_VENDOR_SENSORS
+group: AID_VENDOR_SENSORS
 caps: NET_BIND_SERVICE
 
 [vendor/bin/cnd]
