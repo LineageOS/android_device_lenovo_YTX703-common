@@ -9,7 +9,8 @@
 /data           ext4      /dev/block/bootdevice/by-name/userdata     flags=backup=1;display="Data";encryptable=/dev/block/bootdevice/by-name/userencrypt
 /boot           emmc      /dev/block/bootdevice/by-name/boot         flags=backup=1;display="Boot"
 /recovery       emmc      /dev/block/bootdevice/by-name/recovery     flags=backup=1;display="Recovery"
-/firmware       vfat      /dev/block/bootdevice/by-name/modem        flags=mounttodecrypt;display="Baseband firmware" # Provided by the firmware zips, hence no backup
+/firmware       vfat      /dev/block/bootdevice/by-name/modem        flags=mounttodecrypt;display="Baseband firmware"
+# Modem firmware partition is provided by the firmware zips, hence no backup
 
 # For bootloader commands to recovery
 /misc           emmc      /dev/block/bootdevice/by-name/misc
