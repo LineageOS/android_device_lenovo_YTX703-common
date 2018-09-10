@@ -90,10 +90,6 @@ PRODUCT_PACKAGES += \
     libgnss \
     libgnsspps
 
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-service-qti
-
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
