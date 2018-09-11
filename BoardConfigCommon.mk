@@ -66,9 +66,6 @@ TARGET_KERNEL_CONFIG := lineage_YTX703_defconfig
 # Do not create /cache -> /data/cache symlink.
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
-
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
