@@ -31,4 +31,8 @@
          battery LEDs would set this config to 11. -->
     <integer name="config_deviceLightCapabilities">8</integer>
 
+    <!-- This feature has to be turned on by the user since it changes the
+         backlight in a visible way -->
+    <bool name="config_defaultCABC">false</bool>
+
 </resources>
