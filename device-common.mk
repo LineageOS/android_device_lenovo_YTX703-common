@@ -328,6 +328,9 @@ BOARD_VENDOR_EXTRA_SYMLINKS += \
 BOARD_VENDOR_EXTRA_SYMLINKS += \
     /vendor/etc/sensors:snsc
 
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.gnss@1.0.so:system/lib64/android.hardware.gnss@1.0-v27.so
+
 # HIDL
 $(call inherit-product, $(LOCAL_PATH)/common-treble.mk)
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
