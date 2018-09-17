@@ -35,7 +35,7 @@ audio.parser.ip.buffer.size=262144
 
 # Bluetooth
 bluetooth.hfp.client=1
-qcom.bluetooth.soc=smd
+vendor.qcom.bluetooth.soc=smd
 ro.btconfig.if=smd
 ro.btconfig.dev=/dev/smd3
 ro.btconfig.vendor=qcom
