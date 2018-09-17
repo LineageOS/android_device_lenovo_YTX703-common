@@ -7,11 +7,11 @@ service hciattach /vendor/bin/hci_qcomm_init -e
     disabled
     oneshot
 
-on property:bluetooth.hciattach=true
+on property:vendor.bluetooth.hciattach=true
     start hciattach
 
 on property:bluetooth.hciattach=false
-    setprop bluetooth.status off
+    setprop vendor.bluetooth.status off
 
 # Bluetooth YTX703L
 on property:ro.baseband=msm
