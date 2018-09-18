@@ -1,0 +1,25 @@
+# vim: set ft=sh:
+
+service btnvtool /vendor/bin/sh /vendor/etc/init/btnvtool.sh
+    user bluetooth
+    group bluetooth
+    oneshot
+    disabled
+
+on init
+    start btnvtool
+
+service hci_qcomm_init /vendor/bin/hci_qcomm_init -e
+    class late_start
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+on property:vendor.bluetooth.hciattach=true
+    start hci_qcomm_init
+    setprop vendor.bluetooth.status on
+
+on property:vendor.bluetooth.hciattach=false
+    setprop vendor.bluetooth.status off
+
