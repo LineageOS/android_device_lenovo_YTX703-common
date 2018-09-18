@@ -14,7 +14,6 @@ vendor/bin/xtwifi-inet-agent|d4391030c2ba255e8c44058889c3dbcaf70df6d2
 vendor/bin/hw/vendor.qti.gnss@1.0-service|bdf23fe2af07c2afb74721023431446104fd828d
 vendor/bin/loc_launcher|0675f4524d2c9e94f7e978b5e00734c0835ddf15
 vendor/bin/lowi-server|b9c62aefd4633a2a50287fd768a8000c37ae1b0e
-vendor/bin/slim_daemon|065400e7e8161ac700d93abb0ba7fa4acbab025a
 vendor/bin/xtra-daemon|cc2192efd623aed8c1b5f282b8ff0ccd62bb37a6
 vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc|98655e2adc2158a052b0ecf06b065535f0a2aac7
