@@ -68,6 +68,11 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 # Do not create /cache -> /data/cache symlink.
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
+# API Override
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /vendor/bin/mm-qcamera-daemon=27 \
+    /system/vendor/bin/mm-qcamera-daemon=27 \
+
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
