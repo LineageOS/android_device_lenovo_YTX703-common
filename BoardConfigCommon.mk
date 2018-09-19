@@ -69,6 +69,10 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # ANT+
 #BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
+# API Override
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := /vendor/bin/mm-qcamera-daemon=27 \
+                                       /system/vendor/bin/mm-qcamera-daemon=27
+
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
