@@ -59,7 +59,6 @@ service charger /charger
     seclabel u:r:healthd:s0
 
 on early-init
-    symlink /data/tombstones /tombstones
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
