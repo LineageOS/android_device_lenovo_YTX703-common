@@ -90,8 +90,9 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
+    android.hardware.power@1.1-impl \
+    android.hardware.power@1.1-service \
+    android.hardware.power@1.1-service-qti
 
 # Healthd
 PRODUCT_PACKAGES += \
@@ -106,11 +107,6 @@ PRODUCT_PACKAGES += \
 # Dummy hidl lib for oreo blobs
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0
-
-# Lineage stuff
-# Power
-PRODUCT_PACKAGES += \
-     android.hardware.power@1.0-service-qti
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
