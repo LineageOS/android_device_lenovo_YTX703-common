@@ -164,7 +164,7 @@
     <hal format="hidl">
         <name>android.hardware.power</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IPower</name>
             <instance>default</instance>
@@ -269,14 +269,15 @@
             <instance>default</instance>
         </interface>
     </hal>
-<!--
-      Lineage Power HAL, activated by android.hardware.power@1.0-service-qti.
-      RQBalance Power HAL mixed with lineage qti power hal activated by android.hardware.power@1.0-service-rqbalance.
--->
+    <!--
+      Lineage Power HAL, activated by android.hardware.power@1.1-service-qti.
+      RQBalance Power HAL mixed with lineage qti power hal activated by
+      android.hardware.power@1.1-service-rqbalance.
+    -->
     <hal format="hidl">
         <name>vendor.lineage.power</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>ILineagePower</name>
             <instance>default</instance>
