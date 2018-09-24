@@ -1,5 +1,7 @@
 # Rild
 type rild_file, file_type, vendor_file_type;
+# /vendor/bin/awk
+type vendor_awk_exec, file_type, vendor_file_type;
 # hvdcp_opti (quick charger daemon)
 type sysfs_qpnp_vadc, fs_type, sysfs_type;
 # sysfs node for the bq25892 charger node on the i2c bus
