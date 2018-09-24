@@ -40,6 +40,9 @@ ro.btconfig.if=smd
 ro.btconfig.dev=/dev/smd3
 ro.btconfig.vendor=qcom
 ro.btconfig.chip=WCN3680
+# Bluetooth Common Enable Bluetooth Profiles
+ro.bluetooth.hfp.ver=1.7
+ro.qualcomm.bt.hci_transport=smd
 
 # Camera
 media.camera.ts.monotonic=1
