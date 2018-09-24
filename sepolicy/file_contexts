@@ -8,6 +8,8 @@
 
 # SELinux domains for services
 /(vendor|system/vendor)/bin/timekeep                            u:object_r:timekeep_exec:s0
+/(vendor|system/vendor)/etc/init/hw/init.qcom.bt.sh             u:object_r:bluetooth_loader_exec:s0
+/(vendor|system/vendor)/bin/awk                                 u:object_r:vendor_awk_exec:s0
 
 # Lights
 /(system/vendor|vendor)/bin/hw/android\.hardware\.light@2\.0-service\.msm8952 u:object_r:hal_light_default_exec:s0
