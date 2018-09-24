@@ -1,0 +1,7 @@
+# vim: set ft=sh:
+
+# Start the proprietary component of the GPS HIDL HAL
+service qti_gnss_service /vendor/bin/hw/vendor.qti.gnss@1.0-service
+    class hal
+    user gps
+    group system gps radio
