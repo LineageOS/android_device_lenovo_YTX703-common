@@ -47,8 +47,8 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service
+    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-service-qti
 
 # Light
 PRODUCT_PACKAGES += \
@@ -90,8 +90,6 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-impl \
-    android.hardware.power@1.1-service \
     android.hardware.power@1.1-service-qti
 
 # Healthd
