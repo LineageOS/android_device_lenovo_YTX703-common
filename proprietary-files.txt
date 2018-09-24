@@ -17,7 +17,6 @@ vendor/bin/lowi-server|1734353992c7caf1dfb87671b4480335d7a33dce
 vendor/bin/slim_daemon|065400e7e8161ac700d93abb0ba7fa4acbab025a
 vendor/bin/xtra-daemon|a748021c47bfe89c3e363682b2b8f852e6f11048
 vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
-vendor/etc/init/vendor.qti.gnss@1.0-service.rc|98655e2adc2158a052b0ecf06b065535f0a2aac7
 vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
 vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|2c59e996f369037d03578e9409f9c2a193705855
 vendor/lib64/libDRPlugin.so|d4f1127ed8f98011fe9687d40e8942e5738f4273
@@ -65,7 +64,6 @@ vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|fca94d3e81f9f6453b0cb781c292
 
 # Thermal
 vendor/bin/thermal-engine|bbf59e8257b7f4b227e2b50149f4b679049c487d
-#vendor/etc/thermal-engine.conf|b9b1c15f560c47bc41155c7c647af5bb698c6417
 -vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
 -vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
 vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
