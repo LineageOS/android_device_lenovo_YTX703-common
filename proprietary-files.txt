@@ -163,7 +163,6 @@ bin/pm-service:vendor/bin/pm-service
 bin/qmuxd:vendor/bin/qmuxd|b553a66b749314edc1cc92ed190b21e6f893d924
 bin/qseecomd:vendor/bin/qseecomd
 bin/rmt_storage:vendor/bin/rmt_storage
-bin/wcnss_filter:vendor/bin/wcnss_filter
 -framework/ConnectivityExt.jar:vendor/framework/ConnectivityExt.jar
 -framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -framework/com.qti.snapdragon.sdk.display.jar:vendor/framework/com.qti.snapdragon.sdk.display.jar
