@@ -7,7 +7,7 @@ framework/com.qti.location.sdk.jar:vendor/framework/com.qti.location.sdk.jar|f2e
 framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar|e10f1baf6ae0f70c4a529e5711559cebbc3644c9
 lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so|5a8d59701a0babefe807205b8901829ae9fb5e45
 lib64/libxt_native.so:vendor/lib64/libxt_native.so|6d77733e6d409317079e9ad1a9616d6b9e5dad25
-lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|716a812a9f4cdb45c57eb0a6fabb17624a91d553
+lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|392c70592a5759063ee9e09ebcb637bff04aa4fd
 vendor/bin/garden_app|378d491bab7aa2c9fa5ec3cec6960103858c9dff
 vendor/bin/xtwifi-client|2ed47cf59b6cb49a08f1c4a48bdd92d4d89e9f30
 vendor/bin/xtwifi-inet-agent|d4391030c2ba255e8c44058889c3dbcaf70df6d2
@@ -41,7 +41,7 @@ vendor/lib64/libslimclient.so|d96af467f1eae4a9b5e2e40574ac76340e6564c1
 vendor/lib64/libulp2.so|1a92023fbe40d5042239f3efbdcd82f3299e8b17
 vendor/lib64/libxtadapter.so|9a8fbd106994aaaf380be883fa2ef37d04e20401
 vendor/lib64/libxtwifi_ulp_adaptor.so|078124cc018badf89c1f5588e9102e9f7c034da2
-vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741fbc8
+vendor/lib64/vendor.qti.gnss@1.0_vendor.so|f7e9ee8e3804887a2f3939128e860767e6f27258
 
 # Perf
 lib/vendor.qti.hardware.perf@1.0.so:vendor/lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
