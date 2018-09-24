@@ -1,0 +1,23 @@
+# vim: set ft=sh:
+
+service config_bluetooth /vendor/etc/init/hw/init.qcom.bt.sh "onboot"
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service hciattach /vendor/etc/init/hw/init.qcom.bt.sh
+    class late_start
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+on early-boot
+    start config_bluetooth
+
+on property:vendor.bluetooth.hciattach=true
+    start hciattach
+
+on property:vendor.bluetooth.hciattach=false
+    setprop vendor.bluetooth.status off
