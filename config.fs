@@ -100,3 +100,9 @@ mode:  0755
 user:  AID_SYSTEM
 group: AID_SYSTEM
 caps:  SYS_TIME
+
+[vendor/etc/init/bluetooth_loader.sh]
+mode:  0755
+user:  AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps:  0
