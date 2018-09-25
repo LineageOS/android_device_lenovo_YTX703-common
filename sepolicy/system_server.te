@@ -1,7 +1,0 @@
-# Error "qti_sensors_hal: yhj check open /userstore/adjustsensor_x_x failed"
-# comes from /system/vendor/lib64/sensors.ssc.so
-# which is pointed to by /system/etc/sensors/hals.conf
-# which is read by /system/lib64/hw/sensors.msm8952.so
-# which is dlopened by the system_server
-
-allow system_server sensors_data_file:file r_file_perms;
