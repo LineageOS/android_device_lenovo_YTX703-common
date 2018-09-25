@@ -94,10 +94,11 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service \
     android.hardware.power@1.1-service-qti
 
-# Healthd
+# Health HAL
 PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-impl \
-    android.hardware.health@1.0-service
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service \
+    android.hardware.health@2.0-service.override
 
 # Media
 PRODUCT_PACKAGES += \
