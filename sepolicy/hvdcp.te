@@ -1,6 +1,4 @@
 # hvdcp_opti (quick charger daemon)
-allow hvdcp sysfs_qpnp_vadc:dir  r_dir_perms;
-allow hvdcp sysfs_qpnp_vadc:file r_file_perms;
-allow hvdcp sysfs_i2c_bq25892_charger:dir  r_dir_perms;
-allow hvdcp sysfs_i2c_bq25892_charger:file r_file_perms;
+allow hvdcp sysfs_batteryinfo:dir  r_dir_perms;
+allow hvdcp sysfs_batteryinfo:file r_file_perms;
 
