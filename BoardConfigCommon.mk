@@ -222,6 +222,9 @@ USE_DEVICE_SPECIFIC_THERMAL := true
 
 # Vintf
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
+# Exclude deprecated healthd from framework manifest
+DEVICE_FRAMEWORK_MANIFEST_FILE += \
+    system/libhidl/vintfdata/manifest_healthd_exclude.xml
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
