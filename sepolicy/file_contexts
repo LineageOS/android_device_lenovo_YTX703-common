@@ -3,7 +3,7 @@
 /dev/block/bootdevice/by-name/userencrypt                       u:object_r:dm_device:s0
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/userencrypt   u:object_r:dm_device:s0
 /userstore/wifimac                                              u:object_r:wifi_data_file:s0
-/userstore/adjustsensor_.*                                      u:object_r:sensors_data_file:s0
+/userstore/adjustsensor_.*                                      u:object_r:sensors_persist_file:s0
 /userstore(/.*)?                                                u:object_r:persist_file:s0
 
 # SELinux domains for services
