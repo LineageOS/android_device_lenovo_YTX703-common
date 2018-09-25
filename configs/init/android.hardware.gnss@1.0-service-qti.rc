@@ -1,0 +1,7 @@
+# vim: set ft=sh:
+
+# Start the open-source component of the GPS HIDL HAL
+service vendor.gnss_service /vendor/bin/hw/android.hardware.gnss@1.0-service-qti
+    class hal
+    user gps
+    group system gps radio
