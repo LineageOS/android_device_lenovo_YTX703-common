@@ -66,7 +66,6 @@ on early-init
     mkdir /userstore 0771 system system
     mkdir /firmware 0771 system system
     mkdir /persist 0771 system system
-    mkdir /system 0777 root root
     mkdir /dsp 0771 media media
 
 on init
