@@ -10,3 +10,4 @@ genfscon sysfs /devices/soc.0/78b6000.i2c/i2c-2/2-0055   u:object_r:sysfs_batter
 genfscon sysfs /devices/soc.0/qpnp-smbcharger-16         u:object_r:sysfs_batteryinfo:s0
 genfscon proc  /device-tree/firmware/android             u:object_r:sysfs_dt_firmware_android:s0
 genfscon sysfs /devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/stat u:object_r:sysfs_disk_stat:s0
+genfscon sysfs /devices/soc.0/qpnp-rtc-8/                u:object_r:sysfs_rtc:s0
