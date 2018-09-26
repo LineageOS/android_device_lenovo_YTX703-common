@@ -1,0 +1,2 @@
+# /data/vendor/tombstones/wifi
+r_dir_file(hal_wifi_default, vendor_tombstone_data_file);
