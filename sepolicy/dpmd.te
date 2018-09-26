@@ -1,7 +1,7 @@
 allow dpmd socket_device:dir { write add_name };
 allow dpmd socket_device:sock_file { create setattr  };
 
-#get_prop(dpmd, serialno_prop)
+get_prop(dpmd, serialno_prop)
 
 userdebug_or_eng(`
     diag_use(dpmd)
