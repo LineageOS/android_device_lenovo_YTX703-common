@@ -5,7 +5,8 @@ app_domain(timekeep_app)
 
 allow timekeep_app time_data_file:dir  create_dir_perms;
 allow timekeep_app time_data_file:file create_file_perms;
-allow timekeep_app sysfs:file          r_file_perms;
+allow timekeep_app sysfs_rtc:file      r_file_perms;
+allow timekeep_app sysfs_rtc:dir       r_dir_perms;
 # For /sys/class/rtc/rtc0/since_epoch
 
 allow timekeep_app activity_service:service_manager find;
