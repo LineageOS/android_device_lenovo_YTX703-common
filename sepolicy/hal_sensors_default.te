@@ -1,0 +1,5 @@
+# /dev/sensors
+allow hal_sensors_default sensors_device:chr_file r_file_perms;
+# /dev/socket/sensor_ctl_socket
+allow hal_sensors_default sensors_socket:sock_file w_file_perms;
+allow hal_sensors_default sensors:unix_stream_socket connectto;
