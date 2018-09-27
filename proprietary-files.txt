@@ -204,6 +204,7 @@ vendor/lib/libadreno_utils.so
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so|7c98d68a009612339b7a8d6fbd119400a8b9a392
 vendor/lib/libbccQTI.so
+-vendor/lib/libbtnv.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libc2d30-a4xx.so
 vendor/lib/libc2d30-a5xx.so
@@ -886,7 +887,7 @@ vendor/lib64/libasn1cper.so
 vendor/lib64/libasn1crt.so
 vendor/lib64/libasn1crtx.so
 vendor/lib64/libbccQTI.so
-vendor/lib64/libbtnv.so
+-vendor/lib64/libbtnv.so
 vendor/lib64/libc2d30-a3xx.so
 vendor/lib64/libc2d30-a4xx.so
 vendor/lib64/libc2d30-a5xx.so
