@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56f17ecc_b05a909d",
+        "filename": "sepolicy/timekeep.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18566
+      },
+      "writtenOn": "2018-09-27T01:46:12Z",
+      "side": 1,
+      "message": "r_dir_file(timekeep, sysfs_rtc)",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "b94c22394583eae5f72a9ea2a5c4d7b4b108f647",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "54489dd9_fa81ffda",
+        "filename": "sepolicy/timekeep_app.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18566
+      },
+      "writtenOn": "2018-09-27T01:46:12Z",
+      "side": 1,
+      "message": "r_dir_file(timekeep_app, sysfs_rtc)",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "b94c22394583eae5f72a9ea2a5c4d7b4b108f647",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
