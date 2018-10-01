@@ -29,5 +29,4 @@ VNDK_SP_LIBRARIES := \
 
 VNDK_SP_LIBRARIES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0 \
-    vendor.lineage.power@1.0
+    android.hidl.manager@1.0
