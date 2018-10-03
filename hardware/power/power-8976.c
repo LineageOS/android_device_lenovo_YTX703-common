@@ -60,15 +60,12 @@ static int profile_high_performance[] = {
     CPUS_ONLINE_MIN_BIG, 0x4,
     MIN_FREQ_BIG_CORE_0, 0xFFF,       // maximum frequency on big cluster
     MIN_FREQ_LITTLE_CORE_0, 0xFFF,    // maximum frequency on LITTLE cluster
-    GPU_MIN_PWRLVL_BOOST, 0x1,
-    // SCHED_PREFER_IDLE_DIS_V3, 0x1, // not supported on kernel 3.10
-    SCHED_SMALL_TASK_DIS, 0x1,
-    // SCHED_IDLE_NR_RUN_DIS, 0x1,    // not supported on kernel 3.10
-    // SCHED_IDLE_LOAD_DIS, 0x1,      // not supported on kernel 3.10
+    GPU_MIN_POWER_LEVEL, 0x1,
+    SCHED_SMALL_TASK, 0x1,
 };
 
 static int profile_power_save[] = {
-    CPUS_ONLINE_MAX_LIMIT_BIG, 0x1, // limit max count of online cores in big cluster to 1
+    CPUS_ONLINE_MAX_BIG, 0x1,       // limit max count of online cores in big cluster to 1
     MAX_FREQ_BIG_CORE_0, 0x3bf,     // (next possible freq equals/above at) 959 MHz
     MAX_FREQ_LITTLE_CORE_0, 0x300,  // (next possible freq equals/above at) 768 MHz
 };
@@ -79,7 +76,7 @@ static int profile_bias_power[] = {
 };
 
 static int profile_bias_performance[] = {
-    CPUS_ONLINE_MAX_LIMIT_BIG, 0x4, // 4 cores maximum limit on big cluster
+    CPUS_ONLINE_MAX_BIG, 0x4,       // 4 cores maximum limit on big cluster
     MIN_FREQ_BIG_CORE_0, 0x540,     // (next possible freq equals/above at) 1344 MHz
 };
 
