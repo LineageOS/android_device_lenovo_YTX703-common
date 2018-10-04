@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9a5b7ea_94ed775c",
+        "filename": "AndroidProducts.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-10-04T21:03:06Z",
+      "side": 1,
+      "message": "This doesn\u0027t make sense. This device was not even brought up in the CM era.",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 2,
+        "endChar": 49
+      },
+      "revId": "1a1ccfd1308569b4e0f659894833cdf3f9b8132b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
