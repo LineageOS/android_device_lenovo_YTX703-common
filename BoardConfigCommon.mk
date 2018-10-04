@@ -60,6 +60,8 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x08000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/lenovo/msm8976
 TARGET_KERNEL_CONFIG := lineage_YTX703_defconfig
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
 # You can access menuconfig without messing up the kernel build by running:
 # /usr/bin/make -C kernel/lenovo/msm8976 O=$OUT/obj/KERNEL_OBJ ARCH=arm64 menuconfig
 
