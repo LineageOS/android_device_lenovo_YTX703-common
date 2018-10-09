@@ -15,3 +15,35 @@ vendor/lib/libmmcamera2_stats_modules.so:vendor/lib/libmmcamera2_stats_modules.s
 vendor/lib/libsensor1.so:vendor/lib/libsensor1.so
 vendor/lib/soundfx/libswdap.so:vendor/lib/soundfx/libswdap.so # Only ro.product.model differs
 vendor/lib64/libsensor1.so:vendor/lib64/libsensor1.so
+
+# RIL
+bin/netmgrd:vendor/bin/netmgrd|7a196cbbaff3a2c126211c1444823763f17d9fac
+-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+vendor/lib/liblqe.so
+vendor/lib/libnetmgr.so
+vendor/lib/libdsi_netctrl.so|4dd954f831acd53e12a3a2e5c37ab191d1dac930
+vendor/lib/libqdi.so
+vendor/lib/libqdp.so
+vendor/lib/libril-qc-ltedirectdisc.so
+vendor/lib/libril-qc-qmi-1.so|35a05f83704473ea50f975687ee42bd23d276383
+vendor/lib/libril-qc-radioconfig.so
+vendor/lib/libril-qcril-hook-oem.so
+vendor/lib/librilqmiservices.so
+vendor/lib64/libconfigdb.so
+vendor/lib64/liblqe.so
+vendor/lib64/libdsi_netctrl.so|31515c13b819ff442fae158fcef058bce020b1da
+vendor/lib64/libnetmgr.so
+vendor/lib64/libqdi.so
+vendor/lib64/libqdp.so
+vendor/lib64/libril-qc-ltedirectdisc.so
+vendor/lib64/libril-qc-qmi-1.so|dde74eb11388b940d26629fa01b6ac939e6c4e0a
+vendor/lib64/libril-qc-radioconfig.so
+vendor/lib64/libril-qcril-hook-oem.so
+vendor/lib64/librilqmiservices.so
+vendor/lib64/libsystem_health_mon.so
+vendor/qcril.db
+
+# RIL dependencies, kanged from Bardock
+vendor/lib/libsettings.so|f507b3afa202e7c582bf4e469526b57c6cc8085b
+vendor/lib64/libsettings.so|1a76294b05b125874674fae367d6d91895ec6cbc

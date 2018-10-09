@@ -71,10 +71,6 @@ vendor/bin/thermal-engine|bbf59e8257b7f4b227e2b50149f4b679049c487d
 -vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
 vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
 
-# Misc
-vendor/lib/libsettings.so|f507b3afa202e7c582bf4e469526b57c6cc8085b
-vendor/lib64/libsettings.so|1a76294b05b125874674fae367d6d91895ec6cbc
-
 ### Blobs from Smartron ###
 vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
 
@@ -157,7 +153,6 @@ bin/hvdcp_opti:vendor/bin/hvdcp_opti
 bin/irsc_util:vendor/bin/irsc_util
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
-bin/netmgrd:vendor/bin/netmgrd|7a196cbbaff3a2c126211c1444823763f17d9fac
 bin/pm-proxy:vendor/bin/pm-proxy
 bin/pm-service:vendor/bin/pm-service
 bin/qmuxd:vendor/bin/qmuxd|b553a66b749314edc1cc92ed190b21e6f893d924
@@ -169,13 +164,11 @@ bin/wcnss_filter:vendor/bin/wcnss_filter
 -framework/com.qti.snapdragon.sdk.display.jar:vendor/framework/com.qti.snapdragon.sdk.display.jar
 -framework/dpmapi.jar:vendor/framework/dpmapi.jar
 -framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
--framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 -framework/tcmclient.jar:vendor/framework/tcmclient.jar
 lib/libOmxVpp.so:vendor/lib/libOmxVpp.so
 lib/libvpplibrary.so:vendor/lib/libvpplibrary.so|03d8f12bfa8cfbfa193492e65122e981bc8ab52e
 lib64/libdashplayer.so:vendor/lib64/libdashplayer.so
 lib64/libdhcpcd.so:vendor/lib64/libdhcpcd.so
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/mm-pp-daemon
 vendor/bin/qti
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -684,7 +677,6 @@ vendor/lib/libdpmfdmgr.so
 vendor/lib/libdpmframework.so|740b5b276a8f20ccfc32383b01837df60d5145b4
 vendor/lib/libdpmnsrm.so
 vendor/lib/libdpmtcm.so
-vendor/lib/libdsi_netctrl.so|4dd954f831acd53e12a3a2e5c37ab191d1dac930
 vendor/lib/libdsutils.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
@@ -700,7 +692,6 @@ vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libllvm-qgl.so
 vendor/lib/libloc_ext.so
-vendor/lib/liblqe.so
 vendor/lib/libmdmdetect.so
 vendor/lib/libmm-als.so
 vendor/lib/libmm-color-convertor.so
@@ -822,15 +813,12 @@ vendor/lib/libmmsw_detail_enhancement.so
 vendor/lib/libmmsw_math.so
 vendor/lib/libmmsw_opencl.so
 vendor/lib/libmmsw_platform.so
-vendor/lib/libnetmgr.so
 vendor/lib/liboemcrypto.so|531beb947982c4e4f7d692386c1c9f2e6493aba5
 vendor/lib/liboptizoom.so
 vendor/lib/libperipheral_client.so
 lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so|e619e076613d7bb46a883d481f7e31d2092fb795
 -vendor/lib/libqcci_legacy.so
 vendor/lib/libqct_resampler.so
-vendor/lib/libqdi.so
-vendor/lib/libqdp.so
 -vendor/lib/libqmi.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
@@ -844,11 +832,6 @@ vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqti-at.so
 vendor/lib/libqti-gt.so|f8dbf3251fcef86372130a36e40d9194f3b553b2
-vendor/lib/libril-qc-ltedirectdisc.so
-vendor/lib/libril-qc-qmi-1.so|35a05f83704473ea50f975687ee42bd23d276383
-vendor/lib/libril-qc-radioconfig.so
-vendor/lib/libril-qcril-hook-oem.so
-vendor/lib/librilqmiservices.so
 vendor/lib/librs_adreno.so|6396288ad04bb2f4da6135e50451dfc28943cc1d
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscale.so
@@ -913,7 +896,6 @@ vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libcne.so|ac2c2a42415f79c481a25c0c7d83455630a83176
 vendor/lib64/libcneapiclient.so|28d003259082020dc8947813e333518ac49bddd0
 vendor/lib64/libcneqmiutils.so
-vendor/lib64/libconfigdb.so
 vendor/lib64/libconnctrl.so
 vendor/lib64/libdatactrl.so
 vendor/lib64/libdiag.so
@@ -925,7 +907,6 @@ vendor/lib64/libdpmnsrm.so
 vendor/lib64/libdpmtcm.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libdsi_netctrl.so|31515c13b819ff442fae158fcef058bce020b1da
 vendor/lib64/libdsutils.so
 vendor/lib64/libgsl.so
 vendor/lib64/libidl.so
@@ -933,7 +914,6 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
 vendor/lib64/libloc_ext.so
-vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libmm-als.so
 vendor/lib64/libmm-disp-apis.so
@@ -945,13 +925,10 @@ vendor/lib64/libmmcamera2_is.so
 vendor/lib64/libmmcamera2_q3a_core.so
 vendor/lib64/libmmcamera2_sensor_debug.so
 vendor/lib64/libmmcamera2_stats_algorithm.so
-vendor/lib64/libnetmgr.so
 vendor/lib64/libperipheral_client.so
 lib64/libprotobuf-cpp-lite.so:vendor/lib64/libprotobuf-cpp-Hlte.so|0b7f1be1e68ddca2cd989bdcff7b29e90b5081d1
 -vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqcmaputils.so
-vendor/lib64/libqdi.so
-vendor/lib64/libqdp.so
 vendor/lib64/libqisl.so
 -vendor/lib64/libqmi.so
 vendor/lib64/libqmi_cci.so
@@ -963,11 +940,6 @@ vendor/lib64/libqmi_encdec.so
 -vendor/lib64/libqmiservices.so
 vendor/lib64/libqti-at.so
 vendor/lib64/libqti-gt.so|291e07af4c7cd933764a2275de1fc50c8070faa1
-vendor/lib64/libril-qc-ltedirectdisc.so
-vendor/lib64/libril-qc-qmi-1.so|dde74eb11388b940d26629fa01b6ac939e6c4e0a
-vendor/lib64/libril-qc-radioconfig.so
-vendor/lib64/libril-qcril-hook-oem.so
-vendor/lib64/librilqmiservices.so
 vendor/lib64/librpmb.so|54263c1a69ee14b8f6e137edd3897d3d9e37a782
 vendor/lib64/librs_adreno.so|21ac4a7e227fea1cf3af7e129b9c6d2e3c7082ab
 vendor/lib64/librs_adreno_sha1.so
@@ -979,13 +951,11 @@ vendor/lib64/libsensor_reg.so
 
 vendor/lib64/libsmemlog.so
 vendor/lib64/libssd.so
-vendor/lib64/libsystem_health_mon.so
 -vendor/lib64/libtime_genoff.so
 vendor/lib64/libvendorconn.so
 vendor/lib64/libxml.so
 vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
-vendor/qcril.db
 
 
 etc/firmware/a225p5_pm4.fw:vendor/firmware/a225p5_pm4.fw
