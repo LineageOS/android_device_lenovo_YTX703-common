@@ -3,5 +3,9 @@
 service qcom-radio-sh /vendor/bin/sh /vendor/bin/init.qcom.radio.sh
     class main
     user root
+    disabled
     oneshot
 
+# YTX703L
+on property:ro.baseband=msm
+    enable qcom-radio-sh

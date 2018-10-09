@@ -7,3 +7,6 @@ service qti /system/vendor/bin/qti
     disabled
     writepid /dev/cpuset/system-background/tasks
 
+# YTX703L
+on property:persist.data.mode=concurrent
+    enable qti

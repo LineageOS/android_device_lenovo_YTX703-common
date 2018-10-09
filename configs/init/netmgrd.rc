@@ -5,7 +5,10 @@ service netmgrd /vendor/bin/netmgrd
     disabled
     writepid /dev/cpuset/system-background/tasks
 
+# YTX703L
+on property:ro.use_data_netmgrd=true
+    enable netmgrd
+
 on boot
     # Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
-

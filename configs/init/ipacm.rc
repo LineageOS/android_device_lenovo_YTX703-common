@@ -6,6 +6,10 @@ service ipacm /system/vendor/bin/ipacm
     group radio inet
     disabled
 
+# YTX703L
+on property:ro.baseband=msm
+    enable ipacm
+
 on post-fs-data
     #create ipacm log dir
     mkdir /data/vendor/ipa 0770 radio radio

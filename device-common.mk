@@ -127,7 +127,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.power.rc \
-    init.qcom.radio.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
@@ -164,12 +163,6 @@ PRODUCT_PACKAGES += \
     libwcnss_qmi \
     wpa_supplicant \
     wpa_supplicant.conf \
-
-# data-ipa-cfg-mgr
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
-    libipanat \
 
 #
 # PRODUCT_COPY_FILES rules

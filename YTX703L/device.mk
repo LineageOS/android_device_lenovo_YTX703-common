@@ -39,5 +39,11 @@ PRODUCT_PACKAGES += \
 
 # Extra init scripts
 PRODUCT_PACKAGES += \
-    init.qcom.console.sh \
     init.qcom.radio.sh
+
+# data-ipa-cfg-mgr
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml \
+    libipanat \
+

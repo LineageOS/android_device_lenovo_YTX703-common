@@ -8,6 +8,10 @@ service qmuxd /vendor/bin/qmuxd
     disabled
     writepid /dev/cpuset/system-background/tasks
 
+# YTX703L
+on property:ro.baseband=msm
+    enable qmuxd
+
 on boot
     # Create QMUX daemon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
