@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service qcom-radio-sh /vendor/bin/sh /vendor/bin/init.qcom.radio.sh
+service qcom-radio-sh /vendor/bin/sh /vendor/etc/init/hw/init.qcom.radio.sh
     class main
     user root
     disabled

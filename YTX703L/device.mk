@@ -37,10 +37,6 @@ PRODUCT_PACKAGES += \
     libnfnetlink \
     libnetfilter_conntrack
 
-# Extra init scripts
-PRODUCT_PACKAGES += \
-    init.qcom.radio.sh
-
 # data-ipa-cfg-mgr
 PRODUCT_PACKAGES += \
     ipacm \
