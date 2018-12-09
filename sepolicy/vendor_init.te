@@ -15,6 +15,7 @@ allow vendor_init rootfs:file create_file_perms;
 allow vendor_init rootfs:dir  create_dir_perms;
 allow vendor_init ipa_dev:chr_file w_file_perms;
 allow vendor_init proc:file w_file_perms;
+set_prop(vendor_init, vendor_mpctl_prop);
 
 # REMOVE ME 2019/04/26
 allow vendor_init system_data_file:{ dir file } { getattr relabelto };
