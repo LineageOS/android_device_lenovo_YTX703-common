@@ -12,6 +12,9 @@ service qmuxd /vendor/bin/qmuxd
 on property:ro.baseband=msm
     enable qmuxd
 
+on property:vold.decrypt=trigger_restart_framework
+    restart qmuxd
+
 on boot
     # Create QMUX daemon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
