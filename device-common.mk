@@ -149,9 +149,27 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
 
+# Wi-Fi Display
+PRODUCT_PACKAGES += \
+    vendor.display.config@1.0 \
+    libdisplayconfig \
+    libaacwrapper \
+    libnl \
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 #
 # PRODUCT_COPY_FILES rules
 #
+
+# Wi-Fi Display (WFD) configuration files
+PRODUCT_COPY_FILES += $(foreach wfd_config, $(wildcard $(LOCAL_PATH)/configs/wifi-display/*), \
+    $(wfd_config):$(addprefix $(TARGET_COPY_OUT_SYSTEM)/etc/, $(notdir $(wfd_config))) ) \
+
+# Whitelisted apps
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sysconfig/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
 
 # Device-specific permissions
 PRODUCT_COPY_FILES += $(foreach permission, $(wildcard $(LOCAL_PATH)/configs/permissions/*), \
