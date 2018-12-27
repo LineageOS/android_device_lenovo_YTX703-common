@@ -30,11 +30,15 @@ fi
 
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
+KANG=
 
 while [ $# -gt 0 ]; do
 	case $1 in
 	-n|--no-cleanup)
 		CLEAN_VENDOR=false
+		;;
+	-k|--kang)
+		KANG="--kang"
 		;;
 	-s|--section)
 		shift
@@ -56,10 +60,10 @@ fi
 (
 	setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VENDOR}"
 	extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
-			--section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-fixups"
+			${KANG} --section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-fixups"
 	if [ -s "${MY_DIR}/proprietary-files-twrp.txt" ]; then
 		extract "${MY_DIR}/proprietary-files-twrp.txt" "${SRC}" \
-			--section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-twrp-fixups"
+			${KANG} --section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-twrp-fixups"
 	fi
 )
 
@@ -67,10 +71,10 @@ fi
 (
 	setup_vendor "${DEVICE}" "${VENDOR}/${DEVICE_COMMON}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 	extract "${MY_DIR}/${DEVICE}/proprietary-files.txt" "${SRC}" \
-			--section "${SECTION}" --fixup-dir "${MY_DIR}/${DEVICE}/proprietary-files-fixups"
+			${KANG} --section "${SECTION}" --fixup-dir "${MY_DIR}/${DEVICE}/proprietary-files-fixups"
 	if [ -s "${MY_DIR}/${DEVICE}/proprietary-files-twrp.txt" ]; then
 		extract "${MY_DIR}/${DEVICE}/proprietary-files-twrp.txt" "$SRC" \
-			--section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-twrp-fixups"
+			${KANG} --section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-twrp-fixups"
 	fi
 )
 
