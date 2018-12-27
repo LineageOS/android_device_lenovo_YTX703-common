@@ -28,46 +28,50 @@ if [ ! -f "${HELPER}" ]; then
 fi
 . "${HELPER}"
 
-while getopts ":nd:xh" options
-do
-	case $options in
-	n ) CLEANUP="false" ;;
-	d ) SRC=$OPTARG ;;
-	x ) DEVICE_ONLY=1 ;;
-	h ) echo "Usage: `basename $0` [OPTIONS] "
-	    echo "  -n  No cleanup"
-	    echo "  -d  Fetch blob from filesystem"
-	    echo "  -x  Only device specific extraction"
-	    echo "  -h  Show this help"
-	    exit ;;
-	* ) ;;
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
+
+while [ $# -gt 0 ]; do
+	case $1 in
+	-n|--no-cleanup)
+		CLEAN_VENDOR=false
+		;;
+	-s|--section)
+		shift
+		SECTION=$1
+		CLEAN_VENDOR=false
+		;;
+	*)
+		SRC=$1
+		;;
 	esac
+	shift
 done
 
-if [ -z $SRC ]; then
+if [ -z "$SRC" ]; then
 	SRC=adb
 fi
 
 # Initialize the helper for YTX703-common
-if [ -z "${DEVICE_ONLY}" ]; then
-	(
-	setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEANUP}"
-	extract "${MY_DIR}/proprietary-files.txt" "${SRC}"
+(
+	setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VENDOR}"
+	extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
+			--section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-fixups"
 	if [ -s "${MY_DIR}/proprietary-files-twrp.txt" ]; then
-		extract "${MY_DIR}/proprietary-files-twrp.txt" "${SRC}"
+		extract "${MY_DIR}/proprietary-files-twrp.txt" "${SRC}" \
+			--section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-twrp-fixups"
 	fi
-	)
-fi
-	
-if [ -s "${MY_DIR}/${DEVICE}/proprietary-files.txt" ]; then
-	# Reinitialize the helper for YTX703-common/${device}
-	(
-	setup_vendor "${DEVICE}" "${VENDOR}/${DEVICE_COMMON}" "${LINEAGE_ROOT}" false "${CLEANUP}"
-	extract "${MY_DIR}/${DEVICE}/proprietary-files.txt" "${SRC}"
-	if [ -s "${MY_DIR}/${DEVICE}/proprietary-files-twrp.txt" ]; then
-		extract "${MY_DIR}/${DEVICE}/proprietary-files-twrp.txt" "$SRC"
-	fi
-	)
-fi
+)
 
-"${MY_DIR}/setup-makefiles.sh" "${CLEANUP}"
+# Reinitialize the helper for YTX703-common/${device}
+(
+	setup_vendor "${DEVICE}" "${VENDOR}/${DEVICE_COMMON}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
+	extract "${MY_DIR}/${DEVICE}/proprietary-files.txt" "${SRC}" \
+			--section "${SECTION}" --fixup-dir "${MY_DIR}/${DEVICE}/proprietary-files-fixups"
+	if [ -s "${MY_DIR}/${DEVICE}/proprietary-files-twrp.txt" ]; then
+		extract "${MY_DIR}/${DEVICE}/proprietary-files-twrp.txt" "$SRC" \
+			--section "${SECTION}" --fixup-dir "${MY_DIR}/proprietary-files-twrp-fixups"
+	fi
+)
+
+"${MY_DIR}/setup-makefiles.sh" "${CLEAN_VENDOR}"

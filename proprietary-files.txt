@@ -114,7 +114,7 @@ etc/acdbdata/QRD/msm8976-skun-snd-card/QRD_SKUN_Speaker_cal.acdb:vendor/etc/acdb
 
 # Audio libraries
 vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so|11ebc4c2f4a50a81e810fb0fee01267a8b8fba57
+vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
@@ -125,7 +125,7 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so|b2ea4e2572bf8ec5685839f39cf1198d7893195e
+vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbmapper.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
@@ -133,7 +133,7 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 
 # Listen
-vendor/lib/hw/sound_trigger.primary.msm8952.so|de005e5eb876e1ec06135dedfbb86e0e0c09762f
+vendor/lib/hw/sound_trigger.primary.msm8952.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
@@ -142,9 +142,9 @@ vendor/lib/libsmwrapper.so
 # Please keep the lines alphabetically sorted
 bin/adsprpcd:vendor/bin/adsprpcd
 bin/btnvtool:vendor/bin/btnvtool
-bin/cnd:vendor/bin/cnd|d876882efffa12a235bc2dbba02ebddb7dd3ccb6
+bin/cnd:vendor/bin/cnd
 bin/dpmd:vendor/bin/dpmd
-bin/sensors.qcom:vendor/bin/sensors.qcom|380b6a5c102a49c8a8f9040f77723b7c01166231
+bin/sensors.qcom:vendor/bin/sensors.qcom
 
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 bin/hvdcp_opti:vendor/bin/hvdcp_opti
@@ -153,7 +153,7 @@ bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
 bin/pm-proxy:vendor/bin/pm-proxy
 bin/pm-service:vendor/bin/pm-service
-bin/qmuxd:vendor/bin/qmuxd|b553a66b749314edc1cc92ed190b21e6f893d924
+bin/qmuxd:vendor/bin/qmuxd
 bin/qseecomd:vendor/bin/qseecomd
 bin/rmt_storage:vendor/bin/rmt_storage
 -framework/ConnectivityExt.jar:vendor/framework/ConnectivityExt.jar
@@ -163,7 +163,7 @@ bin/rmt_storage:vendor/bin/rmt_storage
 -framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
 -framework/tcmclient.jar:vendor/framework/tcmclient.jar
 lib/libOmxVpp.so:vendor/lib/libOmxVpp.so
-lib/libvpplibrary.so:vendor/lib/libvpplibrary.so|03d8f12bfa8cfbfa193492e65122e981bc8ab52e
+lib/libvpplibrary.so:vendor/lib/libvpplibrary.so
 lib64/libdashplayer.so:vendor/lib64/libdashplayer.so
 lib64/libdhcpcd.so:vendor/lib64/libdhcpcd.so
 vendor/bin/mm-pp-daemon
@@ -201,7 +201,7 @@ vendor/lib/libactuator_lc898212xd.so
 vendor/lib/libactuator_rohm_bu64243gwz.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsprpc.so|7c98d68a009612339b7a8d6fbd119400a8b9a392
+vendor/lib/libadsprpc.so
 vendor/lib/libbccQTI.so
 -vendor/lib/libbtnv.so
 vendor/lib/libc2d30-a3xx.so
@@ -664,15 +664,15 @@ vendor/lib/libchromatix_s5k3m2xx_snapshot.so
 vendor/lib/libchromatix_s5k3m2xx_video_4k.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_preview_ad5816g.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_video_ad5816g.so
-vendor/lib/libcne.so|35469fcf947d18d9d18fc34bc1a1553c23eb6c0c
-vendor/lib/libcneapiclient.so|171a5f77859fb313256f728706811f3945058bba
+vendor/lib/libcne.so
+vendor/lib/libcneapiclient.so
 vendor/lib/libcneqmiutils.so
 vendor/lib/libconnctrl.so
 vendor/lib/libdatactrl.so
 vendor/lib/libdiag.so
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
-vendor/lib/libdpmframework.so|740b5b276a8f20ccfc32383b01837df60d5145b4
+vendor/lib/libdpmframework.so
 vendor/lib/libdpmnsrm.so
 vendor/lib/libdpmtcm.so
 vendor/lib/libdsutils.so
@@ -694,7 +694,7 @@ vendor/lib/libmdmdetect.so
 vendor/lib/libmm-als.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmm-disp-apis.so
-vendor/lib/libmm-qdcm.so|a5a8ac33f48d3124f7a5c48e5ef46d74c0dc12d3
+vendor/lib/libmm-qdcm.so
 vendor/lib/libmmQSM.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
@@ -811,7 +811,7 @@ vendor/lib/libmmsw_detail_enhancement.so
 vendor/lib/libmmsw_math.so
 vendor/lib/libmmsw_opencl.so
 vendor/lib/libmmsw_platform.so
-vendor/lib/liboemcrypto.so|531beb947982c4e4f7d692386c1c9f2e6493aba5
+vendor/lib/liboemcrypto.so
 vendor/lib/liboptizoom.so
 vendor/lib/libperipheral_client.so
 lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so|e619e076613d7bb46a883d481f7e31d2092fb795
@@ -830,7 +830,7 @@ vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqti-at.so
 vendor/lib/libqti-gt.so|f8dbf3251fcef86372130a36e40d9194f3b553b2
-vendor/lib/librs_adreno.so|6396288ad04bb2f4da6135e50451dfc28943cc1d
+vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
@@ -844,7 +844,7 @@ vendor/lib/libtsvideoprocess.so
 vendor/lib/libubifocus.so
 vendor/lib/libvendorconn.so
 vendor/lib/libxml.so
-vendor/lib/mediadrm/libwvdrmengine.so|7cfe694fd824601e23ab319587b8646c8fa77959
+vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
@@ -877,11 +877,11 @@ vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libRSDriver_adreno.so
-vendor/lib64/libSecureUILib.so|866ddc684bd67b9109760080c277bb6d57a1967b
+vendor/lib64/libSecureUILib.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libadsprpc.so|e6e674edd70253aeaad2ad2e2fac0d77a4c03933
+vendor/lib64/libadsprpc.so
 vendor/lib64/libasn1cper.so
 vendor/lib64/libasn1crt.so
 vendor/lib64/libasn1crtx.so
@@ -891,8 +891,8 @@ vendor/lib64/libc2d30-a3xx.so
 vendor/lib64/libc2d30-a4xx.so
 vendor/lib64/libc2d30-a5xx.so
 vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libcne.so|ac2c2a42415f79c481a25c0c7d83455630a83176
-vendor/lib64/libcneapiclient.so|28d003259082020dc8947813e333518ac49bddd0
+vendor/lib64/libcne.so
+vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneqmiutils.so
 vendor/lib64/libconnctrl.so
 vendor/lib64/libdatactrl.so
@@ -900,7 +900,7 @@ vendor/lib64/libdiag.so
 vendor/lib64/libdisp-aba.so
 vendor/lib64/libdpmctmgr.so
 vendor/lib64/libdpmfdmgr.so
-vendor/lib64/libdpmframework.so|fb94bdf4d26d4bea0dabc062c93c1c63847fb8ee
+vendor/lib64/libdpmframework.so
 vendor/lib64/libdpmnsrm.so
 vendor/lib64/libdpmtcm.so
 vendor/lib64/libdrmfs.so
@@ -917,7 +917,7 @@ vendor/lib64/libmm-als.so
 vendor/lib64/libmm-disp-apis.so
 vendor/lib64/libmm-dspp-utils.so
 vendor/lib64/libmm-qdcm-diag.so
-vendor/lib64/libmm-qdcm.so|0bc5c46f92313cd8587d0d74bc6d7e7e0c264431
+vendor/lib64/libmm-qdcm.so
 vendor/lib64/libmmcamera2_frame_algorithm.so
 vendor/lib64/libmmcamera2_is.so
 vendor/lib64/libmmcamera2_q3a_core.so
@@ -937,9 +937,9 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 -vendor/lib64/libqmiservices.so
 vendor/lib64/libqti-at.so
-vendor/lib64/libqti-gt.so|291e07af4c7cd933764a2275de1fc50c8070faa1
-vendor/lib64/librpmb.so|54263c1a69ee14b8f6e137edd3897d3d9e37a782
-vendor/lib64/librs_adreno.so|21ac4a7e227fea1cf3af7e129b9c6d2e3c7082ab
+vendor/lib64/libqti-gt.so
+vendor/lib64/librpmb.so
+vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libscale.so
 vendor/lib64/libsd_sdk_display.so
