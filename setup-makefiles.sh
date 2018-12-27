@@ -51,13 +51,13 @@ fi
 # We are done!
 write_footers
 
-if [ -s "${MY_DIR}/${DEVICE}/proprietary-files.txt" ]; then
-	# Reinitialize the helper for YTX703-common/${device}
+# Reinitialize the helper for YTX703-common/${device}
+(
 	setup_vendor "${DEVICE}" "${VENDOR}/${DEVICE_COMMON}" "${LINEAGE_ROOT}" "false" "${CLEANUP}"
-	
+
 	# Copyright headers and guards
 	write_headers
-	
+
 	# $1: The device-specific blobs
 	# $2: Make treble compatible paths and put "$(TARGET_COPY_OUT_VENDOR)"
 	#     in generated makefiles
@@ -73,4 +73,4 @@ if [ -s "${MY_DIR}/${DEVICE}/proprietary-files.txt" ]; then
 
 	# We are done!
 	write_footers
-fi
+)

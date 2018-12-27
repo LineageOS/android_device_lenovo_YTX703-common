@@ -2,7 +2,7 @@
 # Please keep the lines alphabetically sorted
 #
 # All binaries below are needed for disk encryption
-bin/qseecomd:recovery/root/sbin/qseecomd|b8dfe578ff2f442a8d686f2ea8e0df5e80df4bb8  # Haxxed to use /sbin/linker64
+bin/qseecomd:recovery/root/sbin/qseecomd
 vendor/lib64/hw/keystore.msm8952.so:recovery/root/vendor/lib64/hw/keystore.msm8952.so
 vendor/lib64/libQSEEComAPI.so:recovery/root/vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libdiag.so:recovery/root/vendor/lib64/libdiag.so
