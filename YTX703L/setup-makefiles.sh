@@ -24,4 +24,4 @@ export VENDOR=lenovo
 
 MY_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
 
-${MY_DIR}/../setup-makefiles.sh $@
+${MY_DIR}/../setup-makefiles.sh "$@"
