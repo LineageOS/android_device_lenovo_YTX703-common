@@ -814,7 +814,7 @@ vendor/lib/libmmsw_platform.so
 vendor/lib/liboemcrypto.so|531beb947982c4e4f7d692386c1c9f2e6493aba5
 vendor/lib/liboptizoom.so
 vendor/lib/libperipheral_client.so
-lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so|e619e076613d7bb46a883d481f7e31d2092fb795
+vendor/lib/libprotobuf-cpp-Hlte.so|e619e076613d7bb46a883d481f7e31d2092fb795
 -vendor/lib/libqcci_legacy.so
 vendor/lib/libqct_resampler.so
 -vendor/lib/libqmi.so
@@ -924,7 +924,7 @@ vendor/lib64/libmmcamera2_q3a_core.so
 vendor/lib64/libmmcamera2_sensor_debug.so
 vendor/lib64/libmmcamera2_stats_algorithm.so
 vendor/lib64/libperipheral_client.so
-lib64/libprotobuf-cpp-lite.so:vendor/lib64/libprotobuf-cpp-Hlte.so|0b7f1be1e68ddca2cd989bdcff7b29e90b5081d1
+vendor/lib64/libprotobuf-cpp-Hlte.so|0b7f1be1e68ddca2cd989bdcff7b29e90b5081d1
 -vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqisl.so
@@ -955,7 +955,7 @@ vendor/lib64/libxml.so
 vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
 
-
+# Common firmware
 etc/firmware/a225p5_pm4.fw:vendor/firmware/a225p5_pm4.fw
 etc/firmware/a225_pfp.fw:vendor/firmware/a225_pfp.fw
 etc/firmware/a225_pm4.fw:vendor/firmware/a225_pm4.fw
