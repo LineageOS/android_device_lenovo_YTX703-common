@@ -24,4 +24,4 @@ export VENDOR=lenovo
 
 MY_DIR=$(dirname $(readlink -f "${BASH_SOURCE[0]}"))
 
-${MY_DIR}/../extract-files.sh $@
+${MY_DIR}/../extract-files.sh "$@"

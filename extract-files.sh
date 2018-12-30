@@ -32,8 +32,8 @@ fi
 CLEAN_VENDOR=true
 KANG=
 
-while [ $# -gt 0 ]; do
-	case $1 in
+while [ "$#" -gt 0 ]; do
+	case "$1" in
 	-n|--no-cleanup)
 		CLEAN_VENDOR=false
 		;;
@@ -41,12 +41,11 @@ while [ $# -gt 0 ]; do
 		KANG="--kang"
 		;;
 	-s|--section)
-		shift
-		SECTION=$1
+		SECTION="$2"; shift
 		CLEAN_VENDOR=false
 		;;
 	*)
-		SRC=$1
+		SRC="$1"
 		;;
 	esac
 	shift
