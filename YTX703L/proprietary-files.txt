@@ -16,6 +16,7 @@ vendor/lib64/libsensor1.so
 
 # RIL
 bin/netmgrd:vendor/bin/netmgrd
+bin/qmuxd:vendor/bin/qmuxd
 -framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/lib/liblqe.so
