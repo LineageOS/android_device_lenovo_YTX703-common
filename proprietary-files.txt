@@ -828,7 +828,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqti-at.so
-vendor/lib/libqti-gt.so|f8dbf3251fcef86372130a36e40d9194f3b553b2
+vendor/lib/libqti-gt.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscale.so
