@@ -1,4 +1,2 @@
-set_prop(rmt_storage, rmt_storage_prop)
-
 allow rmt_storage self:capability { net_raw };
 
