@@ -23,5 +23,5 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # Inherit from common YTX703 device
 $(call inherit-product, device/lenovo/YTX703-common/device-common.mk)
 
-# Call the proprietary device makefile, if present
-$(call inherit-product-if-exists, vendor/lenovo/YTX703-common/YTX703F/YTX703F-vendor.mk)
+# Call the proprietary device makefile
+$(call inherit-product, vendor/lenovo/YTX703-common/YTX703F/YTX703F-vendor.mk)

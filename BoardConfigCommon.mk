@@ -19,7 +19,7 @@ VENDOR_PATH := vendor/lenovo/YTX703-common
 DEVICE_PATH := device/lenovo/YTX703-common
 
 # inherit from the proprietary version
--include $(VENDOR_PATH)/BoardConfigVendor.mk
+include $(VENDOR_PATH)/BoardConfigVendor.mk
 
 include $(DEVICE_PATH)/recovery/twrp.mk
 
