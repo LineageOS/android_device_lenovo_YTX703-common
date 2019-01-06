@@ -91,14 +91,11 @@ on fs
     write /proc/sys/vm/swappiness 100
 
 on late-fs
-    mount_all fstab.qcom --late
+    # Mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.qcom --late
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
-
-on late-fs
-    # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
     # Wait qseecomd started
