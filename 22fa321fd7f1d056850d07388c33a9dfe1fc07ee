@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb329aaf_a4df4992",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-12T21:01:07Z",
+      "side": 1,
+      "message": "Why don\u0027t you remove it from here too?",
+      "revId": "22fa321fd7f1d056850d07388c33a9dfe1fc07ee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
