@@ -16,6 +16,24 @@
       "revId": "22fa321fd7f1d056850d07388c33a9dfe1fc07ee",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "769062a8_a3ce7196",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8752
+      },
+      "writtenOn": "2019-01-13T18:55:34Z",
+      "side": 1,
+      "message": "Indeed...",
+      "parentUuid": "bb329aaf_a4df4992",
+      "revId": "22fa321fd7f1d056850d07388c33a9dfe1fc07ee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
