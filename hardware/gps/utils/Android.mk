@@ -1,3 +1,5 @@
+ifneq ($(BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE),)
+ifneq ($(BUILD_TINY_ANDROID),true)
 #Compile this library only for builds with the latest modem image
 
 LOCAL_PATH := $(call my-dir)
@@ -24,7 +26,8 @@ LOCAL_SRC_FILES += \
     LocThread.cpp \
     MsgTask.cpp \
     loc_misc_utils.cpp \
-    loc_nmea.cpp
+    loc_nmea.cpp \
+    LocIpc.cpp
 
 # Flag -std=c++11 is not accepted by compiler when LOCAL_CLANG is set to true
 LOCAL_CFLAGS += \
@@ -59,3 +62,5 @@ LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
 include $(BUILD_HEADER_LIBRARY)
 
 include $(addsuffix /Android.mk, $(addprefix $(LOCAL_PATH)/, platform_lib_abstractions))
+endif # not BUILD_TINY_ANDROID
+endif # BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE
