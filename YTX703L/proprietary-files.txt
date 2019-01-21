@@ -43,7 +43,6 @@ vendor/lib64/librilqmiservices.so
 vendor/lib64/libsystem_health_mon.so
 vendor/qcril.db
 
-### Blobs from Bardock (2.2.0_20180717-0830-bardock_bq-user-727-Fastboot-FW) ###
-# RIL dependencies
-vendor/lib/libsettings.so|368537c56953b9c1e383072b691e90a986485f4d
-vendor/lib64/libsettings.so|94f6a899c8cda9beb887e50e6fcb616272efd27f
+# RIL dependencies - from bardock - 2.5.0_20181227-1107-bardock_bq-user-1421-Fastboot-FW
+vendor/lib/libsettings.so|3071c5eb9c4c9d7572425a8d3f1909bb9fc2a512
+vendor/lib64/libsettings.so|cb7b8cd32b520c2c0a46077aebd32ce1a37309af
