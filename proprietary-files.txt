@@ -722,7 +722,6 @@ vendor/lib64/libmmcamera2_stats_algorithm.so
 bin/adsprpcd:vendor/bin/adsprpcd
 bin/btnvtool:vendor/bin/btnvtool
 bin/cnd:vendor/bin/cnd
-bin/dpmd:vendor/bin/dpmd
 bin/sensors.qcom:vendor/bin/sensors.qcom
 
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
@@ -736,7 +735,6 @@ bin/rmt_storage:vendor/bin/rmt_storage
 -framework/ConnectivityExt.jar:vendor/framework/ConnectivityExt.jar
 -framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -framework/com.qti.snapdragon.sdk.display.jar:vendor/framework/com.qti.snapdragon.sdk.display.jar
--framework/dpmapi.jar:vendor/framework/dpmapi.jar
 -framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
 -framework/tcmclient.jar:vendor/framework/tcmclient.jar
 lib/libOmxVpp.so:vendor/lib/libOmxVpp.so
@@ -781,11 +779,7 @@ vendor/lib/libcneqmiutils.so
 vendor/lib/libconnctrl.so
 vendor/lib/libdatactrl.so
 vendor/lib/libdiag.so
-vendor/lib/libdpmctmgr.so
-vendor/lib/libdpmfdmgr.so
-vendor/lib/libdpmframework.so
 vendor/lib/libdpmnsrm.so
-vendor/lib/libdpmtcm.so
 vendor/lib/libdsutils.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
@@ -900,11 +894,7 @@ vendor/lib64/libconnctrl.so
 vendor/lib64/libdatactrl.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdisp-aba.so
-vendor/lib64/libdpmctmgr.so
-vendor/lib64/libdpmfdmgr.so
-vendor/lib64/libdpmframework.so
 vendor/lib64/libdpmnsrm.so
-vendor/lib64/libdpmtcm.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libdsutils.so
