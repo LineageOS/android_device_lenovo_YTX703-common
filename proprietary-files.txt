@@ -1,4 +1,4 @@
-### Blobs from Bardock (2.2.0_20180717-0830-bardock_bq-user-727-Fastboot-FW) ###
+### Blobs from Bardock (2.5.0_20181227-1108-bardockpro_bq-user-1422-Fastboot-FW) ###
 # GPS
 framework/com.qti.location.sdk.jar:vendor/framework/com.qti.location.sdk.jar|f2e9f1d49201e1bad83008445fdafe9541e9b2bd
 framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar|e10f1baf6ae0f70c4a529e5711559cebbc3644c9
@@ -69,7 +69,8 @@ vendor/lib64/libthermalioctl.so|04b5bb266ac1f5c9ee77990cc9e348b8caab5ea0
 # Connectivity
 vendor/bin/cnss-daemon|35da8f62262d7146c65fb55af5743ad624a7e657
 
-### Blobs from Smartron ###
+### Blobs from Smartron (smartron-rimo02a-8.0.0-T5524INDURC-475) ###
+# Energy
 vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
 
 ### Blobs from YTX703 (YT-X703L_USR_S000973_1805241139_Q00140_ROW.1) ###
