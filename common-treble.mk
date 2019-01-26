@@ -83,7 +83,7 @@ PRODUCT_PACKAGES += \
 
 # Usb HAL
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service.basic
 
 # Thermal HAL
 PRODUCT_PACKAGES += \
