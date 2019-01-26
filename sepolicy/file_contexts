@@ -2,9 +2,8 @@
 /dev/block/bootdevice/by-name/cache                             u:object_r:cache_block_device:s0
 /dev/block/bootdevice/by-name/userencrypt                       u:object_r:dm_device:s0
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/userencrypt   u:object_r:dm_device:s0
-/userstore/wifimac                                              u:object_r:wifi_data_file:s0
-/userstore/adjustsensor_.*                                      u:object_r:sensors_persist_file:s0
-/userstore(/.*)?                                                u:object_r:persist_file:s0
+# Must match the labeling done in stock
+/userstore(/.*)?                                                u:object_r:system_data_file:s0
 
 # SELinux domains for services
 /(vendor|system/vendor)/bin/timekeep                            u:object_r:timekeep_exec:s0
