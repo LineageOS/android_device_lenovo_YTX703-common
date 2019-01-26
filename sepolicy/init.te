@@ -1,3 +1,10 @@
 allow qti_init_shell btnvtool_exec:file execute;
 allow qti_init_shell btnvtool_exec:file { read open };
 allow qti_init_shell btnvtool_exec:file execute_no_trans;
+
+# REMOVE ME 2019/04/26
+allow qti_init_shell system_data_file:{ dir file } { getattr relabelto };
+allow qti_init_shell unlabeled:{ dir file } { getattr relabelfrom };
+allow qti_init_shell wifi_data_file:file { getattr relabelfrom };
+allow qti_init_shell sensors_persist_file:file { getattr relabelfrom };
+allow qti_init_shell persist_file:file { getattr relabelfrom };
