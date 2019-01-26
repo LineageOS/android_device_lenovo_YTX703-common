@@ -1,0 +1,7 @@
+# Error "qti_sensors_hal: yhj check open /userstore/adjustsensor_x_x failed"
+# comes from /vendor/lib64/sensors.ssc.so
+# which is pointed to by /vendor/etc/snsc/_hals.conf
+# which is read by /vendor/lib64/hw/sensors.msm8952.so
+# which is dlopened by /vendor/bin/hw/android.hardware.sensors@1.0-service
+# We must allow access using the same file labeling that stock has.
+allow hal_sensors_default system_data_file:file r_file_perms;
