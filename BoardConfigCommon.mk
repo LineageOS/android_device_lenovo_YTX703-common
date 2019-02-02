@@ -229,6 +229,16 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/$(TARGET_DEVICE)/system.prop
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
+# Recovery
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/configs/fstab.qcom
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+
+# For USB OTG
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
+
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
