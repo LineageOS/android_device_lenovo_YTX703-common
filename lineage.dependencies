@@ -3,8 +3,4 @@
     "repository": "android_kernel_lenovo_msm8976",
     "target_path": "kernel/lenovo/msm8976"
   },
-  {
-    "repository": "android_hardware_sony_timekeep",
-    "target_path": "hardware/sony/timekeep"
-  }
 ]
