@@ -127,6 +127,11 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libxml2 \
 
+# Recovery
+PRODUCT_PACKAGES := \
+    twrp.fstab \
+    init.recovery.qcom.rc
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8952 \

@@ -19,10 +19,6 @@ TW_DEFAULT_BRIGHTNESS := 128
 # Unshare the TWRP-specific recovery/root/etc/twrp.fstab
 # and the AOSP rootdir/etc/fstab.qcom files. TWRP will give
 # precedence to reading its own file if present.
-
-# $(TARGET_RECOVERY_DEVICE_DIRS) are copied directly
-# to $(TARGET_RECOVERY_ROOT_OUT) with cp -rf.
-TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/configs/fstab.qcom
 
 TARGET_USERIMAGES_USE_EXT4 := true
