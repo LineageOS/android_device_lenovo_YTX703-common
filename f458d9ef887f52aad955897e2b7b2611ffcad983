@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e495f78e_9f448177",
+        "filename": "manifest.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 18924
+      },
+      "writtenOn": "2019-02-03T13:25:08Z",
+      "side": 1,
+      "message": "I have to disagree with the approach taken here. This is a YTX703L-only HAL and should be included in a vintf manifest fragment for YTX703L only.",
+      "revId": "f458d9ef887f52aad955897e2b7b2611ffcad983",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
