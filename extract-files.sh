@@ -60,9 +60,6 @@ function blob_fixup() {
 	etc/permissions/qti_libpermissions.xml)
 		sed -i 's|name="android.hidl.manager-V1.0-java"|name="android.hidl.manager@1.0-java"|g' "${2}"
 		;;
-	vendor/bin/cnd)
-		sed -i -e 's|libprotobuf-cpp-lite\.so|libprotobuf-cpp-Hlte.so|g' "${2}"
-		;;
 	vendor/bin/sensors.qcom)
 		# See commit 45e37256 for details
 		sed -i -e 's|sns\.reg|sns.los|g' "${2}"
@@ -145,13 +142,6 @@ function blob_fixup() {
 		sed -i -e 's|system/etc|vendor/etc|g' "${2}"
 		sed -i -e 's|system/lib/hw|vendor/lib/hw|g' "${2}"
 		sed -i -e 's|etc/acdbdata|vendor/etc/a|g' "${2}"
-		;;
-	vendor/lib/libcne.so | vendor/lib64/libcne.so)
-		sed -i -e 's|system/etc|vendor/etc|g' "${2}"
-		sed -i -e 's|libprotobuf-cpp-lite\.so|libprotobuf-cpp-Hlte.so|g' "${2}"
-		;;
-	vendor/lib/libcneapiclient.so | vendor/lib64/libcneapiclient.so)
-		sed -i -e 's|libprotobuf-cpp-lite\.so|libprotobuf-cpp-Hlte.so|g' "${2}"
 		;;
 	vendor/lib/libdpmframework.so | vendor/lib64/libdpmframework.so)
 		sed -i -e 's|system/etc|vendor/etc|g' "${2}"
