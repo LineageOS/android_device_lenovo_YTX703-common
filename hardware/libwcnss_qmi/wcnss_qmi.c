@@ -114,7 +114,7 @@ int wcnss_init_qmi()
 		/* Get a handle to the Device Management Services.
 		 * Some magic constants involved, don't ask.
 		 */
-		dms_service = dms_get_service_object_internal_v01(1, 55, 6);
+		dms_service = dms_get_service_object_internal_v01(1, 56, 6);
 		if (dms_service == NULL) {
 			ALOGE("%s: Not able to get a handle to the device management service",
 			      __func__);
