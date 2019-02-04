@@ -14,11 +14,12 @@ vendor/lib/libsensor1.so
 vendor/lib/soundfx/libswdap.so # Only ro.product.model differs
 vendor/lib64/libsensor1.so
 
-# RIL - from smartron (smartron-rimo02a-8.0.0-T5524INDURC-475)
--framework/qcrilhook.jar:vendor/framework/qcrilhook.jar|ed781809772d08f05ae8409926bd794eb9717da9|42583273761aedae7d69c0d484d8ae4a638a0bb2
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|6cf0a3c84201ba9e0eb2584f6785e1b71e151b59|ab05c568afe269b5fb899b32530fc74b0f3f2637
+# RIL - from smartron-rimo02a-8.0.0-T5524INDURC-475
+-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar|ed781809772d08f05ae8409926bd794eb9717da9|6e8d089a3544573cf026a1639f27fbf67ea28e35
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|6cf0a3c84201ba9e0eb2584f6785e1b71e151b59|e21952722670e544461eed8a7eee870cf5217bf3
 bin/netmgrd:vendor/bin/netmgrd|a6e18631974dfe6495ef45bea7c27a81156d0776
 bin/qmuxd:vendor/bin/qmuxd|0c72a4c7e8b9bc465b38f0218d1db00e3f1312d9
+vendor/bin/qti|215f239bd2c683f9a6219845f540206f8c70c3b8
 vendor/lib/liblqe.so|1f06d630a8772bee3ea6efbeee199146b4bae0fa
 vendor/lib/libnetmgr.so|cd8e5a5a49f191152a09e0ab0a0f01a7fa7756c6
 vendor/lib/libdsi_netctrl.so|f673ddc573f83132cf66b955b1923b2a9b086ce8
@@ -37,6 +38,7 @@ vendor/lib64/libril-qc-radioconfig.so|19f62d2ad03628847132731211d77989079b3ffa
 vendor/lib64/libril-qcril-hook-oem.so|66929fbb29022c1cd2ca33fc6ed6193e5aac4c8b
 vendor/lib64/librilqmiservices.so|2e669415a969931afe68867d73eebd0817e272f5
 vendor/lib64/libsystem_health_mon.so|10d03ad4c1b6f3c30019a9a35169b01af56a0bc4
+vendor/lib64/libqcmaputils.so|90e65be36642b6da20ff3924c6a6c78861427cc5
 vendor/lib64/vendor.qti.hardware.radio.uim@1.0_vendor.so|5ba3ab31c2749031de51af3c5008a3fef4d4c790
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.0_vendor.so|7b152f9670b1e514d2af4fb6d76d2d0fcc7d6119
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|fc9c9bf42b1151c9e1eda28f6289cd7280bcdf73
@@ -49,7 +51,7 @@ vendor/lib/libsettings.so|7748d051fb23e8f971d13cc3ba29a9f08168532a
 vendor/lib64/libsettings.so|6f8dd8568a3925a2fb377eb69f0b6a62935d44a7
 vendor/qcril.db
 
-# DPM - from daisy - PKQ1.180917.001
+# DPM - from daisy-user-9-PKQ1.180917.001-V10.0.1.0.PDLMIFJ-release-keys
 bin/dpmd|1b38829a7faf33d5cbdc195d703f99384c20c9f4
 etc/dpm/dpm.conf|5f19d3984b5291ac956552bda2a84c10c535df0a
 #etc/init/dpmd.rc
