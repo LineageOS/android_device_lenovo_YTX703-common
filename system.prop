@@ -93,7 +93,7 @@ drm.service.enabled=true
 ro.config.vc_call_vol_steps=30
 ro.config.media_vol_steps=30
 ro.config.alarm_vol_steps=30
-ro.config.ring_vol_steps=30
+ro.config.system_vol_steps=30
 
 # Vendor
 ro.vendor.extension_library=libqti-perfd-client.so
