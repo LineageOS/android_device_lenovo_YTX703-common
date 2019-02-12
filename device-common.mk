@@ -376,6 +376,8 @@ PRODUCT_COPY_FILES += \
 # Parsed by vendor/cm/build/tasks/target_symlinks.mk
 #
 
+TARGET_DISABLE_WCNSS_CONFIG_COPY := true
+
 # Discussion on files required by the WCN36xx WLAN driver (drivers/staging/prima).
 # The wcnss_service userspace application triggers an ancilliary kernel driver
 # by writing to /dev/wcnss_ctrl.
