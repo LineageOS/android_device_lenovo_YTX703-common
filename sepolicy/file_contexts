@@ -25,6 +25,8 @@
 # Perfd
 /dev/cpuset(/.*)?                                               u:object_r:cgroup:s0
 /sys/devices/soc.0/qcom,cpubw.50(/.*)?                          u:object_r:sysfs_devfreq:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:hal_perf_default_exec:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.0\.so                              u:object_r:same_process_hal_file:s0
 
 # DPMD
 /(vendor|system/vendor)/bin/dpmd                                u:object_r:dpmd_exec:s0
