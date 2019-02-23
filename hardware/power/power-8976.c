@@ -91,8 +91,9 @@ int get_number_of_profiles()
 }
 #endif
 
-static void set_power_profile(int profile)
+static void set_power_profile(void *data)
 {
+    int profile = data ? *((int*)data) : 0;
     if (profile == current_power_profile)
         return;
 
@@ -185,7 +186,7 @@ static int switch_mode(perf_mode_type_t mode) {
 
 static int process_perf_hint(void *data, perf_mode_type_t mode) {
     // enable
-    if (*(int32_t *)data) {
+    if (data) {
         ALOGI("Enable request for mode: 0x%x", mode);
         // check if mode is current mode
         if (current_mode & mode) {
@@ -326,7 +327,7 @@ static int process_interaction_hint(void *data)
 int power_hint_override(power_hint_t hint, void *data)
 {
     if (hint == POWER_HINT_SET_PROFILE) {
-        set_power_profile(*(int32_t *)data);
+        set_power_profile(data);
         return HINT_HANDLED;
     }
 
