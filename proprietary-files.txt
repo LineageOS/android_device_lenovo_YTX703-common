@@ -822,27 +822,27 @@ vendor/lib64/libGPreqcancel_svc.so
 # Gatekeeper
 vendor/lib64/hw/gatekeeper.msm8952.so
 
-# EGL - from YT-X703L_S000973_180524_ROW
-vendor/lib/egl/eglSubDriverAndroid.so|de0ec336af8430ddcdada5c5d6aac3688faa6763
-vendor/lib/egl/libEGL_adreno.so|3e661d2644eeda67659d718a91b39605848ce255
-vendor/lib/egl/libGLESv1_CM_adreno.so|8eff7da1ff86a694f578f8462b4e78cada4708c7
-vendor/lib/egl/libGLESv2_adreno.so|483442e47dd7099ca378597bf7922ac511114ea8
-vendor/lib/egl/libQTapGLES.so|5da6c31f8150d9b629abef47e062670019c11b4f
-vendor/lib/egl/libq3dtools_adreno.so|256c65f254171413730835f220fffb12dff1aad1
-vendor/lib/egl/libq3dtools_esx.so|dde11b8ac352f77c9ef1877b1504499c51a13ed2
-vendor/lib/libllvm-glnext.so|ab3c97c4023b14edc1e7b99dafe979bb6062048a
-vendor/lib/libllvm-qcom.so|722d72ce3e1a3a66b95eebfb780434d742e6b755
-vendor/lib/libllvm-qgl.so|ddb18c7e76b043a6f97eaae9df7285b06f8709c2
-vendor/lib64/egl/eglSubDriverAndroid.so|077283538ae65f5167e1f52a45976bc6310365db
-vendor/lib64/egl/libEGL_adreno.so|d0f42ceb4e435d8c142f65caf39439ac26e8c297
-vendor/lib64/egl/libGLESv1_CM_adreno.so|d2dcc3fab31e4376ab39e9820858be91fa65e115
-vendor/lib64/egl/libGLESv2_adreno.so|c34c6c60cb9d9a69847e8ea8ce4a32d3b9e5cb88
-vendor/lib64/egl/libQTapGLES.so|fa260a4021d6c209ed92eaeab82fa0b4509d0eb1
-vendor/lib64/egl/libq3dtools_adreno.so|355adae904404ea2637d21c2adbc65359e72ed8e
-vendor/lib64/egl/libq3dtools_esx.so|400bd82418f1fa2ed35790c4617be149db23857b
-vendor/lib64/libllvm-glnext.so|538ad073c5a452ca172e3736ddc221620ae8ff52
-vendor/lib64/libllvm-qcom.so|980ab4b51a1b8a3335fae6d61a6f2183a4898a61
-vendor/lib64/libllvm-qgl.so|ea773b680d7b8a59de01724b323d7c6957c317e6
+# EGL - from smartron-rimo02a-8.0.0-T5524INDURC-475
+vendor/lib/egl/eglSubDriverAndroid.so|7ebcccbadde865ec130378c5c0f866049d420c3a
+vendor/lib/egl/libEGL_adreno.so|f274e2e26b1d5b524783d0934909f077fff76212
+vendor/lib/egl/libGLESv1_CM_adreno.so|e4127763c4fd16db09f79ec56ae9f6b55229645a
+vendor/lib/egl/libGLESv2_adreno.so|d29e8fe7c574ba8b834fe588569895e3de67d9cd
+vendor/lib/egl/libQTapGLES.so|91095005e7caebf2887bfad69fc62d93ca5d23fc
+vendor/lib/egl/libq3dtools_adreno.so|ecf18ca7d54fc998c58f16aa1d3c9ab0fd77f20c
+vendor/lib/egl/libq3dtools_esx.so|a1631532c9a5bdcad34afc37d52f4a12574ccf6b
+vendor/lib/libllvm-glnext.so|d7752af3e28fda51ef7e606e81a52c065b2a8127
+vendor/lib/libllvm-qcom.so|a4d10000e09d6db8a1fbf7b841ba0b2f06a2efed
+vendor/lib/libllvm-qgl.so|6139569d50716c8791502000c44fd55ccc2e0342
+vendor/lib64/egl/eglSubDriverAndroid.so|2125a4d98b104f89af6c44ec9bedecc8bdddb502
+vendor/lib64/egl/libEGL_adreno.so|04daba69de9bcdd1207d1e2502899ec17d3f2901
+vendor/lib64/egl/libGLESv1_CM_adreno.so|b0b5a3d55d354ccdd22e285c6a1e4d0384e38967
+vendor/lib64/egl/libGLESv2_adreno.so|c15ec81e3a37fb42da1c919ebe1daba7c8d00bac
+vendor/lib64/egl/libQTapGLES.so|1c3dc1ad2d25192010f12b80e57c2a53c561b598
+vendor/lib64/egl/libq3dtools_adreno.so|5e7d358ad581b366b496ae8a0c7fa91e4914e8dc
+vendor/lib64/egl/libq3dtools_esx.so|ff6cbbf3b2dfcd47ac0f923b098e3ad71c0981fe
+vendor/lib64/libllvm-glnext.so|0c36b63ec28ad9eac735cbebfd7d8745894cd228
+vendor/lib64/libllvm-qcom.so|808a0cf1567eda293bcda65ea3d9e26fa50ad06d
+vendor/lib64/libllvm-qgl.so|37b68725bfd8c35ae19718aa67bea2d120c732d9
 
 # Graphics - from smartron-rimo02a-8.0.0-T5524INDURC-475
 vendor/lib/libC2D2.so|9c8906bb05b889892d7e006cf469ee6a5a42ed06
