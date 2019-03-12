@@ -17,21 +17,3 @@ Front Camera | 5.0 MP
 Release Date | December 2016
 
 ![Lenovo Yoga Tablet 3 Plus](http://cdn2.gsmarena.com/vv/pics/lenovo/lenovo-yoga-tab3-plus.jpg "Lenovo Tablet 3 Plus")
-
-Pick list
----------
-
-The following not-yet-merged changes are necessary for successful
-compilation of LineageOS for the device:
-
-* https://review.lineageos.org/c/LineageOS/android_build/+/215826
-* https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/214991
-
-From a shell environment, you can pick them as following:
-
-```bash
-$ source build/envsetup.sh
-$ repopick 215826
-$ repopick 214991
-```
-
