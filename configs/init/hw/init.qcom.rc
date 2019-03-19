@@ -97,6 +97,10 @@ on late-fs
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 on post-fs
+    # avoid USB crash
+    setprop persist.adb.nonblocking_ffs 0
+    setprop ro.adb.nonblocking_ffs 0
+
     start vendor.qseecomd
     # Wait qseecomd started
     wait_for_prop sys.listeners.registered true
