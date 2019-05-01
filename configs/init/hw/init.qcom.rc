@@ -53,10 +53,10 @@
 import /vendor/etc/init/hw/init.qcom.power.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 
-service charger /charger
+service charger /system/bin/charger
     class charger
     group log
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
