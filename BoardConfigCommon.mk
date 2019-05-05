@@ -220,9 +220,11 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/$(TARGET_DEVICE)/system.prop
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
-# SELinux
+# SELinux (excluded for TWRP)
+ifneq ($(BUILD_OMNI),true)
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+endif
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
@@ -232,9 +234,11 @@ USE_DEVICE_SPECIFIC_THERMAL := true
 
 # Vintf
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
+ifneq ($(BUILD_OMNI),true)
 # Exclude deprecated healthd from framework manifest
 DEVICE_FRAMEWORK_MANIFEST_FILE += \
     system/libhidl/vintfdata/manifest_healthd_exclude.xml
+endif
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true

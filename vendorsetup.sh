@@ -1,3 +1,7 @@
+add_lunch_combo omni_YTX703F-userdebug
+add_lunch_combo omni_YTX703F-eng
+add_lunch_combo omni_YTX703L-userdebug
+add_lunch_combo omni_YTX703L-eng
 add_lunch_combo lineage_YTX703F-userdebug
 add_lunch_combo lineage_YTX703F-eng
 add_lunch_combo lineage_YTX703L-userdebug

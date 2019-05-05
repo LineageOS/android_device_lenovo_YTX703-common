@@ -16,3 +16,5 @@
 PRODUCT_MAKEFILES := \
     lineage_YTX703F:device/lenovo/YTX703-common/YTX703F/lineage.mk \
     lineage_YTX703L:device/lenovo/YTX703-common/YTX703L/lineage.mk \
+    omni_YTX703F:device/lenovo/YTX703-common/YTX703F/omni.mk \
+    omni_YTX703L:device/lenovo/YTX703-common/YTX703L/omni.mk \
