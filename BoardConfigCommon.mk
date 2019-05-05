@@ -21,7 +21,9 @@ DEVICE_PATH := device/lenovo/YTX703-common
 # inherit from the proprietary version
 include $(VENDOR_PATH)/BoardConfigVendor.mk
 
+ifeq ($(BUILD_OMNI),true)
 include $(DEVICE_PATH)/recovery/twrp.mk
+endif
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
@@ -52,9 +54,6 @@ TARGET_NO_BOOTLOADER := true
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_CMDLINE += ramoops.mem_address=0x30000000 ramoops.mem_size=0x300000 ramoops.ecc=1 ramoops.console_size=0x20000
-ifeq ($(WITH_TWRP), true)
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-endif
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x08000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100

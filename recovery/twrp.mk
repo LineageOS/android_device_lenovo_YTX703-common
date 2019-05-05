@@ -3,13 +3,13 @@ TW_EXCLUDE_TWRPAPP := true
 TW_THEME := landscape_hdpi
 TW_TARGET_USES_QCOM_BSP := true
 TW_NEW_ION_HEAP := true
-# If you change TW_HWROTATION, you'll have to either use:
+# If you change TW_ROTATION, you'll have to either use:
 #   RECOVERY_TOUCHSCREEN_SWAP_XY := true
 #   RECOVERY_TOUCHSCREEN_FLIP_X := true
 # Or make the same change in the DTS (preferable):
 #   synaptics,swap-axes;
 #   synaptics,y-flip;
-TW_HWROTATION := 90
+TW_ROTATION := 90
 # Encryption support
 TW_INCLUDE_CRYPTO := true
 # Asian region languages
@@ -35,3 +35,5 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 TW_INTERNAL_STORAGE_PATH := /sdcard
 TW_EXTERNAL_STORAGE_PATH := /sdcard1
+
+ALLOW_MISSING_DEPENDENCIES := true
