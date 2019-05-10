@@ -4,5 +4,6 @@ service per_mgr /vendor/bin/pm-service
     class core
     user system
     group system
+    ioprio rt 4
     writepid /dev/cpuset/system-background/tasks
 
