@@ -73,6 +73,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /vendor/bin/mm-qcamera-daemon=27 \
     /system/vendor/bin/mm-qcamera-daemon=27 \
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
