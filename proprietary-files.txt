@@ -718,6 +718,14 @@ vendor/lib64/libmmcamera2_q3a_core.so
 vendor/lib64/libmmcamera2_sensor_debug.so
 vendor/lib64/libmmcamera2_stats_algorithm.so
 
+# Keymaster
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so|9d855636cd20177f6fdaa47a9a45260330ed901b
+lib64/libsoftkeymasterdevice.so:vendor/lib64/libsoftkeymasterdevice-v27.so|2095d5c1c1600c9f1c714b102b4dccef00109fe1
+lib64/libkeymaster_messages.so:vendor/lib64/libkeymaster_messages-v27.so|4a37f2a5f1f208348c93243a58f0eaea457268e3
+lib64/libkeymaster_portable.so:vendor/lib64/libkeymaster_portable-v27.so|32771663c29fa4b8de3086f7c18eddd8dd586c17
+lib64/libkeymaster_staging.so:vendor/lib64/libkeymaster_staging-v27.so|62ae7af0ad77a3de31111a64da24c2329785e3d4
+lib64/libsoftkeymaster.so:vendor/lib64/libsoftkeymaster-v27.so|5704b8420586613635def323ca2c28a0f6ded59a
+
 # Stuff which is not grouped yet
 bin/adsprpcd:vendor/bin/adsprpcd
 bin/btnvtool:vendor/bin/btnvtool

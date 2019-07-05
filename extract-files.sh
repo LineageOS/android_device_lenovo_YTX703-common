@@ -185,6 +185,14 @@ function blob_fixup() {
 	vendor/lib64/vendor.qti.gnss@1.0_vendor.so)
 		patchelf --replace-needed "android.hardware.gnss@1.0.so" "android.hardware.gnss@1.0-v27.so" "${2}"
 		;;
+	vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so|vendor/lib64/libsoftkeymasterdevice-v27.so|vendor/lib64/libkeymaster_messages-v27.so|vendor/lib64/libkeymaster_portable-v27.so|vendor/lib64/libkeymaster_staging-v27.so|vendor/lib64/libsoftkeymaster-v27.so)
+		patchelf --replace-needed "libsoftkeymasterdevice.so" "libsoftkeymasterdevice-v27.so" "${2}"
+		patchelf --replace-needed "libkeymaster_messages.so" "libkeymaster_messages-v27.so" "${2}"
+		patchelf --replace-needed "libkeymaster_portable.so" "libkeymaster_portable-v27.so" "${2}"
+		patchelf --replace-needed "libkeymaster_staging.so" "libkeymaster_staging-v27.so" "${2}"
+		patchelf --replace-needed "libsoftkeymaster.so" "libsoftkeymaster-v27.so" "${2}"
+		patchelf --set-soname $(basename "${2}") "${2}"
+		;;
 	recovery/root/sbin/qseecomd)
 		# Inspired by bootable/recovery-twrp/prebuilt/relink.sh
 		sed -i \
