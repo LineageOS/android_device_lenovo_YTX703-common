@@ -3,7 +3,7 @@ framework/com.qti.location.sdk.jar:vendor/framework/com.qti.location.sdk.jar|f2e
 framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar|e10f1baf6ae0f70c4a529e5711559cebbc3644c9
 lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so|83c73c816048b0c564d28d1823a319878f00e781
 lib64/libxt_native.so:vendor/lib64/libxt_native.so|e4f2c1813d08ff7452dcba59fa1e23deea2494e4
-lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|716a812a9f4cdb45c57eb0a6fabb17624a91d553|392c70592a5759063ee9e09ebcb637bff04aa4fd
+lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|392c70592a5759063ee9e09ebcb637bff04aa4fd
 vendor/bin/garden_app|0017b1b57a2b6dd6448184bf08280cf43cbe42d9
 vendor/bin/hw/vendor.qti.gnss@1.0-service|bdf23fe2af07c2afb74721023431446104fd828d
 vendor/bin/loc_launcher|b8f9d24d78cc08b8563112e216cfc96a969b7bb5
@@ -14,7 +14,7 @@ vendor/bin/xtwifi-inet-agent|237613241926db3f6cac845d59a4b3bd5a9c3dfc
 vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
 vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
 vendor/lib/libloc_api_v02.so|ad43ba53d7faf0a46bd88a213a4671dcb5760b83
-vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|6050622d9fe2afece1d055891072416c10c8bb42
+vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|eabc217f68bd84e101cb2cde39ce4b037eb47119
 vendor/lib64/libDRPlugin.so|d4f1127ed8f98011fe9687d40e8942e5738f4273
 vendor/lib64/lib_drplugin_server.so|6e425fc7e016c673b3b33bbc8e58aa13fcc4004c
 vendor/lib64/libalarmservice_jni.so|166137a9f4b7d22ebf3c19348b6c17bd998ee282
@@ -26,7 +26,7 @@ vendor/lib64/libgdtap.so|899a336541f8603f4db4dbab83b840d3bc226cc0
 vendor/lib64/libgeofence.so|b666ad9429e910f3644e73066a2fd2fd5bc7df1e
 vendor/lib64/libizat_client_api.so|a1fffb1efdcc653dbce922aa437e0cb63ede09ee
 vendor/lib64/libizat_core.so|9961c70e1e9e3e05e19f9ed30b5f29bdbcaea3ce
-vendor/lib64/liblbs_core.so|0ec82e6a32738036473ca0d6e000068f38dc2c7f|d14bc609ed436b61c160d3b842c343dd362729a5
+vendor/lib64/liblbs_core.so|d14bc609ed436b61c160d3b842c343dd362729a5
 vendor/lib64/libloc_api_v02.so|41083e35594afe48ea44741e58184c1b592ab803
 vendor/lib64/libloc_ds_api.so|88bd00eef7b3e052e2725ce8883a8da0d95028f0
 vendor/lib64/libloc_externalDr.so|ea635a1ad4f97bef7aa60caacd6ffc291a464b4d
@@ -39,7 +39,7 @@ vendor/lib64/libslimclient.so|d96af467f1eae4a9b5e2e40574ac76340e6564c1
 vendor/lib64/libulp2.so|3411294234c320050d09dfafaae742242506ea87
 vendor/lib64/libxtadapter.so|9a8fbd106994aaaf380be883fa2ef37d04e20401
 vendor/lib64/libxtwifi_ulp_adaptor.so|81b2083a5b2ca2931811a1b8507f50b8f5fa8e55
-vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741fbc8|f7e9ee8e3804887a2f3939128e860767e6f27258
+vendor/lib64/vendor.qti.gnss@1.0_vendor.so|f7e9ee8e3804887a2f3939128e860767e6f27258
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk|bd1aa17ee9f419b0042f6fe25e359f69bb7d3598
 
 # Perf - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
@@ -60,7 +60,7 @@ vendor/lib64/libqti-util.so|6411586729d90e0c6a6f94e456f66d376ddb8969
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|fca94d3e81f9f6453b0cb781c2925be845bb2ddb
 
 # Thermal - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
-vendor/bin/thermal-engine|f15ad5e04a8be7788344d47e370890f32aada299|665f96b2d5c0f7fafd80561823a3e895a55394ad
+vendor/bin/thermal-engine|665f96b2d5c0f7fafd80561823a3e895a55394ad
 vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
 -vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
 -vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
@@ -810,7 +810,7 @@ vendor/lib/libmmsw_platform.so
 vendor/lib/liboemcrypto.so
 vendor/lib/liboptizoom.so
 vendor/lib/libperipheral_client.so
-vendor/lib/libprotobuf-cpp-Hlte.so|e619e076613d7bb46a883d481f7e31d2092fb795
+lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so
 -vendor/lib/libqcci_legacy.so
 vendor/lib/libqct_resampler.so
 -vendor/lib/libqmi.so
@@ -911,7 +911,7 @@ vendor/lib64/libmm-dspp-utils.so
 vendor/lib64/libmm-qdcm-diag.so
 vendor/lib64/libmm-qdcm.so
 vendor/lib64/libperipheral_client.so
-vendor/lib64/libprotobuf-cpp-Hlte.so|0b7f1be1e68ddca2cd989bdcff7b29e90b5081d1
+lib64/libprotobuf-cpp-lite.so:vendor/lib64/libprotobuf-cpp-Hlte.so
 -vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqisl.so
