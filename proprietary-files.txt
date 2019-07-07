@@ -14,7 +14,7 @@ vendor/bin/xtwifi-inet-agent|237613241926db3f6cac845d59a4b3bd5a9c3dfc
 vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
 vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
 vendor/lib/libloc_api_v02.so|ad43ba53d7faf0a46bd88a213a4671dcb5760b83
-vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|6050622d9fe2afece1d055891072416c10c8bb42
+vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|eabc217f68bd84e101cb2cde39ce4b037eb47119
 vendor/lib64/libDRPlugin.so|d4f1127ed8f98011fe9687d40e8942e5738f4273
 vendor/lib64/lib_drplugin_server.so|6e425fc7e016c673b3b33bbc8e58aa13fcc4004c
 vendor/lib64/libalarmservice_jni.so|166137a9f4b7d22ebf3c19348b6c17bd998ee282
@@ -810,7 +810,7 @@ vendor/lib/libmmsw_platform.so
 vendor/lib/liboemcrypto.so
 vendor/lib/liboptizoom.so
 vendor/lib/libperipheral_client.so
-vendor/lib/libprotobuf-cpp-Hlte.so|e619e076613d7bb46a883d481f7e31d2092fb795
+lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so
 -vendor/lib/libqcci_legacy.so
 vendor/lib/libqct_resampler.so
 -vendor/lib/libqmi.so
@@ -911,7 +911,7 @@ vendor/lib64/libmm-dspp-utils.so
 vendor/lib64/libmm-qdcm-diag.so
 vendor/lib64/libmm-qdcm.so
 vendor/lib64/libperipheral_client.so
-vendor/lib64/libprotobuf-cpp-Hlte.so|0b7f1be1e68ddca2cd989bdcff7b29e90b5081d1
+lib64/libprotobuf-cpp-lite.so:vendor/lib64/libprotobuf-cpp-Hlte.so
 -vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqisl.so
