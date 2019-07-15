@@ -36,26 +36,32 @@
 
     <!-- config_enablePerfBoostForAnimation-->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+        <!-- CPUBOOST_CPUS_ONLINE_MIN_BIG resource opcode, value -->
+        <!-- CPUBOOST_MIN_FREQ_BIG_CORE_0 resource opcode, value -->
 
         <!-- Type="1", Animation boost of 0.6sec -->
         <Config
             Id="0x00001083" Type="1" Enable="true" Timeout="600" Target="msm8976"
-            Resources="0x40800100, 0x578" />
+            Resources="0x40800100, 0x578, 0x41000000, 0x2, 0x40800000, 0x546" />
 
     <!--Vertical Scroll boost-->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value -->
+        <!-- CPUBOOST_CPUS_ONLINE_MIN_BIG resource opcode, value -->
+        <!-- CPUBOOST_MIN_FREQ_BIG_CORE_0 resource opcode, value -->
 
         <!-- Type="1", Vertical Scroll boost -->
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="msm8976"
-            Resources="0x40800100, 0x578" />
+            Resources="0x40800100, 0x578, 0x41000000, 0x2, 0x40800000, 0x546" />
 
     <!--Horizontal Scroll boost-->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value -->
+        <!-- CPUBOOST_CPUS_ONLINE_MIN_BIG resource opcode, value -->
+        <!-- CPUBOOST_MIN_FREQ_BIG_CORE_0 resource opcode, value -->
 
         <!-- Type="2", Horizontal Scroll boost -->
         <Config
             Id="0x00001080" Type="2" Enable="true" Target="msm8976"
-            Resources="0x40800100, 0x578" />
+            Resources="0x40800100, 0x578, 0x41000000, 0x2, 0x40800000, 0x546" />
     </PerfBoost>
 </BoostConfigs>
