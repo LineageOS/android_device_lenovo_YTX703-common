@@ -279,8 +279,8 @@
         <item>"/system/framework/boot.vdex"</item>
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/boot-core-libart.vdex"</item>
-        <item>"/product/priv-app/SystemUIGoogle/oat/arm64/SystemUIGoogle.vdex"</item>
-        <item>"/product/priv-app/SystemUIGoogle/oat/arm64/SystemUIGoogle.odex"</item>
+        <item>"/product/priv-app/SystemUI/SystemUI.apk"</item>
+        <item>"/product/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
         <item>"/system/lib64/libsurfaceflinger.so"</item>
    </string-array>
 
