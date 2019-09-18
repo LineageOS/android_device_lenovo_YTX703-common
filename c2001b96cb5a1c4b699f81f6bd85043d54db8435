@@ -16,6 +16,29 @@
       "revId": "c2001b96cb5a1c4b699f81f6bd85043d54db8435",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05f48a6e_c6083fff",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2019-09-18T20:01:10Z",
+      "side": 1,
+      "message": "also DEVICE_PATH, not COMMON_PATH ^^",
+      "range": {
+        "startLine": 234,
+        "startChar": 30,
+        "endLine": 234,
+        "endChar": 41
+      },
+      "revId": "c2001b96cb5a1c4b699f81f6bd85043d54db8435",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
