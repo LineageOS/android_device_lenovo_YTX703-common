@@ -39,6 +39,47 @@
       "revId": "c2001b96cb5a1c4b699f81f6bd85043d54db8435",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c86953e_67815a6d",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 18924
+      },
+      "writtenOn": "2019-09-18T20:05:02Z",
+      "side": 1,
+      "message": "So if it worked like that (set to COMMON_PATH), then you can probably delete it?",
+      "parentUuid": "05f48a6e_c6083fff",
+      "range": {
+        "startLine": 234,
+        "startChar": 30,
+        "endLine": 234,
+        "endChar": 41
+      },
+      "revId": "c2001b96cb5a1c4b699f81f6bd85043d54db8435",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ca43937_bb4aa9d0",
+        "filename": "hardware/libhidl/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 18924
+      },
+      "writtenOn": "2019-09-18T20:05:02Z",
+      "side": 1,
+      "message": "Can\u0027t we just delete this? Does it serve any purpose?",
+      "revId": "c2001b96cb5a1c4b699f81f6bd85043d54db8435",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
