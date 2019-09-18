@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34056aca_5c7e7bc9",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-09-18T20:00:19Z",
+      "side": 1,
+      "message": "Don\u0027t add this to BoardConfig.mk",
+      "revId": "c2001b96cb5a1c4b699f81f6bd85043d54db8435",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
