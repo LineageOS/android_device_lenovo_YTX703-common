@@ -41,7 +41,6 @@
 #          - triggers fs (system and vendor must be mounted
 #                         by end of this stage)
 #          - triggers post-fs (ramdisk is mounted read-only)
-#          - triggers load_system_props_action
 #          - triggers late-fs
 #          - triggers post-fs-data (userdata must be mounted by end of
 #                                   this stage. decryption happens here)
