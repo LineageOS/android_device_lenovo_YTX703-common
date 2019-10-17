@@ -1,3 +1,6 @@
 allow init sysfs_mmc_host:file { setattr w_file_perms };
 allow init sysfs_graphics:file { setattr w_file_perms };
 allow init sysfs_batteryinfo:file { setattr w_file_perms };
+
+# Allow init to bind mount loader config for media swcodec
+allow init system_file:file mounton;
