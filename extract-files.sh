@@ -57,6 +57,9 @@ fi
 
 function blob_fixup() {
 	case "${1}" in
+	etc/permissions/qti_libpermissions.xml)
+		sed -i 's|name="android.hidl.manager-V1.0-java"|name="android.hidl.manager@1.0-java"|g' "${2}"
+		;;
 	vendor/bin/cnd)
 		sed -i -e 's|libprotobuf-cpp-lite\.so|libprotobuf-cpp-Hlte.so|g' "${2}"
 		;;
