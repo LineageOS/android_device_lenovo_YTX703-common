@@ -1,9 +1,4 @@
 # GPS - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
-framework/com.qti.location.sdk.jar:vendor/framework/com.qti.location.sdk.jar|f2e9f1d49201e1bad83008445fdafe9541e9b2bd
-framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar|e10f1baf6ae0f70c4a529e5711559cebbc3644c9
-lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so|83c73c816048b0c564d28d1823a319878f00e781
-lib64/libxt_native.so:vendor/lib64/libxt_native.so|e4f2c1813d08ff7452dcba59fa1e23deea2494e4
-lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|716a812a9f4cdb45c57eb0a6fabb17624a91d553|392c70592a5759063ee9e09ebcb637bff04aa4fd
 vendor/bin/garden_app|0017b1b57a2b6dd6448184bf08280cf43cbe42d9
 vendor/bin/hw/vendor.qti.gnss@1.0-service|bdf23fe2af07c2afb74721023431446104fd828d
 vendor/bin/loc_launcher|b8f9d24d78cc08b8563112e216cfc96a969b7bb5
@@ -40,7 +35,6 @@ vendor/lib64/libulp2.so|3411294234c320050d09dfafaae742242506ea87
 vendor/lib64/libxtadapter.so|9a8fbd106994aaaf380be883fa2ef37d04e20401
 vendor/lib64/libxtwifi_ulp_adaptor.so|81b2083a5b2ca2931811a1b8507f50b8f5fa8e55
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741fbc8|f7e9ee8e3804887a2f3939128e860767e6f27258
--priv-app/com.qualcomm.location/com.qualcomm.location.apk|bd1aa17ee9f419b0042f6fe25e359f69bb7d3598
 
 # Perf - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
 lib/vendor.qti.hardware.perf@1.0.so:vendor/lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
