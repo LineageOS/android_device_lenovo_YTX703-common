@@ -1,7 +1,7 @@
 # vim: set ft=sh:
 
 service vendor.ipacm /system/vendor/bin/ipacm
-    class main
+    class late_start
     user radio
     group radio inet
     disabled
