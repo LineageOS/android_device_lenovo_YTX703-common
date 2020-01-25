@@ -1,69 +1,124 @@
-# GPS - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
+# GPS - from bardock pro - 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
+lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so|b980facf6f16028828e78038c027b124e421b715|ccd4a3b982dcc7b4a85063e4ca6fc4b982fe918d
 vendor/bin/garden_app|0017b1b57a2b6dd6448184bf08280cf43cbe42d9
 vendor/bin/hw/vendor.qti.gnss@1.0-service|bdf23fe2af07c2afb74721023431446104fd828d
 vendor/bin/loc_launcher|b8f9d24d78cc08b8563112e216cfc96a969b7bb5
-vendor/bin/lowi-server|a453087410856d31f944b2e9f23c9c2b2368e412
-vendor/bin/xtra-daemon|bd026dabbc535a0855c05e17d6558d0801f493f4
-vendor/bin/xtwifi-client|39d29fdb1c6fd26b7e9829d992f0be9b42ec041f
+vendor/bin/lowi-server|e1a2e3696724ef5941fe03b56694f944d7f7b3cf
+vendor/bin/xtra-daemon|a36e21c222ceb280d86ace404d9fb0906fa11d7c
+vendor/bin/xtwifi-client|322645fbd42cdfa24bbacbc092e2b219f3b307b9
 vendor/bin/xtwifi-inet-agent|237613241926db3f6cac845d59a4b3bd5a9c3dfc
 vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
 vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
-vendor/lib/libloc_api_v02.so|ad43ba53d7faf0a46bd88a213a4671dcb5760b83
-vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|eabc217f68bd84e101cb2cde39ce4b037eb47119
+vendor/lib/libloc_api_v02.so|b30a1a36d64deb4494455e5f9ddb585d8f20eb02
+vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|a848757f919400b32ba876bae84c707899109830
 vendor/lib64/libDRPlugin.so|d4f1127ed8f98011fe9687d40e8942e5738f4273
 vendor/lib64/lib_drplugin_server.so|6e425fc7e016c673b3b33bbc8e58aa13fcc4004c
 vendor/lib64/libalarmservice_jni.so|166137a9f4b7d22ebf3c19348b6c17bd998ee282
-vendor/lib64/libdataitems.so|85c2204a9438c8d317bb8e70fde428287995abea
+vendor/lib64/libdataitems.so|c3afb26653a77351ba9ca88d910da050c85f3d4a
 vendor/lib64/libdrplugin_client.so|312ef07b275bdbfb923cca18e961edf146736616
 vendor/lib64/libevent_observer.so|c163884372303f68e1fc073cf42d30959ef771c6
-vendor/lib64/libflp.so|086e2f6d30b7d7ec6695b17fddc636f67db7f978
-vendor/lib64/libgdtap.so|899a336541f8603f4db4dbab83b840d3bc226cc0
+vendor/lib64/libflp.so|63260007f685460ce133b34e6776ff16d47d5f16
+vendor/lib64/libgdtap.so|b798b6114d017ca8e344cff250e466fb1617baf0
 vendor/lib64/libgeofence.so|b666ad9429e910f3644e73066a2fd2fd5bc7df1e
 vendor/lib64/libizat_client_api.so|a1fffb1efdcc653dbce922aa437e0cb63ede09ee
-vendor/lib64/libizat_core.so|9961c70e1e9e3e05e19f9ed30b5f29bdbcaea3ce
-vendor/lib64/liblbs_core.so|0ec82e6a32738036473ca0d6e000068f38dc2c7f|d14bc609ed436b61c160d3b842c343dd362729a5
-vendor/lib64/libloc_api_v02.so|41083e35594afe48ea44741e58184c1b592ab803
+vendor/lib64/libizat_core.so|f743d29914a872eba357991bc8e1d3da72e859e4
+vendor/lib64/liblbs_core.so|ff30ca4f423fd827ab670c629e077f3240aebcab|2556b27bcfb2ab92c0031f79a28756d9f766a770
+vendor/lib64/libloc_api_v02.so|ba4511f636dc8b795f40ab0041c0a6833b8d354b
 vendor/lib64/libloc_ds_api.so|88bd00eef7b3e052e2725ce8883a8da0d95028f0
-vendor/lib64/libloc_externalDr.so|ea635a1ad4f97bef7aa60caacd6ffc291a464b4d
-vendor/lib64/liblocationservice.so|115af789d48608b76814fac9ed3896a0a0a60475
+vendor/lib64/libloc_externalDr.so|5cd45ab523bd47474d30b710a731c6ffd35352ad
+vendor/lib64/liblocationservice.so|1e83a44e0ba130773ff7b76873a511299bfd52a1
 vendor/lib64/liblocationservice_glue.so|9f56f0e9089f0eadc29036c2cffd5a06852f4cb0
 vendor/lib64/liblowi_client.so|166b5c14520d8bd2d583c0d182ab92964f5e88bd
 vendor/lib64/liblowi_wifihal.so|a72819c88a88c26784281287a6f7c37435632fcf
 vendor/lib64/libquipc_os_api.so|ec2826a8e108ea094589f95d273cd8edf7abb5b5
 vendor/lib64/libslimclient.so|d96af467f1eae4a9b5e2e40574ac76340e6564c1
 vendor/lib64/libulp2.so|3411294234c320050d09dfafaae742242506ea87
-vendor/lib64/libxtadapter.so|9a8fbd106994aaaf380be883fa2ef37d04e20401
+vendor/lib64/libxtadapter.so|413b7921bf26af6c91c75dc4389392e3c03ed9d0
 vendor/lib64/libxtwifi_ulp_adaptor.so|81b2083a5b2ca2931811a1b8507f50b8f5fa8e55
-vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741fbc8|f7e9ee8e3804887a2f3939128e860767e6f27258
+vendor/lib64/vendor.qti.gnss@1.0_vendor.so|ac0a4c61c7f85e0f935532bf9834aa251b50ede5|d2055e4589d64b919a19da54b16674113b2f1378
 
-# Perf - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
-lib/vendor.qti.hardware.perf@1.0.so:vendor/lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
-lib64/vendor.qti.hardware.perf@1.0.so:vendor/lib64/vendor.qti.hardware.perf@1.0.so|db6d62913453c545bd057866aeb37a0d058bf6f6
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|e34d3ab597388add3c68d0583cbb4e3a3fc5921e
+# QMI - from smartron (smartron-rimo02a-8.0.0-T5524INDURC-475)
+etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
+lib/libdiag_system.so|a9fe505affae79c0ec0f5532821e9c6cbe9e46d0
+lib/libqmi_cci_system.so|01fff3aeb8d2c2a8529f900c38f6dfbe41ead760
+lib64/libdiag_system.so|d715979a771a964ef3d0f9fe1b297259e74e4f94
+lib64/libqmi_cci_system.so|c6d249277026e8d255dae9f293175cd56893c1c5
+vendor/bin/irsc_util|371d455e92a47c3942ca1aea001c8999dfac52d1
+vendor/lib/libdiag.so|aae150f8623e0c2be53b58846b9172881d1e851c
+vendor/lib/libdsi_netctrl.so|f673ddc573f83132cf66b955b1923b2a9b086ce8
+vendor/lib/libdsutils.so|20efd0bfac63c881d768effd117e1dac08c004a5
+vendor/lib/libidl.so|5373b72960e27b7404958f927401e2887f6a428e
+-vendor/lib/libqcci_legacy.so|a862dd1bbecd89f8d9ae046f2267ed7f3f8480fb
+vendor/lib/libqdi.so|060ffc75e50f06e202ee1f3e6e611d37c94e7fcb
+vendor/lib/libqdp.so|d9e79e193eb31a01af75b05aa2ccbc2f991fa79a
+-vendor/lib/libqmi.so|3adba23d7566466d19b25cd2dbd1a9da838fb473
+vendor/lib/libqmi_cci.so|6130daa0f9776a3f3bf804586e2d0ccb33f4b432
+vendor/lib/libqmi_client_helper.so|d5027b185c3397648c1b38d99c23ee435871797d
+vendor/lib/libqmi_client_qmux.so|7965628298f5acba02b57cf22553b6fc1ff298f1
+vendor/lib/libqmi_common_so.so|96157811bb8e84a4da115e1b11b34b962c9d724d
+vendor/lib/libqmi_csi.so|4d24ace35159d3c2009353cfd9f60dc2ce96c80e
+vendor/lib/libqmi_encdec.so|6ddb054091d34015f0fac9d324b15bd46a2f2234
+-vendor/lib/libqmiservices.so|3f7804519648edf6bc15c732328592bca2175a14
+vendor/lib/libsmemlog.so|9318cb4405e7edd329946893a7ed860f3f5134e0
+vendor/lib64/libdiag.so|ac420c8ee7daa701ab2f636e86d57697fff8ca82
+vendor/lib64/libdsi_netctrl.so|aec92b9feed1b1e5438284c3f614519229cea2e3
+vendor/lib64/libdsutils.so|69da5a340ce1923aec5cda1567b599ce1374f280
+vendor/lib64/libidl.so|9db2e36d509a288c8158b217a419ee70e443bf16
+-vendor/lib64/libqcci_legacy.so|21e70afb6e17cea7630f20f6ecb03bd0c700d74b
+vendor/lib64/libqdi.so|0c420ba0310d67a8177f9cf3fca7fc8214fcd9fa
+vendor/lib64/libqdp.so|a4b033b4ff659ef8f9a7e91649b92ad47f08ddd6
+-vendor/lib64/libqmi.so|337caa8120a77ddceae3807b2d94f2d09a77ee95
+vendor/lib64/libqmi_cci.so|c92ee26b3662e5d358716dd1e6dbab7a33b2fe4e
+vendor/lib64/libqmi_client_helper.so|a520b40a4fab28804d6de1205be8d34b8521293f
+vendor/lib64/libqmi_client_qmux.so|62568e7b7654ccbb60a4c26c8dda42cce2a09693
+vendor/lib64/libqmi_common_so.so|4518aaaa4b29216ecd5ae72a316d090d457c8036
+vendor/lib64/libqmi_csi.so|0a1ae51831a12c947a7d6c8612a05a38e51f6b34
+vendor/lib64/libqmi_encdec.so|68eb90998702f1bd036df07014324cb91aa964a6
+-vendor/lib64/libqmiservices.so|1b3c0109bb0028d4e782f5f225b65e59907797f3
+vendor/lib64/libsmemlog.so|bf755b5cd7bac037804bbff247998824f0746104
+
+# Perf - from bardock pro - 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
+lib/vendor.qti.hardware.perf@1.0.so:vendor/lib/vendor.qti.hardware.perf@1.0.so|a5838c4c09c60e90b79e700cb433bf798f332c05
+lib64/vendor.qti.hardware.perf@1.0.so:vendor/lib64/vendor.qti.hardware.perf@1.0.so|a50799270a817fec0976b5d64f2731d549d80e4d
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|a5b685a510834ad383e2f7bc20dee68364e20319
 vendor/lib/libfeedbackhandler.so|6b9876b1f649aaef895b75ba6a47e03f8ae22186
 vendor/lib/libperfgluelayer.so|701dccc6912647b3ea29bb3fdb0b20a43b0c5213
-vendor/lib/libqti-perfd-client.so|582336afcadb82800178cc312367cb1e0a9dc3b4
-vendor/lib/libqti-perfd.so|8812d1ec9e01527c26b852f5a8692ae35fc427a0
+vendor/lib/libqti-perfd-client.so|445be6f7173799f66418bad3d4f5c4f1a68bebaa
+vendor/lib/libqti-perfd.so|fe66f0fd20c717838c114e92c187b23ace412828
 vendor/lib/libqti-util.so|49ef7e51ae38127ff3b54ce3c2b3d1986f0af38c
-vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so|add8d51e211ef4fd73c2289e8c066c5ecd0d4df9
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so|0d276727738411ea3fa298b3796a55ad15040c3f
 vendor/lib64/libfeedbackhandler.so|82728d38aa14268617868ab0750cbb8fb244bf9a
 vendor/lib64/libperfgluelayer.so|bf99ec37cbf4fd191ba641a915c98855b4e2797d
-vendor/lib64/libqti-perfd-client.so|d9724ac58072657c2ba9fc7502c0f2577ef75230
-vendor/lib64/libqti-perfd.so|4e2b3ba749b03409e01817dc2eeef4185d38696d
+vendor/lib64/libqti-perfd-client.so|0b536a3d9e15d0d7133281348bddbe9090148ec0
+vendor/lib64/libqti-perfd.so|8dbb4a7028183a15b40fc5cb95842b9a0b17f907
 vendor/lib64/libqti-util.so|6411586729d90e0c6a6f94e456f66d376ddb8969
-vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|fca94d3e81f9f6453b0cb781c2925be845bb2ddb
+vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|c136732e39f120c04fd4339266800e530f8873d5
 
-# Thermal - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
-vendor/bin/thermal-engine|f15ad5e04a8be7788344d47e370890f32aada299|665f96b2d5c0f7fafd80561823a3e895a55394ad
+# Thermal - from bardock pro - 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
+vendor/bin/thermal-engine|190d6ac2141a1c94fb59752e5600562e03e26d15|7a87feeacd32481ee08685b3ae2d91eee8be5eaa
 vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
 -vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
 -vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
 
-# Connectivity - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
+# Connectivity - from bardock pro - 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
 vendor/bin/cnss-daemon|58fd958b2f66f3335722d0905b3bb1e70dc1c762
 
 # Energy awareness - from smartron (smartron-rimo02a-8.0.0-T5524INDURC-475)
 vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
+
+# Peripheral manager - from smartron (smartron-rimo02a-8.0.0-T5524INDURC-475)
+vendor/bin/pm-proxy|e2487f98879ff4cd446ba52d4ae169857053864a
+vendor/bin/pm-service|9b926be78cd9d59d232a8f7cfc45064756540974
+vendor/lib/libmdmdetect.so|1997b3b566b2ff73128f9ee2c1a9e361cb21d5e6
+vendor/lib/libperipheral_client.so|2030421246c392132625d0df69f25e5a42532d68
+vendor/lib64/libmdmdetect.so|f2b202cf5cac3fef0c6585cad14ea1c1c2113856
+vendor/lib64/libperipheral_client.so|1bddec8ca9e5c6170c03b603849520b9dbb56756
+
+# RIL - from smartron (smartron-rimo02a-8.0.0-T5524INDURC-475)
+-framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar|ed781809772d08f05ae8409926bd794eb9717da9|141c9214153f8895a6a4e5e5e6b1f848ea1eb069
+-framework/qcnvitems.jar:vendor/framework/qcnvitems.jar|ed781809772d08f05ae8409926bd794eb9717da9|a4c559c404a37a04ba24882a2848d378c7b4fd6b
+-framework/tcmclient.jar:vendor/framework/tcmclient.jar|b05ba06f2f0304f80c354ab62dfbc063ec587b5c
 
 ### Blobs from YTX703 (YT-X703L_USR_S000973_1805241139_Q00140_ROW.1) ###
 
@@ -720,17 +775,11 @@ bin/sensors.qcom:vendor/bin/sensors.qcom
 
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 bin/hvdcp_opti:vendor/bin/hvdcp_opti
-bin/irsc_util:vendor/bin/irsc_util
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
-bin/pm-proxy:vendor/bin/pm-proxy
-bin/pm-service:vendor/bin/pm-service
 bin/qseecomd:vendor/bin/qseecomd
 bin/rmt_storage:vendor/bin/rmt_storage
--framework/ConnectivityExt.jar:vendor/framework/ConnectivityExt.jar
--framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -framework/com.qti.snapdragon.sdk.display.jar:vendor/framework/com.qti.snapdragon.sdk.display.jar
--framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
--framework/tcmclient.jar:vendor/framework/tcmclient.jar
+-framework/ConnectivityExt.jar:vendor/framework/ConnectivityExt.jar
 lib/libOmxVpp.so:vendor/lib/libOmxVpp.so
 lib/libvpplibrary.so:vendor/lib/libvpplibrary.so
 lib64/libdashplayer.so:vendor/lib64/libdashplayer.so
@@ -772,13 +821,10 @@ vendor/lib/libcneapiclient.so
 vendor/lib/libcneqmiutils.so
 vendor/lib/libconnctrl.so
 vendor/lib/libdatactrl.so
-vendor/lib/libdiag.so
 vendor/lib/libdpmnsrm.so
-vendor/lib/libdsutils.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libgsl.so
-vendor/lib/libidl.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
@@ -788,7 +834,6 @@ vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libllvm-qgl.so
 vendor/lib/libloc_ext.so
-vendor/lib/libmdmdetect.so
 vendor/lib/libmm-als.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmm-disp-apis.so
@@ -803,18 +848,8 @@ vendor/lib/libmmsw_opencl.so
 vendor/lib/libmmsw_platform.so
 vendor/lib/liboemcrypto.so
 vendor/lib/liboptizoom.so
-vendor/lib/libperipheral_client.so
 lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so
--vendor/lib/libqcci_legacy.so
 vendor/lib/libqct_resampler.so
--vendor/lib/libqmi.so
-vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_client_helper.so
-vendor/lib/libqmi_client_qmux.so
-vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_csi.so
-vendor/lib/libqmi_encdec.so
--vendor/lib/libqmiservices.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
@@ -826,7 +861,6 @@ vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
 vendor/lib/libseemore.so
 vendor/lib/libsensor_reg.so
-vendor/lib/libsmemlog.so
 -vendor/lib/libtime_genoff.so
 -vendor/lib/libts_detected_face_hal.so
 -vendor/lib/libts_face_beautify_hal.so
@@ -886,37 +920,23 @@ vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneqmiutils.so
 vendor/lib64/libconnctrl.so
 vendor/lib64/libdatactrl.so
-vendor/lib64/libdiag.so
 vendor/lib64/libdisp-aba.so
 vendor/lib64/libdpmnsrm.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libdsutils.so
 vendor/lib64/libgsl.so
-vendor/lib64/libidl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
 vendor/lib64/libloc_ext.so
-vendor/lib64/libmdmdetect.so
 vendor/lib64/libmm-als.so
 vendor/lib64/libmm-disp-apis.so
 vendor/lib64/libmm-dspp-utils.so
 vendor/lib64/libmm-qdcm-diag.so
 vendor/lib64/libmm-qdcm.so
-vendor/lib64/libperipheral_client.so
 lib64/libprotobuf-cpp-lite.so:vendor/lib64/libprotobuf-cpp-Hlte.so
--vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqisl.so
--vendor/lib64/libqmi.so
-vendor/lib64/libqmi_cci.so
-vendor/lib64/libqmi_client_helper.so
-vendor/lib64/libqmi_client_qmux.so
-vendor/lib64/libqmi_common_so.so
-vendor/lib64/libqmi_csi.so
-vendor/lib64/libqmi_encdec.so
--vendor/lib64/libqmiservices.so
 vendor/lib64/libqti-at.so
 vendor/lib64/libqti-gt.so
 vendor/lib64/librpmb.so
@@ -927,8 +947,6 @@ vendor/lib64/libsd_sdk_display.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libsensor_reg.so
-
-vendor/lib64/libsmemlog.so
 vendor/lib64/libssd.so
 -vendor/lib64/libtime_genoff.so
 vendor/lib64/libvendorconn.so
