@@ -14,46 +14,48 @@ vendor/lib/libsensor1.so
 vendor/lib/soundfx/libswdap.so # Only ro.product.model differs
 vendor/lib64/libsensor1.so
 
-# RIL
-bin/netmgrd:vendor/bin/netmgrd
-bin/qmuxd:vendor/bin/qmuxd
--framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/lib/liblqe.so
-vendor/lib/libnetmgr.so
-vendor/lib/libdsi_netctrl.so
-vendor/lib/libqdi.so
-vendor/lib/libqdp.so
-vendor/lib/libril-qc-ltedirectdisc.so
-vendor/lib/libril-qc-qmi-1.so
-vendor/lib/libril-qc-radioconfig.so
-vendor/lib/libril-qcril-hook-oem.so
-vendor/lib/librilqmiservices.so
-vendor/lib64/libconfigdb.so
-vendor/lib64/liblqe.so
-vendor/lib64/libdsi_netctrl.so
-vendor/lib64/libnetmgr.so
-vendor/lib64/libqdi.so
-vendor/lib64/libqdp.so
-vendor/lib64/libril-qc-ltedirectdisc.so
-vendor/lib64/libril-qc-qmi-1.so
-vendor/lib64/libril-qc-radioconfig.so
-vendor/lib64/libril-qcril-hook-oem.so
-vendor/lib64/librilqmiservices.so
-vendor/lib64/libsystem_health_mon.so
+# RIL - from smartron (smartron-rimo02a-8.0.0-T5524INDURC-475)
+-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar|ed781809772d08f05ae8409926bd794eb9717da9|42583273761aedae7d69c0d484d8ae4a638a0bb2
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|6cf0a3c84201ba9e0eb2584f6785e1b71e151b59|ab05c568afe269b5fb899b32530fc74b0f3f2637
+bin/netmgrd:vendor/bin/netmgrd|a6e18631974dfe6495ef45bea7c27a81156d0776
+bin/qmuxd:vendor/bin/qmuxd|0c72a4c7e8b9bc465b38f0218d1db00e3f1312d9
+vendor/lib/liblqe.so|1f06d630a8772bee3ea6efbeee199146b4bae0fa
+vendor/lib/libnetmgr.so|cd8e5a5a49f191152a09e0ab0a0f01a7fa7756c6
+vendor/lib/libdsi_netctrl.so|f673ddc573f83132cf66b955b1923b2a9b086ce8
+vendor/lib/libril-qc-ltedirectdisc.so|48bda209c41dc3964e10e7b70426cb39a9d71297
+vendor/lib/libril-qc-qmi-1.so|29e3f1939d277cc6d7a2c26a80a99c5802d35d1c
+vendor/lib/libril-qc-radioconfig.so|cfd0385e0756976a32d773f537c5f2fbfa765540
+vendor/lib/libril-qcril-hook-oem.so|0685a9fc88da6478167ba4e4fbcdeaa14e203bc4
+vendor/lib/librilqmiservices.so|e59f9f4f546b183c29c5dc03088278ec57b55cd4
+vendor/lib64/libconfigdb.so|d87210b16e35b00598cd153b4602668791053737
+vendor/lib64/liblqe.so|952995706551ae5dad83d75f93df19e2d1c00f8d
+vendor/lib64/libdsi_netctrl.so|aec92b9feed1b1e5438284c3f614519229cea2e3
+vendor/lib64/libnetmgr.so|733b49b0eb34821197de078ddbfeaa67e8de890b
+vendor/lib64/libril-qc-ltedirectdisc.so|d959e0c60d77eaf98026d471581a4f4368f43fb6
+vendor/lib64/libril-qc-qmi-1.so|2d796723dd7b7c2f2c95b0d7b2021c665f7119c8
+vendor/lib64/libril-qc-radioconfig.so|19f62d2ad03628847132731211d77989079b3ffa
+vendor/lib64/libril-qcril-hook-oem.so|66929fbb29022c1cd2ca33fc6ed6193e5aac4c8b
+vendor/lib64/librilqmiservices.so|2e669415a969931afe68867d73eebd0817e272f5
+vendor/lib64/libsystem_health_mon.so|10d03ad4c1b6f3c30019a9a35169b01af56a0bc4
+vendor/lib64/vendor.qti.hardware.radio.uim@1.0_vendor.so|5ba3ab31c2749031de51af3c5008a3fef4d4c790
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.0_vendor.so|7b152f9670b1e514d2af4fb6d76d2d0fcc7d6119
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|fc9c9bf42b1151c9e1eda28f6289cd7280bcdf73
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|23be221268209beef5df745bf1d019935cd8e6d0
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|7ac382a77665e8dc9a56f07ab6739a1a78e6794f
+vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|649573bfd3969b1eb64c968ae6dada5c15133483
+vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so|cf37d696dca57868b66278df304eb93a7b0ccc32
+vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so|d5af712c2213b476a95282122acbfe8cb68e5d06
+vendor/lib/libsettings.so|7748d051fb23e8f971d13cc3ba29a9f08168532a
+vendor/lib64/libsettings.so|6f8dd8568a3925a2fb377eb69f0b6a62935d44a7
 vendor/qcril.db
-
-# RIL dependencies - from bardock pro - 2.5.1_20190114-1551-bardockpro_bq-user-1492-Fastboot-FW
-vendor/lib/libsettings.so|2a862fcee91d4ad751e8dd80d591047e901cb6bd
-vendor/lib64/libsettings.so|59a6bfe89ba1cb2ecb5f74c65ef12759abab41a3
 
 # DPM - from daisy - PKQ1.180917.001
 bin/dpmd|1b38829a7faf33d5cbdc195d703f99384c20c9f4
 etc/dpm/dpm.conf|5f19d3984b5291ac956552bda2a84c10c535df0a
-#etc/init/dpmd.rc|52ca6ad920a1804e4ff608113cece063730f5e0c
+#etc/init/dpmd.rc
 etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
 etc/permissions/dpmapi.xml|ded29f9befaef20a7ccee0c75427fda1d1d04890
-framework/com.qti.dpmframework.jar|2a6ff555ebff148a508fc7ea2fbeaee4b9a2dff6
+framework/com.qti.dpmframework.jar|4a48456f8ed4b751135b05a99f273996bf35fd9c
 framework/dpmapi.jar|66a30e2752b058f6f522721ef6b5efb4c747f7ed
 lib64/com.qualcomm.qti.dpm.api@1.0.so|2af88934e4039edaac842576a1861cbdfe39838b
 lib64/libdiag_system.so|d715979a771a964ef3d0f9fe1b297259e74e4f94
@@ -64,4 +66,4 @@ lib64/libdpmtcm.so|1f85ced85f541146756df0b4597a4c51300be63a
 vendor/bin/dpmQmiMgr|31e019a02d25a959a2edfe2c9a04ab958562bb67
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|2af88934e4039edaac842576a1861cbdfe39838b
 vendor/lib64/libdpmqmihal.so|4254cc9f10f6f3d990958c17f4e43d8e9e09c382
-#-priv-app/dpmserviceapp/dpmserviceapp.apk|a642336052f3e5d70580700e2aebba230a5f663f
+#-priv-app/dpmserviceapp/dpmserviceapp.apk
