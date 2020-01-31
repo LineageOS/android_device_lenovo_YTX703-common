@@ -29,7 +29,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_CFLAGS := -v
 LOCAL_CFLAGS += -DFEATURE_IPA_ANDROID
-LOCAL_CFLAGS += -DFEATURE_IPACM_HAL -Wall -Werror -Wno-error=macro-redefined
+LOCAL_CFLAGS += -DFEATURE_IPACM_HAL -Wall -Werror -Wno-error=macro-redefined -Wno-error=implicit-fallthrough -Wno-error=enum-compare
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 LOCAL_CFLAGS += -DDEBUG
 endif
