@@ -6,7 +6,6 @@
 /userstore(/.*)?                                                u:object_r:system_data_file:s0
 
 # SELinux domains for services
-/(vendor|system/vendor)/bin/timekeep                            u:object_r:timekeep_exec:s0
 /(vendor|system/vendor)/etc/init/hw/init.qcom.bt.sh             u:object_r:bluetooth_loader_exec:s0
 /(vendor|system/vendor)/bin/awk                                 u:object_r:vendor_awk_exec:s0
 
