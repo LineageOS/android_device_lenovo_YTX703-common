@@ -131,11 +131,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.msm8952 \
 
-# TimeKeep
-PRODUCT_PACKAGES += \
-    timekeep \
-    TimeKeep \
-
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/seccomp_policy/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
