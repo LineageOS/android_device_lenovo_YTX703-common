@@ -120,6 +120,12 @@ vendor/lib64/libperipheral_client.so|1bddec8ca9e5c6170c03b603849520b9dbb56756
 -framework/qcnvitems.jar:vendor/framework/qcnvitems.jar|ed781809772d08f05ae8409926bd794eb9717da9|a4c559c404a37a04ba24882a2848d378c7b4fd6b
 -framework/tcmclient.jar:vendor/framework/tcmclient.jar|b05ba06f2f0304f80c354ab62dfbc063ec587b5c
 
+# Time services - from bardock pro - 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
+-vendor/app/TimeService/TimeService.apk|5055619766db32fe499cda86b892c9f3081219c5
+vendor/bin/time_daemon|8ea7d65a65c1d50afc6553ad52848b454c62563d
+-vendor/lib/libtime_genoff.so|267516e23fe515013b6ef4e2f7edd0049fb75466
+-vendor/lib64/libtime_genoff.so|7683a85cae9f17cd535e8960fceda1d6831074a0
+
 ### Blobs from YTX703 (YT-X703L_USR_S000973_1805241139_Q00140_ROW.1) ###
 
 # Audio
@@ -861,7 +867,6 @@ vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
 vendor/lib/libseemore.so
 vendor/lib/libsensor_reg.so
--vendor/lib/libtime_genoff.so
 -vendor/lib/libts_detected_face_hal.so
 -vendor/lib/libts_face_beautify_hal.so
 vendor/lib/libtsvideoprocess.so
@@ -948,7 +953,6 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libssd.so
--vendor/lib64/libtime_genoff.so
 vendor/lib64/libvendorconn.so
 vendor/lib64/libxml.so
 vendor/lib64/sensor_calibrate.so
