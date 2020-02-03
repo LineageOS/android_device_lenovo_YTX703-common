@@ -21,7 +21,9 @@ DEVICE_PATH := device/lenovo/YTX703-common
 # inherit from the proprietary version
 include $(VENDOR_PATH)/BoardConfigVendor.mk
 
+ifeq ($(WITH_TWRP), true)
 include $(DEVICE_PATH)/recovery/twrp.mk
+endif
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
