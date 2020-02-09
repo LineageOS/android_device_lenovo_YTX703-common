@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-service qseecomd /vendor/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
@@ -8,7 +8,7 @@ service qseecomd /vendor/bin/qseecomd
     writepid /dev/cpuset/system-background/tasks
 
 on late-init
-    start qseecomd
+    start vendor.qseecomd
 
 on post-fs-data
     # Create directory for TZ Apps
