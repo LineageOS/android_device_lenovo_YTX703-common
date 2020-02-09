@@ -75,7 +75,7 @@ on init
     mount_all /vendor/etc/fstab.qcom --early
     # qseecomd needs /dev/block/bootdevice
     # vold needs keymaster that needs qseecomd
-    start qseecomd
+    start vendor.qseecomd
 
 
     mkdir /persist/bluetooth 0770 bluetooth bluetooth
