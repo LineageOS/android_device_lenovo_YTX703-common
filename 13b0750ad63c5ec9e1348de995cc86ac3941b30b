@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b78c516f_de59e6a2",
+        "filename": "configs/init/hw/init.qcom.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 18924
+      },
+      "writtenOn": "2020-02-20T20:49:25Z",
+      "side": 1,
+      "message": "Don\u0027t you actually want to remove it from \"on init\" though, and move the comment here?",
+      "revId": "13b0750ad63c5ec9e1348de995cc86ac3941b30b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
