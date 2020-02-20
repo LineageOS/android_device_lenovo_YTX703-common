@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6164a180_7ab5e39e",
+        "filename": "YTX703F/lineage.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18924
+      },
+      "writtenOn": "2020-02-20T20:45:32Z",
+      "side": 1,
+      "message": "Whoops, stray whitespace.",
+      "revId": "9c10d53afb0cff733afbae7a32297a55efab79ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
