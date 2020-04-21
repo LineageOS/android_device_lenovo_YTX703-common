@@ -1,4 +1,4 @@
-# ADSP - from smartron-rimo02a-8.0.0-T5524INDURC-475
+#  ADSP - from smartron-rimo02a-8.0.0-T5524INDURC-475
 vendor/bin/adsprpcd|7ceb4f275de3816b2a86b889c8902cd7f4e83aa3
 vendor/lib/libadsp_default_listener.so|ae178877cef5f10c9b755bad836d004a75aaa582
 vendor/lib/libadsprpc.so|a461493b33424ff92b2cee4669c704ca0d21eb54|100d7a89d8fa8a7955044298c9f07646273a9865
@@ -7,7 +7,7 @@ vendor/lib/libfastcvopt.so|746f669d5cab15f719546a5650ad2af803a35a7b
 vendor/lib64/libadsp_default_listener.so|d13ec3501f029660c213208999c13315767b0ec4
 vendor/lib64/libadsprpc.so|ef09248c0a16ed1fc738127d4de0392c01fea58e|f5346bbb0ba487e219b7f848d84a67509f7de2d3
 
-# DEVICE_ADSP - from YT-X703L_S000973_180524_ROW
+#  DEVICE_ADSP - from YT-X703L_S120015_200317_ROW
 vendor/lib/libvendorconn.so|08eed256fd86626a8f6833d0be97a1a2dd835277
 vendor/lib/rfsa/adsp/libapps_mem_heap.so|d9f61bc2350cbccc09e94974ae89dff98feac920
 vendor/lib/rfsa/adsp/libdspCV_skel.so|e2aa658b5ff78cb8528653b58fbc5eb1c4208eac
@@ -872,7 +872,7 @@ vendor/lib64/librs_adreno_sha1.so|3aff4d201264dc5e1166272591909bc1fe9116c1
 vendor/lib/hw/vulkan.msm8952.so|45a826c86321a3acb3556fed7988f595354ccb6c
 vendor/lib64/hw/vulkan.msm8952.so|a442c83cc25798de78fa0336358a85c8a7daccc3
 
-# GFX firmware - daisy-user-10-QKQ1.191002.002-V11.0.2.0.QDLMIXM-release-keys
+# GFX firmware - from daisy-user-10-QKQ1.191002.002-V11.0.2.0.QDLMIXM-release-keys
 etc/firmware/a225p5_pm4.fw:vendor/firmware/a225p5_pm4.fw|02e5fb26c121d388104bc6a0f31811dfa91f1828
 etc/firmware/a225_pfp.fw:vendor/firmware/a225_pfp.fw|7ba4003796285d36c125fabe453b45d5e21850cc
 etc/firmware/a225_pm4.fw:vendor/firmware/a225_pm4.fw|87d6f27ca08b521cc3361f63f0631a1fef2403ac
@@ -1082,8 +1082,8 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so|2943c3a72992ef81c00a
 
 # RIL - from smartron-rimo02a-8.0.0-T5524INDURC-475
 bin/rmt_storage:vendor/bin/rmt_storage|7b45ce9faaccd5e61a2d2b9ba45d5ac9a6adb79e
--framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar|ed781809772d08f05ae8409926bd794eb9717da9|babdc3b8000d00b8e4e4e642c561b863b2b2f51f
--framework/qcnvitems.jar:vendor/framework/qcnvitems.jar|ed781809772d08f05ae8409926bd794eb9717da9|62b78a300aef95a6b22ef1d5d268bc6cbff940a0
+-framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar|ed781809772d08f05ae8409926bd794eb9717da9|4460d365e430c307a05ca97bed19205579c2aa27
+-framework/qcnvitems.jar:vendor/framework/qcnvitems.jar|ed781809772d08f05ae8409926bd794eb9717da9|f918ce5fde01f561a7b4adf458a984bd6521bcde
 -framework/tcmclient.jar:vendor/framework/tcmclient.jar|b05ba06f2f0304f80c354ab62dfbc063ec587b5c
 
 # Sensors

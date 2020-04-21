@@ -15,8 +15,8 @@ vendor/lib/soundfx/libswdap.so # Only ro.product.model differs
 vendor/lib64/libsensor1.so
 
 # RIL - from smartron-rimo02a-8.0.0-T5524INDURC-475
--framework/qcrilhook.jar:vendor/framework/qcrilhook.jar|ed781809772d08f05ae8409926bd794eb9717da9|6e8d089a3544573cf026a1639f27fbf67ea28e35
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|6cf0a3c84201ba9e0eb2584f6785e1b71e151b59|e21952722670e544461eed8a7eee870cf5217bf3
+-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar|ed781809772d08f05ae8409926bd794eb9717da9|74e14967916a9c554815c80dd5d3048fc2736689
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|6cf0a3c84201ba9e0eb2584f6785e1b71e151b59|e87c2d680101a92c06cd54942c314938aad801ba
 bin/netmgrd:vendor/bin/netmgrd|a6e18631974dfe6495ef45bea7c27a81156d0776
 bin/qmuxd:vendor/bin/qmuxd|0c72a4c7e8b9bc465b38f0218d1db00e3f1312d9
 vendor/bin/qti|215f239bd2c683f9a6219845f540206f8c70c3b8
