@@ -1101,8 +1101,6 @@ vendor/lib/liboemcrypto.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # Time services - from 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
--vendor/app/TimeService/TimeService.apk|5055619766db32fe499cda86b892c9f3081219c5
-vendor/bin/time_daemon|8ea7d65a65c1d50afc6553ad52848b454c62563d
 -vendor/lib/libtime_genoff.so|267516e23fe515013b6ef4e2f7edd0049fb75466
 -vendor/lib64/libtime_genoff.so|7683a85cae9f17cd535e8960fceda1d6831074a0
 
