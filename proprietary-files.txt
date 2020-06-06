@@ -802,25 +802,25 @@ etc/firmware/widevine.b06:vendor/firmware/widevine.b06
 # Connectivity - from 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
 vendor/bin/cnss-daemon|58fd958b2f66f3335722d0905b3bb1e70dc1c762
 
-# DRM
-bin/qseecomd:vendor/bin/qseecomd
-vendor/lib/libQSEEComAPI.so
-vendor/lib64/lib-sec-disp.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/librpmb.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libssd.so
-vendor/lib64/libqisl.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
+#  DRM - from smartron-rimo02a-8.0.0-T5524INDURC-475
+bin/qseecomd:vendor/bin/qseecomd|20a166a2258222a786f7f8948c5f05efefeefe6d
+vendor/lib/libQSEEComAPI.so|c7e251269fc8d00a287449efef7c7385f87bdd07
+vendor/lib64/lib-sec-disp.so|53aa1f8358f67b4a2212d0c7d3b64d3b91ccdb19
+vendor/lib64/libQSEEComAPI.so|13daf33d75412c53938f881bdbdfa14aa86b317f
+vendor/lib64/libSecureUILib.so|d040aacabfa73d4f496f2e719515dcb82ca7ac2c|53eb8634a4c15597e9e9c41892660821ae13e14a
+vendor/lib64/libStDrvInt.so|45ddafcbc484b1e3e94ffe4af68f26f672c3c4b2
+vendor/lib64/libdrmfs.so|91543daa7f573420e701fbc942c12bee1ac20812
+vendor/lib64/libdrmtime.so|8a82cb36856a1f845e1cb8c7c29ec52b9636f7e9
+vendor/lib64/librpmb.so|0d2150269bd6fe41a02d3c41e5c5739f72ae4eb1|cc12a22a9b4304ba20b820589ff0bfd6954f668e
+vendor/lib64/libsecureui.so|2af128ecb7724f912795aed8b5419560bc8d8466
+vendor/lib64/libsecureui_svcsock.so|cc586de86f4e93c1a072420e3ee2dc743617c56e
+vendor/lib64/libssd.so|53e2fc329e1b709758d4b66180c88c42cbd14288
+vendor/lib64/libqisl.so|c665714a1e618313a645be5617fc1f09a3a4d41b
+vendor/lib64/libGPreqcancel.so|a11d29d299f9514bceac4857cd52c4ac8894ced5
+vendor/lib64/libGPreqcancel_svc.so|8bdb7f24be10323a1d8890cc8124f4df63bf7141
 
-# Gatekeeper
-vendor/lib64/hw/gatekeeper.msm8952.so
+#  Gatekeeper - from smartron-rimo02a-8.0.0-T5524INDURC-475
+vendor/lib64/hw/gatekeeper.msm8952.so|d6ec95511d4025835534286a813dd98b47488986
 
 # EGL - from smartron-rimo02a-8.0.0-T5524INDURC-475
 vendor/lib/egl/eglSubDriverAndroid.so|7ebcccbadde865ec130378c5c0f866049d420c3a
@@ -927,8 +927,8 @@ vendor/lib64/vendor.qti.gnss@1.0_vendor.so|ac0a4c61c7f85e0f935532bf9834aa251b50e
 # Energy - from smartron-rimo02a-8.0.0-T5524INDURC-475
 vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
 
-# Keystore
-vendor/lib64/hw/keystore.msm8952.so
+#  Keystore - from smartron-rimo02a-8.0.0-T5524INDURC-475
+vendor/lib64/hw/keystore.msm8952.so|20a5ac06eff901c97de41277ab1948d75b630c5b
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8952.so
@@ -1100,9 +1100,9 @@ lib64/libdhcpcd.so:vendor/lib64/libdhcpcd.so
 vendor/lib/liboemcrypto.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
-# Time services - from 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
--vendor/lib/libtime_genoff.so|267516e23fe515013b6ef4e2f7edd0049fb75466
--vendor/lib64/libtime_genoff.so|7683a85cae9f17cd535e8960fceda1d6831074a0
+# Time services - from smartron-rimo02a-8.0.0-T5524INDURC-475
+-vendor/lib/libtime_genoff.so|5364ab63bf4c30f8cece3fe6f41de919c2034791
+-vendor/lib64/libtime_genoff.so|2fd4f27d66d3fbe4a1b3bf72dbf6cd90041559b5
 
 # Misc common stuff
 lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlte.so
