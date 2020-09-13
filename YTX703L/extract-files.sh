@@ -32,6 +32,9 @@ function blob_fixup() {
 	vendor/lib/libril-qc-qmi-1.so | vendor/lib64/libril-qc-qmi-1.so)
 		sed -i -e 's|system/etc|vendor/etc|g' "${2}"
 		;;
+	vendor/lib/libsettings.so | vendor/lib64/libsettings.so)
+		patchelf --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v28.so" "${2}"
+		;;
 	esac
 }
 

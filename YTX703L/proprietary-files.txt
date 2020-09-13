@@ -47,8 +47,8 @@ vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|7ac382a77665e8dc9a
 vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|649573bfd3969b1eb64c968ae6dada5c15133483
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so|cf37d696dca57868b66278df304eb93a7b0ccc32
 vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so|d5af712c2213b476a95282122acbfe8cb68e5d06
-vendor/lib/libsettings.so|7748d051fb23e8f971d13cc3ba29a9f08168532a
-vendor/lib64/libsettings.so|6f8dd8568a3925a2fb377eb69f0b6a62935d44a7
+vendor/lib/libsettings.so|7748d051fb23e8f971d13cc3ba29a9f08168532a|3bf090534e8d1898c9f99f878572bc86d83a916c
+vendor/lib64/libsettings.so|6f8dd8568a3925a2fb377eb69f0b6a62935d44a7|080ce170dc40f4b87ab82e2623fec960736e0568
 vendor/qcril.db
 
 # DPM - from daisy-user-9-PKQ1.180917.001-V10.0.1.0.PDLMIFJ-release-keys
