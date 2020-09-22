@@ -164,6 +164,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
 
 # HIDL HAL list
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
