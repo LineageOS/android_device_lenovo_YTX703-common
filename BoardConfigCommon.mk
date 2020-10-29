@@ -228,6 +228,10 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
+
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
 
