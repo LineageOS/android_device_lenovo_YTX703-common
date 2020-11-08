@@ -8,6 +8,6 @@ allow cnd system_wpa_socket:sock_file { unlink };
 #for using public interface vendor.qti.data.factory
 #client should add their domain to cnd.te
 ##############################################################
-userdebug_or_eng('
+userdebug_or_eng(`
   binder_call(cnd, radio)
 ')
