@@ -31,7 +31,7 @@ TARGET_SCREEN_HEIGHT := 1600
 # Device characteristics
 PRODUCT_CHARACTERISTICS := tablet
 
-$(call inherit-product-if-exists, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, $(LOCAL_PATH)/configs/memconfig/phone-xxhdpi-3072-dalvik-heap.mk)
 
 #
 # PRODUCT_PACKAGES rules
