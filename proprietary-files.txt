@@ -1100,6 +1100,11 @@ lib64/libdhcpcd.so:vendor/lib64/libdhcpcd.so
 vendor/lib/liboemcrypto.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
+# Widevine HAL - from tissot-user-9-PKQ1.180917.001-V10.0.10.0.PDHMIXM-release-keys
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine|458b57eadd116b32d1d288447d3537d00761f506
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|458dd241f5f8536eccb57f012b3eba0061736e8e
+vendor/lib/libwvhidl.so|45bc058184befe19b26cbb7bbcedf497c693024e|ac725bcbc865bc6be9c5ad2eadd49c5a537d0a50
+
 # Time services - from smartron-rimo02a-8.0.0-T5524INDURC-475
 -vendor/lib/libtime_genoff.so|5364ab63bf4c30f8cece3fe6f41de919c2034791
 -vendor/lib64/libtime_genoff.so|2fd4f27d66d3fbe4a1b3bf72dbf6cd90041559b5

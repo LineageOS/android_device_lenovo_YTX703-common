@@ -77,6 +77,9 @@ function blob_fixup() {
 		sed -i -e 's|system/lib/hw|vendor/lib/hw|g' "${2}"
 		sed -i -e 's|etc/acdbdata|vendor/etc/a|g' "${2}"
 		;;
+	vendor/lib/libwvhidl.so)
+		patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v28.so" "${2}"
+		;;
 	vendor/lib/mediadrm/libwvdrmengine.so)
 		sed -i -e 's|libprotobuf-cpp-lite\.so|libprotobuf-cpp-Hlte.so|g' "${2}"
 		;;
