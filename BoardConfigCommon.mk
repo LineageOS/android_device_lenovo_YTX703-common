@@ -220,6 +220,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/$(TARGET_DEVICE)/system.prop
 
 # Power
 TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/hardware/power/power-mode.cpp
+TARGET_POWERHAL_BOOST_EXT := $(DEVICE_PATH)/hardware/power/power-boost.cpp
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
