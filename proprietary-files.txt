@@ -1027,9 +1027,7 @@ vendor/lib64/libsmemlog.so|bf755b5cd7bac037804bbff247998824f0746104
 # Perf - from 2.11.0_20191121-1510-bardockpro_bq-user-2395-Fastboot-FW
 vendor/bin/msm_irqbalance|1c0e43d00bc82a597974d13d5872fe033597ae93
 lib/libqti-at.so|3f4ea7fcdc0bc95aa6c47fe5770eb0b551705d6d
-lib/vendor.qti.hardware.perf@1.0.so:vendor/lib/vendor.qti.hardware.perf@1.0.so|a5838c4c09c60e90b79e700cb433bf798f332c05
 lib64/libqti-at.so|f6c172ad88dcd72ee2f390178b0a546b2b809b67
-lib64/vendor.qti.hardware.perf@1.0.so:vendor/lib64/vendor.qti.hardware.perf@1.0.so|a50799270a817fec0976b5d64f2731d549d80e4d
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|a5b685a510834ad383e2f7bc20dee68364e20319
 vendor/lib/libfeedbackhandler.so|6b9876b1f649aaef895b75ba6a47e03f8ae22186
 vendor/lib/libperfgluelayer.so|701dccc6912647b3ea29bb3fdb0b20a43b0c5213
