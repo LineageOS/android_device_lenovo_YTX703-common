@@ -212,6 +212,6 @@ on charger
 on property:init.svc.recovery=running
     trigger enable-low-power
 
-on property:dev.bootcomplete=1
+on property:sys.boot_completed=1
     setprop sys.io.scheduler "bfq"
     trigger enable-low-power
