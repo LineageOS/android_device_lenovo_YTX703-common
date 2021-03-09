@@ -1,7 +1,7 @@
 # Label power supply driver properties for access from
 # hvdcp_opti (quick charger daemon) and health@2.0-service.
 genfscon sysfs /devices/soc.0/msm-bcl-18                 u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/soc.0/qcom,bcl.57                u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc.0/soc:qcom,bcl               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc.0/qpnp-vadc-6                u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc.0/qpnp-vadc-13               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc.0/78db000.usb                u:object_r:sysfs_batteryinfo:s0
