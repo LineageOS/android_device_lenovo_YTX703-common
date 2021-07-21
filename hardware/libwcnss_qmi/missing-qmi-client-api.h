@@ -19,13 +19,13 @@
 #define DMS_DEVICE_MAC_WLAN_V01         0
 #define QMI_DMS_GET_MAC_ADDRESS_REQ_V01 0x5Cull
 
-void *dms_get_service_object_internal_v01(int32_t, int32_t, int32_t);
-int   qmi_client_send_msg_sync(void*, unsigned int, void*, unsigned int,
+void *(*dms_get_service_object_internal_v01)(int32_t, int32_t, int32_t);
+int   (*qmi_client_send_msg_sync)(void*, unsigned int, void*, unsigned int,
                                void*, unsigned int, unsigned int);
-int   qmi_client_init(const char*, void*, void*, void*, void**);
-int   qmi_client_release(void*);
-int   qmi_init(void*, void*);
-int   qmi_release(int);
+int   (*qmi_client_init)(const char*, void*, void*, void*, void**);
+int   (*qmi_client_release)(void*);
+int   (*qmi_init)(void*, void*);
+int   (*qmi_release)(int);
 
 struct dms_get_mac_address_req_msg_v01 {
 	int device;
