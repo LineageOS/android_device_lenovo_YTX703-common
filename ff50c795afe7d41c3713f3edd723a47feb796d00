@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "185c8ce0_bf747455",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31469
+      },
+      "writtenOn": "2022-07-22T20:35:37Z",
+      "side": 1,
+      "message": "I want to be able to do it myself if it\u0027s possible or better",
+      "revId": "ff50c795afe7d41c3713f3edd723a47feb796d00",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
